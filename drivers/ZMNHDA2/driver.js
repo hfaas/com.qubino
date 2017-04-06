@@ -7,23 +7,36 @@ const ZwaveDriver = require('homey-zwavedriver');
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
 	capabilities: {
-		onoff: {
-			command_class: 'COMMAND_CLASS_SWITCH_BINARY',
-			command_get: 'SWITCH_BINARY_GET',
-			command_set: 'SWITCH_BINARY_SET',
-			command_set_parser: value => ({
-				'Switch Value': (value) ? 'on/enable' : 'off/disable',
-			}),
-			command_report: 'SWITCH_BINARY_REPORT',
-			command_report_parser: report => {
-				if (report['Value'] === 'on/enable') {
-					return true;
-				} else if (report['Value'] === 'off/disable') {
-					return false;
-				}
-				return null;
+		onoff: [
+			{
+				command_class: 'COMMAND_CLASS_SWITCH_BINARY',
+				command_get: 'SWITCH_BINARY_GET',
+				command_set: 'SWITCH_BINARY_SET',
+				command_set_parser: value => ({
+					'Switch Value': (value) ? 'on/enable' : 'off/disable',
+				}),
+				command_report: 'SWITCH_BINARY_REPORT',
+				command_report_parser: report => {
+					if (report['Value'] === 'on/enable') {
+						return true;
+					} else if (report['Value'] === 'off/disable') {
+						return false;
+					}
+					return null;
+				},
 			},
-		},
+			{
+				command_class: 'COMMAND_CLASS_SWITCH_MULTILEVEL',
+				command_report: 'SWITCH_MULTILEVEL_REPORT',
+				command_report_parser: report => {
+					if (report && report['Value (Raw)']) {
+						if (report['Value (Raw)'][0] > 0) return true;
+						return false;
+					}
+					return null;
+				},
+			}
+		],
 		dim: {
 			command_class: 'COMMAND_CLASS_SWITCH_MULTILEVEL',
 			command_get: 'SWITCH_MULTILEVEL_GET',
@@ -35,7 +48,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			command_report: 'SWITCH_MULTILEVEL_REPORT',
 			command_report_parser: report => {
 				if (report && report['Value (Raw)']) {
-					if(report['Value (Raw)'][0] === 255) return 1;
+					if (report['Value (Raw)'][0] === 255) return 1;
 					return report['Value (Raw)'][0] / 99;
 				}
 				return null;
