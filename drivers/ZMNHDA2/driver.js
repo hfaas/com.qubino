@@ -46,9 +46,22 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				'Dimming Duration': 255
 			}),
 			command_report: 'SWITCH_MULTILEVEL_REPORT',
-			command_report_parser: report => {
-				if (report && report['Value (Raw)']) {
-					if (report['Value (Raw)'][0] === 255) return 1;
+			command_report_parser: (report, node) => {
+				if (report.Value === 'on/enable') {
+					module.exports.realtime(node.device_data, 'onoff', true);
+					return 1.0;
+				}
+				else if (report.Value === 'off/disable') {
+					module.exports.realtime(node.device_data, 'onoff', false);
+					return 0.0;
+				}
+				else if (typeof report.Value === 'number') {
+					module.exports.realtime(node.device_data, 'onoff', report.Value > 0);
+					return report.Value / 99;
+				}
+				else if (typeof report['Value (Raw)'] !== 'undefined') {
+					module.exports.realtime(node.device_data, 'onoff', report['Value (Raw)'][0] > 0);
+					if(report['Value (Raw)'][0] === 255) return 1.0;
 					return report['Value (Raw)'][0] / 99;
 				}
 				return null;
