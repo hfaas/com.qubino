@@ -117,7 +117,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			size: 1,
 		},
 		input_2_type: {
-			index: 1,
+			index: 2,
 			size: 1,
 		},
 		input_2_contact_type: {
