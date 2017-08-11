@@ -162,7 +162,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 		},
 		dimming_time_when_key_pressed: {
 			index: 66,
-			size: 1,
+			size: 2,
 		},
 	},
 });

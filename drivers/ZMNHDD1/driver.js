@@ -117,7 +117,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			size: 1,
 		},
 		input_2_type: {
-			index: 1,
+			index: 2,
 			size: 1,
 		},
 		input_2_contact_type: {
@@ -166,7 +166,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 		},
 		dimming_time_when_key_pressed: {
 			index: 66,
-			size: 1,
+			size: 2,
 		},
 	},
 });
