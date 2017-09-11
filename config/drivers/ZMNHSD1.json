@@ -283,12 +283,12 @@
 			},
 			"value": 3,
 			"attr": {
-				"min": 50,
+				"min": 1,
 				"max": 255
 			},
 			"hint": {
-				"en": "Time of moving the dimmer between minimum and maximum dimming values by push button Input 1 (short press). 50 = 500 miliseconds, 255 = 2550 miliseconds.",
-				"nl": "Tijd die nodig is voor het veranderen van minimaal naar maximaal dim niveau (d.m.v. korte druk op Input 1). 50 = 500 miliseconden, 255 = 2550 miliseconden."
+				"en": "Time (in seconds) of moving the dimmer between minimum and maximum dimming values by push button Input 1 (short press).",
+				"nl": "Tijd (in seconden) die nodig is voor het veranderen van minimaal naar maximaal dim niveau (d.m.v. korte druk op Input 1)."
 			}
 		}
 	]

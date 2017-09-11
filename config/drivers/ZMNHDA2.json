@@ -307,14 +307,14 @@
 				"en": "Dimming duration I1",
 				"nl": "Dim periode I1"
 			},
-			"value": 50,
+			"value": 3,
 			"attr": {
-				"min": 50,
+				"min": 1,
 				"max": 255
 			},
 			"hint": {
-				"en": "Time of moving the dimmer between minimum and maximum dimming values by push button I1 (short press). 50 = 500 miliseconds, 255 = 2550 miliseconds.",
-				"nl": "Tijd die nodig is voor het veranderen van het minimale naar maximale dim niveau (d.m.v. korte druk op I1). 50 = 500 miliseconden, 255 = 2550 miliseconden."
+				"en": "Time (in seconds) of moving the dimmer between minimum and maximum dimming values by push button I1 (short press).",
+				"nl": "Tijd (in seconden) die nodig is voor het veranderen van het minimale naar maximale dim niveau (d.m.v. korte druk op I1)."
 			}
 		}
 	]
