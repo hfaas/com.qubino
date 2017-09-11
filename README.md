@@ -3,6 +3,10 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
+
+Version 1.1.6
+* Minor bug fixes for dimming duration setting (parameter 66) for ZMNHVD1, ZMNHSD1 and ZMNHDA2
+
 Version 1.1.0
 * Add support for ZMNHDD1 (Flush Dimmer)
 * Add support for ZMNHBD1 (Flush 2 Relays)
