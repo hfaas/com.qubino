@@ -1032,8 +1032,8 @@
             ],
             "icon": "/drivers/ZMNHBD1/assets/icon.svg",
             "name": {
-              "en": "ZMNHBD1 Relay 2",
-              "nl": "ZMNHBD1 Relais 2"
+              "en": "ZMNHBD1 Relay 1",
+              "nl": "ZMNHBD1 Relais 1"
             },
             "mobile": {
               "components": [
@@ -1926,6 +1926,41 @@
           "hint": {
             "en": "The parameter defines the contact type",
             "nl": "Deze parameter bepaalt het contact type"
+          }
+        },
+        {
+          "id": "state_of_3_way_switch",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Single push button (connected to I1)",
+                "nl": "Enkele schakelaar (aangesloten op I1)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "3 way switch (connected to I1 and I2)",
+                "nl": "3 weg schakelaar (aangesloten op I1 en I2)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Additional switch (connected to I2)",
+                "nl": "Extra schakelaar (aangesloten op I2)"
+              }
+            }
+          ],
+          "value": "0",
+          "label": {
+            "en": "Switch configuration"
+          },
+          "hint": {
+            "en": "The parameter defines the configuration of used switches. Enabling 3 way switch sets I1 to dim up and I2 to dim down.",
+            "nl": "Deze parameter bepaalt de schakelaar configuratie. 3 weg schakelaar set I1 als dim up en I2 als dim down."
           }
         },
         {

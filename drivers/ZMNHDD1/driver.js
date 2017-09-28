@@ -140,6 +140,10 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			index: 12,
 			size: 2,
 		},
+		state_of_3_way_switch: {
+			index: 20,
+			size: 1,
+		},
 		state_of_device_after_power_failure: {
 			index: 30,
 			size: 1,

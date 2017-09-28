@@ -189,6 +189,41 @@
 			}
 		},
 		{
+			"id": "state_of_3_way_switch",
+			"type": "dropdown",
+			"values": [
+				{
+					"id": "0",
+					"label": {
+						"en": "Single push button (connected to I1)",
+						"nl": "Enkele schakelaar (aangesloten op I1)"
+					}
+				},
+				{
+					"id": "1",
+					"label": {
+						"en": "3 way switch (connected to I1 and I2)",
+						"nl": "3 weg schakelaar (aangesloten op I1 en I2)"
+					}
+				},
+				{
+					"id": "2",
+					"label": {
+						"en": "Additional switch (connected to I2)",
+						"nl": "Extra schakelaar (aangesloten op I2)"
+					}
+				}
+			],
+			"value": "0",
+			"label": {
+				"en": "Switch configuration"
+			},
+			"hint": {
+				"en": "The parameter defines the configuration of used switches. Enabling 3 way switch sets I1 to dim up and I2 to dim down.",
+				"nl": "Deze parameter bepaalt de schakelaar configuratie. 3 weg schakelaar set I1 als dim up en I2 als dim down."
+			}
+		},
+		{
 			"id": "deactivate_ALL_ON_ALL_OFF",
 			"type": "dropdown",
 			"values": [
