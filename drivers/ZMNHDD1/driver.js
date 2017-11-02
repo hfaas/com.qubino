@@ -6,6 +6,7 @@ const ZwaveDriver = require('homey-zwavedriver');
 // Documentation: http://qubino.com/download/990/
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
+	debug: true,
 	capabilities: {
 		onoff: {
 			command_class: 'COMMAND_CLASS_SWITCH_BINARY',
@@ -169,4 +170,37 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			size: 2,
 		},
 	},
+});
+
+module.exports.on('initNode', token => {
+	const node = module.exports.nodes[token];
+
+	if (node) {
+
+		// I2 switched
+		if (node.instance.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_SENSOR_BINARY) {
+			node.instance.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_SENSOR_BINARY.on('report', (command, report) => {
+				if (command.name === 'SENSOR_BINARY_REPORT') {
+					if (report['Sensor Value'] === 'detected an event') {
+						Homey.manager('flow').triggerDevice('ZMNHDD1_I2_on', {}, {}, node.device_data);
+					} else if (report['Sensor Value'] === 'idle') {
+						Homey.manager('flow').triggerDevice('ZMNHDD1_I2_off', {}, {}, node.device_data);
+					}
+				}
+			});
+		}
+
+		// I3 switched
+		if (node.instance.MultiChannelNodes['3'].CommandClass.COMMAND_CLASS_SENSOR_BINARY) {
+			node.instance.MultiChannelNodes['3'].CommandClass.COMMAND_CLASS_SENSOR_BINARY.on('report', (command, report) => {
+				if (command.name === 'SENSOR_BINARY_REPORT') {
+					if (report['Sensor Value'] === 'detected an event') {
+						Homey.manager('flow').triggerDevice('ZMNHDD1_I3_on', {}, {}, node.device_data);
+					} else if (report['Sensor Value'] === 'idle') {
+						Homey.manager('flow').triggerDevice('ZMNHDD1_I3_off', {}, {}, node.device_data);
+					}
+				}
+			});
+		}
+	}
 });
