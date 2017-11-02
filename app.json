@@ -1755,10 +1755,11 @@
           }
         },
         "associationGroups": [
-          1,
-          4,
-          7,
-          10
+	        4
+        ],
+        "associationGroupsMultiChannel": [
+	        1,
+	        10
         ],
         "defaultConfiguration": [
           {

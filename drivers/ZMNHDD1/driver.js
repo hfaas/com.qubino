@@ -6,25 +6,25 @@ const ZwaveDriver = require('homey-zwavedriver');
 // Documentation: http://qubino.com/download/990/
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
-	debug: true,
 	capabilities: {
-		onoff: {
-			command_class: 'COMMAND_CLASS_SWITCH_BINARY',
-			command_get: 'SWITCH_BINARY_GET',
-			command_set: 'SWITCH_BINARY_SET',
-			command_set_parser: value => ({
-				'Switch Value': (value) ? 'on/enable' : 'off/disable',
-			}),
-			command_report: 'SWITCH_BINARY_REPORT',
-			command_report_parser: report => {
-				if (report['Value'] === 'on/enable') {
-					return true;
-				} else if (report['Value'] === 'off/disable') {
-					return false;
-				}
-				return null;
+		onoff: [
+			{
+				command_class: 'COMMAND_CLASS_SWITCH_BINARY',
+				command_set: 'SWITCH_BINARY_SET',
+				command_set_parser: value => ({
+					'Switch Value': (value) ? 'on/enable' : 'off/disable',
+				}),
 			},
-		},
+			{
+				command_class: 'COMMAND_CLASS_SWITCH_MULTILEVEL',
+				command_get: 'SWITCH_MULTILEVEL_GET',
+				command_report: 'SWITCH_MULTILEVEL_SET',
+				command_report_parser: report => {
+					console.log('report', report)
+					return report['Value'] !== 'off/disable'
+				},
+			}			
+		],
 		dim: {
 			command_class: 'COMMAND_CLASS_SWITCH_MULTILEVEL',
 			command_get: 'SWITCH_MULTILEVEL_GET',
@@ -174,12 +174,15 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 
 module.exports.on('initNode', token => {
 	const node = module.exports.nodes[token];
+	
+	console.log('node && node.instance && node.instance.MultiChannelNodes', node.instance.MultiChannelNodes)
 
-	if (node) {
-
+	if (node && node.instance && node.instance.MultiChannelNodes ) {
+		
 		// I2 switched
-		if (node.instance.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_SENSOR_BINARY) {
+		if (node.instance.MultiChannelNodes['2'] && node.instance.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_SENSOR_BINARY) {
 			node.instance.MultiChannelNodes['2'].CommandClass.COMMAND_CLASS_SENSOR_BINARY.on('report', (command, report) => {
+				console.log('2', 'command, report', command, report)
 				if (command.name === 'SENSOR_BINARY_REPORT') {
 					if (report['Sensor Value'] === 'detected an event') {
 						Homey.manager('flow').triggerDevice('ZMNHDD1_I2_on', {}, {}, node.device_data);
@@ -191,8 +194,9 @@ module.exports.on('initNode', token => {
 		}
 
 		// I3 switched
-		if (node.instance.MultiChannelNodes['3'].CommandClass.COMMAND_CLASS_SENSOR_BINARY) {
+		if (node.instance.MultiChannelNodes['3'] && node.instance.MultiChannelNodes['3'].CommandClass.COMMAND_CLASS_SENSOR_BINARY) {
 			node.instance.MultiChannelNodes['3'].CommandClass.COMMAND_CLASS_SENSOR_BINARY.on('report', (command, report) => {
+				console.log('3', 'command, report', command, report)
 				if (command.name === 'SENSOR_BINARY_REPORT') {
 					if (report['Sensor Value'] === 'detected an event') {
 						Homey.manager('flow').triggerDevice('ZMNHDD1_I3_on', {}, {}, node.device_data);
@@ -202,5 +206,7 @@ module.exports.on('initNode', token => {
 				}
 			});
 		}
+	} else {
+		console.log('Failed to get multiChannelNodes for ZMNHDD1');
 	}
 });
