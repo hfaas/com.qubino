@@ -15,9 +15,10 @@
 			}
 		},
 		"associationGroups": [
+			4
+		],
+		"associationGroupsMultiChannel": [
 			1,
-			4,
-			7,
 			10
 		],
 		"defaultConfiguration": [
