@@ -4,8 +4,8 @@
   "description": "This app adds support for the following Qubino devices in Homey:",
   "main": "app.js",
   "dependencies": {
-    "homey-log": "~1.0.1",
-    "homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git"
+    "homey-log": "^1.0.5",
+    "homey-meshdriver": "^1.2.5"
   },
   "devDependencies": {},
   "scripts": {
