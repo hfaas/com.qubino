@@ -3,6 +3,8 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
+Version 1.1.8
+* Fix token example type
 
 Version 1.1.6
 * Minor bug fixes for dimming duration setting (parameter 66) for ZMNHVD1, ZMNHSD1 and ZMNHDA2

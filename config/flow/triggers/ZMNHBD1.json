@@ -13,9 +13,7 @@
 					"en": "Temperature",
 					"nl": "Temperatuur"
 				},
-				"example": {
-					"en": "23.5"
-				}
+				"example": 23.5
 			}
 		],
 		"args": [
