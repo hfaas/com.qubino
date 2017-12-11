@@ -163,7 +163,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 		},
 		dimming_time_soft_on_off: {
 			index: 65,
-			size: 1,
+			size: 2,
 		},
 		dimming_time_when_key_pressed: {
 			index: 66,
