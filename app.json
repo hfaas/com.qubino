@@ -1032,8 +1032,8 @@
             ],
             "icon": "/drivers/ZMNHBD1/assets/icon.svg",
             "name": {
-              "en": "ZMNHBD1 Relay 2",
-              "nl": "ZMNHBD1 Relais 2"
+              "en": "ZMNHBD1 Relay 1",
+              "nl": "ZMNHBD1 Relais 1"
             },
             "mobile": {
               "components": [
