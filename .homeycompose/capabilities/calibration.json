@@ -1,0 +1,9 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Start calibration",
+    "nl": "Begin kalibratie"
+  },
+  "getable": true,
+  "setable": true
+}

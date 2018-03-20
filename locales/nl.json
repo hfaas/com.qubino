@@ -1,0 +1,6 @@
+{
+  "error": {
+    "venetian_mode_not_enabled": "Jaloezie modus is niet geactiveerd.",
+    "missing_multi_channel_command_class": "Er is iets fout gegaan tijdens het toevoegen van dit apparaat, probeer het opnieuw toe te voegen."
+  }
+}

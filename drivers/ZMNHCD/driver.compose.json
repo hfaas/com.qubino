@@ -1,0 +1,95 @@
+{
+  "id": "ZMNHCD",
+  "name": {
+    "en": "Flush Shutter ({{driverId}})"
+  },
+  "images": {
+    "large": "{{driverAssetsPath}}/large.png",
+    "small": "{{driverAssetsPath}}/small.png"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "dim",
+    "calibration",
+    "meter_power",
+    "measure_power",
+    "measure_temperature",
+    "windowcoverings_tilt_set"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Position",
+        "nl": "Positie"
+      }
+    },
+    "windowcoverings_tilt_set": {
+      "title": {
+        "en": "Tilt slats",
+        "nl": "Kanteling lamellen"
+      }
+    }
+  },
+  "mobile": {
+    "components": [
+      {
+        "id": "icon",
+        "capabilities": []
+      },
+      {
+        "id": "slider",
+        "capabilities": [
+          "dim"
+        ],
+        "options": {
+          "showTitle": true
+        }
+      },
+      {
+        "id": "slider",
+        "capabilities": [
+          "windowcoverings_tilt_set"
+        ],
+        "options": {
+          "showTitle": true
+        }
+      },
+      {
+        "id": "sensor",
+        "capabilities": [
+          "measure_power",
+          "meter_power",
+          "measure_temperature"
+        ]
+      },
+      {
+        "id": "button",
+        "capabilities": [
+          "calibration"
+        ]
+      }
+    ]
+  },
+  "zwave": {
+    "manufacturerId": 345,
+    "productTypeId": 3,
+    "productId": 82,
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/learnmode.svg",
+      "instruction": {
+        "en": "Enable inclusion mode on the {{driverNameEn}} via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+        "nl": "Activeer inclusie modus op de {{driverNameNl}} via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+      }
+    },
+    "associationGroups": [
+      1
+    ],
+    "unlearnmode": {
+      "instruction": {
+        "en": "Enable exclusion mode on the {{driverNameEn}} via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+        "nl": "Activeer exclusie modus op de {{driverNameNl}} via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+      },
+      "image": "{{driverAssetsPath}}/learnmode.svg"
+    }
+  }
+}

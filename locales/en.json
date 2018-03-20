@@ -1,1 +1,6 @@
-{}
+{
+  "error": {
+    "venetian_mode_not_enabled": "Venetian blind mode is not enabled.",
+    "missing_multi_channel_command_class": "Something went wrong during the inclusion of this device, please try to re-pair."
+  }
+}
