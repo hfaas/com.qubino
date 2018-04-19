@@ -1,42 +1,12 @@
 [
   {
-    "id": "allOn",
-    "type": "checkbox",
-    "label": {
-      "en": "Turn on when 'all on' command is received",
-      "nl": "Gaat aan bij ontvangen 'alles aan' commando"
-    },
-    "hint": {
-      "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
-      "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
-    },
-    "value": true
+    "$extends": "allOn"
   },
   {
-    "id": "allOff",
-    "type": "checkbox",
-    "label": {
-      "en": "Turn off when 'all off' command is received",
-      "nl": "Gaat uit bij ontvangen 'alles uit' commando"
-    },
-    "hint": {
-      "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
-      "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
-    },
-    "value": true
+    "$extends": "allOff"
   },
   {
-    "id": "inclusionMode",
-    "type": "checkbox",
-    "label": {
-      "en": "Secure inclusion",
-      "nl": "Beveiligde modus"
-    },
-    "value": false,
-    "hint": {
-      "en": "This parameter (250) determines if the device will be included as a secure device during the next inclusion. Note: to use secure inclusion the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
-      "nl": "Deze parameter (250) bepaalt of het apparaat tijdens de volgende inclusie in beveiligde modus wordt toegevoegd. Let op: om gebruik te maken van de beveiligde modus moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
-    }
+    "$extends": "inclusionMode"
   },
   {
     "type": "group",
@@ -46,81 +16,16 @@
     },
     "children": [
       {
-        "id": "invertWindowCoveringsDirection",
-        "type": "checkbox",
-        "label": {
-          "en": "Invert shutter movement direction",
-          "nl": "Keer rolluik beweging om"
-        },
-        "value": false,
-        "hint": {
-          "en": "If this setting is enabled, the shutter movement will be inverted.",
-          "nl": "Als deze instelling is geactiveerd wordt de rolluik beweging omgedraait."
-        }
+        "$extends": "invertWindowCoveringsDirection"
       },
       {
-        "id": "motorMovingTime",
-        "type": "number",
-        "label": {
-          "en": "Up/down moving time of motor (s)",
-          "nl": "Omhoog/omlaag bewegingstijd van motor (s)"
-        },
-        "zwave": {
-          "index": 74,
-          "size": 2
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 3276
-        },
-        "hint": {
-          "en": "This parameter (74) determines the time (in seconds) needed to completely open or close the shutters. Note: it is important that the reference position used for determining the moving time of the motor is when the shutter is at its lowest position. Check the device manual for detailed calibration instructions.",
-          "nl": "Deze parameter (74) bepaalt de tijd (in seconden) die nodig is voor het volledig openen of sluiten van de jalozieën. Let op: het is belangrijk dat de jaloezieën zich op hun laagste punt bevinden bij het bepalen van de motor bewegingstijd. Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
-        }
+        "$extends": "motorMovingTime"
       },
       {
-        "id": "motorOperationDetection",
-        "type": "number",
-        "label": {
-          "en": "Limit switch power consumption threshold (W)",
-          "nl": "Limiet stroomverbruik drempelwaarde (W)"
-        },
-        "zwave": {
-          "index": 76,
-          "size": 1
-        },
-        "value": 30,
-        "attr": {
-          "min": 0,
-          "max": 127
-        },
-        "hint": {
-          "en": "This parameter (76) determines the threshold value in Watts after which the device detects that it can not move any higher or lower.",
-          "nl": "Deze parameter (76) bepaalt de drempwaarde in Watts waarna het apparaat detecteert dat er niet verder omhoog of omlaag bewogen kan worden."
-        }
+        "$extends": "motorOperationDetection"
       },
       {
-        "id": "delayBetweenMotorMovement",
-        "type": "number",
-        "label": {
-          "en": "Delay between motor movement (s)",
-          "nl": "Vertraging tussen motor bewegingen(s)"
-        },
-        "zwave": {
-          "index": 90,
-          "size": 1
-        },
-        "value": 0.5,
-        "attr": {
-          "min": 0.1,
-          "max": 3,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter (90) determines the minimum time delay between successive motor movements.",
-          "nl": "Deze parameter (90) bepaalt de minimale vertraging tussen opeenvolgende motor bewegingen."
-        }
+        "$extends": "delayBetweenMotorMovement"
       }
     ]
   },
@@ -132,72 +37,16 @@
     },
     "children": [
       {
-        "id": "operatingMode",
-        "type": "checkbox",
-        "label": {
-          "en": "Enable venetian blind mode",
-          "nl": "Schakel besturing van lamellen in"
-        },
-        "zwave": {
-          "index": 71,
-          "size": 1
-        },
-        "value": false,
-        "hint": {
-          "en": "This parameter (71) enables venetian blind mode. Note: after changing this setting the device needs to be removed from Homey and re-added after waiting for 30 seconds (do not reset the device when removing). Check the device manual for more detailed instructions.",
-          "nl": "Deze parameter (71) schakelt besturing van lamellen in. Let op: na het wijzigen van deze parameter moet het apparaat worden verwijderd van Homey, vervolgens, na 30 seconden te hebben gewacht, kan het weer worden toegevoegd aan Homey (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen). Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
-        }
+        "$extends": "operatingMode"
       },
       {
-        "id": "invertWindowCoveringsTiltDirection",
-        "type": "checkbox",
-        "label": {
-          "en": "Invert slats tilt direction",
-          "nl": "Draai lamelrichting om"
-        },
-        "value": false,
-        "hint": {
-          "en": "If this setting is enabled, the slats tilt movement will be inverted.",
-          "nl": "Als deze instelling is geactiveerd wordt de draairichting van de lamellen omgedraait."
-        }
+        "$extends": "invertWindowCoveringsTiltDirection"
       },
       {
-        "id": "slatsTiltingTime",
-        "type": "number",
-        "label": {
-          "en": "Slats full turn tilting time (s)",
-          "nl": "Kantel tijd van de lamellen (s)"
-        },
-        "zwave": {
-          "index": 72,
-          "size": 2
-        },
-        "value": 1.5,
-        "attr": {
-          "min": 0,
-          "max": 327
-        },
-        "hint": {
-          "en": "This parameter (72) determines the time (in seconds) needed to complete full turn tilting. Note: if the set time is too long the shutters will start moving up or down for the remaining time.",
-          "nl": "Deze parameter (72) bepaalt de tijd (in seconden) die nodig is voor het volledig kantelen van de lamellen. Let op: als de ingestelde tijd te lang is dan zal de jaloezie omhoog of omlaag bewegen gedurende de resterende tijd."
-        }
+        "$extends": "slatsTiltingTime"
       },
       {
-        "id": "slatsPosition",
-        "type": "checkbox",
-        "label": {
-          "en": "Restore slat position after control through switches",
-          "nl": "Herstel lamel positie na bediening via schakelaars"
-        },
-        "zwave": {
-          "index": 73,
-          "size": 1
-        },
-        "value": true,
-        "hint": {
-          "en": "This parameter (73) determines whether the slat position should be restored to the last know position after the shutters are controlled through the connected switches or push buttons (or when the lower limit switch is triggered). Note: the slat position is always restored to the last know position after being controller via Homey.",
-          "nl": "Deze parameter (73) bepaalt of de positie van de lamellen moet worden hersteld naar de laatst bekende positie nadat de jaloezie is bediend via de aangesloten schakelaars (of wanneer de lagere limiet switch is bereikt). Let op: de positie van de lamellen wordt altijd hersteld naar de laatst bekende positie na het bedienen via Homey."
-        }
+        "$extends": "slatsPosition"
       }
     ]
   },
@@ -209,67 +58,13 @@
     },
     "children": [
       {
-        "id": "powerReportingThreshold",
-        "type": "number",
-        "label": {
-          "en": "Power report on power change (%)",
-          "nl": "Stroomverbruik update bij verandering van (%)"
-        },
-        "zwave": {
-          "index": 40,
-          "size": 1
-        },
-        "value": 10,
-        "attr": {
-          "min": 0,
-          "max": 100
-        },
-        "hint": {
-          "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
-          "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
-        }
+        "$extends": "powerReportingThreshold"
       },
       {
-        "id": "powerReportingInterval",
-        "type": "number",
-        "label": {
-          "en": "Power reporting interval (s)",
-          "nl": "Stroomverbruik report interval (s)"
-        },
-        "zwave": {
-          "index": 42,
-          "size": 2
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 32767
-        },
-        "hint": {
-          "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
-          "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
-        }
+        "$extends": "powerReportingInterval"
       },
       {
-        "id": "powerReportDelayTime",
-        "type": "number",
-        "label": {
-          "en": "Power consumption report max delay (s)",
-          "nl": "Stroomverbruik report max vertraging (s)"
-        },
-        "zwave": {
-          "index": 85,
-          "size": 1
-        },
-        "value": 30,
-        "attr": {
-          "min": 3,
-          "max": 50
-        },
-        "hint": {
-          "en": "This parameter (85) determines the maximum delay (in seconds) of a power consumption report after the motor has moved.",
-          "nl": "Deze parameter (85) bepaalt de maximale vertraging (in seconden) van een stroomverbruik report nadat the motor heeft bewogen."
-        }
+        "$extends": "powerReportDelayTime"
       }
     ]
   },
@@ -281,40 +76,10 @@
     },
     "children": [
       {
-        "id": "temperatureSensorOffset",
-        "type": "number",
-        "label": {
-          "en": "Temperature sensor calibration (°C)",
-          "nl": "Temperatuur sensor kalibratie (°C)"
-        },
-        "value": 0,
-        "attr": {
-          "min": -10,
-          "max": 10,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter (110) determines the value (in degrees Celsius) that will be added to the measured temperature value for the sake of calibration",
-          "nl": "Deze parameter (110) bepaalt de waarde (in graden Celsius) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
-        }
+        "$extends": "temperatureSensorOffset"
       },
       {
-        "id": "temperatureSensorReportingThreshold",
-        "type": "number",
-        "label": {
-          "en": "Temperature report threshold (°C)",
-          "nl": "Temperatuur report drempelwaarde (°C)"
-        },
-        "value": 0.5,
-        "attr": {
-          "min": 0,
-          "max": 12.7,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter (120) defines the threshold (degrees Celsius) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
-          "nl": "Deze parameter (120) bepaalt de verandering (in graden Celsius) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
-        }
+        "$extends": "temperatureSensorReportingThreshold"
       }
     ]
   }

@@ -1,0 +1,13 @@
+{
+  "triggers": [
+    {
+      "$extends": "inputTwoTurnedOn"
+    },
+    {
+      "$extends": "inputTwoTurnedOff"
+    },
+    {
+      "$extends": "inputTwoToggled"
+    }
+  ]
+}

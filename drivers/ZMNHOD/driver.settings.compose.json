@@ -1,0 +1,115 @@
+[
+  {
+    "$extends": "allOn"
+  },
+  {
+    "$extends": "allOff"
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Roller shutter",
+      "nl": "Rolluik"
+    },
+    "children": [
+      {
+        "$extends": "invertWindowCoveringsDirection"
+      },
+      {
+        "$extends": "motorMovingTime"
+      },
+      {
+        "$extends": "motorOperationDetection",
+        "value": 0.6,
+        "attr": {
+          "min": 0.5,
+          "max": 10
+        }
+      },
+      {
+        "$extends": "delayBetweenMotorMovement"
+      },
+      {
+        "id": "motorOffDelayLimitSwitch",
+        "type": "number",
+        "label": {
+          "en": "Delay after reaching limit switch",
+          "nl": "Vertraging na bereiken limiet"
+        },
+        "units": {
+          "en": "s",
+          "nl": "s"
+        },
+        "zwave": {
+          "index": 86,
+          "size": 1
+        },
+        "value": 8,
+        "attr": {
+          "min": 3,
+          "max": 50
+        },
+        "hint": {
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the delay (in seconds), after the power consumption has dropped below the value specified in parameter 76, before the motor is turned off.",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging (in seconden), nadat het stroomverbruik is afgenomen tot onder de in parameter 76 ingestelde drempelwaarde, voordat de motor wordt uitgeschakelt."
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Slats",
+      "nl": "Lamellen"
+    },
+    "children": [
+      {
+        "$extends": "operatingMode"
+      },
+      {
+        "$extends": "invertWindowCoveringsTiltDirection"
+      },
+      {
+        "$extends": "slatsTiltingTime"
+      },
+      {
+        "$extends": "slatsPosition"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Power reporting",
+      "nl": "Stroomverbruik"
+    },
+    "children": [
+      {
+        "$extends": "powerReportingThreshold"
+      },
+      {
+        "$extends": "powerReportingInterval",
+        "value": 300
+      },
+      {
+        "$extends": "powerReportDelayTime",
+        "value": 8
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Temperature reporting",
+      "nl": "Temperatuur metingen"
+    },
+    "children": [
+      {
+        "$extends": "temperatureSensorOffset"
+      },
+      {
+        "$extends": "temperatureSensorReportingThreshold"
+      }
+    ]
+  }
+]

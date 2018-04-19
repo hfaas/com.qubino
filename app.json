@@ -31,19 +31,1628 @@
       }
     ]
   },
+  "flow": {
+    "actions": [
+      {
+        "id": "resetMeter_ZMNHBD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": {
+              "driver_id": "ZMNHBD",
+              "flags": "zwaveMultiChannel"
+            }
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHAD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHCD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHCD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHDD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHOD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHOD"
+          }
+        ]
+      }
+    ],
+    "triggers": [
+      {
+        "id": "inputTwoTurnedOn_ZMNHAD",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOff_ZMNHAD",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoToggled_ZMNHAD",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeTurnedOn_ZMNHAD",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeTurnedOff_ZMNHAD",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeToggled_ZMNHAD",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOn_ZMNHDD",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOff_ZMNHDD",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoToggled_ZMNHDD",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeTurnedOn_ZMNHDD",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeTurnedOff_ZMNHDD",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeToggled_ZMNHDD",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOn_ZMNHND",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHND"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOff_ZMNHND",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHND"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoToggled_ZMNHND",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHND"
+          }
+        ]
+      }
+    ]
+  },
   "drivers": [
+    {
+      "id": "ZMNHAD",
+      "name": {
+        "en": "Flush 1 Relay (ZMNHAD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHAD/assets/images/large.png",
+        "small": "/drivers/ZMNHAD/assets/images/small.png"
+      },
+      "class": "socket",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_temperature",
+        "resetMeter",
+        "onoff"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power",
+              "meter_power",
+              "measure_temperature"
+            ]
+          },
+          {
+            "id": "button",
+            "capabilities": [
+              "resetMeter"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 2,
+        "productId": 82,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHAD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHAD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOn",
+          "type": "number",
+          "label": {
+            "en": "Turn on automatically",
+            "nl": "Schakel automatisch in"
+          },
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          }
+        },
+        {
+          "id": "autoOnOffUnit",
+          "type": "dropdown",
+          "label": {
+            "en": "Turn on/off automatically setting unit",
+            "nl": "Schakel automatisch aan/uit parameter eenheid"
+          },
+          "zwave": {
+            "index": 15,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Seconds",
+                "nl": "Seconden"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Miliseconds",
+                "nl": "Miliseconden"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (15) defines the unit of time used for the \"Turn on/off automatically\" settings (parameters 11 and 12).",
+            "nl": "Deze parameter (15) bepaalt de tijdseenheid die gebruikt wordt voor de \"Schakel automatisch aan/uit\" instellingen (parameters 11 en 12)."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "id": "relayType",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type",
+            "nl": "Relais type"
+          },
+          "zwave": {
+            "index": 63,
+            "size": 1
+          },
+          "hint": {
+            "en": "This parameter (63) defines the relay type. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (63) bepaalt het relais type. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "value": "1",
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush 1 Relay (ZMNHAD).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush 1 Relay (ZMNHAD)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (2) defines the contact type of input 2.",
+                "nl": "Deze parameter (2) bepaalt het contact type van ingang 2."
+              },
+              "id": "contactTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 2",
+                "nl": "Contact type ingang 2"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NG (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "zwave": {
+                "index": 3,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (3) defines the contact type of input 3.",
+                "nl": "Deze parameter (3) bepaalt het contact type van ingang 3."
+              },
+              "id": "contactTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 3",
+                "nl": "Contact type ingang 3"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NG (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "enableInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 notification type and event",
+                "nl": "Ingang 2 notificatie type en event"
+              },
+              "zwave": {
+                "index": 100,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (100) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              }
+            },
+            {
+              "id": "enableInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 3 notification type and event",
+                "nl": "Ingang 3 notificatie type en event"
+              },
+              "zwave": {
+                "index": 101,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (101) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (101) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "value": 300,
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32535
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ZMNHBD",
+      "name": {
+        "en": "Flush 2 Relay (ZMNHBD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHBD/assets/images/large.png",
+        "small": "/drivers/ZMNHBD/assets/images/small.png"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_temperature",
+        "allOn",
+        "allOff"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": []
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_temperature"
+            ]
+          },
+          {
+            "id": "button",
+            "capabilities": [
+              "allOn",
+              "allOff"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 2,
+        "productId": 81,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHBD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush 2 Relay (ZMNHBD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush 2 Relay (ZMNHBD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush 2 Relay (ZMNHBD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush 2 Relay (ZMNHBD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHBD/assets/learnmode.svg"
+        },
+        "multiChannelNodes": {
+          "1": {
+            "class": "socket",
+            "capabilities": [
+              "measure_power",
+              "meter_power",
+              "resetMeter",
+              "onoff"
+            ],
+            "icon": "/drivers/ZMNHBD/assets/icon.svg",
+            "name": {
+              "en": "Flush 2 Relay - Relay 1 (ZMNHBD)",
+              "nl": "Flush 2 Relay - Relais 1 (ZMNHBD)"
+            },
+            "mobile": {
+              "components": [
+                {
+                  "id": "icon",
+                  "capabilities": [
+                    "onoff"
+                  ]
+                },
+                {
+                  "id": "toggle",
+                  "capabilities": [
+                    "onoff"
+                  ]
+                },
+                {
+                  "id": "sensor",
+                  "capabilities": [
+                    "measure_power",
+                    "meter_power"
+                  ]
+                },
+                {
+                  "id": "button",
+                  "capabilities": [
+                    "resetMeter"
+                  ]
+                }
+              ]
+            }
+          },
+          "2": {
+            "class": "socket",
+            "capabilities": [
+              "measure_power",
+              "meter_power",
+              "resetMeter",
+              "onoff"
+            ],
+            "icon": "/drivers/ZMNHBD/assets/icon.svg",
+            "name": {
+              "en": "Flush 2 Relay - Relay 2 (ZMNHBD)",
+              "nl": "Flush 2 Relay - Relais 2 (ZMNHBD)"
+            },
+            "mobile": {
+              "components": [
+                {
+                  "id": "icon",
+                  "capabilities": [
+                    "onoff"
+                  ]
+                },
+                {
+                  "id": "toggle",
+                  "capabilities": [
+                    "onoff"
+                  ]
+                },
+                {
+                  "id": "sensor",
+                  "capabilities": [
+                    "measure_power",
+                    "meter_power"
+                  ]
+                },
+                {
+                  "id": "button",
+                  "capabilities": [
+                    "resetMeter"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "autoOffQ1",
+          "type": "number",
+          "label": {
+            "en": "Turn off output 1 automatically",
+            "nl": "Schakel uitgang 1 automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which output 1 is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna uitgang 1 automatisch wordt uitgezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOnQ1",
+          "type": "number",
+          "label": {
+            "en": "Turn on output 1 automatically",
+            "nl": "Schakel uitgang 1 automatisch in"
+          },
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which output 1 is turned on automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna uitgang 1 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOffQ2",
+          "type": "number",
+          "label": {
+            "en": "Turn off output 2 automatically",
+            "nl": "Schakel uitgang 2 automatisch uit"
+          },
+          "zwave": {
+            "index": 13,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (13) defines the time after which output 2 is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (13) bepaalt de tijd waarna uitgang 2 automatisch wordt uitgezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOnQ2",
+          "type": "number",
+          "label": {
+            "en": "Turn on output 2 automatically",
+            "nl": "Schakel uitgang 2 automatisch in"
+          },
+          "zwave": {
+            "index": 14,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (14) defines the time after which output 2 is turned on automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (14) bepaalt de tijd waarna uitgang 2 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOnOffUnitQ1Q2",
+          "type": "dropdown",
+          "label": {
+            "en": "Turn on/off automatically setting unit",
+            "nl": "Schakel automatisch aan/uit parameter eenheid"
+          },
+          "zwave": {
+            "index": 15,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Seconds",
+                "nl": "Seconden"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Miliseconds",
+                "nl": "Miliseconden"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (15) defines the unit of time used for the \"Turn on/off output 1/2 automatically\" settings (parameters 11, 12, 13 and 14).",
+            "nl": "Deze parameter (15) bepaalt de tijdseenheid die gebruikt wordt voor de \"Schakel uitgang 1/2 automatisch aan/uit\" instellingen (parameters 11, 12, 14 en 14)."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "id": "relayTypeQ1",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type output 1",
+            "nl": "Relais type uitgang 1"
+          },
+          "zwave": {
+            "index": 63,
+            "size": 1
+          },
+          "hint": {
+            "en": "This parameter (63) defines the relay type of output 1. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (63) bepaalt het relais type van uitgang 1. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "relayTypeQ2",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type output 2",
+            "nl": "Relais type uitgang 2"
+          },
+          "zwave": {
+            "index": 64,
+            "size": 1
+          },
+          "hint": {
+            "en": "This parameter (64) defines the relay type of output 2. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (64) bepaalt het relais type van uitgang 2. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "value": "1",
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush 2 Relay (ZMNHBD).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush 2 Relay (ZMNHBD)."
+              }
+            },
+            {
+              "value": "1",
+              "id": "switchTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 2",
+                "nl": "Schakelaar type ingang 2"
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush 2 Relay (ZMNHBD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush 2 Relay (ZMNHBD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "id": "powerReportingThresholdQ1",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change for output 1",
+                "nl": "Stroomverbruik update van uitgang 1 bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) for output 1 which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) voor uitgang 1 die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "value": 300,
+              "id": "powerReportingIntervalQ1",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval for output 1",
+                "nl": "Stroomverbruik report interval uitgang 1"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32535
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts of output 1 is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update van uitgang 1 moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            },
+            {
+              "id": "powerReportingThresholdQ2",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change for output 2",
+                "nl": "Stroomverbruik update van uitgang 2 bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 41,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (41) defines the relative threshold (percentage) for output 1 which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (41) bepaalt de relatieve verandering (in procenten) voor uitgang 1 die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "value": 300,
+              "id": "powerReportingIntervalQ2",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval for output 2",
+                "nl": "Stroomverbruik report interval uitgang 2"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 43,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32535
+              },
+              "hint": {
+                "en": "This parameter (43) defines the interval in seconds with which the power consumption in Watts of output 2 is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (43) bepaalt op welk interval (in seconden) een stroomverbruik update van uitgang 2 moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "ZMNHCD",
       "name": {
         "en": "Flush Shutter (ZMNHCD)"
       },
       "images": {
-        "large": "/drivers/ZMNHCD/assets/large.png",
-        "small": "/drivers/ZMNHCD/assets/small.png"
+        "large": "/drivers/ZMNHCD/assets/images/large.png",
+        "small": "/drivers/ZMNHCD/assets/images/small.png"
       },
       "class": "windowcoverings",
       "capabilities": [
         "dim",
+        "resetMeter",
         "calibration",
         "meter_power",
         "measure_power",
@@ -99,6 +1708,7 @@
           {
             "id": "button",
             "capabilities": [
+              "resetMeter",
               "calibration"
             ]
           }
@@ -108,6 +1718,9 @@
         "manufacturerId": 345,
         "productTypeId": 3,
         "productId": 82,
+        "associationGroups": [
+          1
+        ],
         "learnmode": {
           "image": "/drivers/ZMNHCD/assets/learnmode.svg",
           "instruction": {
@@ -115,9 +1728,6 @@
             "nl": "Activeer inclusie modus op de Flush Shutter (ZMNHCD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
           }
         },
-        "associationGroups": [
-          1
-        ],
         "unlearnmode": {
           "instruction": {
             "en": "Enable exclusion mode on the Flush Shutter (ZMNHCD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
@@ -160,6 +1770,10 @@
             "en": "Secure inclusion",
             "nl": "Beveiligde modus"
           },
+          "zwave": {
+            "index": 250,
+            "size": 1
+          },
           "value": false,
           "hint": {
             "en": "This parameter (250) determines if the device will be included as a secure device during the next inclusion. Note: to use secure inclusion the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
@@ -190,8 +1804,12 @@
               "id": "motorMovingTime",
               "type": "number",
               "label": {
-                "en": "Up/down moving time of motor (s)",
-                "nl": "Omhoog/omlaag bewegingstijd van motor (s)"
+                "en": "Up/down moving time of motor",
+                "nl": "Omhoog/omlaag bewegingstijd van motor"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
               },
               "zwave": {
                 "index": 74,
@@ -203,16 +1821,20 @@
                 "max": 3276
               },
               "hint": {
-                "en": "This parameter (74) determines the time (in seconds) needed to completely open or close the shutters. Note: it is important that the reference position used for determining the moving time of the motor is when the shutter is at its lowest position. Check the device manual for detailed calibration instructions.",
-                "nl": "Deze parameter (74) bepaalt de tijd (in seconden) die nodig is voor het volledig openen of sluiten van de jalozieën. Let op: het is belangrijk dat de jaloezieën zich op hun laagste punt bevinden bij het bepalen van de motor bewegingstijd. Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
+                "en": "This parameter (74) determines the time needed to completely open or close the shutters. Note: it is important that the reference position used for determining the moving time of the motor is when the shutter is at its lowest position. Check the device manual for detailed calibration instructions.",
+                "nl": "Deze parameter (74) bepaalt de tijd die nodig is voor het volledig openen of sluiten van de jalozieën. Let op: het is belangrijk dat de jaloezieën zich op hun laagste punt bevinden bij het bepalen van de motor bewegingstijd. Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
               }
             },
             {
               "id": "motorOperationDetection",
               "type": "number",
               "label": {
-                "en": "Limit switch power consumption threshold (W)",
-                "nl": "Limiet stroomverbruik drempelwaarde (W)"
+                "en": "Limit switch power consumption threshold",
+                "nl": "Limiet stroomverbruik drempelwaarde"
+              },
+              "units": {
+                "en": "W",
+                "nl": "W"
               },
               "zwave": {
                 "index": 76,
@@ -225,15 +1847,19 @@
               },
               "hint": {
                 "en": "This parameter (76) determines the threshold value in Watts after which the device detects that it can not move any higher or lower.",
-                "nl": "Deze parameter (76) bepaalt de drempwaarde in Watts waarna het apparaat detecteert dat er niet verder omhoog of omlaag bewogen kan worden."
+                "nl": "Deze parameter (76) bepaalt de drempelwaarde in Watts waarna het apparaat detecteert dat er niet verder omhoog of omlaag bewogen kan worden."
               }
             },
             {
               "id": "delayBetweenMotorMovement",
               "type": "number",
               "label": {
-                "en": "Delay between motor movement (s)",
-                "nl": "Vertraging tussen motor bewegingen(s)"
+                "en": "Delay between motor movement",
+                "nl": "Vertraging tussen motor bewegingen"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
               },
               "zwave": {
                 "index": 90,
@@ -293,8 +1919,12 @@
               "id": "slatsTiltingTime",
               "type": "number",
               "label": {
-                "en": "Slats full turn tilting time (s)",
-                "nl": "Kantel tijd van de lamellen (s)"
+                "en": "Slats full turn tilting time",
+                "nl": "Kantel tijd van de lamellen"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
               },
               "zwave": {
                 "index": 72,
@@ -340,8 +1970,12 @@
               "id": "powerReportingThreshold",
               "type": "number",
               "label": {
-                "en": "Power report on power change (%)",
-                "nl": "Stroomverbruik update bij verandering van (%)"
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
               },
               "zwave": {
                 "index": 40,
@@ -361,8 +1995,12 @@
               "id": "powerReportingInterval",
               "type": "number",
               "label": {
-                "en": "Power reporting interval (s)",
-                "nl": "Stroomverbruik report interval (s)"
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
               },
               "zwave": {
                 "index": 42,
@@ -371,7 +2009,7 @@
               "value": 0,
               "attr": {
                 "min": 0,
-                "max": 32767
+                "max": 32535
               },
               "hint": {
                 "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
@@ -382,8 +2020,12 @@
               "id": "powerReportDelayTime",
               "type": "number",
               "label": {
-                "en": "Power consumption report max delay (s)",
-                "nl": "Stroomverbruik report max vertraging (s)"
+                "en": "Power consumption report max delay",
+                "nl": "Stroomverbruik report max vertraging"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
               },
               "zwave": {
                 "index": 85,
@@ -412,8 +2054,16 @@
               "id": "temperatureSensorOffset",
               "type": "number",
               "label": {
-                "en": "Temperature sensor calibration (°C)",
-                "nl": "Temperatuur sensor kalibratie (°C)"
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
               },
               "value": 0,
               "attr": {
@@ -422,16 +2072,24 @@
                 "step": 0.1
               },
               "hint": {
-                "en": "This parameter (110) determines the value (in degrees Celsius) that will be added to the measured temperature value for the sake of calibration",
-                "nl": "Deze parameter (110) bepaalt de waarde (in graden Celsius) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
               }
             },
             {
               "id": "temperatureSensorReportingThreshold",
               "type": "number",
               "label": {
-                "en": "Temperature report threshold (°C)",
-                "nl": "Temperatuur report drempelwaarde (°C)"
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
               },
               "value": 0.5,
               "attr": {
@@ -440,8 +2098,2184 @@
                 "step": 0.1
               },
               "hint": {
-                "en": "This parameter (120) defines the threshold (degrees Celsius) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
-                "nl": "Deze parameter (120) bepaalt de verandering (in graden Celsius) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ZMNHDD",
+      "name": {
+        "en": "Flush Dimmer (ZMNHDD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHDD/assets/images/large.png",
+        "small": "/drivers/ZMNHDD/assets/images/small.png"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "meter_power",
+        "measure_power",
+        "measure_temperature"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "slider",
+            "capabilities": [
+              "dim"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power",
+              "meter_power",
+              "measure_temperature"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 1,
+        "productId": 81,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHDD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush Dimmer (ZMNHDD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush Dimmer (ZMNHDD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush Dimmer (ZMNHDD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush Dimmer (ZMNHDD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHDD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOn",
+          "type": "number",
+          "label": {
+            "en": "Turn on automatically",
+            "nl": "Schakel automatisch in"
+          },
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "id": "reportAfterSet",
+          "type": "checkbox",
+          "label": {
+            "en": "Send report to Homey after received set command",
+            "nl": "Verstuur update naar Homey na ontvangen set commando"
+          },
+          "zwave": {
+            "index": 249,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (249) determines whether the Flush Dimmer (ZMNHDD) should send a report to Homey after it received a set command. Note: it is generally advised to leave this parameter unchanged.",
+            "nl": "Deze parameter (249) bepaalt of de Flush Dimmer (ZMNHDD) na het ontvangen van een set commando een update naar Homey moet sturen met de nieuw ingestelde waarde. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten."
+          }
+        },
+        {
+          "id": "inclusionMode",
+          "type": "checkbox",
+          "label": {
+            "en": "Secure inclusion",
+            "nl": "Beveiligde modus"
+          },
+          "zwave": {
+            "index": 250,
+            "size": 1
+          },
+          "value": false,
+          "hint": {
+            "en": "This parameter (250) determines if the device will be included as a secure device during the next inclusion. Note: to use secure inclusion the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+            "nl": "Deze parameter (250) bepaalt of het apparaat tijdens de volgende inclusie in beveiligde modus wordt toegevoegd. Let op: om gebruik te maken van de beveiligde modus moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush Dimmer (ZMNHDD).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush Dimmer (ZMNHDD)."
+              }
+            },
+            {
+              "id": "switchTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 2",
+                "nl": "Schakelaar type ingang 2"
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush Dimmer (ZMNHDD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush Dimmer (ZMNHDD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
+              }
+            },
+            {
+              "id": "contactTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 2",
+                "nl": "Contact type ingang 2"
+              },
+              "zwave": {
+                "index": 3,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (3) defines the contact type of input 2.",
+                "nl": "Deze parameter (3) bepaalt het contact type van ingang 2."
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NG (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "contactTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 3",
+                "nl": "Contact type ingang 3"
+              },
+              "zwave": {
+                "index": 4,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (4) defines the contact type of input 3.",
+                "nl": "Deze parameter (4) bepaalt het contact type van ingang 3."
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NG (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "additionalDimSwitch",
+              "type": "dropdown",
+              "label": {
+                "en": "Configure additional switch",
+                "nl": "Configureer extra schakelaar"
+              },
+              "zwave": {
+                "index": 20,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Single push-button or switch (input 1)",
+                    "nl": "Enkele schakelaar of drukknop (ingang 1)"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Three-way switch (input 1 and 2)",
+                    "nl": "Wisselschakeling (ingang 1 en 2)"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Additional switch (input 2)",
+                    "nl": "Extra schakelaar (ingang 2)"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (20) enables the configuration of an additional switch which can be used to control the connected light.",
+                "nl": "Deze parameter (20) kan gebruikt worden om een extra schakelaar te activeren die gebruikt kan worden voor het aansturen van het licht."
+              }
+            },
+            {
+              "id": "doubleClick",
+              "type": "checkbox",
+              "label": {
+                "en": "Double click functionality",
+                "nl": "Dubbel klikken functionaliteit"
+              },
+              "zwave": {
+                "index": 21,
+                "sie": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (21) determines if the double click functionality is enabled; when enabled a quick double click of the connected switch will set the light to the highest dim level. Note: this parameter is only applied if input 1 is configured as a momentary switch.",
+                "nl": "Deze parameter (21) bepaalt of de dubbel klikken functionaliteit is ingeschakeld; wanneer ingeschakeld zal een snelle dubbele klik op de aangesloten schakelaar het licht op het hoogste dim niveau instellen. Let op: deze parameter is alleen van toepassing als ingang 1 is ingesteld als pulsdrukschakelaar."
+              }
+            },
+            {
+              "id": "enableInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 notification type and event",
+                "nl": "Ingang 2 notificatie type en event"
+              },
+              "zwave": {
+                "index": 100,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (100) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              }
+            },
+            {
+              "id": "enableInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 3 notification type and event",
+                "nl": "Ingang 3 notificatie type en event"
+              },
+              "zwave": {
+                "index": 101,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (101) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (101) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimming",
+            "nl": "Dimmen"
+          },
+          "children": [
+            {
+              "id": "minimumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Minimum dimming value (%)",
+                "nl": "Minimale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 98
+              },
+              "hint": {
+                "en": "This parameter (60) defines the lowest dim value that can be set. Note: the minimum dim value may not be higher than the maximum dim value.",
+                "nl": "Deze parameter (60) bepaalt de laagste dim waarde die kan worden ingesteld. Let op: de minimale dim waarde mag niet hoger zijn dan de maximale dim waarde."
+              }
+            },
+            {
+              "id": "maximumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Maximum dimming value (%)",
+                "nl": "Maximale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 61,
+                "size": 1
+              },
+              "value": 99,
+              "attr": {
+                "min": 2,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (61) defines the highest dim value that can be set. Note: the maximum dim value may not be lower than the minimum dim value.",
+                "nl": "Deze parameter (61) bepaalt de hoogste dim waarde die kan worden ingesteld. Let op: de maximale dim waarde mag niet lager zijn dan de minimale dim waarde."
+              }
+            },
+            {
+              "id": "dimDuration",
+              "type": "number",
+              "label": {
+                "en": "Dim duration",
+                "nl": "Dim duur"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 65,
+                "size": 2
+              },
+              "value": 1,
+              "attr": {
+                "min": 0.5,
+                "max": 2.5,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (65) determines the time (in seconds) it takes to move between the maximum and minimum dim values when the switch connected to input 1 is clicked shortly or when controlled via Homey.",
+                "nl": "Deze parameter (65) bepaalt de tijd (in seconden) die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 kort is ingedrukt of wanneer aangestuurd via Homey."
+              }
+            },
+            {
+              "id": "dimDurationKeyPressed",
+              "type": "number",
+              "label": {
+                "en": "Dim duration when key pressed (s)",
+                "nl": "Dim duur bij lang indrukken (s)"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 66,
+                "size": 2
+              },
+              "value": 3,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (66) determines the time it takes to move between the maximum and minimum dim values when the switch connected to input 1 is pressed continuously or when controlled via an associated device.",
+                "nl": "Deze parameter (66) bepaalt de tijd die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 lang wordt ingedrukt of wanneer aangestuurd via een geassocieerd apparaat."
+              }
+            },
+            {
+              "id": "ignoreStartLevel",
+              "type": "checkbox",
+              "label": {
+                "en": "Ignore dim start value",
+                "nl": "Negeer dim start niveau"
+              },
+              "zwave": {
+                "index": 67,
+                "size": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (67) determines whether the dim start value should be ignored or respected, when ignored the device will not start dimming from the currently set dim value. Note: this parameter is only relevant if the Flush Dimmer (ZMNHDD) is associated to other devices.",
+                "nl": "Deze parameter (67) bepaalt of het dim start niveau moet worden genegeerd of gerespecteerd, bij negeren zal het apparaat niet beginnen met dimmen vanaf het op dat moment ingestelde dim niveau. Let op: deze parameter is alleen relevant als de Flush Dimmer (ZMNHDD) is geassocieerd met andere apparaten."
+              }
+            },
+            {
+              "id": "dimDurationAssociated",
+              "type": "number",
+              "label": {
+                "en": "Dim duration association group 3",
+                "nl": "Dim duur voor associatiegroep 3"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 68,
+                "size": 1
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 127
+              },
+              "hint": {
+                "en": "This parameter (68) determines the dim transition duration time that is send to devices in association group 3.",
+                "nl": "Deze parameter (68) bepaalt de duur die wordt verstuurd naar apparaten in associatie groep 3."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32535
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ZMNHND",
+      "name": {
+        "en": "Flush 1D Relay (ZMNHND)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHND/assets/images/large.png",
+        "small": "/drivers/ZMNHND/assets/images/small.png"
+      },
+      "class": "socket",
+      "capabilities": [
+        "measure_temperature",
+        "onoff"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_temperature"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 2,
+        "productId": 83,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHND/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush 1D Relay (ZMNHND) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush 1D Relay (ZMNHND) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush 1D Relay (ZMNHND) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush 1D Relay (ZMNHND) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHND/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOn",
+          "type": "number",
+          "label": {
+            "en": "Turn on automatically",
+            "nl": "Schakel automatisch in"
+          },
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          }
+        },
+        {
+          "id": "autoOnOffUnit",
+          "type": "dropdown",
+          "label": {
+            "en": "Turn on/off automatically setting unit",
+            "nl": "Schakel automatisch aan/uit parameter eenheid"
+          },
+          "zwave": {
+            "index": 15,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Seconds",
+                "nl": "Seconden"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Miliseconds",
+                "nl": "Miliseconden"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (15) defines the unit of time used for the \"Turn on/off automatically\" settings (parameters 11 and 12).",
+            "nl": "Deze parameter (15) bepaalt de tijdseenheid die gebruikt wordt voor de \"Schakel automatisch aan/uit\" instellingen (parameters 11 en 12)."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "id": "relayType",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type",
+            "nl": "Relais type"
+          },
+          "zwave": {
+            "index": 63,
+            "size": 1
+          },
+          "hint": {
+            "en": "This parameter (63) defines the relay type. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (63) bepaalt het relais type. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "value": "1",
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush 1D Relay (ZMNHND).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush 1D Relay (ZMNHND)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (2) defines the contact type of input 2.",
+                "nl": "Deze parameter (2) bepaalt het contact type van ingang 2."
+              },
+              "id": "contactTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 2",
+                "nl": "Contact type ingang 2"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NG (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "enableInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 notification type and event",
+                "nl": "Ingang 2 notificatie type en event"
+              },
+              "zwave": {
+                "index": 100,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (100) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ZMNHOD",
+      "name": {
+        "en": "Flush Shutter DC (ZMNHOD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHOD/assets/images/large.png",
+        "small": "/drivers/ZMNHOD/assets/images/small.png"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "dim",
+        "resetMeter",
+        "calibration",
+        "meter_power",
+        "measure_power",
+        "measure_temperature",
+        "windowcoverings_tilt_set"
+      ],
+      "capabilitiesOptions": {
+        "dim": {
+          "title": {
+            "en": "Position",
+            "nl": "Positie"
+          }
+        },
+        "windowcoverings_tilt_set": {
+          "title": {
+            "en": "Tilt slats",
+            "nl": "Kanteling lamellen"
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": []
+          },
+          {
+            "id": "slider",
+            "capabilities": [
+              "dim"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "slider",
+            "capabilities": [
+              "windowcoverings_tilt_set"
+            ],
+            "options": {
+              "showTitle": true
+            }
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power",
+              "meter_power",
+              "measure_temperature"
+            ]
+          },
+          {
+            "id": "button",
+            "capabilities": [
+              "resetMeter",
+              "calibration"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 3,
+        "productId": 83,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHOD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush Shutter DC (ZMNHOD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush Shutter DC (ZMNHOD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush Shutter DC (ZMNHOD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush Shutter DC (ZMNHOD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHOD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Roller shutter",
+            "nl": "Rolluik"
+          },
+          "children": [
+            {
+              "id": "invertWindowCoveringsDirection",
+              "type": "checkbox",
+              "label": {
+                "en": "Invert shutter movement direction",
+                "nl": "Keer rolluik beweging om"
+              },
+              "value": false,
+              "hint": {
+                "en": "If this setting is enabled, the shutter movement will be inverted.",
+                "nl": "Als deze instelling is geactiveerd wordt de rolluik beweging omgedraait."
+              }
+            },
+            {
+              "id": "motorMovingTime",
+              "type": "number",
+              "label": {
+                "en": "Up/down moving time of motor",
+                "nl": "Omhoog/omlaag bewegingstijd van motor"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 74,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 3276
+              },
+              "hint": {
+                "en": "This parameter (74) determines the time needed to completely open or close the shutters. Note: it is important that the reference position used for determining the moving time of the motor is when the shutter is at its lowest position. Check the device manual for detailed calibration instructions.",
+                "nl": "Deze parameter (74) bepaalt de tijd die nodig is voor het volledig openen of sluiten van de jalozieën. Let op: het is belangrijk dat de jaloezieën zich op hun laagste punt bevinden bij het bepalen van de motor bewegingstijd. Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
+              }
+            },
+            {
+              "value": 0.6,
+              "attr": {
+                "min": 0.5,
+                "max": 10
+              },
+              "id": "motorOperationDetection",
+              "type": "number",
+              "label": {
+                "en": "Limit switch power consumption threshold",
+                "nl": "Limiet stroomverbruik drempelwaarde"
+              },
+              "units": {
+                "en": "W",
+                "nl": "W"
+              },
+              "zwave": {
+                "index": 76,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (76) determines the threshold value in Watts after which the device detects that it can not move any higher or lower.",
+                "nl": "Deze parameter (76) bepaalt de drempelwaarde in Watts waarna het apparaat detecteert dat er niet verder omhoog of omlaag bewogen kan worden."
+              }
+            },
+            {
+              "id": "delayBetweenMotorMovement",
+              "type": "number",
+              "label": {
+                "en": "Delay between motor movement",
+                "nl": "Vertraging tussen motor bewegingen"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 90,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0.1,
+                "max": 3,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (90) determines the minimum time delay between successive motor movements.",
+                "nl": "Deze parameter (90) bepaalt de minimale vertraging tussen opeenvolgende motor bewegingen."
+              }
+            },
+            {
+              "id": "motorOffDelayLimitSwitch",
+              "type": "number",
+              "label": {
+                "en": "Delay after reaching limit switch",
+                "nl": "Vertraging na bereiken limiet"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 86,
+                "size": 1
+              },
+              "value": 8,
+              "attr": {
+                "min": 3,
+                "max": 50
+              },
+              "hint": {
+                "en": "This parameter (86) determines the delay (in seconds), after the power consumption has dropped below the value specified in parameter 76, before the motor is turned off.",
+                "nl": "Deze parameter (86) bepaalt de vertraging (in seconden), nadat het stroomverbruik is afgenomen tot onder de in parameter 76 ingestelde drempelwaarde, voordat de motor wordt uitgeschakelt."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Slats",
+            "nl": "Lamellen"
+          },
+          "children": [
+            {
+              "id": "operatingMode",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable venetian blind mode",
+                "nl": "Schakel besturing van lamellen in"
+              },
+              "zwave": {
+                "index": 71,
+                "size": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (71) enables venetian blind mode. Note: after changing this setting the device needs to be removed from Homey and re-added after waiting for 30 seconds (do not reset the device when removing). Check the device manual for more detailed instructions.",
+                "nl": "Deze parameter (71) schakelt besturing van lamellen in. Let op: na het wijzigen van deze parameter moet het apparaat worden verwijderd van Homey, vervolgens, na 30 seconden te hebben gewacht, kan het weer worden toegevoegd aan Homey (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen). Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
+              }
+            },
+            {
+              "id": "invertWindowCoveringsTiltDirection",
+              "type": "checkbox",
+              "label": {
+                "en": "Invert slats tilt direction",
+                "nl": "Draai lamelrichting om"
+              },
+              "value": false,
+              "hint": {
+                "en": "If this setting is enabled, the slats tilt movement will be inverted.",
+                "nl": "Als deze instelling is geactiveerd wordt de draairichting van de lamellen omgedraait."
+              }
+            },
+            {
+              "id": "slatsTiltingTime",
+              "type": "number",
+              "label": {
+                "en": "Slats full turn tilting time",
+                "nl": "Kantel tijd van de lamellen"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 72,
+                "size": 2
+              },
+              "value": 1.5,
+              "attr": {
+                "min": 0,
+                "max": 327
+              },
+              "hint": {
+                "en": "This parameter (72) determines the time (in seconds) needed to complete full turn tilting. Note: if the set time is too long the shutters will start moving up or down for the remaining time.",
+                "nl": "Deze parameter (72) bepaalt de tijd (in seconden) die nodig is voor het volledig kantelen van de lamellen. Let op: als de ingestelde tijd te lang is dan zal de jaloezie omhoog of omlaag bewegen gedurende de resterende tijd."
+              }
+            },
+            {
+              "id": "slatsPosition",
+              "type": "checkbox",
+              "label": {
+                "en": "Restore slat position after control through switches",
+                "nl": "Herstel lamel positie na bediening via schakelaars"
+              },
+              "zwave": {
+                "index": 73,
+                "size": 1
+              },
+              "value": true,
+              "hint": {
+                "en": "This parameter (73) determines whether the slat position should be restored to the last know position after the shutters are controlled through the connected switches or push buttons (or when the lower limit switch is triggered). Note: the slat position is always restored to the last know position after being controller via Homey.",
+                "nl": "Deze parameter (73) bepaalt of de positie van de lamellen moet worden hersteld naar de laatst bekende positie nadat de jaloezie is bediend via de aangesloten schakelaars (of wanneer de lagere limiet switch is bereikt). Let op: de positie van de lamellen wordt altijd hersteld naar de laatst bekende positie na het bedienen via Homey."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "value": 300,
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32535
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            },
+            {
+              "value": 8,
+              "id": "powerReportDelayTime",
+              "type": "number",
+              "label": {
+                "en": "Power consumption report max delay",
+                "nl": "Stroomverbruik report max vertraging"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 85,
+                "size": 1
+              },
+              "attr": {
+                "min": 3,
+                "max": 50
+              },
+              "hint": {
+                "en": "This parameter (85) determines the maximum delay (in seconds) of a power consumption report after the motor has moved.",
+                "nl": "Deze parameter (85) bepaalt de maximale vertraging (in seconden) van een stroomverbruik report nadat the motor heeft bewogen."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ZMNHVD",
+      "name": {
+        "en": "Flush Dimmer 0 - 10V (ZMNHVD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHVD/assets/images/large.png",
+        "small": "/drivers/ZMNHVD/assets/images/small.png"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "slider",
+            "capabilities": [
+              "dim"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_temperature"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 1,
+        "productId": 83,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHVD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush Dimmer 0 - 10V (ZMNHVD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush Dimmer 0 - 10V (ZMNHVD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush Dimmer 0 - 10V (ZMNHVD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush Dimmer 0 - 10V (ZMNHVD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHVD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOn",
+          "type": "number",
+          "label": {
+            "en": "Turn on automatically",
+            "nl": "Schakel automatisch in"
+          },
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "id": "inclusionMode",
+          "type": "checkbox",
+          "label": {
+            "en": "Secure inclusion",
+            "nl": "Beveiligde modus"
+          },
+          "zwave": {
+            "index": 250,
+            "size": 1
+          },
+          "value": false,
+          "hint": {
+            "en": "This parameter (250) determines if the device will be included as a secure device during the next inclusion. Note: to use secure inclusion the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+            "nl": "Deze parameter (250) bepaalt of het apparaat tijdens de volgende inclusie in beveiligde modus wordt toegevoegd. Let op: om gebruik te maken van de beveiligde modus moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush Dimmer 0 - 10V (ZMNHVD).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush Dimmer 0 - 10V (ZMNHVD)."
+              }
+            },
+            {
+              "id": "doubleClick",
+              "type": "checkbox",
+              "label": {
+                "en": "Double click functionality",
+                "nl": "Dubbel klikken functionaliteit"
+              },
+              "zwave": {
+                "index": 21,
+                "sie": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (21) determines if the double click functionality is enabled; when enabled a quick double click of the connected switch will set the light to the highest dim level. Note: this parameter is only applied if input 1 is configured as a momentary switch.",
+                "nl": "Deze parameter (21) bepaalt of de dubbel klikken functionaliteit is ingeschakeld; wanneer ingeschakeld zal een snelle dubbele klik op de aangesloten schakelaar het licht op het hoogste dim niveau instellen. Let op: deze parameter is alleen van toepassing als ingang 1 is ingesteld als pulsdrukschakelaar."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimming",
+            "nl": "Dimmen"
+          },
+          "children": [
+            {
+              "id": "minimumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Minimum dimming value (%)",
+                "nl": "Minimale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 98
+              },
+              "hint": {
+                "en": "This parameter (60) defines the lowest dim value that can be set. Note: the minimum dim value may not be higher than the maximum dim value.",
+                "nl": "Deze parameter (60) bepaalt de laagste dim waarde die kan worden ingesteld. Let op: de minimale dim waarde mag niet hoger zijn dan de maximale dim waarde."
+              }
+            },
+            {
+              "id": "maximumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Maximum dimming value (%)",
+                "nl": "Maximale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 61,
+                "size": 1
+              },
+              "value": 99,
+              "attr": {
+                "min": 2,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (61) defines the highest dim value that can be set. Note: the maximum dim value may not be lower than the minimum dim value.",
+                "nl": "Deze parameter (61) bepaalt de hoogste dim waarde die kan worden ingesteld. Let op: de maximale dim waarde mag niet lager zijn dan de minimale dim waarde."
+              }
+            },
+            {
+              "id": "dimDuration",
+              "type": "number",
+              "label": {
+                "en": "Dim duration",
+                "nl": "Dim duur"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 65,
+                "size": 2
+              },
+              "value": 1,
+              "attr": {
+                "min": 0.5,
+                "max": 2.5,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (65) determines the time (in seconds) it takes to move between the maximum and minimum dim values when the switch connected to input 1 is clicked shortly or when controlled via Homey.",
+                "nl": "Deze parameter (65) bepaalt de tijd (in seconden) die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 kort is ingedrukt of wanneer aangestuurd via Homey."
+              }
+            },
+            {
+              "id": "dimDurationKeyPressed",
+              "type": "number",
+              "label": {
+                "en": "Dim duration when key pressed (s)",
+                "nl": "Dim duur bij lang indrukken (s)"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 66,
+                "size": 2
+              },
+              "value": 3,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (66) determines the time it takes to move between the maximum and minimum dim values when the switch connected to input 1 is pressed continuously or when controlled via an associated device.",
+                "nl": "Deze parameter (66) bepaalt de tijd die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 lang wordt ingedrukt of wanneer aangestuurd via een geassocieerd apparaat."
+              }
+            },
+            {
+              "id": "ignoreStartLevel",
+              "type": "checkbox",
+              "label": {
+                "en": "Ignore dim start value",
+                "nl": "Negeer dim start niveau"
+              },
+              "zwave": {
+                "index": 67,
+                "size": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (67) determines whether the dim start value should be ignored or respected, when ignored the device will not start dimming from the currently set dim value. Note: this parameter is only relevant if the Flush Dimmer 0 - 10V (ZMNHVD) is associated to other devices.",
+                "nl": "Deze parameter (67) bepaalt of het dim start niveau moet worden genegeerd of gerespecteerd, bij negeren zal het apparaat niet beginnen met dimmen vanaf het op dat moment ingestelde dim niveau. Let op: deze parameter is alleen relevant als de Flush Dimmer 0 - 10V (ZMNHVD) is geassocieerd met andere apparaten."
+              }
+            },
+            {
+              "id": "dimDurationAssociated",
+              "type": "number",
+              "label": {
+                "en": "Dim duration association group 3",
+                "nl": "Dim duur voor associatiegroep 3"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 68,
+                "size": 1
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 127
+              },
+              "hint": {
+                "en": "This parameter (68) determines the dim transition duration time that is send to devices in association group 3.",
+                "nl": "Deze parameter (68) bepaalt de duur die wordt verstuurd naar apparaten in associatie groep 3."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
               }
             }
           ]
@@ -450,11 +4284,38 @@
     }
   ],
   "capabilities": {
+    "allOff": {
+      "type": "boolean",
+      "title": {
+        "en": "All off",
+        "nl": "Alles uit"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "allOn": {
+      "type": "boolean",
+      "title": {
+        "en": "All on",
+        "nl": "Alles aan"
+      },
+      "getable": true,
+      "setable": true
+    },
     "calibration": {
       "type": "boolean",
       "title": {
         "en": "Start calibration",
         "nl": "Begin kalibratie"
+      },
+      "getable": true,
+      "setable": true
+    },
+    "resetMeter": {
+      "type": "boolean",
+      "title": {
+        "en": "Reset power meter",
+        "nl": "Stel stroomverbuik opnieuw in"
       },
       "getable": true,
       "setable": true

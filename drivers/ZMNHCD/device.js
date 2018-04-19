@@ -1,31 +1,19 @@
 'use strict';
 
-const MeshDriverUtil = require('homey-meshdriver').Util;
-const GenericShutterDevice = require('./../genericShutterDevice');
+const constants = require('../../lib/constants');
+const QubinoShutterDevice = require('../../lib/QubinoShutterDevice');
 
-const MOTOR_MOVING_TIME = 'motorMovingTime';
-const SLATS_TILTING_TIME_SETTING = 'slatsTiltingTime';
-const POWER_REPORT_DELAY_SETTING = 'powerReportDelayTime';
-const TEMPERATURE_SENSOR_OFFSET_SETTING = 'temperatureSensorOffset';
-const DELAY_BETWEEN_MOTOR_MOVEMENT_SETTING = 'delayBetweenMotorMovement';
-const WINDOWCOVERINGS_TILT_SET_CAPABILITY = 'windowcoverings_tilt_set';
-
-// TODO driver keys
-// TODO test settings
-// TODO test dim duration
-// TODO capability constants
-// TODO test driver separation
-
-class ZMNHCD extends GenericShutterDevice {
-
+/**
+ * Flush Shutter (ZMNHCD)
+ * Extended manual: http://qubino.com/download/2075/
+ * Regular manual: http://qubino.com/download/1041/
+ */
+class ZMNHCD extends QubinoShutterDevice {
 	async onMeshInit() {
-		super.onMeshInit();
+		await super.onMeshInit();
 
 		// Register configuration dependent capabilities
 		this._registerCapabilities();
-
-		// Register custom setting parsers
-		this._registerSettings();
 	}
 
 	/**
@@ -37,103 +25,43 @@ class ZMNHCD extends GenericShutterDevice {
 	 */
 	_registerCapabilities() {
 
-		// Start calibration on button press
-		this.registerCapabilityListener('calibration', this._startCalibration.bind(this));
+		if (this.numberOfMultiChannelNodes === 0) {
+			/**
+			 * Configuration: venetian blind mode is not activated and no temperature sensor connected.
+			 * Regular motor control on root node.
+			 */
+			this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
+			this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
+			this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
 
-		switch (this.numberOfMultiChannelNodes) {
-			case 0:
-				/**
-				 * Configuration: venetian blind mode is not activated and no temperature sensor connected.
-				 * Regular motor control on root node.
-				 */
-				this.registerCapability('meter_power', 'METER');
-				this.registerCapability('measure_power', 'METER');
-				this.registerCapability('dim', 'SWITCH_MULTILEVEL');
+			// Set venetian blind motor control slider to zero, since it can not be used.
+			this.setCapabilityValue(constants.capabilities.windowCoveringsTiltSet, 0);
 
-				// Set venetian blind motor control slider to zero, since it can not be used.
-				this.setCapabilityValue(WINDOWCOVERINGS_TILT_SET_CAPABILITY, 0);
-
-				// Throw and show an error when user tries to control venetian blinds when venetian blind mode is disabled
-				this.registerCapabilityListener(WINDOWCOVERINGS_TILT_SET_CAPABILITY, this._handleUnconfiguredTiltSet.bind(this));
-				break;
-			case 2:
-				if (this.isTemperatureSensorConnected) {
-					/**
-					 * Configuration: venetian blind mode is not activated and temperature sensor is connected.
-					 * Temperature sensor multi channel node id is 2.
-					 * Regular motor control multi channel node id is 1.
-					 */
-					this.registerCapability('meter_power', 'METER', { multiChannelNodeId: 1 });
-					this.registerCapability('measure_power', 'METER', { multiChannelNodeId: 1 });
-					this.registerCapability('dim', 'SWITCH_MULTILEVEL', { multiChannelNodeId: 1 });
-					this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 2 });
-
-					// Set venetian blind motor control slider to zero, since it can not be used.
-					this.setCapabilityValue(WINDOWCOVERINGS_TILT_SET_CAPABILITY, 0);
-
-					// Throw and show an error when user tries to control venetian blinds when venetian blind mode is disabled
-					this.registerCapabilityListener(WINDOWCOVERINGS_TILT_SET_CAPABILITY, this._handleUnconfiguredTiltSet.bind(this));
-
-				} else {
-					/**
-					 * Configuration: venetian blind mode is activated and no temperature sensor connected.
-					 * Venetian blind motor control multi channel node id is 2.
-					 * Regular motor control multi channel node id is 1.
-					 */
-					this.registerCapability('meter_power', 'METER', { multiChannelNodeId: 1 });
-					this.registerCapability('measure_power', 'METER', { multiChannelNodeId: 1 });
-					this.registerCapability('dim', 'SWITCH_MULTILEVEL', { multiChannelNodeId: 1 });
-					this.registerCapability(WINDOWCOVERINGS_TILT_SET_CAPABILITY, 'SWITCH_MULTILEVEL', { multiChannelNodeId: 2 });
-				}
-				break;
-			case 3:
-				/**
-				 * Configuration: venetian blind mode is activated and temperature sensor is connected.
-				 * Temperature sensor multi channel node id is 3.
-				 * Venetian blind motor control multi channel node id is 2.
-				 * Regular motor control multi channel node id is 1.
-				 */
-				this.registerCapability('meter_power', 'METER', { multiChannelNodeId: 1 });
-				this.registerCapability('measure_power', 'METER', { multiChannelNodeId: 1 });
-				this.registerCapability('dim', 'SWITCH_MULTILEVEL', { multiChannelNodeId: 1 });
-				this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL', { multiChannelNodeId: 3 });
-				this.registerCapability(WINDOWCOVERINGS_TILT_SET_CAPABILITY, 'SWITCH_MULTILEVEL', { multiChannelNodeId: 2 });
-
-				break;
-			default:
-				this.error(`unknown configuration detected (multi channel nodes: 
-				${this.numberOfMultiChannelNodes}, temp sensor: ${this.isTemperatureSensorConnected})`);
+			// Throw and show an error when user tries to control venetian blinds when venetian blind mode is disabled
+			this.registerCapabilityListener(constants.capabilities.windowCoveringsTiltSet, this.handleUnconfiguredTiltSet.bind(this));
+			return;
 		}
-	}
 
-	/**
-	 * Method that registers some custom settings parsers.
-	 * @private
-	 */
-	_registerSettings() {
+		// Register root device endpoint
+		const rootDeviceEndpoint = this.findRootDeviceEndpoint();
+		if (typeof rootDeviceEndpoint === 'number') {
+			this.log('Configured root device on multi channel node', rootDeviceEndpoint);
 
-		// Multiply slats tilting time by 100
-		this.registerSetting(SLATS_TILTING_TIME_SETTING, value => value * 100);
+			this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter, {
+				multiChannelNodeId: rootDeviceEndpoint,
+			});
+			this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter, {
+				multiChannelNodeId: rootDeviceEndpoint,
+			});
+			this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel, {
+				multiChannelNodeId: rootDeviceEndpoint,
+			});
 
-		// Multiply motor moving time by 10
-		this.registerSetting(MOTOR_MOVING_TIME, value => value * 10);
+			this.registerCapability(constants.capabilities.windowCoveringsTiltSet, constants.commandClasses.switchMultilevel, constants.multiChannelNodeIdTwo);
+		}
 
-		// Multiply power report delay time by 10
-		this.registerSetting(POWER_REPORT_DELAY_SETTING, value => value * 10);
-
-		// Multiply delay between motor movement by 10
-		this.registerSetting(DELAY_BETWEEN_MOTOR_MOVEMENT_SETTING, value => value * 10);
-
-		// Map temperature calibration value
-		this.registerSetting(TEMPERATURE_SENSOR_OFFSET_SETTING, value => {
-			if (value === 0) return 32536;
-
-			// -10 till -0.1 becomes 1100 till 1001
-			if (value < 0) return MeshDriverUtil.mapValueRange(-10, -0.1, 1100, 1001, value);
-
-			// 10 till 0.1 becomes 100 till 1
-			return MeshDriverUtil.mapValueRange(10, 0.1, 100, 1, value);
-		});
+		// Register temperature sensor endpoint
+		this.registerTemperatureSensorEndpoint();
 	}
 }
 
