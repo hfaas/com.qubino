@@ -25,7 +25,7 @@
       "id": "1",
       "label": {
         "en": "NC (normally close) input type",
-        "nl": "NG (in rust gesloten) ingang type"
+        "nl": "NC (in rust gesloten) ingang type"
       }
     }
   ]
