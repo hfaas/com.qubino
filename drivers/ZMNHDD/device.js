@@ -29,7 +29,7 @@ class ZMNHDD extends QubinoDimDevice {
 			this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 			this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 			this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-			this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchMultilevel);
+			this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
 		} else {
 
 			// Register root device endpoint
@@ -46,7 +46,7 @@ class ZMNHDD extends QubinoDimDevice {
 				this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel, {
 					multiChannelNodeId: rootDeviceEndpoint,
 				});
-				this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchMultilevel, {
+				this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary, {
 					multiChannelNodeId: rootDeviceEndpoint,
 				});
 			}

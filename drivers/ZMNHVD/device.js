@@ -29,7 +29,7 @@ class ZMNHVD extends QubinoDimDevice {
 		if (this.numberOfMultiChannelNodes === 0) {
 			this.log('Configured root device');
 			this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-			this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchMultilevel);
+			this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
 		} else {
 
 			// Register root device endpoint
@@ -40,7 +40,7 @@ class ZMNHVD extends QubinoDimDevice {
 				this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel, {
 					multiChannelNodeId: rootDeviceEndpoint,
 				});
-				this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchMultilevel, {
+				this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary, {
 					multiChannelNodeId: rootDeviceEndpoint,
 				});
 
