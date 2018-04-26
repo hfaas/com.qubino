@@ -4324,6 +4324,539 @@
       ]
     },
     {
+      "id": "ZMNHSD",
+      "name": {
+        "en": "DIN Dimmer (ZMNHSD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHSD/assets/images/large.png",
+        "small": "/drivers/ZMNHSD/assets/images/small.png"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "meter_power",
+        "measure_power",
+        "measure_temperature"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "slider",
+            "capabilities": [
+              "dim"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power",
+              "meter_power",
+              "measure_temperature"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 1,
+        "productId": 82,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHSD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the DIN Dimmer (ZMNHSD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de DIN Dimmer (ZMNHSD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the DIN Dimmer (ZMNHSD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de DIN Dimmer (ZMNHSD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHSD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOn",
+          "type": "number",
+          "label": {
+            "en": "Turn on automatically",
+            "nl": "Schakel automatisch in"
+          },
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          }
+        },
+        {
+          "id": "workingMode",
+          "type": "dropdown",
+          "label": {
+            "en": "Working mode",
+            "nl": "Modus"
+          },
+          "zwave": {
+            "index": 5,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Dimmer",
+                "nl": "Dimmer"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Switch",
+                "nl": "Schakelaar"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (5) defines the working mode of the device, if mode is set to \"Switch\" the dimming functionality will be disabled. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+            "nl": "Deze parameter (5) bepaalt de modus van het apparaat, als de modus staat ingesteld op \"Schakelaar\" zal de dim functionaliteit niet langer werken. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the DIN Dimmer (ZMNHSD).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de DIN Dimmer (ZMNHSD)."
+              }
+            },
+            {
+              "id": "doubleClick",
+              "type": "checkbox",
+              "label": {
+                "en": "Double click functionality",
+                "nl": "Dubbel klikken functionaliteit"
+              },
+              "zwave": {
+                "index": 21,
+                "sie": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (21) determines if the double click functionality is enabled; when enabled a quick double click of the connected switch will set the light to the highest dim level. Note: this parameter is only applied if input 1 is configured as a momentary switch.",
+                "nl": "Deze parameter (21) bepaalt of de dubbel klikken functionaliteit is ingeschakeld; wanneer ingeschakeld zal een snelle dubbele klik op de aangesloten schakelaar het licht op het hoogste dim niveau instellen. Let op: deze parameter is alleen van toepassing als ingang 1 is ingesteld als pulsdrukschakelaar."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimming",
+            "nl": "Dimmen"
+          },
+          "children": [
+            {
+              "id": "minimumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Minimum dimming value (%)",
+                "nl": "Minimale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "value": 1,
+              "attr": {
+                "min": 1,
+                "max": 98
+              },
+              "hint": {
+                "en": "This parameter (60) defines the lowest dim value that can be set. Note: the minimum dim value may not be higher than the maximum dim value.",
+                "nl": "Deze parameter (60) bepaalt de laagste dim waarde die kan worden ingesteld. Let op: de minimale dim waarde mag niet hoger zijn dan de maximale dim waarde."
+              }
+            },
+            {
+              "id": "maximumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Maximum dimming value (%)",
+                "nl": "Maximale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 61,
+                "size": 1
+              },
+              "value": 99,
+              "attr": {
+                "min": 2,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (61) defines the highest dim value that can be set. Note: the maximum dim value may not be lower than the minimum dim value.",
+                "nl": "Deze parameter (61) bepaalt de hoogste dim waarde die kan worden ingesteld. Let op: de maximale dim waarde mag niet lager zijn dan de minimale dim waarde."
+              }
+            },
+            {
+              "id": "dimDuration",
+              "type": "number",
+              "label": {
+                "en": "Dim duration",
+                "nl": "Dim duur"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 65,
+                "size": 2
+              },
+              "value": 1,
+              "attr": {
+                "min": 0.5,
+                "max": 2.5,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (65) determines the time (in seconds) it takes to move between the maximum and minimum dim values when the switch connected to input 1 is clicked shortly or when controlled via Homey.",
+                "nl": "Deze parameter (65) bepaalt de tijd (in seconden) die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 kort is ingedrukt of wanneer aangestuurd via Homey."
+              }
+            },
+            {
+              "id": "dimDurationKeyPressed",
+              "type": "number",
+              "label": {
+                "en": "Dim duration when key pressed (s)",
+                "nl": "Dim duur bij lang indrukken (s)"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 66,
+                "size": 2
+              },
+              "value": 3,
+              "attr": {
+                "min": 1,
+                "max": 255
+              },
+              "hint": {
+                "en": "This parameter (66) determines the time it takes to move between the maximum and minimum dim values when the switch connected to input 1 is pressed continuously or when controlled via an associated device.",
+                "nl": "Deze parameter (66) bepaalt de tijd die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 lang wordt ingedrukt of wanneer aangestuurd via een geassocieerd apparaat."
+              }
+            },
+            {
+              "id": "ignoreStartLevel",
+              "type": "checkbox",
+              "label": {
+                "en": "Ignore dim start value",
+                "nl": "Negeer dim start niveau"
+              },
+              "zwave": {
+                "index": 67,
+                "size": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (67) determines whether the dim start value should be ignored or respected, when ignored the device will not start dimming from the currently set dim value. Note: this parameter is only relevant if the DIN Dimmer (ZMNHSD) is associated to other devices.",
+                "nl": "Deze parameter (67) bepaalt of het dim start niveau moet worden genegeerd of gerespecteerd, bij negeren zal het apparaat niet beginnen met dimmen vanaf het op dat moment ingestelde dim niveau. Let op: deze parameter is alleen relevant als de DIN Dimmer (ZMNHSD) is geassocieerd met andere apparaten."
+              }
+            },
+            {
+              "id": "dimDurationAssociated",
+              "type": "number",
+              "label": {
+                "en": "Dim duration association group 3",
+                "nl": "Dim duur voor associatiegroep 3"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 68,
+                "size": 1
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 127
+              },
+              "hint": {
+                "en": "This parameter (68) determines the dim transition duration time that is send to devices in association group 3.",
+                "nl": "Deze parameter (68) bepaalt de duur die wordt verstuurd naar apparaten in associatie groep 3."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "value": 5,
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32535
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ZMNHVD",
       "name": {
         "en": "Flush Dimmer 0 - 10V (ZMNHVD)"
