@@ -7,6 +7,7 @@ const Log = require('homey-log').Log;
  * TODO: test kWh on a device and the reset functionality
  * TODO: check all settings
  * TODO: mark devices as offline while fetching settings etc.
+ * TODO: switch type settings reference to parameter 20/100
  */
 class QubinoApp extends Homey.App {
 	onInit() {

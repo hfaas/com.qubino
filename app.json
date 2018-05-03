@@ -5,7 +5,7 @@
   },
   "sdk": 2,
   "version": "2.0.0",
-  "compatibility": ">=1.5.0",
+  "compatibility": ">=1.5.11",
   "description": {
     "en": "Qubino devices for Homey",
     "nl": "Qubino apparaten voor Homey"
@@ -123,6 +123,24 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHIA",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA"
           }
         ]
       },
@@ -255,15 +273,12 @@
         ]
       },
       {
+        "hint": null,
         "id": "inputTwoTurnedOn_ZMNHDA",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
         },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
         "args": [
           {
             "type": "device",
@@ -273,15 +288,12 @@
         ]
       },
       {
+        "hint": null,
         "id": "inputTwoTurnedOff_ZMNHDA",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
         },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
         "args": [
           {
             "type": "device",
@@ -291,15 +303,12 @@
         ]
       },
       {
+        "hint": null,
         "id": "inputTwoToggled_ZMNHDA",
         "title": {
           "en": "Input 2 was toggled",
           "nl": "Ingang 2 is geschakeld"
         },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
         "args": [
           {
             "type": "device",
@@ -309,15 +318,12 @@
         ]
       },
       {
+        "hint": null,
         "id": "inputThreeTurnedOn_ZMNHDA",
         "title": {
           "en": "Input 3 turned on",
           "nl": "Ingang 3 is ingeschakeld"
         },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
         "args": [
           {
             "type": "device",
@@ -327,15 +333,12 @@
         ]
       },
       {
+        "hint": null,
         "id": "inputThreeTurnedOff_ZMNHDA",
         "title": {
           "en": "Input 3 turned off",
           "nl": "Ingang 3 is uitgeschakeld"
         },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
         "args": [
           {
             "type": "device",
@@ -345,14 +348,11 @@
         ]
       },
       {
+        "hint": null,
         "id": "inputThreeToggled_ZMNHDA",
         "title": {
           "en": "Input 3 was toggled",
           "nl": "Ingang 3 is geschakeld"
-        },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
         },
         "args": [
           {
@@ -467,6 +467,96 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHDD"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoTurnedOn_ZMNHIA",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoTurnedOff_ZMNHIA",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoToggled_ZMNHIA",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeTurnedOn_ZMNHIA",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeTurnedOff_ZMNHIA",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeToggled_ZMNHIA",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA"
           }
         ]
       },
@@ -3425,6 +3515,618 @@
       ]
     },
     {
+      "id": "ZMNHIA",
+      "name": {
+        "en": "Flush On/Off Thermostat (ZMNHIA)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHIA/assets/images/large.png",
+        "small": "/drivers/ZMNHIA/assets/images/small.png"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "offAutoThermostatMode",
+        "target_temperature",
+        "measure_temperature",
+        "meter_power",
+        "measure_power"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "capabilities": [],
+            "id": "icon"
+          },
+          {
+            "capabilities": [
+              "offAutoThermostatMode"
+            ],
+            "id": "picker"
+          },
+          {
+            "capabilities": [
+              "measure_temperature",
+              "meter_power",
+              "measure_power"
+            ],
+            "id": "sensor"
+          },
+          {
+            "capabilities": [
+              "target_temperature"
+            ],
+            "id": "thermostat"
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 5,
+        "productId": 1,
+        "associationGroups": [
+          6
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHIA/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush On/Off Thermostat (ZMNHIA) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush On/Off Thermostat (ZMNHIA) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush On/Off Thermostat (ZMNHIA) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush On/Off Thermostat (ZMNHIA) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHIA/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "id": "relayType",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type",
+            "nl": "Relais type"
+          },
+          "zwave": {
+            "index": 63,
+            "size": 1
+          },
+          "hint": {
+            "en": "This parameter (63) defines the relay type. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (63) bepaalt het relais type. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "value": "1",
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush On/Off Thermostat (ZMNHIA).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush On/Off Thermostat (ZMNHIA)."
+              }
+            },
+            {
+              "value": "1",
+              "id": "switchTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 2",
+                "nl": "Schakelaar type ingang 2"
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush On/Off Thermostat (ZMNHIA). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush On/Off Thermostat (ZMNHIA). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
+              }
+            },
+            {
+              "value": "1",
+              "id": "switchTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 3",
+                "nl": "Schakelaar type ingang 3"
+              },
+              "zwave": {
+                "index": 3,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush On/Off Thermostat (ZMNHIA). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "nl": "Deze parameter (3) specificeert het type schakelaar dat is aangesloten op ingang 3 van de Flush On/Off Thermostat (ZMNHIA). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
+              }
+            },
+            {
+              "zwave": {
+                "index": 4,
+                "size": 1
+              },
+              "id": "contactTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 2",
+                "nl": "Contact type ingang 2"
+              },
+              "hint": {
+                "en": "This parameter (4) defines the contact type of input 2.",
+                "nl": "Deze parameter (4) bepaalt het contact type van ingang 2."
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "zwave": {
+                "index": 5,
+                "size": 1
+              },
+              "id": "contactTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 3",
+                "nl": "Contact type ingang 3"
+              },
+              "hint": {
+                "en": "This parameter (5) defines the contact type of input 3.",
+                "nl": "Deze parameter (5) bepaalt het contact type van ingang 3."
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "setpointInput2Enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable changing set point via input 2",
+                "nl": "Stel doeltemperatuur in via ingang 2"
+              },
+              "hint": {
+                "en": "This setting enables setting the target temperature via input 2, when enabled the value of parameter 11 will become the new set point when input 2 is triggered.",
+                "nl": "Deze instelling schakelt het instellen van de doeltemperatuur via ingang 2 in. Als deze instelling is ingeschakeld zal, wanneer ingang 2 wordt geschakeld, de doeltemperatuur worden geactiveerd die is ingesteld via parameter 11."
+              },
+              "value": false
+            },
+            {
+              "id": "setpointInput2",
+              "type": "number",
+              "label": {
+                "en": "Set point set by input 2",
+                "nl": "Doeltemperatuur ingesteld door ingang 2"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 11,
+                "size": 2
+              },
+              "hint": {
+                "en": "This parameter (11) determines the target temperature that will be set when input 2 is switched. Note: make sure this functionality is enabled, see the setting above.",
+                "nl": "Deze parameter (11) bepaalt de doeltemperatuur die wordt ingesteld wanneer input 2 wordt geschakeld. Let op: zorg ervoor dat deze functionaliteit is ingeschakeld, zie hiervoor de instelling hier boven."
+              },
+              "value": 20,
+              "attr": {
+                "min": -15,
+                "max": 99,
+                "step": 0.1
+              }
+            },
+            {
+              "id": "setpointInput3Enabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable changing set point via input 3",
+                "nl": "Stel doeltemperatuur in via ingang 3"
+              },
+              "hint": {
+                "en": "This setting enables setting the target temperature via input 3, when enabled the value of parameter 12 will become the new set point when input 3 is triggered.",
+                "nl": "Deze instelling schakelt het instellen van de doeltemperatuur via ingang 3 in. Als deze instelling is ingeschakeld zal, wanneer ingang 3 wordt geschakeld, de doeltemperatuur worden geactiveerd die is ingesteld via parameter 12."
+              },
+              "value": false
+            },
+            {
+              "id": "setpointInput2",
+              "type": "number",
+              "label": {
+                "en": "Set point set by input 3",
+                "nl": "Doeltemperatuur ingesteld door ingang 3"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 12,
+                "size": 2
+              },
+              "hint": {
+                "en": "This parameter (12) determines the target temperature that will be set when input 3 is switched. Note: make sure this functionality is enabled, see the setting above.",
+                "nl": "Deze parameter (12) bepaalt de doeltemperatuur die wordt ingesteld wanneer input 3 wordt geschakeld. Let op: zorg ervoor dat deze functionaliteit is ingeschakeld, zie hiervoor de instelling hier boven."
+              },
+              "value": 20,
+              "attr": {
+                "min": -15,
+                "max": 99,
+                "step": 0.1
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "value": 3,
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "value": 300,
+              "attr": {
+                "min": 0,
+                "max": 65535
+              },
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "children": [
+            {
+              "id": "temperatureHysteresisOn",
+              "type": "number",
+              "label": {
+                "en": "Temperature hysteresis on",
+                "nl": "Temperatuur hysteresis aan"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 43,
+                "size": 1,
+                "signed": false
+              },
+              "value": -0.5,
+              "attr": {
+                "min": -12.7,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (43) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the device on.",
+                "nl": "Deze parameter (43) bepaalt het temperatuur verschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat aanzet."
+              }
+            },
+            {
+              "id": "temperatureHysteresisOff",
+              "type": "number",
+              "label": {
+                "en": "Temperature hysteresis off",
+                "nl": "Temperatuur hysteresis uit"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 44,
+                "size": 1,
+                "signed": false
+              },
+              "value": 0.5,
+              "attr": {
+                "min": -12.7,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (44) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the device off.",
+                "nl": "Deze parameter (44) bepaalt het temperatuur verschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat uitzet."
+              }
+            },
+            {
+              "id": "antifreezeEnabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Antifreeze enabled",
+                "nl": "Vorstbeveiliging ingeschakeld"
+              },
+              "hint": {
+                "en": "This setting enables the antifreeze functionality of the device.",
+                "nl": "Deze instelling schakelt de vorstbeveiliging in."
+              },
+              "value": false
+            },
+            {
+              "id": "antifreeze",
+              "type": "number",
+              "label": {
+                "en": "Antifreeze protection temperature threshold",
+                "nl": "Vorstbeveiliging temperatuur drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 45,
+                "size": 1,
+                "signed": false
+              },
+              "value": 5,
+              "attr": {
+                "min": -12.6,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (45) defines the temperature below which the heating will be turned on (to prevent freezing) even if the thermostat was manually set to off.",
+                "nl": "Deze parameter (45) bepaalt de temperatuur waaronder de verwarming wordt ingeschakeld (vorstbeveiliging) zelfs als de thermostaat handmatig op uit is ingesteld."
+              }
+            },
+            {
+              "id": "tooLowTemperatureLimit",
+              "type": "number",
+              "label": {
+                "en": "Too low temperature limit",
+                "nl": "Te lage temperatuur limiet"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 60,
+                "size": 2
+              },
+              "value": 5,
+              "attr": {
+                "min": 1,
+                "max": 100,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (60) determines the temperature value below which the temperature is considered too low.",
+                "nl": "Deze parameter (60) bepaalt de waarde waaronder de temperatuur als te laag wordt beschouwd."
+              }
+            },
+            {
+              "id": "tooHighTemperatureLimit",
+              "type": "number",
+              "label": {
+                "en": "Too high temperature limit",
+                "nl": "Te hoge temperatuur limiet"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 61,
+                "size": 2
+              },
+              "value": 70,
+              "attr": {
+                "min": 1,
+                "max": 100,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (61) determines the temperature value above which the temperature is considered too high.",
+                "nl": "Deze parameter (61) bepaalt de waarde waarboven de temperatuur als te hoog wordt beschouwd."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ZMNHND",
       "name": {
         "en": "Flush 1D Relay (ZMNHND)"
@@ -5338,6 +6040,30 @@
       },
       "getable": true,
       "setable": true
+    },
+    "offAutoThermostatMode": {
+      "type": "enum",
+      "title": {
+        "en": "Thermostat mode"
+      },
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Auto"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        }
+      ]
     },
     "resetMeter": {
       "type": "boolean",
