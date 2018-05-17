@@ -7,5 +7,8 @@
   },
   "settings": {
     "re_pair_required": "Apparaatinstellingen bijgewerkt, het apparaat moet opnieuw worden toegevoegd aan Homey om gebruik te maken van de nieuwe instellingen. Wacht 30 seconden na het verwijderen voor het opnieuw toevoegen."
+  },
+  "pairing": {
+    "configuring": "Configureren..."
   }
 }

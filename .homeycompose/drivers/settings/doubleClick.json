@@ -6,7 +6,7 @@
   },
   "zwave": {
     "index": 21,
-    "sie": 1
+    "size": 1
   },
   "value": false,
   "hint": {

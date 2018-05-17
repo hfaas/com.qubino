@@ -9,41 +9,26 @@ const QubinoDevice = require('../../lib/QubinoDevice');
  * Regular manual: http://qubino.com/download/1014/
  */
 class ZMNHND extends QubinoDevice {
-	async onMeshInit() {
-		await super.onMeshInit();
 
-		// Register configuration dependent capabilities
-		this._registerCapabilities();
+	/**
+	 * Expose input configuration, one possible input (input 2).
+	 * @returns {*[]}
+	 */
+	get inputConfiguration() {
+		return [
+			{
+				id: 2,
+				parameterIndex: 100,
+			},
+		];
 	}
 
 	/**
-	 * Method that will register capabilities based on the detected configuration of the device; it can have 5
-	 * different configurations (with/without temperature sensor, input 2 enabled/disabled).
+	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
-	_registerCapabilities() {
-
-		// Only register root device, no inputs, no temperature sensor
-		if (this.numberOfMultiChannelNodes === 0) {
-			this.log('Configured root device');
-			this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
-		} else {
-
-			// Register root device endpoint
-			const rootDeviceEndpoint = this.findRootDeviceEndpoint();
-			if (typeof rootDeviceEndpoint === 'number') {
-				this.log('Configured root device on multi channel node', rootDeviceEndpoint);
-				this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary, {
-					multiChannelNodeId: rootDeviceEndpoint,
-				});
-			}
-
-			// Register input endpoints
-			this.registerInputEndpoints();
-
-			// Register temperature sensor endpoint
-			this.registerTemperatureSensorEndpoint();
-		}
+	registerCapabilities() {
+		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
 	}
 }
 

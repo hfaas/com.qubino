@@ -11,14 +11,8 @@ class ZMNHIA extends QubinoDevice {
 	async onMeshInit() {
 		await super.onMeshInit();
 
-		// Register configuration dependent capabilities
-		this._registerCapabilities();
-
 		// Register custom settings parsers
 		this.registerSettings();
-
-		// Register input endpoints
-		await this.registerInputEndpoints();
 	}
 
 	/**
@@ -38,11 +32,20 @@ class ZMNHIA extends QubinoDevice {
 	}
 
 	/**
-	 * Override registering endpoints since this device has fixed endpoints on multi channel node ids 1 and 2.
+	 * Expose input configuration, two possible inputs (input 1 and input 2).
+	 * @returns {*[]}
 	 */
-	async registerInputEndpoints() {
-		this.registerInputEndpointListener(1, 2);
-		this.registerInputEndpointListener(2, 3);
+	get inputConfiguration() {
+		return [
+			{
+				id: 2,
+				defaultEnabled: true,
+			},
+			{
+				id: 3,
+				defaultEnabled: true,
+			},
+		];
 	}
 
 	/**
@@ -100,6 +103,8 @@ class ZMNHIA extends QubinoDevice {
 	 * Method that registers custom setting parsers.
 	 */
 	registerSettings() {
+		super.registerSettings();
+
 		this.registerSetting(constants.settings.setpointInput2, value => {
 			if (!value || value === 65535) return value;
 			if (value >= 0) return value * 10;
@@ -124,17 +129,13 @@ class ZMNHIA extends QubinoDevice {
 
 		this.registerSetting(constants.settings.tooLowTemperatureLimit, value => value * 10);
 		this.registerSetting(constants.settings.tooHighTemperatureLimit, value => value * 10);
-
-		super.registerSettings();
 	}
 
 	/**
-	 * Method that will register capabilities based on the detected configuration of the device; it can have 5
-	 * different configurations (with/without temperature sensor, input 2 enabled/disabled).
+	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
-	_registerCapabilities() {
-		this.log('Configured root device');
+	registerCapabilities() {
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);

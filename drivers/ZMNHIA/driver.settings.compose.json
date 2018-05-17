@@ -138,6 +138,11 @@
       {
         "$extends": "powerReportingInterval",
         "value": 300,
+        "zwave": {
+          "index": 42,
+          "size": 2,
+          "signed": false
+        },
         "attr": {
           "min": 0,
           "max": 65535
@@ -153,150 +158,22 @@
     },
     "children": [
       {
-        "id": "temperatureHysteresisOn",
-        "type": "number",
-        "label": {
-          "en": "Temperature hysteresis on",
-          "nl": "Temperatuur hysteresis aan"
-        },
-        "units": {
-          "en": "°C",
-          "nl": "°C"
-        },
-        "zwave": {
-          "index": 43,
-          "size": 1,
-          "signed": false
-        },
-        "value": -0.5,
-        "attr": {
-          "min": -12.7,
-          "max": 12.7,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the device on.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het temperatuur verschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat aanzet."
-        }
+        "$extends": "temperatureHysteresisOn"
       },
       {
-        "id": "temperatureHysteresisOff",
-        "type": "number",
-        "label": {
-          "en": "Temperature hysteresis off",
-          "nl": "Temperatuur hysteresis uit"
-        },
-        "units": {
-          "en": "°C",
-          "nl": "°C"
-        },
-        "zwave": {
-          "index": 44,
-          "size": 1,
-          "signed": false
-        },
-        "value": 0.5,
-        "attr": {
-          "min": -12.7,
-          "max": 12.7,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the device off.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt het temperatuur verschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat uitzet."
-        }
+        "$extends": "temperatureHysteresisOff"
       },
       {
-        "id": "antifreezeEnabled",
-        "type": "checkbox",
-        "label": {
-          "en": "Antifreeze enabled",
-          "nl": "Vorstbeveiliging ingeschakeld"
-        },
-        "hint": {
-          "en": "This setting enables the antifreeze functionality of the device.",
-          "nl": "Deze instelling schakelt de vorstbeveiliging in."
-        },
-        "value": false
+        "$extends": "antifreezeEnabled"
       },
       {
-        "id": "antifreeze",
-        "type": "number",
-        "label": {
-          "en": "Antifreeze protection temperature threshold",
-          "nl": "Vorstbeveiliging temperatuur drempelwaarde"
-        },
-        "units": {
-          "en": "°C",
-          "nl": "°C"
-        },
-        "zwave": {
-          "index": 45,
-          "size": 1,
-          "signed": false
-        },
-        "value": 5,
-        "attr": {
-          "min": -12.6,
-          "max": 12.7,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) defines the temperature below which the heating will be turned on (to prevent freezing) even if the thermostat was manually set to off.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de temperatuur waaronder de verwarming wordt ingeschakeld (vorstbeveiliging) zelfs als de thermostaat handmatig op uit is ingesteld."
-        }
+        "$extends": "antifreeze"
       },
       {
-        "id": "tooLowTemperatureLimit",
-        "type": "number",
-        "label": {
-          "en": "Too low temperature limit",
-          "nl": "Te lage temperatuur limiet"
-        },
-        "units": {
-          "en": "°C",
-          "nl": "°C"
-        },
-        "zwave": {
-          "index": 60,
-          "size": 2
-        },
-        "value": 5,
-        "attr": {
-          "min": 1,
-          "max": 100,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the temperature value below which the temperature is considered too low.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de waarde waaronder de temperatuur als te laag wordt beschouwd."
-        }
+        "$extends": "tooLowTemperatureLimit"
       },
       {
-        "id": "tooHighTemperatureLimit",
-        "type": "number",
-        "label": {
-          "en": "Too high temperature limit",
-          "nl": "Te hoge temperatuur limiet"
-        },
-        "units": {
-          "en": "°C",
-          "nl": "°C"
-        },
-        "zwave": {
-          "index": 61,
-          "size": 2
-        },
-        "value": 70,
-        "attr": {
-          "min": 1,
-          "max": 100,
-          "step": 0.1
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the temperature value above which the temperature is considered too high.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de waarde waarboven de temperatuur als te hoog wordt beschouwd."
-        }
+        "$extends": "tooHighTemperatureLimit"
       }
     ]
   }

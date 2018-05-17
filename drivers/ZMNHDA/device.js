@@ -8,15 +8,6 @@ const QubinoDimDevice = require('../../lib/QubinoDimDevice');
  * Manual: https://smart-telematik.se/dokument/qubino-flush-dimmer.pdf
  */
 class ZMNHDA extends QubinoDimDevice {
-	async onMeshInit() {
-		await super.onMeshInit();
-
-		// Register configuration dependent capabilities
-		this._registerCapabilities();
-
-		// Register input endpoints
-		await this.registerInputEndpoints();
-	}
 
 	/**
 	 * Override allOnAllOff Z-Wave setting size.
@@ -35,19 +26,27 @@ class ZMNHDA extends QubinoDimDevice {
 	}
 
 	/**
-	 * Override registering endpoints since this device has fixed endpoints on multi channel node ids 1 and 2.
+	 * Expose input configuration, two possible inputs (input 2 and input 3).
+	 * @returns {*[]}
 	 */
-	async registerInputEndpoints() {
-		this.registerInputEndpointListener(1, 2);
-		this.registerInputEndpointListener(2, 3);
+	get inputConfiguration() {
+		return [
+			{
+				id: 2,
+				defaultEnabled: true,
+			},
+			{
+				id: 3,
+				defaultEnabled: true,
+			},
+		];
 	}
 
 	/**
-	 * Method that will register capabilities on the root device only.
+	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
-	_registerCapabilities() {
-		this.log('Configured root device');
+	registerCapabilities() {
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);

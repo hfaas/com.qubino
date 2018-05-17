@@ -5,7 +5,7 @@
   },
   "sdk": 2,
   "version": "2.0.0",
-  "compatibility": ">=1.5.11",
+  "compatibility": ">=1.5.1",
   "description": {
     "en": "Qubino devices for Homey",
     "nl": "Qubino apparaten voor Homey"
@@ -141,6 +141,24 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHIA"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHKD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD"
           }
         ]
       },
@@ -557,6 +575,114 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHIA"
+          }
+        ]
+      },
+      {
+        "id": "inputOneTurnedOn_ZMNHKD",
+        "title": {
+          "en": "Input 1 turned on",
+          "nl": "Ingang 1 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD"
+          }
+        ]
+      },
+      {
+        "id": "inputOneTurnedOff_ZMNHKD",
+        "title": {
+          "en": "Input 1 turned off",
+          "nl": "Ingang 1 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD"
+          }
+        ]
+      },
+      {
+        "id": "inputOneToggled_ZMNHKD",
+        "title": {
+          "en": "Input 1 was toggled",
+          "nl": "Ingang 1 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOn_ZMNHKD",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOff_ZMNHKD",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoToggled_ZMNHKD",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD"
           }
         ]
       },
@@ -3080,7 +3206,7 @@
               },
               "zwave": {
                 "index": 21,
-                "sie": 1
+                "size": 1
               },
               "value": false,
               "hint": {
@@ -3944,6 +4070,11 @@
             },
             {
               "value": 300,
+              "zwave": {
+                "index": 42,
+                "size": 2,
+                "signed": false
+              },
               "attr": {
                 "min": 0,
                 "max": 65535
@@ -3957,10 +4088,6 @@
               "units": {
                 "en": "s",
                 "nl": "s"
-              },
-              "zwave": {
-                "index": 42,
-                "size": 2
               },
               "hint": {
                 "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
@@ -4000,7 +4127,7 @@
               },
               "hint": {
                 "en": "This parameter (43) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the device on.",
-                "nl": "Deze parameter (43) bepaalt het temperatuur verschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat aanzet."
+                "nl": "Deze parameter (43) bepaalt het temperatuurverschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat aanzet."
               }
             },
             {
@@ -4027,7 +4154,7 @@
               },
               "hint": {
                 "en": "This parameter (44) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the device off.",
-                "nl": "Deze parameter (44) bepaalt het temperatuur verschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat uitzet."
+                "nl": "Deze parameter (44) bepaalt het temperatuurverschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het apparaat uitzet."
               }
             },
             {
@@ -4120,6 +4247,1099 @@
               "hint": {
                 "en": "This parameter (61) determines the temperature value above which the temperature is considered too high.",
                 "nl": "Deze parameter (61) bepaalt de waarde waarboven de temperatuur als te hoog wordt beschouwd."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ZMNHKD",
+      "name": {
+        "en": "Flush Heat & Cool Thermostat (ZMNHKD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHKD/assets/images/large.png",
+        "small": "/drivers/ZMNHKD/assets/images/small.png"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "offAutoThermostatMode",
+        "target_temperature",
+        "measure_temperature",
+        "meter_power",
+        "measure_power"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "capabilities": [],
+            "id": "icon"
+          },
+          {
+            "capabilities": [
+              "measure_temperature",
+              "meter_power",
+              "measure_power"
+            ],
+            "id": "sensor"
+          },
+          {
+            "capabilities": [
+              "offAutoThermostatMode"
+            ],
+            "id": "picker"
+          },
+          {
+            "capabilities": [
+              "target_temperature"
+            ],
+            "id": "thermostat"
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 5,
+        "productId": 82,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHKD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush Heat & Cool Thermostat (ZMNHKD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush Heat & Cool Thermostat (ZMNHKD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush Heat & Cool Thermostat (ZMNHKD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush Heat & Cool Thermostat (ZMNHKD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHKD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "zwave": {
+            "index": 64,
+            "size": 1
+          },
+          "id": "relayTypeQ1",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type output 1",
+            "nl": "Relais type uitgang 1"
+          },
+          "hint": {
+            "en": "This parameter (64) defines the relay type of output 1. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (64) bepaalt het relais type van uitgang 1. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "zwave": {
+            "index": 65,
+            "size": 1
+          },
+          "id": "relayTypeQ2",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type output 2",
+            "nl": "Relais type uitgang 2"
+          },
+          "hint": {
+            "en": "This parameter (65) defines the relay type of output 2. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (65) bepaalt het relais type van uitgang 2. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "reportingIntervalAssociationGroups2and10",
+          "type": "number",
+          "label": {
+            "en": "Reporting interval for association group 2 and 10",
+            "nl": "Report interval voor associatie groepen 2 en 10"
+          },
+          "hint": {
+            "en": "This parameter (76) determines the reporting interval for devices associated to group 2 and/or 10.",
+            "nl": "Deze parameter (76) specificeert het interval waarop wordt gereport naar associatie groepen 2 en 10."
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "zwave": {
+            "index": 76,
+            "size": 1
+          },
+          "value": 30,
+          "attr": {
+            "min": 0,
+            "max": 127
+          }
+        },
+        {
+          "id": "reportingDelayAssociationGroup10",
+          "type": "number",
+          "label": {
+            "en": "Reporting delay for association group 10",
+            "nl": "Report vertraging voor associatie groep 10"
+          },
+          "hint": {
+            "en": "This parameter (77) determines the reporting delay for devices associated to group 10.",
+            "nl": "Deze parameter (77) specificeert de vertraging waarna wordt gereport naar associatie groepen 10."
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "zwave": {
+            "index": 77,
+            "size": 2
+          },
+          "value": 180,
+          "attr": {
+            "min": 0,
+            "max": 32767
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush Heat & Cool Thermostat (ZMNHKD).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush Heat & Cool Thermostat (ZMNHKD)."
+              }
+            },
+            {
+              "id": "switchTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 2",
+                "nl": "Schakelaar type ingang 2"
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush Heat & Cool Thermostat (ZMNHKD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush Heat & Cool Thermostat (ZMNHKD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
+              }
+            },
+            {
+              "zwave": {
+                "index": 4,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (4) defines the contact type of input 2. Note: this parameter is only active when parameter 11 is set to the value 2.",
+                "nl": "Deze parameter (4) bepaalt het contact type van ingang 2. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op de waarde 2."
+              },
+              "id": "contactTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 2",
+                "nl": "Contact type ingang 2"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "zwave": {
+                "index": 5,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (5) defines the contact type of input 3. Note: this parameter is only active when parameter 12 is set to the value 2000.",
+                "nl": "Deze parameter (5) bepaalt het contact type van ingang 3. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op de waarde 200."
+              },
+              "id": "contactTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 3",
+                "nl": "Contact type ingang 3"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "functionalityInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 1 functionality",
+                "nl": "Ingang 1 functionaliteit"
+              },
+              "hint": {
+                "en": "This parameter (11) determines the functionality of input 1. Note: if this parameter is set to influence heating and cooling according to the window sensor status then input 1 must be enabled via parameter 100.",
+                "nl": "Deze parameter (11) bepaalt de functionaliteit van ingang 1. Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor dan moet ingang 1 ingeschakeld zijn via parameter 100."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 2
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "32767",
+                  "label": {
+                    "en": "Does not influence heating and cooling",
+                    "nl": "Beïnvloed verwarmen en verkoelen niet"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Switches the thermostat mode between Off and Auto",
+                    "nl": "Schakelt thermostaat modus tussen Uit en Auto"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Influences heating and cooling according to window sensor status",
+                    "nl": "Beïnvloed verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "functionalityInput2",
+              "type": "number",
+              "label": {
+                "en": "Input 2 functionality",
+                "nl": "Ingang 2 functionaliteit"
+              },
+              "hint": {
+                "en": "This parameter (12) determines the target temperature that will be set when input 2 is switched. The target temperature ranges from 0 - 990 (0°C to 99°C) and from 1001 to 1150 (-0.1°C to -15°C). To disable the influence of input 2 on the heating and cooling process set the value to 32767. To let the connected condense sensor influence the heating and cooling process set the value to 2000. Note: if this parameter is set to influence heating and cooling according to the condense sensor then input 2 must be enabled via parameter 101.",
+                "nl": "Deze parameter (12) bepaalt de doeltemperatuur die wordt ingesteld wanneer input 2 wordt geschakeld. Het bereik van de doeltemperatuur gaat van 0 - 990 (0°C tot 99°C) en van 1001 tot 1150 (-0.1°C to -15°C). Om de invloed van ingang 2 op het verwarmen en verkoelen uit te schakelen stel deze parameter in op 32767. Om de aangesloten condenssensor het verwarmen en verkoelen te laten beïnvloeden stel deze parameter in op 2000. Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor dan moet ingang 2 ingeschakeld zijn via parameter 101."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 2
+              },
+              "value": 32767,
+              "attr": {
+                "min": 0,
+                "max": 32767
+              }
+            },
+            {
+              "hint": {
+                "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              },
+              "id": "enableInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 1 notification type and event",
+                "nl": "Ingang 1 notificatie type en event"
+              },
+              "zwave": {
+                "index": 100,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ]
+            },
+            {
+              "zwave": {
+                "index": 101,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (101) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. If input 2 is enabled parameter 12 must be set to influence heating and cooling according to the condense sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (101) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 2 is ingeschakeld moet parameter 12 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              },
+              "id": "enableInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 notification type and event",
+                "nl": "Ingang 2 notificatie type en event"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "statusOnDelayInput1",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching on input 1",
+                "nl": "Vertraging na inschakelen ingang 1"
+              },
+              "hint": {
+                "en": "This parameter (70) specifies the delay which occurs after input 1 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 11 is set to use the window sensor functionality for input 1.",
+                "nl": "Deze parameter (70) bepaalt de vertraging die optreedt nadat ingang 1 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op het gebruik van de raamsensor functionaliteit voor ingang 1."
+              },
+              "zwave": {
+                "index": 70,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOffDelayInput1",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching off input 1",
+                "nl": "Vertraging na uitschakelen ingang 1"
+              },
+              "hint": {
+                "en": "This parameter (71) specifies the delay which occurs after input 1 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 11 is set to use the window sensor functionality for input 1.",
+                "nl": "Deze parameter (71) bepaalt de vertraging die optreedt nadat ingang 1 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op het gebruik van de raamsensor functionaliteit voor ingang 1."
+              },
+              "zwave": {
+                "index": 71,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOnDelayInput2",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching on input 2",
+                "nl": "Vertraging na inschakelen ingang 2"
+              },
+              "hint": {
+                "en": "This parameter (72) specifies the delay which occurs after input 2 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 12 is set to use the condense sensor functionality for input 2.",
+                "nl": "Deze parameter (72) bepaalt de vertraging die optreedt nadat ingang 2 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op het gebruik van de condenssensor functionaliteit voor ingang 2."
+              },
+              "zwave": {
+                "index": 72,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOffDelayInput2",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching off input 2",
+                "nl": "Vertraging na uitschakelen ingang 2"
+              },
+              "hint": {
+                "en": "This parameter (73) specifies the delay which occurs after input 2 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 12 is set to use the condense sensor functionality for input 2.",
+                "nl": "Deze parameter (73) bepaalt de vertraging die optreedt nadat ingang 2 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op het gebruik van de condenssensor functionaliteit voor ingang 2."
+              },
+              "zwave": {
+                "index": 73,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "children": [
+            {
+              "id": "temperatureHeatingHysteresisOn",
+              "zwave": {
+                "index": 43,
+                "size": 2
+              },
+              "value": -1,
+              "attr": {
+                "min": -25.5,
+                "max": 25.5,
+                "step": 0.1
+              },
+              "label": {
+                "en": "Temperature heating hysteresis on",
+                "nl": "Temperatuur verwarmen hysteresis aan"
+              },
+              "hint": {
+                "en": "This parameter (43) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the heating on.",
+                "nl": "Deze parameter (43) bepaalt het temperatuurverschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het verwarmen start."
+              },
+              "type": "number",
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              }
+            },
+            {
+              "id": "temperatureHeatingHysteresisOff",
+              "zwave": {
+                "index": 44,
+                "size": 2
+              },
+              "value": 0.2,
+              "attr": {
+                "min": -25.5,
+                "max": 25.5,
+                "step": 0.1
+              },
+              "label": {
+                "en": "Temperature heating hysteresis off",
+                "nl": "Temperatuur verwarmen hysteresis uit"
+              },
+              "hint": {
+                "en": "This parameter (44) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the heating off.",
+                "nl": "Deze parameter (44) bepaalt het temperatuurverschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het verwarmen stopt."
+              },
+              "type": "number",
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              }
+            },
+            {
+              "id": "temperatureCoolingHysteresisOn",
+              "zwave": {
+                "index": 45,
+                "size": 2
+              },
+              "value": 0.5,
+              "attr": {
+                "min": -25.5,
+                "max": 25.5,
+                "step": 0.1
+              },
+              "label": {
+                "en": "Temperature heating hysteresis on",
+                "nl": "Temperatuur verwarmen hysteresis aan"
+              },
+              "hint": {
+                "en": "This parameter (45) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the cooling on.",
+                "nl": "Deze parameter (45) bepaalt het temperatuurverschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het verkoelen start."
+              },
+              "type": "number",
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              }
+            },
+            {
+              "id": "temperatureCoolingHysteresisOff",
+              "zwave": {
+                "index": 46,
+                "size": 2
+              },
+              "value": -0.2,
+              "attr": {
+                "min": -25.5,
+                "max": 25.5,
+                "step": 0.1
+              },
+              "label": {
+                "en": "Temperature heating hysteresis off",
+                "nl": "Temperatuur verwarmen hysteresis uit"
+              },
+              "hint": {
+                "en": "This parameter (46) defines the temperature difference between the measured temperature and set point temperature which, when exceeded, will turn the cooling off.",
+                "nl": "Deze parameter (46) bepaalt het temperatuurverschil tussen de gemeten temperatuur en de doeltemperatuur die, wanneer overschreden, het verkoelen stopt."
+              },
+              "type": "number",
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              }
+            },
+            {
+              "id": "antifreezeEnabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Antifreeze enabled",
+                "nl": "Vorstbeveiliging ingeschakeld"
+              },
+              "hint": {
+                "en": "This setting enables the antifreeze functionality of the device.",
+                "nl": "Deze instelling schakelt de vorstbeveiliging in."
+              },
+              "value": false
+            },
+            {
+              "zwave": {
+                "index": 47,
+                "size": 2
+              },
+              "attr": {
+                "min": -12.7,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "id": "antifreeze",
+              "type": "number",
+              "label": {
+                "en": "Antifreeze protection temperature threshold",
+                "nl": "Vorstbeveiliging temperatuur drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "value": 5,
+              "hint": {
+                "en": "This parameter (47) defines the temperature below which the heating will be turned on (to prevent freezing) even if the thermostat was manually set to off.",
+                "nl": "Deze parameter (47) bepaalt de temperatuur waaronder de verwarming wordt ingeschakeld (vorstbeveiliging) zelfs als de thermostaat handmatig op uit is ingesteld."
+              }
+            },
+            {
+              "attr": {
+                "min": -15,
+                "max": 100,
+                "step": 0.1
+              },
+              "id": "tooLowTemperatureLimit",
+              "type": "number",
+              "label": {
+                "en": "Too low temperature limit",
+                "nl": "Te lage temperatuur limiet"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 60,
+                "size": 2
+              },
+              "value": 5,
+              "hint": {
+                "en": "This parameter (60) determines the temperature value below which the temperature is considered too low.",
+                "nl": "Deze parameter (60) bepaalt de waarde waaronder de temperatuur als te laag wordt beschouwd."
+              }
+            },
+            {
+              "id": "tooHighTemperatureLimit",
+              "type": "number",
+              "label": {
+                "en": "Too high temperature limit",
+                "nl": "Te hoge temperatuur limiet"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 61,
+                "size": 2
+              },
+              "value": 70,
+              "attr": {
+                "min": 1,
+                "max": 100,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (61) determines the temperature value above which the temperature is considered too high.",
+                "nl": "Deze parameter (61) bepaalt de waarde waarboven de temperatuur als te hoog wordt beschouwd."
+              }
+            },
+            {
+              "id": "temperatureScale",
+              "type": "dropdown",
+              "label": {
+                "en": "Temperature scale",
+                "nl": "Temperatuurschaal"
+              },
+              "hint": {
+                "en": "This parameter (78) determines the temperature scale used by the Flush Heat & Cool Thermostat (ZMNHKD). Note: Homey currently only supports the Celsius scale.",
+                "nl": "Deze parameter (78) bepaalt de temperatuurschaal die gebruikt wordt door de Flush Heat & Cool Thermostat (ZMNHKD). Let op: Homey ondersteunt momenteel alleen de Celsius schaal."
+              },
+              "zwave": {
+                "index": 78,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Celsius"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Fahrenheit"
+                  }
+                }
+              ]
+            },
+            {
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration. Note: when parameter 78 is set to use Fahrenheit this parameter must still be set as Celsius.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren. Let op: wanneer parameter 78 is ingesteld op Fahrenheit moet deze parameter alsnog als Celsius worden ingesteld."
+              },
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              }
+            },
+            {
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely. Note: when parameter 78 is set to use Fahrenheit this parameter must still be set as Celsius.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit. Let op: wanneer parameter 78 is ingesteld op Fahrenheit moet deze parameter alsnog als Celsius worden ingesteld."
+              },
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              }
+            },
+            {
+              "id": "temperatureSensorSetpointSelector",
+              "type": "dropdown",
+              "label": {
+                "en": "Select temperature sensor",
+                "nl": "Selecteer temperatuursensor"
+              },
+              "hint": {
+                "en": "This parameter (121) enables the selection of an external temperature sensor. Note: if an external battery powered sensor is selected, its node id must be set in parameter 122 (see below).",
+                "nl": "Deze parameter (121) faciliteert het selecteren van een externe temperatuursensor. Let op: als een externe temperatuursensor op batterijen is geselecteerd moet de node id van deze sensor in parameter 122 (zie hieronder) worden ingesteld."
+              },
+              "zwave": {
+                "index": 121,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Directly connected temperature sensor",
+                    "nl": "Direct aangesloten temperatuursensor"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "External always on sensor measured temperature (\"sensor multilevel get\" on association group 3)",
+                    "nl": "Externe altijd-aan sensor gemeten temperatuur (\"sensor multilevel get\" op associatie groep 3)"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "External battery powered sensor measured temperature",
+                    "nl": "Externe sensor op batterijen gemeten temperatuur"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "External always on device setpoint temperature (\"thermostat setpoint get\" on association group 5)",
+                    "nl": "Extern altijd-aan apparaat doeltemperatuur (\"thermostat setpoint get\" op associatie groep 5)"
+                  }
+                },
+                {
+                  "id": "8",
+                  "label": {
+                    "en": "External battery powered sensor setpoint temperature",
+                    "nl": "Externe sensor op batterijen doeltemperatuur"
+                  }
+                },
+                {
+                  "id": "10",
+                  "label": {
+                    "en": "External battery powered sensor setpoint and measured temperature",
+                    "nl": "Externe sensor op batterijen doel- en gemetentemperatuur"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "externalTemperatureSensorNodeId",
+              "type": "number",
+              "label": {
+                "en": "External temperature sensor node id",
+                "nl": "Externe temperatuursensor node id"
+              },
+              "hint": {
+                "en": "This parameter (122) specifies the node id of the external battery powered temperature sensor. Note: this parameter is only relevant if parameter 121 is set to use an external battery powered temperature sensor. It is important to set this parameter immediately after the external battery sensor wakes up, this has to be done according to the external battery powered sensor manual.",
+                "nl": "Deze parameter (122) specificeert de node id van de externe temperatuursensor op batterijen. Let op: deze parameter is allen relevant wanneer parameter 121 is ingesteld op het gebruik van een externe temperatuursensor op batterijen. Het is belangrijk dat deze parameter wordt ingesteld direct nadat de externe temperatuursensor op batterijen wakker wordt, voor specifieke instructies zie de handleiding van de externe temperatuursensor op batterijen."
+              },
+              "zwave": {
+                "index": 122,
+                "size": 1,
+                "signed": false
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 254
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "value": 0,
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "attr": {
+                "min": 0,
+                "max": 32767
+              },
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "value": 0,
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
               }
             }
           ]
@@ -5274,7 +6494,7 @@
               },
               "zwave": {
                 "index": 21,
-                "sie": 1
+                "size": 1
               },
               "value": false,
               "hint": {
@@ -5787,7 +7007,7 @@
               },
               "zwave": {
                 "index": 21,
-                "sie": 1
+                "size": 1
               },
               "value": false,
               "hint": {
