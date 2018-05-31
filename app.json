@@ -1565,8 +1565,8 @@
             "max": 32535
           },
           "hint": {
-            "en": "This parameter (12) defines the time after which output 1 is turned on automatically. Note: setting this parameter to zero will disable automatically turning off.",
-            "nl": "Deze parameter (12) bepaalt de tijd waarna uitgang 1 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+            "en": "This parameter (12) defines the time after which output 1 is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna uitgang 1 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
           }
         },
         {
@@ -1615,8 +1615,8 @@
             "max": 32535
           },
           "hint": {
-            "en": "This parameter (14) defines the time after which output 2 is turned on automatically. Note: setting this parameter to zero will disable automatically turning off.",
-            "nl": "Deze parameter (14) bepaalt de tijd waarna uitgang 2 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+            "en": "This parameter (14) defines the time after which output 2 is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (14) bepaalt de tijd waarna uitgang 2 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
           }
         },
         {
@@ -6779,6 +6779,552 @@
       ]
     },
     {
+      "id": "ZMNHTD",
+      "name": {
+        "en": "Smart Meter (ZMNHTD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHTD/assets/images/large.png",
+        "small": "/drivers/ZMNHTD/assets/images/small.png"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_voltage",
+        "measure_current",
+        "measure_power",
+        "meter_power.import",
+        "meter_power.export",
+        "powerReactive",
+        "powerTotalReactive",
+        "powerTotalApparent",
+        "powerFactor",
+        "resetMeter"
+      ],
+      "capabilitiesOptions": {
+        "meter_power.import": {
+          "title": {
+            "en": "Power Meter (import)",
+            "nl": "Energiemeter (import)"
+          }
+        },
+        "meter_power.export": {
+          "title": {
+            "en": "Power Meter (export)",
+            "nl": "Energiemeter (export)"
+          }
+        }
+      },
+      "mobile": {
+        "components": [
+          {
+            "capabilities": [
+              "onoff"
+            ],
+            "id": "icon"
+          },
+          {
+            "capabilities": [
+              "measure_voltage",
+              "measure_current",
+              "meter_power.import",
+              "meter_power.export",
+              "measure_power",
+              "powerReactive",
+              "powerTotalReactive",
+              "powerTotalApparent",
+              "powerFactor"
+            ],
+            "id": "sensor"
+          },
+          {
+            "capabilities": [
+              "resetMeter"
+            ],
+            "id": "button"
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 7,
+        "productId": 82,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHTD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Smart Meter (ZMNHTD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Press and hold the S (Service) button for more than 2 seconds.",
+            "nl": "Activeer inclusie modus op de Smart Meter (ZMNHTD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Houd de S (Service) knop langer dan 2 seconden ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "To enable exclusion mode on the Smart Meter (ZMNHTD) press and hold the S (Service) button for 2 to 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Smart Meter (ZMNHTD) door de S (Service) knop tussen de 2 en 6 seconden ingedrukt te houden.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingedrukt wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHTD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "label": {
+            "en": "Turn off IR external relay automatically",
+            "nl": "Schakel extern IR relais automatisch uit"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the IR external relay is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het externe IR relais automatisch wordt uitgezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          },
+          "id": "autoOffQ1",
+          "type": "number",
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          }
+        },
+        {
+          "label": {
+            "en": "Turn on IR external relay automatically",
+            "nl": "Schakel extern IR relais automatisch in"
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which the IR external relay is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna het externe IR relais automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          },
+          "id": "autoOnQ1",
+          "type": "number",
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          }
+        },
+        {
+          "label": {
+            "en": "Turn off external relay automatically",
+            "nl": "Schakel extern relais automatisch uit"
+          },
+          "hint": {
+            "en": "This parameter (13) defines the time after which the external relay is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (13) bepaalt de tijd waarna het externe relais automatisch wordt uitgezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          },
+          "id": "autoOffQ2",
+          "type": "number",
+          "zwave": {
+            "index": 13,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          }
+        },
+        {
+          "label": {
+            "en": "Turn on external relay automatically",
+            "nl": "Schakel extern relais automatisch in"
+          },
+          "hint": {
+            "en": "This parameter (14) defines the time after which the external relay is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (14) bepaalt de tijd waarna het externe relais automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          },
+          "id": "autoOnQ2",
+          "type": "number",
+          "zwave": {
+            "index": 14,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          }
+        },
+        {
+          "id": "relayAutoOffSelect",
+          "type": "dropdown",
+          "label": {
+            "en": "Select relay for auto-off",
+            "nl": "Selecteer relais voor automatisch uitschakelen"
+          },
+          "zwave": {
+            "index": 112,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Switch between both relays",
+                "nl": "Wissel tussen beide relais"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "IR external relay",
+                "nl": "Externe IR relais"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "External relay",
+                "nl": "Externe relais"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "Both relays",
+                "nl": "Beide relais"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (112) determines which relay should be powered off when the threshold is reached (defined in parameter 110). Note: when switching between both relays is selected, IR external relay will be turned off, if after restart of this relay power consumption is still to high it will turn off the external relay.",
+            "nl": "Deze parameter (112) bepaalt welk relais uitgeschakeld moet worden wanneer de drempelwaarde is bereikt (gedefinieerd in parameter 110). Let op: wanneer wisselen tussen beide relais is geselecteerd zal het externe IR relais worden uitgeschakeld, als na de restart van dit relais het stroomverbruik nog steeds te hoog is zal het externe relais worden uitgeschakeld."
+          }
+        },
+        {
+          "id": "relayPowerOffThreshold",
+          "type": "number",
+          "label": {
+            "en": "Relay auto-off threshold",
+            "nl": "Relais automatisch uitschakelen drempelwaarde"
+          },
+          "units": {
+            "en": "W",
+            "nl": "W"
+          },
+          "hint": {
+            "en": "This parameter (110) determines the threshold value that will turn the selected relay off when exceeded.",
+            "nl": "Deze parameter (110) bepaalt de drempelwaarde die ervoor zorgt dat het geselecteerde relais wordt uitgeschakeld wanneer overschreden."
+          },
+          "zwave": {
+            "index": 110,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 15000
+          }
+        },
+        {
+          "id": "delayPowerOff",
+          "type": "number",
+          "label": {
+            "en": "Delay auto-off relay",
+            "nl": "Vertraging relais automatisch uit"
+          },
+          "hint": {
+            "en": "This parameter (111) specifies the delay which occurs before the relay is restarted after being powered off due to exceeding the threshold (defined in parameter 110).",
+            "nl": "Deze parameter (111) bepaalt de vertraging die optreedt voordat het relais opnieuw wordt gestart nadat het is uitgeschakeld door het overschrijden van de drempelwaarde (gedefinieerd in parameter 110)."
+          },
+          "units": {
+            "en": "s",
+            "nl": ""
+          },
+          "zwave": {
+            "index": 111,
+            "size": 2
+          },
+          "value": 30,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "zwave": {
+                "index": 7,
+                "size": 1
+              },
+              "value": "4",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Controls IR external relay (momentary switch)",
+                    "nl": "Stuurt extern IR relais aan (pulsdrukschakelaar)"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "Controls IR external relay (toggle switch)",
+                    "nl": "Stuurt extern IR relais aan (tuimelschakelaar)"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Controls external relay (momentary switch)",
+                    "nl": "Stuurt extern relais aan (pulsdrukschakelaar)"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Controls external relay (toggle switch)",
+                    "nl": "Stuurt extern relais aan (tuimelschakelaar)"
+                  }
+                }
+              ],
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "hint": {
+                "en": "This parameter (7) determines the type of switch connected to input 1 of the Smart Meter (ZMNHTD).",
+                "nl": "Deze parameter (7) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Smart Meter (ZMNHTD)."
+              }
+            },
+            {
+              "label": {
+                "en": "Enable external relays",
+                "nl": "Schakel externe relais in"
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "IR relay disabled, external relay enabled",
+                    "nl": "IR relais uitgeschakeld, externe relais ingeschakeld"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "IR relay enabled, external relay disabled",
+                    "nl": "IR relais ingeschakeld, externe relais uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "IR relay and external relay enabled",
+                    "nl": "IR relais en externe relais ingeschakeld"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (100) determines whether the external relay or external IR relay are enabled. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (100) bepaalt of de externe relais of externe IR relais zijn ingeschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              },
+              "id": "enableInput1",
+              "type": "dropdown",
+              "zwave": {
+                "index": 100,
+                "size": 1
+              },
+              "value": "0"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "children": []
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported, when a Watt report is sent it will also send Voltage, Amperes, Power Factor and Reactive Power reports.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd, waneer een Watt report wordt verstuurd zullen ook Voltage, Ampère, Power Factor en Reactief Vermogen worden gerapporteerd."
+              },
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              }
+            },
+            {
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely, when a Watt report is sent it will also send Voltage, Amperes, Power Factor and Reactive Power reports.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit, waneer een Watt report wordt verstuurd zullen ook Voltage, Ampère, Power Factor en Reactief Vermogen worden gerapporteerd."
+              },
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32535
+              }
+            },
+            {
+              "id": "resetPowerCounters",
+              "type": "dropdown",
+              "label": {
+                "en": "Select meter reset values",
+                "nl": "Selecteer waarden voor stel opnieuw in"
+              },
+              "hint": {
+                "en": "This parameter (45) determines which power meter should be reset when a \"reset power meter\" command is sent to the device.",
+                "nl": "Deze parameter (45) bepaalt welke stroomverbruik waarden opnieuw ingesteld moeten worden wanneer \"stel stroomverbuik opnieuw in\" commando is ontvangen."
+              },
+              "zwave": {
+                "index": 45,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "None",
+                    "nl": "Geen"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Power meter (kWh)",
+                    "nl": "Stroomverbruik (kWh)"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Total Reactive Power (kVarh)",
+                    "nl": "Totale Reactief Vermogen (kVarh)"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Total Apparent Power (kVAh)",
+                    "nl": "Totale Schijnbare Vermogen (kVAh)"
+                  }
+                },
+                {
+                  "id": "15",
+                  "label": {
+                    "en": "All",
+                    "nl": "Alles"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "ZMNHVD",
       "name": {
         "en": "Flush Dimmer 0 - 10V (ZMNHVD)"
@@ -7284,6 +7830,75 @@
           }
         }
       ]
+    },
+    "powerFactor": {
+      "type": "number",
+      "title": {
+        "en": "Power Factor",
+        "nl": "Power Factor"
+      },
+      "decimals": 2,
+      "chartType": "spline",
+      "desc": {
+        "en": "Power Factor (PF)",
+        "nl": "Power Factor (PF)"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "powerReactive": {
+      "type": "number",
+      "title": {
+        "en": "Reactive Power",
+        "nl": "Reactief Vermogen"
+      },
+      "decimals": 2,
+      "chartType": "spline",
+      "units": {
+        "en": "kVar"
+      },
+      "desc": {
+        "en": "Reactive Power (kVar)",
+        "nl": "Reactief Vermogen (kVar)"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "powerTotalApparent": {
+      "type": "number",
+      "title": {
+        "en": "Total Apparent Power",
+        "nl": "Totale Schijnbaar Vermogen"
+      },
+      "decimals": 2,
+      "chartType": "spline",
+      "units": {
+        "en": "kVAh"
+      },
+      "desc": {
+        "en": "Total Apparent Power (kVAh)",
+        "nl": "Totale Schijnbaar Vermogen (kVAh)"
+      },
+      "getable": true,
+      "setable": false
+    },
+    "powerTotalReactive": {
+      "type": "number",
+      "title": {
+        "en": "Total Reactive Power",
+        "nl": "Totale Reactief Vermogen"
+      },
+      "decimals": 2,
+      "chartType": "spline",
+      "units": {
+        "en": "kvarh"
+      },
+      "desc": {
+        "en": "Total Reactive Power (kVarh)",
+        "nl": "Totale Reactief Vermogen (kVarh)"
+      },
+      "getable": true,
+      "setable": false
     },
     "resetMeter": {
       "type": "boolean",
