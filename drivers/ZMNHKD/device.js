@@ -8,17 +8,6 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
  * Flush Heat & Cool Thermostat (ZMNHKD)
  * Extended manual: http://qubino.com/download/2054/
  * Regular manual: http://qubino.com/download/1071/
- * NOTE: 11,2,2;12,2,2000 raw config param is needed to make all inputs work
- * NOTE: only when inputs are configured for notifications it seems to work correctly
- * TODO: fix I1/I2
- * TODO: setting 100/101 hint explanation for flow cards
- * TODO: add extra explanation in flow about parameter 100/101/11/12
- * TODO: add extra explanation in flow that inputs need to be toggled once before they work
- * TODO: 100/101 -> 1/9 and 11 -> window sensor and 12 -> 2000 is needed for inputs to work in flow
- *
- * TODO: wait for response from Qubino on the SENSOR_BINARY endpoint issue (report from input 1 and 2 instead of 2 and 3)
- *
- * TODO: test only one input enabled configuration
  */
 class ZMNHKD extends QubinoDevice {
 
