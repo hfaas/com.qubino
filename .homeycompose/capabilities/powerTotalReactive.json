@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Total Reactive Power",
+    "nl": "Totale Reactief Vermogen"
+  },
+  "decimals": 2,
+  "chartType": "spline",
+  "units": {
+    "en": "kvarh"
+  },
+  "desc": {
+    "en": "Total Reactive Power (kVarh)",
+    "nl": "Totale Reactief Vermogen (kVarh)"
+  },
+  "getable": true,
+  "setable": false
+}

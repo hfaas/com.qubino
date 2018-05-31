@@ -1,0 +1,18 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Reactive Power",
+    "nl": "Reactief Vermogen"
+  },
+  "decimals": 2,
+  "chartType": "spline",
+  "units": {
+    "en": "kVar"
+  },
+  "desc": {
+    "en": "Reactive Power (kVar)",
+    "nl": "Reactief Vermogen (kVar)"
+  },
+  "getable": true,
+  "setable": false
+}
