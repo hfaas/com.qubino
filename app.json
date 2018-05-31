@@ -55,6 +55,24 @@
         ]
       },
       {
+        "id": "resetMeter_ZMNHAA",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA"
+          }
+        ]
+      },
+      {
         "id": "resetMeter_ZMNHAD",
         "title": {
           "en": "Reset power meter",
@@ -182,6 +200,96 @@
       }
     ],
     "triggers": [
+      {
+        "hint": null,
+        "id": "inputTwoTurnedOn_ZMNHAA",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoTurnedOff_ZMNHAA",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoToggled_ZMNHAA",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeTurnedOn_ZMNHAA",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeTurnedOff_ZMNHAA",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeToggled_ZMNHAA",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHAA"
+          }
+        ]
+      },
       {
         "id": "inputTwoTurnedOn_ZMNHAD",
         "title": {
@@ -743,6 +851,310 @@
     ]
   },
   "drivers": [
+    {
+      "id": "ZMNHAA",
+      "name": {
+        "en": "Flush 1 Relay (ZMNHAA)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHAA/assets/images/large.png",
+        "small": "/drivers/ZMNHAA/assets/images/small.png"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "meter_power",
+        "measure_temperature"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "id": "icon",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "toggle",
+            "capabilities": [
+              "onoff"
+            ]
+          },
+          {
+            "id": "sensor",
+            "capabilities": [
+              "measure_power",
+              "meter_power",
+              "measure_temperature"
+            ]
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 2,
+        "productId": 2,
+        "associationGroups": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHAA/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush 1 Relay (ZMNHAA) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush 1 Relay (ZMNHAA) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush 1 Relay (ZMNHAA) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush 1 Relay (ZMNHAA) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHAA/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "attr": {
+            "min": 0,
+            "max": 655
+          },
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "value": "1",
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush 1 Relay (ZMNHAA).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush 1 Relay (ZMNHAA)."
+              }
+            },
+            {
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "id": "contactTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 2",
+                "nl": "Contact type ingang 2"
+              },
+              "hint": {
+                "en": "This parameter (2) defines the contact type of input 2.",
+                "nl": "Deze parameter (2) bepaalt het contact type van ingang 2."
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "zwave": {
+                "index": 3,
+                "size": 1
+              },
+              "id": "contactTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 3",
+                "nl": "Contact type ingang 3"
+              },
+              "hint": {
+                "en": "This parameter (3) defines the contact type of input 3.",
+                "nl": "Deze parameter (3) bepaalt het contact type van ingang 3."
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "value": 3,
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "value": 300,
+              "zwave": {
+                "index": 42,
+                "size": 2,
+                "signed": false
+              },
+              "attr": {
+                "min": 0,
+                "max": 65535
+              },
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "ZMNHAD",
       "name": {
