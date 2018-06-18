@@ -4,6 +4,15 @@ This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
 
+Version 2.0.0
+* Major update to SDKv2 (please note, it is advised to re-pair your devices, otherwise some functionality might break)
+* Added support for roller shutters (ZMNHCD and ZMNHOD)
+* Added missing configuration parameters
+* Added input functionality (please note, this might require some configuration of the device, refer to the device manual, the device settings and the Flow Card hints for more information)
+* Added dim duration ability on Flow Cards of devices supporting 'dimming over time'
+* Added 'reset power meter' Flow Cards and button capabilities to devices that support this functionality
+* Added 'calibration' button capabilities to devices that support this functionality
+
 Version 1.1.6
 * Minor bug fixes for dimming duration setting (parameter 66) for ZMNHVD1, ZMNHSD1 and ZMNHDA2
 
