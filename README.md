@@ -4,6 +4,10 @@ This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
 
+Version 2.0.1
+* Updated dependencies
+* Updated power meter report parsers to accommodate for incomplete reports
+
 Version 2.0.0
 * Major update to SDKv2 (please note, it is advised to re-pair your devices, otherwise some functionality might break)
 * Added support for roller shutters (ZMNHCD and ZMNHOD)
