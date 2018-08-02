@@ -3,7 +3,7 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
-Version 2.0.2
+Version 2.0.3
 * Added support for ZMNHID (Flush On/Off Thermostat)
 
 Version 2.0.1
