@@ -217,6 +217,24 @@
         ]
       },
       {
+        "id": "resetMeter_ZMNHLD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
         "id": "resetMeter_ZMNHOD",
         "title": {
           "en": "Reset power meter",
@@ -989,6 +1007,168 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHKD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputOneTurnedOn_ZMNHLD",
+        "title": {
+          "en": "Input 1 turned on",
+          "nl": "Ingang 1 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputOneTurnedOff_ZMNHLD",
+        "title": {
+          "en": "Input 1 turned off",
+          "nl": "Ingang 1 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputOneToggled_ZMNHLD",
+        "title": {
+          "en": "Input 1 was toggled",
+          "nl": "Ingang 1 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputTwoTurnedOn_ZMNHLD",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputTwoTurnedOff_ZMNHLD",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputTwoToggled_ZMNHLD",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputThreeTurnedOn_ZMNHLD",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings (parameter 102 and 13) for more information. Note: input 3 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 102 en 13) voor meer informatie. Let op: ingang 3 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputThreeTurnedOff_ZMNHLD",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings (parameter 102 and 13) for more information. Note: input 3 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 102 en 13) voor meer informatie. Let op: ingang 3 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputThreeToggled_ZMNHLD",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
           }
         ]
       },
@@ -7454,6 +7634,1143 @@
               "attr": {
                 "min": 0,
                 "max": 254
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "value": 0,
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "attr": {
+                "min": 0,
+                "max": 32767
+              },
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "value": 0,
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ZMNHLD",
+      "name": {
+        "en": "Flush PWM Thermostat (ZMNHLD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHLD/assets/images/large.png",
+        "small": "/drivers/ZMNHLD/assets/images/small.png"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "offAutoThermostatMode",
+        "target_temperature",
+        "measure_temperature",
+        "meter_power",
+        "measure_power"
+      ],
+      "mobile": {
+        "components": [
+          {
+            "capabilities": [],
+            "id": "icon"
+          },
+          {
+            "capabilities": [
+              "offAutoThermostatMode"
+            ],
+            "id": "picker"
+          },
+          {
+            "capabilities": [
+              "measure_temperature",
+              "meter_power",
+              "measure_power"
+            ],
+            "id": "sensor"
+          },
+          {
+            "capabilities": [
+              "target_temperature"
+            ],
+            "id": "thermostat"
+          }
+        ]
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 5,
+        "productId": 83,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHLD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Flush PWM Thermostat (ZMNHLD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush PWM Thermostat (ZMNHLD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Flush PWM Thermostat (ZMNHLD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush PWM Thermostat (ZMNHLD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHLD/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "relayType",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay type",
+            "nl": "Relais type"
+          },
+          "zwave": {
+            "index": 63,
+            "size": 1
+          },
+          "hint": {
+            "en": "This parameter (63) defines the relay type. Normally open means that the relay delivers power when it is switched off, whereas normally closed means that it will deliver power when it is switched on.",
+            "nl": "Deze parameter (63) bepaalt het relais type. In rust open (NO) betekent dat het relais spanning levert wanneer het is uitgeschakelt, in rust gesloten (NC) betekent dat het spanning levert wanneer het is ingeschakelt."
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "NC (normally close)",
+                "nl": "NC (in rust gesloten)"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "NO (normally open)",
+                "nl": "NO (in rust open)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "associationReportingInterval",
+          "type": "number",
+          "label": {
+            "en": "Reporting interval association groups 2 and 10",
+            "nl": "Reporting interval associatiegroepen 2 en 10"
+          },
+          "hint": {
+            "en": "This parameter (76) determines the interval at which association groups 2 and 10 report their state.",
+            "nl": "Deze parameter (76) bepaalt de interval waarop associatiegroepen 2 en 10 hun status rapporteren."
+          },
+          "zwave": {
+            "index": 76,
+            "size": 1
+          },
+          "units": {
+            "en": "min",
+            "nl": "min"
+          },
+          "value": 30,
+          "attr": {
+            "min": 0,
+            "max": 127
+          }
+        },
+        {
+          "id": "delayReportAssociationGroup10",
+          "type": "number",
+          "label": {
+            "en": "Reporting delay association group 10",
+            "nl": "Reporting vertraging associatiegroep 10"
+          },
+          "hint": {
+            "en": "This parameter (77) determines the delay before a report is send to association group 10.",
+            "nl": "Deze parameter (77) bepaalt de vertraging die optreedt voordat associatiegroep 10 een status update verstuurd."
+          },
+          "zwave": {
+            "index": 77,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 180,
+          "attr": {
+            "min": 0,
+            "max": 32767
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Inputs",
+            "nl": "Ingangen"
+          },
+          "children": [
+            {
+              "value": "1",
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush PWM Thermostat (ZMNHLD).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush PWM Thermostat (ZMNHLD)."
+              }
+            },
+            {
+              "value": "1",
+              "id": "switchTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 2",
+                "nl": "Schakelaar type ingang 2"
+              },
+              "zwave": {
+                "index": 2,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush PWM Thermostat (ZMNHLD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush PWM Thermostat (ZMNHLD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
+              }
+            },
+            {
+              "value": "1",
+              "id": "switchTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 3",
+                "nl": "Schakelaar type ingang 3"
+              },
+              "zwave": {
+                "index": 3,
+                "size": 1
+              },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Momentary switch",
+                    "nl": "Pulsdrukschakelaar"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Toggle switch",
+                    "nl": "Tuimelschakelaar"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush PWM Thermostat (ZMNHLD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "nl": "Deze parameter (3) specificeert het type schakelaar dat is aangesloten op ingang 3 van de Flush PWM Thermostat (ZMNHLD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
+              }
+            },
+            {
+              "hint": {
+                "en": "This parameter (4) defines the contact type of input 1. Note: this parameter is only active when parameter 11 is set to the value 2.",
+                "nl": "Deze parameter (4) bepaalt het contact type van ingang 1. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op de waarde 2."
+              },
+              "id": "contactTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 1",
+                "nl": "Contact type ingang 1"
+              },
+              "zwave": {
+                "index": 4,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "hint": {
+                "en": "This parameter (5) defines the contact type of input 2. Note: this parameter is only active when parameter 12 is set to the value 2000.",
+                "nl": "Deze parameter (5) bepaalt het contact type van ingang 2. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op de waarde 200."
+              },
+              "zwave": {
+                "index": 5,
+                "size": 1
+              },
+              "id": "contactTypeInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 2",
+                "nl": "Contact type ingang 2"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "hint": {
+                "en": "This parameter (6) defines the contact type of input 3. Note: this parameter is only active when parameter 13 is set to the value 2.",
+                "nl": "Deze parameter (6) bepaalt het contact type van ingang 3. Let op: deze parameter is alleen actief wanneer parameter 13 is ingesteld op de waarde 2."
+              },
+              "zwave": {
+                "index": 6,
+                "size": 1
+              },
+              "id": "contactTypeInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Contact type input 3",
+                "nl": "Contact type ingang 3"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "NO (normally open) input type",
+                    "nl": "NO (in rust open) ingang type"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "NC (normally close) input type",
+                    "nl": "NC (in rust gesloten) ingang type"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "functionalityInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 1 functionality",
+                "nl": "Ingang 1 functionaliteit"
+              },
+              "hint": {
+                "en": "This parameter (11) determines the functionality of input 1. To use this input as a Flow Trigger configure this parameter to use the window sensor status. Note: if this parameter is set to influence heating and cooling according to the window sensor status then input 1 must be enabled via parameter 100.",
+                "nl": "Deze parameter (11) bepaalt de functionaliteit van ingang 1. Om deze ingang als Flow Trigger te gebruiken configureer deze parameter voor het gebruik van de aangesloten raamsensor. Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor dan moet ingang 1 ingeschakeld zijn via parameter 100."
+              },
+              "zwave": {
+                "index": 11,
+                "size": 2
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "32767",
+                  "label": {
+                    "en": "Does not influence heating and cooling",
+                    "nl": "Beïnvloed verwarmen en verkoelen niet"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Switches the thermostat mode between Off and Auto",
+                    "nl": "Schakelt thermostaat modus tussen Uit en Auto"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Influences heating and cooling according to window sensor status",
+                    "nl": "Beïnvloed verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "functionalityInput2",
+              "type": "number",
+              "label": {
+                "en": "Input 2 functionality",
+                "nl": "Ingang 2 functionaliteit"
+              },
+              "hint": {
+                "en": "This parameter (12) determines the target temperature that will be set when input 2 is switched. The target temperature ranges from 0 - 990 (0°C to 99°C) and from 1001 to 1150 (-0.1°C to -15°C). To disable the influence of input 2 on the heating and cooling process set the value to 32767. To let the connected condense sensor influence the heating and cooling process set the value to 2000. To use this input as a Flow Trigger configure this parameter to the value 2000 (use of the connected condensation sensor). Note: if this parameter is set to influence heating and cooling according to the condense sensor then input 2 must be enabled via parameter 101.",
+                "nl": "Deze parameter (12) bepaalt de doeltemperatuur die wordt ingesteld wanneer input 2 wordt geschakeld. Het bereik van de doeltemperatuur gaat van 0 - 990 (0°C tot 99°C) en van 1001 tot 1150 (-0.1°C to -15°C). Om de invloed van ingang 2 op het verwarmen en verkoelen uit te schakelen stel deze parameter in op 32767. Om de aangesloten condenssensor het verwarmen en verkoelen te laten beïnvloeden stel deze parameter in op 2000. Om deze ingang als Flow Trigger te gebruiken stel deze parameter in op de waarde 200 (gebruik van de aangesloten condensatiesensor). Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor dan moet ingang 2 ingeschakeld zijn via parameter 101."
+              },
+              "zwave": {
+                "index": 12,
+                "size": 2
+              },
+              "value": 32767,
+              "attr": {
+                "min": 0,
+                "max": 32767
+              }
+            },
+            {
+              "id": "functionalityInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 3 functionality",
+                "nl": "Ingang 3 functionaliteit"
+              },
+              "hint": {
+                "en": "This parameter (13) determines the functionality of input 3. To use this input as a Flow Trigger configure this parameter to use the floor sensor status. Note: if this parameter is set to influence heating and cooling according to the flood sensor status then input 3 must be enabled via parameter 102, also if this parameter is set to switch the thermostat mode between Heat and Cool it will override parameter 59.",
+                "nl": "Deze parameter (13) bepaalt de functionaliteit van ingang 3. Om deze ingang als Flow Trigger te gebruiken configureer deze parameter voor het gebruik van de aangesloten overstromingssensor. Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor dan moet ingang 3 ingeschakeld zijn via parameter 102, daarnaast, als deze parameter is ingesteld op het schakelen van de thermostaat modus tussen Verwarmen en Verkoelen wordt parameter 59 genegeerd."
+              },
+              "zwave": {
+                "index": 13,
+                "size": 2
+              },
+              "value": "32767",
+              "values": [
+                {
+                  "id": "32767",
+                  "label": {
+                    "en": "Does not influence heating and cooling",
+                    "nl": "Beïnvloed verwarmen en verkoelen niet"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Switches the thermostat mode between Heat and Cool",
+                    "nl": "Schakelt thermostaat modus tussen Verwarmen en Verkoelen"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Influences heating and cooling according to flood sensor status",
+                    "nl": "Beïnvloed verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor"
+                  }
+                }
+              ]
+            },
+            {
+              "hint": {
+                "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              },
+              "id": "enableInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 1 notification type and event",
+                "nl": "Ingang 1 notificatie type en event"
+              },
+              "zwave": {
+                "index": 100,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ]
+            },
+            {
+              "zwave": {
+                "index": 101,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (101) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. If input 2 is enabled parameter 12 must be set to influence heating and cooling according to the condense sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (101) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 2 is ingeschakeld moet parameter 12 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              },
+              "id": "enableInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 notification type and event",
+                "nl": "Ingang 2 notificatie type en event"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ]
+            },
+            {
+              "zwave": {
+                "index": 102,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (102) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. If input 3 is enabled parameter 13 must be set to influence heating and cooling according to the flood sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (102) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 3 is ingeschakeld moet parameter 13 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              },
+              "id": "enableInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 3 notification type and event",
+                "nl": "Ingang 3 notificatie type en event"
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Home Security; Motion Detection, unknown location",
+                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "CO; Carbon Monoxide detected, unknown location",
+                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "CO2; Carbon Dioxide detected, unknown location",
+                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "Water Alarm; Water Leak detected, unknown location",
+                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "Heat Alarm; Overheat detected, unknown location",
+                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "6",
+                  "label": {
+                    "en": "Smoke Alarm; Smoke detected, unknown location",
+                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "statusOnDelayInput1",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching on input 1",
+                "nl": "Vertraging na inschakelen ingang 1"
+              },
+              "hint": {
+                "en": "This parameter (70) specifies the delay which occurs after input 1 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 11 is set to use the window sensor functionality for input 1.",
+                "nl": "Deze parameter (70) bepaalt de vertraging die optreedt nadat ingang 1 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op het gebruik van de raamsensor functionaliteit voor ingang 1."
+              },
+              "zwave": {
+                "index": 70,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOffDelayInput1",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching off input 1",
+                "nl": "Vertraging na uitschakelen ingang 1"
+              },
+              "hint": {
+                "en": "This parameter (71) specifies the delay which occurs after input 1 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 11 is set to use the window sensor functionality for input 1.",
+                "nl": "Deze parameter (71) bepaalt de vertraging die optreedt nadat ingang 1 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op het gebruik van de raamsensor functionaliteit voor ingang 1."
+              },
+              "zwave": {
+                "index": 71,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOnDelayInput2",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching on input 2",
+                "nl": "Vertraging na inschakelen ingang 2"
+              },
+              "hint": {
+                "en": "This parameter (72) specifies the delay which occurs after input 2 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 12 is set to use the condense sensor functionality for input 2.",
+                "nl": "Deze parameter (72) bepaalt de vertraging die optreedt nadat ingang 2 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op het gebruik van de condenssensor functionaliteit voor ingang 2."
+              },
+              "zwave": {
+                "index": 72,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOffDelayInput2",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching off input 2",
+                "nl": "Vertraging na uitschakelen ingang 2"
+              },
+              "hint": {
+                "en": "This parameter (73) specifies the delay which occurs after input 2 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 12 is set to use the condense sensor functionality for input 2.",
+                "nl": "Deze parameter (73) bepaalt de vertraging die optreedt nadat ingang 2 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op het gebruik van de condenssensor functionaliteit voor ingang 2."
+              },
+              "zwave": {
+                "index": 73,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOnDelayInput3",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching on input 3",
+                "nl": "Vertraging na inschakelen ingang 3"
+              },
+              "hint": {
+                "en": "This parameter (74) specifies the delay which occurs after input 3 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 13 is set to use the flood sensor functionality for input 3.",
+                "nl": "Deze parameter (74) bepaalt de vertraging die optreedt nadat ingang 3 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 13 is ingesteld op het gebruik van de overstromingssensor functionaliteit voor ingang 3."
+              },
+              "zwave": {
+                "index": 74,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            },
+            {
+              "id": "statusOffDelayInput3",
+              "type": "number",
+              "label": {
+                "en": "Delay after switching off input 3",
+                "nl": "Vertraging na uitschakelen ingang 3"
+              },
+              "hint": {
+                "en": "This parameter (75) specifies the delay which occurs after input 3 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 13 is set to use the flood sensor functionality for input 3.",
+                "nl": "Deze parameter (75) bepaalt de vertraging die optreedt nadat ingang 3 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 13 is ingesteld op het gebruik van de overstromingssensor functionaliteit voor ingang 3."
+              },
+              "zwave": {
+                "index": 75,
+                "size": 2
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32000
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          },
+          "children": [
+            {
+              "id": "thermostatMode",
+              "type": "dropdown",
+              "label": {
+                "en": "Thermostat mode",
+                "nl": "Thermostaat modus"
+              },
+              "zwave": {
+                "index": 59,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Heating",
+                    "nl": "Verwarmen"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Cooling",
+                    "nl": "Koelen"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (59) determines the operating mode of the device. Note: when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (59) bepaalt de werking van het apparaat. Let op: na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              }
+            },
+            {
+              "id": "antifreezeEnabled",
+              "type": "checkbox",
+              "label": {
+                "en": "Antifreeze enabled",
+                "nl": "Vorstbeveiliging ingeschakeld"
+              },
+              "hint": {
+                "en": "This setting enables the antifreeze functionality of the device.",
+                "nl": "Deze instelling schakelt de vorstbeveiliging in."
+              },
+              "value": false
+            },
+            {
+              "zwave": {
+                "index": 45,
+                "size": 2
+              },
+              "attr": {
+                "min": -12.6,
+                "max": 12.5,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (45) defines the temperature below which the heating will be turned on (to prevent freezing) even if the thermostat was manually set to off. Note: antifreeze is only activated when Heating thermostat mode is selected and uses a hysteresis of ±0.5°C.",
+                "nl": "Deze parameter (45) bepaalt de temperatuur waaronder de verwarming wordt ingeschakeld (vorstbeveiliging) zelfs als de thermostaat handmatig op uit is ingesteld. Let op: vorstbeveiliging is alleen geactiveerd wanneer de thermostaat modus Verwarmen is geselecteerd en gebruikt een hysteresis ±0.5°C."
+              },
+              "id": "antifreeze",
+              "type": "number",
+              "label": {
+                "en": "Antifreeze protection temperature threshold",
+                "nl": "Vorstbeveiliging temperatuur drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "value": 5
+            },
+            {
+              "hint": {
+                "en": "This parameter (60) determines the temperature value below which the temperature is considered too low. Note: too low temperature limit is used by association group 4.",
+                "nl": "Deze parameter (60) bepaalt de waarde waaronder de temperatuur als te laag wordt beschouwd. Let op: te lage temperatuur limiet wordt gebruikt door associatiegroep 4."
+              },
+              "attr": {
+                "min": -15,
+                "max": 100,
+                "step": 0.1
+              },
+              "id": "tooLowTemperatureLimit",
+              "type": "number",
+              "label": {
+                "en": "Too low temperature limit",
+                "nl": "Te lage temperatuur limiet"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 60,
+                "size": 2
+              },
+              "value": 5
+            },
+            {
+              "hint": {
+                "en": "This parameter (61) determines the temperature value above which the temperature is considered too high. Note: too high temperature limit is used by association group 4.",
+                "nl": "Deze parameter (61) bepaalt de waarde waarboven de temperatuur als te hoog wordt beschouwd. Let op: te hoge temperatuur limiet wordt gebruikt door associatiegroep 4."
+              },
+              "id": "tooHighTemperatureLimit",
+              "type": "number",
+              "label": {
+                "en": "Too high temperature limit",
+                "nl": "Te hoge temperatuur limiet"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 61,
+                "size": 2
+              },
+              "value": 70,
+              "attr": {
+                "min": 1,
+                "max": 100,
+                "step": 0.1
+              }
+            },
+            {
+              "id": "temperatureScale",
+              "type": "dropdown",
+              "label": {
+                "en": "Temperature scale",
+                "nl": "Temperatuurschaal"
+              },
+              "hint": {
+                "en": "This parameter (78) determines the temperature scale used by the Flush PWM Thermostat (ZMNHLD). Note: Homey currently only supports the Celsius scale.",
+                "nl": "Deze parameter (78) bepaalt de temperatuurschaal die gebruikt wordt door de Flush PWM Thermostat (ZMNHLD). Let op: Homey ondersteunt momenteel alleen de Celsius schaal."
+              },
+              "zwave": {
+                "index": 78,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Celsius"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "Fahrenheit"
+                  }
+                }
+              ]
+            },
+            {
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration. Note: when parameter 78 is set to use Fahrenheit this parameter must still be set as Celsius.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren. Let op: wanneer parameter 78 is ingesteld op Fahrenheit moet deze parameter alsnog als Celsius worden ingesteld."
+              },
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -10,
+                "max": 10,
+                "step": 0.1
+              }
+            },
+            {
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely. Note: when parameter 78 is set to use Fahrenheit this parameter must still be set as Celsius.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit. Let op: wanneer parameter 78 is ingesteld op Fahrenheit moet deze parameter alsnog als Celsius worden ingesteld."
+              },
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
               }
             }
           ]
