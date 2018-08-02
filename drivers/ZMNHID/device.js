@@ -8,8 +8,6 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
  * Flush On/Off Thermostat (ZMNHID)
  * Extended manual: http://qubino.com/download/2057/
  * Regular manual: http://qubino.com/download/1061/
- * TODO test flows and capabilities
- * TODO send Qubino email about faulty module (ALARM/NOTIFICATION issue) also momentary and toggle seem to be inverted?
  */
 class ZMNHID extends QubinoDevice {
 	async onMeshInit() {
@@ -21,7 +19,6 @@ class ZMNHID extends QubinoDevice {
 
 	/**
 	 * Expose input configuration, three possible inputs (input 1, input 2 and input 3).
-	 * TODO test if this config works
 	 * @returns {*[]}
 	 */
 	get inputConfiguration() {
@@ -114,7 +111,7 @@ class ZMNHID extends QubinoDevice {
 					if (report.Level.Mode.toLowerCase() === 'heat' || report.Level.Mode.toLowerCase() === 'cool') {
 
 						// Update the thermostatMode since it may be override by input 3
-						this.setSettings({ thermostatMode: report.Level.Mode });
+						this.setSettings({ thermostatMode: report.Level.Mode === 'Heat' ? '0' : '1' });
 						this.setStoreValue('thermostatMode', report.Level.Mode);
 						return 'auto';
 					}
@@ -160,7 +157,7 @@ class ZMNHID extends QubinoDevice {
 			const thermostatMode = await this.safeConfigurationGet(59);
 			if (thermostatMode && thermostatMode.hasOwnProperty('Configuration Value')) {
 				const result = thermostatMode['Configuration Value'][0] ? 'Cool' : 'Heat';
-				this.setSettings({ thermostatMode: result });
+				this.setSettings({ thermostatMode: result === 'Heat' ? '0' : '1' });
 				this.setStoreValue('thermostatMode', result);
 				return result;
 			}

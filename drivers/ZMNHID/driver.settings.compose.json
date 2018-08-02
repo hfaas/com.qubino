@@ -411,13 +411,15 @@
           {
             "id": "0",
             "label": {
-              "en": "Heating"
+              "en": "Heating",
+              "nl": "Verwarmen"
             }
           },
           {
             "id": "1",
             "label": {
-              "en": "Cooling"
+              "en": "Cooling",
+              "nl": "Koelen"
             }
           }
         ],

@@ -5248,7 +5248,6 @@
       },
       "class": "thermostat",
       "capabilities": [
-        "onoff",
         "offAutoThermostatMode",
         "target_temperature",
         "measure_temperature",
@@ -5258,9 +5257,7 @@
       "mobile": {
         "components": [
           {
-            "capabilities": [
-              "onoff"
-            ],
+            "capabilities": [],
             "id": "icon"
           },
           {
@@ -6123,13 +6120,15 @@
                 {
                   "id": "0",
                   "label": {
-                    "en": "Heating"
+                    "en": "Heating",
+                    "nl": "Verwarmen"
                   }
                 },
                 {
                   "id": "1",
                   "label": {
-                    "en": "Cooling"
+                    "en": "Cooling",
+                    "nl": "Koelen"
                   }
                 }
               ],
