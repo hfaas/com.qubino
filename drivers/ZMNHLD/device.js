@@ -8,9 +8,6 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
  * Flush On/Off Thermostat (ZMNHLD)
  * Extended manual: http://qubino.com/download/2060/
  * Regular manual: http://qubino.com/download/1084/
- * TODO: parameters 50 - 58 (also see if the PID settings can be applied to other devices)
- * TODO: test capabilities and flows
- * TODO: move common settings (with ZMNHID) to .homeycompose
  */
 class ZMNHLD extends QubinoDevice {
 	async onMeshInit() {
@@ -75,6 +72,8 @@ class ZMNHLD extends QubinoDevice {
 			if (value >= 0) return value * 10;
 			return MeshDriverUtil.mapValueRange(-0.1, -15, 1001, 1150, value);
 		});
+
+		this.registerSetting(constants.settings.pidDeadband, value => value * 10);
 
 		this.registerSetting(constants.settings.tooHighTemperatureLimit, value => value * 10);
 	}

@@ -7877,6 +7877,81 @@
           }
         },
         {
+          "id": "pwmMaxValue",
+          "type": "number",
+          "label": {
+            "en": "PWM maximum value",
+            "nl": "PWM maximale waarde"
+          },
+          "units": {
+            "en": "%",
+            "nl": "%"
+          },
+          "zwave": {
+            "index": 50,
+            "size": 1
+          },
+          "value": 100,
+          "attr": {
+            "min": 2,
+            "max": 100
+          },
+          "hint": {
+            "en": "This parameter (50) determines the maximum PWM value. Note: the maximum level may not be lower than the minimum level (see parameter 51).",
+            "nl": "Deze parameter (50) bepaalt de maximale PWM waarde. Let op: de maximale waarde mag niet lager zijn dan de minimale waarde (zie parameter 51)."
+          }
+        },
+        {
+          "id": "pwmMinValue",
+          "type": "number",
+          "label": {
+            "en": "PWM minimum value",
+            "nl": "PWM minimale waarde"
+          },
+          "units": {
+            "en": "%",
+            "nl": "%"
+          },
+          "zwave": {
+            "index": 51,
+            "size": 1
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 99
+          },
+          "hint": {
+            "en": "This parameter (51) determines the minimum PWM value. Note: the minimum level may not be higher than the maximum level (see parameter 50).",
+            "nl": "Deze parameter (51) bepaalt de minimale PWM waarde. Let op: de minimale waarde mag niet hoger zijn dan de maximale waarde (zie parameter 50)."
+          }
+        },
+        {
+          "id": "pwmCycleDuration",
+          "type": "number",
+          "label": {
+            "en": "PWM cycle duration",
+            "nl": "PWM cyclus duur"
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "zwave": {
+            "index": 52,
+            "size": 1
+          },
+          "value": 10,
+          "attr": {
+            "min": 5,
+            "max": 127
+          },
+          "hint": {
+            "en": "This parameter (52) determines the PWM cycle duration. PWM cycle duration defines the summary of all 'on' plus 'off' time periods, for example if output is set to 70% with PWM cycle duration of 20s, output will be 'on' for 14s then 'off' for 6s.",
+            "nl": "Deze parameter (52) bepaalt de PWM cyclus duur. PWM cyclus duur is de tijd die nodig is voor alle 'aan' en 'uit' perioden, bijvoorbeeld als de output op 70% staat ingesteld met een PWM cyclus duur van 20s zal de ouput 14s 'aan' zijn en vervolgens 6s 'uit'."
+          }
+        },
+        {
           "type": "group",
           "label": {
             "en": "Inputs",
@@ -8830,6 +8905,150 @@
               "hint": {
                 "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
                 "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "PID",
+            "nl": "PID"
+          },
+          "children": [
+            {
+              "id": "pidValueInsideDeadband",
+              "type": "dropdown",
+              "label": {
+                "en": "PID value inside deadband",
+                "nl": "PID waarde in deadband"
+              },
+              "zwave": {
+                "index": 53,
+                "size": 1
+              },
+              "value": "0",
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "PID value equals PWM minimum value",
+                    "nl": "PID waarde gelijk aan minimale waarde PWM"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "PID value set to last value",
+                    "nl": "PID waarde ingesteld op laatste waarde"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "This parameter (53) determines de PID value inside deadband. Note: when the value is set to 'equals PWM minimum value' the PID inside deadband is forced to PWM minimum value, 'last value' means that PID remains on the same level as it was before entering into deadband.",
+                "nl": "Deze parameter (53) bepaalt de PID waarde in de deadband. Let op: wanneer de waarde is ingesteld op 'gelijk aan minimale waarde PWM' wordt de PID waarde in de deadband geforceerd op de minimale PWM waarde, 'laatste waarde' betekent dat de PID waarde blijft staan op de waarde die hij had voordat hij de deadband in ging."
+              }
+            },
+            {
+              "id": "pidDeadband",
+              "type": "number",
+              "label": {
+                "en": "PID deadband",
+                "nl": "PID deadband"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 54,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (54) defines the zone where PID is not active, if the temperature difference between actual and setpoint is bigger than PID deadband, then the PID will start to regulate the system, otherwise the PID is zero or fixed.",
+                "nl": "Deze parameter (54) definieert de zone waar PID niet actief is, als het temperatuursverschil tussen de gemeten temperatuur en de doel temperatuur groter is dan de PID deadband zal de PID het systeem beginnen te reguleren, anders is de PID nul of vastgezet."
+              }
+            },
+            {
+              "id": "integralSamplingTime",
+              "type": "number",
+              "label": {
+                "en": "Integral sampling time",
+                "nl": "Integrale bemonsteringstijd"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 55,
+                "size": 1
+              },
+              "value": 5,
+              "attr": {
+                "min": 0,
+                "max": 127
+              },
+              "hint": {
+                "en": "This parameter (55) defines the time between samples, on each sample the controller captures difference between SP-act.",
+                "nl": "Deze parameter (55) definieert de tijd tussen bemonsteren, bij het bemonsteren neemt de controller het verschil tussen SP-act op."
+              }
+            },
+            {
+              "id": "pParameter",
+              "type": "number",
+              "label": {
+                "en": "P parameter",
+                "nl": "P parameter"
+              },
+              "zwave": {
+                "index": 56,
+                "size": 2
+              },
+              "value": 1000,
+              "attr": {
+                "min": 0,
+                "max": 1000
+              }
+            },
+            {
+              "id": "iParameter",
+              "type": "number",
+              "label": {
+                "en": "I parameter",
+                "nl": "I parameter"
+              },
+              "zwave": {
+                "index": 57,
+                "size": 2
+              },
+              "value": 1,
+              "attr": {
+                "min": 0,
+                "max": 1000
+              }
+            },
+            {
+              "id": "dParameter",
+              "type": "number",
+              "label": {
+                "en": "D parameter",
+                "nl": "D parameter"
+              },
+              "zwave": {
+                "index": 58,
+                "size": 2
+              },
+              "value": 1,
+              "attr": {
+                "min": 0,
+                "max": 1000
               }
             }
           ]
