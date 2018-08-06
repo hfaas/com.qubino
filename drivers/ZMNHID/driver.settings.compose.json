@@ -9,54 +9,10 @@
     "$extends": "relayType"
   },
   {
-    "id": "associationReportingInterval",
-    "type": "number",
-    "label": {
-      "en": "Reporting interval association groups 2 and 10",
-      "nl": "Reporting interval associatiegroepen 2 en 10"
-    },
-    "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines the interval at which association groups 2 and 10 report their state.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de interval waarop associatiegroepen 2 en 10 hun status rapporteren."
-    },
-    "zwave": {
-      "index": 76,
-      "size": 1
-    },
-    "units": {
-      "en": "min",
-      "nl": "min"
-    },
-    "value": 30,
-    "attr": {
-      "min": 0,
-      "max": 127
-    }
+    "$extends": "associationReportingInterval"
   },
   {
-    "id": "delayReportAssociationGroup10",
-    "type": "number",
-    "label": {
-      "en": "Reporting delay association group 10",
-      "nl": "Reporting vertraging associatiegroep 10"
-    },
-    "hint": {
-      "en": "This parameter ({{zwaveParameterIndex}}) determines the delay before a report is send to association group 10.",
-      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging die optreedt voordat associatiegroep 10 een status update verstuurd."
-    },
-    "zwave": {
-      "index": 77,
-      "size": 2
-    },
-    "units": {
-      "en": "s",
-      "nl": "s"
-    },
-    "value": 180,
-    "attr": {
-      "min": 0,
-      "max": 32767
-    }
+    "$extends": "delayReportAssociationGroup10"
   },
   {
     "type": "group",
@@ -107,105 +63,13 @@
         }
       },
       {
-        "id": "functionalityInput1",
-        "type": "dropdown",
-        "label": {
-          "en": "Input 1 functionality",
-          "nl": "Ingang 1 functionaliteit"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the functionality of input 1. To use this input as a Flow Trigger configure this parameter to use the window sensor status. Note: if this parameter is set to influence heating and cooling according to the window sensor status then input 1 must be enabled via parameter 100.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de functionaliteit van ingang 1. Om deze ingang als Flow Trigger te gebruiken configureer deze parameter voor het gebruik van de aangesloten raamsensor. Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor dan moet ingang 1 ingeschakeld zijn via parameter 100."
-        },
-        "zwave": {
-          "index": 11,
-          "size": 2
-        },
-        "value": "1",
-        "values": [
-          {
-            "id": "32767",
-            "label": {
-              "en": "Does not influence heating and cooling",
-              "nl": "Beïnvloed verwarmen en verkoelen niet"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Switches the thermostat mode between Off and Auto",
-              "nl": "Schakelt thermostaat modus tussen Uit en Auto"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "Influences heating and cooling according to window sensor status",
-              "nl": "Beïnvloed verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor"
-            }
-          }
-        ]
+        "$extends": "functionalityInput1"
       },
       {
-        "id": "functionalityInput2",
-        "type": "number",
-        "label": {
-          "en": "Input 2 functionality",
-          "nl": "Ingang 2 functionaliteit"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the target temperature that will be set when input 2 is switched. The target temperature ranges from 0 - 990 (0°C to 99°C) and from 1001 to 1150 (-0.1°C to -15°C). To disable the influence of input 2 on the heating and cooling process set the value to 32767. To let the connected condense sensor influence the heating and cooling process set the value to 2000. To use this input as a Flow Trigger configure this parameter to the value 2000 (use of the connected condensation sensor). Note: if this parameter is set to influence heating and cooling according to the condense sensor then input 2 must be enabled via parameter 101.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de doeltemperatuur die wordt ingesteld wanneer input 2 wordt geschakeld. Het bereik van de doeltemperatuur gaat van 0 - 990 (0°C tot 99°C) en van 1001 tot 1150 (-0.1°C to -15°C). Om de invloed van ingang 2 op het verwarmen en verkoelen uit te schakelen stel deze parameter in op 32767. Om de aangesloten condenssensor het verwarmen en verkoelen te laten beïnvloeden stel deze parameter in op 2000. Om deze ingang als Flow Trigger te gebruiken stel deze parameter in op de waarde 200 (gebruik van de aangesloten condensatiesensor). Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor dan moet ingang 2 ingeschakeld zijn via parameter 101."
-        },
-        "zwave": {
-          "index": 12,
-          "size": 2
-        },
-        "value": 32767,
-        "attr": {
-          "min": 0,
-          "max": 32767
-        }
+        "$extends": "functionalityInput2"
       },
       {
-        "id": "functionalityInput3",
-        "type": "dropdown",
-        "label": {
-          "en": "Input 3 functionality",
-          "nl": "Ingang 3 functionaliteit"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the functionality of input 3. To use this input as a Flow Trigger configure this parameter to use the floor sensor status. Note: if this parameter is set to influence heating and cooling according to the flood sensor status then input 3 must be enabled via parameter 102, also if this parameter is set to switch the thermostat mode between Heat and Cool it will override parameter 59.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de functionaliteit van ingang 3. Om deze ingang als Flow Trigger te gebruiken configureer deze parameter voor het gebruik van de aangesloten overstromingssensor. Let op: als deze parameter is ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor dan moet ingang 3 ingeschakeld zijn via parameter 102, daarnaast, als deze parameter is ingesteld op het schakelen van de thermostaat modus tussen Verwarmen en Verkoelen wordt parameter 59 genegeerd."
-        },
-        "zwave": {
-          "index": 13,
-          "size": 2
-        },
-        "value": "32767",
-        "values": [
-          {
-            "id": "32767",
-            "label": {
-              "en": "Does not influence heating and cooling",
-              "nl": "Beïnvloed verwarmen en verkoelen niet"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Switches the thermostat mode between Heat and Cool",
-              "nl": "Schakelt thermostaat modus tussen Verwarmen en Verkoelen"
-            }
-          },
-          {
-            "id": "2",
-            "label": {
-              "en": "Influences heating and cooling according to flood sensor status",
-              "nl": "Beïnvloed verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor"
-            }
-          }
-        ]
+        "$extends": "functionalityInput3"
       },
       {
         "$extends": "enableInput1",
@@ -237,154 +101,22 @@
         }
       },
       {
-        "id": "statusOnDelayInput1",
-        "type": "number",
-        "label": {
-          "en": "Delay after switching on input 1",
-          "nl": "Vertraging na inschakelen ingang 1"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) specifies the delay which occurs after input 1 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 11 is set to use the window sensor functionality for input 1.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging die optreedt nadat ingang 1 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op het gebruik van de raamsensor functionaliteit voor ingang 1."
-        },
-        "zwave": {
-          "index": 70,
-          "size": 2
-        },
-        "units": {
-          "en": "s",
-          "nl": "s"
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 32000
-        }
+        "$extends": "statusOnDelayInput1"
       },
       {
-        "id": "statusOffDelayInput1",
-        "type": "number",
-        "label": {
-          "en": "Delay after switching off input 1",
-          "nl": "Vertraging na uitschakelen ingang 1"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) specifies the delay which occurs after input 1 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 11 is set to use the window sensor functionality for input 1.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging die optreedt nadat ingang 1 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 11 is ingesteld op het gebruik van de raamsensor functionaliteit voor ingang 1."
-        },
-        "zwave": {
-          "index": 71,
-          "size": 2
-        },
-        "units": {
-          "en": "s",
-          "nl": "s"
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 32000
-        }
+        "$extends": "statusOffDelayInput1"
       },
       {
-        "id": "statusOnDelayInput2",
-        "type": "number",
-        "label": {
-          "en": "Delay after switching on input 2",
-          "nl": "Vertraging na inschakelen ingang 2"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) specifies the delay which occurs after input 2 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 12 is set to use the condense sensor functionality for input 2.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging die optreedt nadat ingang 2 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op het gebruik van de condenssensor functionaliteit voor ingang 2."
-        },
-        "zwave": {
-          "index": 72,
-          "size": 2
-        },
-        "units": {
-          "en": "s",
-          "nl": "s"
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 32000
-        }
+        "$extends": "statusOnDelayInput2"
       },
       {
-        "id": "statusOffDelayInput2",
-        "type": "number",
-        "label": {
-          "en": "Delay after switching off input 2",
-          "nl": "Vertraging na uitschakelen ingang 2"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) specifies the delay which occurs after input 2 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 12 is set to use the condense sensor functionality for input 2.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging die optreedt nadat ingang 2 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 12 is ingesteld op het gebruik van de condenssensor functionaliteit voor ingang 2."
-        },
-        "zwave": {
-          "index": 73,
-          "size": 2
-        },
-        "units": {
-          "en": "s",
-          "nl": "s"
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 32000
-        }
+        "$extends": "statusOffDelayInput2"
       },
       {
-        "id": "statusOnDelayInput3",
-        "type": "number",
-        "label": {
-          "en": "Delay after switching on input 3",
-          "nl": "Vertraging na inschakelen ingang 3"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) specifies the delay which occurs after input 3 is switched on and before the associated action is executed. Note: this parameter is only active if parameter 13 is set to use the flood sensor functionality for input 3.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging die optreedt nadat ingang 3 is ingeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 13 is ingesteld op het gebruik van de overstromingssensor functionaliteit voor ingang 3."
-        },
-        "zwave": {
-          "index": 74,
-          "size": 2
-        },
-        "units": {
-          "en": "s",
-          "nl": "s"
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 32000
-        }
+        "$extends": "statusOnDelayInput3"
       },
       {
-        "id": "statusOffDelayInput3",
-        "type": "number",
-        "label": {
-          "en": "Delay after switching off input 3",
-          "nl": "Vertraging na uitschakelen ingang 3"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) specifies the delay which occurs after input 3 is switched off and before the associated action is executed. Note: this parameter is only active if parameter 13 is set to use the flood sensor functionality for input 3.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vertraging die optreedt nadat ingang 3 is uitgeschakeld en voordat de bijbehorende actie wordt uitgevoerd. Let op: deze parameter is alleen actief wanneer parameter 13 is ingesteld op het gebruik van de overstromingssensor functionaliteit voor ingang 3."
-        },
-        "zwave": {
-          "index": 75,
-          "size": 2
-        },
-        "units": {
-          "en": "s",
-          "nl": "s"
-        },
-        "value": 0,
-        "attr": {
-          "min": 0,
-          "max": 32000
-        }
+        "$extends": "statusOffDelayInput3"
       }
     ]
   },
@@ -396,37 +128,7 @@
     },
     "children": [
       {
-        "id": "thermostatMode",
-        "type": "dropdown",
-        "label": {
-          "en": "Thermostat mode",
-          "nl": "Thermostaat modus"
-        },
-        "zwave": {
-          "index": 59,
-          "size": 1
-        },
-        "value": "0",
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "Heating",
-              "nl": "Verwarmen"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Cooling",
-              "nl": "Koelen"
-            }
-          }
-        ],
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the operating mode of the device. Note: when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de werking van het apparaat. Let op: na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
-        }
+        "$extends": "thermostatMode"
       },
       {
         "$extends": "temperatureHysteresisOn",
@@ -501,35 +203,7 @@
         }
       },
       {
-        "id": "temperatureScale",
-        "type": "dropdown",
-        "label": {
-          "en": "Temperature scale",
-          "nl": "Temperatuurschaal"
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the temperature scale used by the {{driverNameEn}}. Note: Homey currently only supports the Celsius scale.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de temperatuurschaal die gebruikt wordt door de {{driverNameNl}}. Let op: Homey ondersteunt momenteel alleen de Celsius schaal."
-        },
-        "zwave": {
-          "index": 78,
-          "size": 1
-        },
-        "value": "0",
-        "values": [
-          {
-            "id": "0",
-            "label": {
-              "en": "Celsius"
-            }
-          },
-          {
-            "id": "1",
-            "label": {
-              "en": "Fahrenheit"
-            }
-          }
-        ]
+        "$extends": "temperatureScale"
       },
       {
         "$extends": "temperatureSensorOffset",

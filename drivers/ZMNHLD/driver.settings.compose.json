@@ -349,80 +349,16 @@
         }
       },
       {
-        "id": "integralSamplingTime",
-        "type": "number",
-        "label": {
-          "en": "Integral sampling time",
-          "nl": "Integrale bemonsteringstijd"
-        },
-        "units": {
-          "en": "s",
-          "nl": "s"
-        },
-        "zwave": {
-          "index": 55,
-          "size": 1
-        },
-        "value": 5,
-        "attr": {
-          "min": 0,
-          "max": 127
-        },
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) defines the time between samples, on each sample the controller captures difference between SP-act.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) definieert de tijd tussen bemonsteren, bij het bemonsteren neemt de controller het verschil tussen SP-act op."
-        }
+        "$extends": "integralSamplingTime"
       },
       {
-        "id": "pParameter",
-        "type": "number",
-        "label": {
-          "en": "P parameter",
-          "nl": "P parameter"
-        },
-        "zwave": {
-          "index": 56,
-          "size": 2
-        },
-        "value": 1000,
-        "attr": {
-          "min": 0,
-          "max": 1000
-        }
+        "$extends": "pParameter"
       },
       {
-        "id": "iParameter",
-        "type": "number",
-        "label": {
-          "en": "I parameter",
-          "nl": "I parameter"
-        },
-        "zwave": {
-          "index": 57,
-          "size": 2
-        },
-        "value": 1,
-        "attr": {
-          "min": 0,
-          "max": 1000
-        }
+        "$extends": "iParameter"
       },
       {
-        "id": "dParameter",
-        "type": "number",
-        "label": {
-          "en": "D parameter",
-          "nl": "D parameter"
-        },
-        "zwave": {
-          "index": 58,
-          "size": 2
-        },
-        "value": 1,
-        "attr": {
-          "min": 0,
-          "max": 1000
-        }
+        "$extends": "dParameter"
       }
     ]
   }
