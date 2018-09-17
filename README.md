@@ -3,9 +3,11 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
+Version 2.0.6
+* Fixed an issue that could cause the "invert direction" setting of some devices to malfunction
+
 Version 2.0.5
 * Update app icon
-* Fixed an issue that could cause the "invert direction" setting of the ZMNHOD to malfunction
 
 Version 2.0.4
 * Added support for ZMNHYD (Smart Plug)
