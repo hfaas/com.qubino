@@ -3,6 +3,9 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
+Version 2.0.7
+* Removed ZMNHID (Flush On/Off Thermostat) Flow Cards for input 1/2/3 due to firmware issue with device
+
 Version 2.0.6
 * Fixed an issue that could cause the "invert direction" setting of some devices to malfunction
 
@@ -53,3 +56,6 @@ Version 1.1.0
     * ZMNHKD1 (Flush Heat & Cool Thermostat): input 2 and 3 can not be used in Flows
     * ZMNHIA2 (Flush On/Off Thermostat): input 2 and 3 can not be used in Flows
     * ZMNHSD1 (DIN Dimmer): input 1 can not be used in Flows
+
+### Known limitations
+* ZMNHID (Flush On/Off Thermostat) does not support the use of Flow Cards for the inputs 1, 2 and 3. This is because of a firmware issue with the device itself.
