@@ -4,7 +4,7 @@
     "en": "Qubino"
   },
   "sdk": 2,
-  "version": "2.0.8",
+  "version": "2.0.9",
   "compatibility": ">=1.5.1",
   "description": {
     "en": "Qubino devices for Homey",
