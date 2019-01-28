@@ -3,6 +3,9 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
+Version 2.0.9
+* Added support for ZMNHWD (Flush RGBW Dimmer)
+
 Version 2.0.8
 * Fixed an issue that caused connected devices to dim to full brightness when being turned on by Homey (via onoff capability)
 * Fixed an issue for the Flush Shutters (ZMNHCD and ZMNHOD) that might cause weird behaviour (especially i.c.w. the invert direction setting)
