@@ -3,8 +3,9 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
-Version 2.0.9
+Version 2.0.10
 * Added support for ZMNHWD (Flush RGBW Dimmer)
+* Fixed an issue that might prevent power meter values from being updated
 
 Version 2.0.8
 * Fixed an issue that caused connected devices to dim to full brightness when being turned on by Homey (via onoff capability)
