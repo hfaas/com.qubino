@@ -12716,7 +12716,7 @@
       "type": "number",
       "title": {
         "en": "Total Apparent Power",
-        "nl": "Totale Schijnbaar Vermogen"
+        "nl": "Totaal Schijnbaar Vermogen"
       },
       "decimals": 2,
       "chartType": "spline",
@@ -12725,7 +12725,7 @@
       },
       "desc": {
         "en": "Total Apparent Power (kVAh)",
-        "nl": "Totale Schijnbaar Vermogen (kVAh)"
+        "nl": "Totaal Schijnbaar Vermogen (kVAh)"
       },
       "getable": true,
       "setable": false
@@ -12734,7 +12734,7 @@
       "type": "number",
       "title": {
         "en": "Total Reactive Power",
-        "nl": "Totale Reactief Vermogen"
+        "nl": "Totaal Reactief Vermogen"
       },
       "decimals": 2,
       "chartType": "spline",
@@ -12743,7 +12743,7 @@
       },
       "desc": {
         "en": "Total Reactive Power (kVarh)",
-        "nl": "Totale Reactief Vermogen (kVarh)"
+        "nl": "Totaal Reactief Vermogen (kVarh)"
       },
       "getable": true,
       "setable": false
