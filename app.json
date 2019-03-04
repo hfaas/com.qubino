@@ -9811,7 +9811,6 @@
       ]
     },
     {
-      "id": "ZMNHSD1",
       "name": {
         "en": "DIN Dimmer (ZMNHSD)"
       },
@@ -10341,10 +10340,10 @@
             }
           ]
         }
-      ]
+      ],
+      "id": "ZMNHSD1"
     },
     {
-      "id": "ZMNHTD1",
       "name": {
         "en": "Smart Meter (ZMNHTD)"
       },
@@ -10432,6 +10431,7 @@
           "image": "/drivers/ZMNHTD1/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHTD1",
       "settings": [
         {
           "id": "allOn",
@@ -10890,7 +10890,6 @@
       ]
     },
     {
-      "id": "ZMNHVD1",
       "name": {
         "en": "Flush Dimmer 0 - 10V (ZMNHVD)"
       },
@@ -10958,6 +10957,7 @@
           "image": "/drivers/ZMNHVD1/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHVD1",
       "settings": [
         {
           "id": "allOn",
