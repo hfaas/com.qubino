@@ -1,54 +1,38 @@
 {
-  "id": "ZMNHIA",
   "name": {
-    "en": "Flush On/Off Thermostat ({{driverId}})"
+    "en": "Flush 1D Relay (ZMNHND)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "class": "thermostat",
+  "class": "socket",
   "capabilities": [
-    "offAutoThermostatMode",
-    "target_temperature",
     "measure_temperature",
-    "meter_power",
-    "measure_power"
+    "onoff"
   ],
   "mobile": {
     "components": [
       {
-        "capabilities": [],
-        "id": "icon"
+        "id": "icon",
+        "capabilities": [
+          "onoff"
+        ]
       },
       {
+        "id": "sensor",
         "capabilities": [
-          "offAutoThermostatMode"
-        ],
-        "id": "picker"
-      },
-      {
-        "capabilities": [
-          "measure_temperature",
-          "meter_power",
-          "measure_power"
-        ],
-        "id": "sensor"
-      },
-      {
-        "capabilities": [
-          "target_temperature"
-        ],
-        "id": "thermostat"
+          "measure_temperature"
+        ]
       }
     ]
   },
   "zwave": {
     "manufacturerId": 345,
-    "productTypeId": 5,
-    "productId": 1,
+    "productTypeId": 2,
+    "productId": 83,
     "associationGroups": [
-      6
+      1
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",

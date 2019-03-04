@@ -1,33 +1,26 @@
 {
-  "id": "ZMNHCD",
   "name": {
-    "en": "Flush Shutter (ZMNHCD)"
+    "en": "Flush Dimmer (ZMNHDD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "class": "windowcoverings",
+  "class": "light",
   "capabilities": [
+    "onoff",
     "dim",
-    "resetMeter",
-    "calibration",
     "meter_power",
     "measure_power",
-    "measure_temperature",
-    "windowcoverings_tilt_set"
+    "measure_temperature"
   ],
   "capabilitiesOptions": {
-    "dim": {
-      "title": {
-        "en": "Position",
-        "nl": "Positie"
-      }
+    "onoff": {
+      "setOnDim": false
     },
-    "windowcoverings_tilt_set": {
-      "title": {
-        "en": "Tilt slats",
-        "nl": "Kanteling lamellen"
+    "dim": {
+      "opts": {
+        "duration": true
       }
     }
   },
@@ -35,25 +28,15 @@
     "components": [
       {
         "id": "icon",
-        "capabilities": []
+        "capabilities": [
+          "onoff"
+        ]
       },
       {
         "id": "slider",
         "capabilities": [
           "dim"
-        ],
-        "options": {
-          "showTitle": true
-        }
-      },
-      {
-        "id": "slider",
-        "capabilities": [
-          "windowcoverings_tilt_set"
-        ],
-        "options": {
-          "showTitle": true
-        }
+        ]
       },
       {
         "id": "sensor",
@@ -62,20 +45,13 @@
           "meter_power",
           "measure_temperature"
         ]
-      },
-      {
-        "id": "button",
-        "capabilities": [
-          "resetMeter",
-          "calibration"
-        ]
       }
     ]
   },
   "zwave": {
     "manufacturerId": 345,
-    "productTypeId": 3,
-    "productId": 82,
+    "productTypeId": 1,
+    "productId": 81,
     "associationGroups": [
       1
     ],

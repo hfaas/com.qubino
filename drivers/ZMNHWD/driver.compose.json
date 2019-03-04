@@ -1,7 +1,7 @@
 {
   "id": "ZMNHWD",
   "name": {
-    "en": "Flush RGBW Dimmer ({{driverId}})"
+    "en": "Flush RGBW Dimmer (ZMNHWD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

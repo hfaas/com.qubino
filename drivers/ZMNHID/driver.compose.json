@@ -1,7 +1,7 @@
 {
   "id": "ZMNHID",
   "name": {
-    "en": "Flush On/Off Thermostat ({{driverId}})"
+    "en": "Flush On/Off Thermostat (ZMNHID)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

@@ -1,7 +1,7 @@
 {
   "id": "ZMNHYD",
   "name": {
-    "en": "Smart Plug ({{driverId}})"
+    "en": "Smart Plug (ZMNHYD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

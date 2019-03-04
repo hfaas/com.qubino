@@ -1,7 +1,6 @@
 {
-  "id": "ZMNHSD",
   "name": {
-    "en": "DIN Dimmer ({{driverId}})"
+    "en": "Flush Dimmer 0 - 10V (ZMNHVD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -11,8 +10,6 @@
   "capabilities": [
     "onoff",
     "dim",
-    "meter_power",
-    "measure_power",
     "measure_temperature"
   ],
   "capabilitiesOptions": {
@@ -42,8 +39,6 @@
       {
         "id": "sensor",
         "capabilities": [
-          "measure_power",
-          "meter_power",
           "measure_temperature"
         ]
       }
@@ -52,7 +47,7 @@
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 1,
-    "productId": 82,
+    "productId": 83,
     "associationGroups": [
       1
     ],
@@ -70,6 +65,5 @@
       },
       "image": "{{driverAssetsPath}}/learnmode.svg"
     }
-  },
-  "settings": []
+  }
 }

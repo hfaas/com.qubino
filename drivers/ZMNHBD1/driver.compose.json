@@ -1,40 +1,34 @@
 {
-  "id": "ZMNHAD",
   "name": {
-    "en": "Flush 1 Relay ({{driverId}})"
+    "en": "Flush 2 Relay (ZMNHBD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "class": "socket",
+  "class": "other",
   "capabilities": [
-    "measure_power",
-    "meter_power",
     "measure_temperature",
-    "resetMeter",
-    "onoff"
+    "allOn",
+    "allOff"
   ],
   "mobile": {
     "components": [
       {
         "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
+        "capabilities": []
       },
       {
         "id": "sensor",
         "capabilities": [
-          "measure_power",
-          "meter_power",
           "measure_temperature"
         ]
       },
       {
         "id": "button",
         "capabilities": [
-          "resetMeter"
+          "allOn",
+          "allOff"
         ]
       }
     ]
@@ -42,7 +36,7 @@
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 2,
-    "productId": 82,
+    "productId": 81,
     "associationGroups": [
       1
     ],
@@ -59,6 +53,94 @@
         "nl": "Activeer exclusie modus op de {{driverNameNl}} via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
       },
       "image": "{{driverAssetsPath}}/learnmode.svg"
+    },
+    "multiChannelNodes": {
+      "1": {
+        "class": "socket",
+        "capabilities": [
+          "measure_power",
+          "meter_power",
+          "resetMeter",
+          "onoff"
+        ],
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "name": {
+          "en": "{{driverNameEn}} - Relay 1",
+          "nl": "{{driverNameNl}} - Relais 1"
+        },
+        "mobile": {
+          "components": [
+            {
+              "id": "icon",
+              "capabilities": [
+                "onoff"
+              ]
+            },
+            {
+              "id": "toggle",
+              "capabilities": [
+                "onoff"
+              ]
+            },
+            {
+              "id": "sensor",
+              "capabilities": [
+                "measure_power",
+                "meter_power"
+              ]
+            },
+            {
+              "id": "button",
+              "capabilities": [
+                "resetMeter"
+              ]
+            }
+          ]
+        }
+      },
+      "2": {
+        "class": "socket",
+        "capabilities": [
+          "measure_power",
+          "meter_power",
+          "resetMeter",
+          "onoff"
+        ],
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "name": {
+          "en": "{{driverNameEn}} - Relay 2",
+          "nl": "{{driverNameNl}} - Relais 2"
+        },
+        "mobile": {
+          "components": [
+            {
+              "id": "icon",
+              "capabilities": [
+                "onoff"
+              ]
+            },
+            {
+              "id": "toggle",
+              "capabilities": [
+                "onoff"
+              ]
+            },
+            {
+              "id": "sensor",
+              "capabilities": [
+                "measure_power",
+                "meter_power"
+              ]
+            },
+            {
+              "id": "button",
+              "capabilities": [
+                "resetMeter"
+              ]
+            }
+          ]
+        }
+      }
     }
   }
 }

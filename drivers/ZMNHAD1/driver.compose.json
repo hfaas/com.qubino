@@ -1,7 +1,6 @@
 {
-  "id": "ZMNHAD",
   "name": {
-    "en": "Flush 1D Relay ({{driverId}})"
+    "en": "Flush 1 Relay (ZMNHAD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -9,7 +8,10 @@
   },
   "class": "socket",
   "capabilities": [
+    "measure_power",
+    "meter_power",
     "measure_temperature",
+    "resetMeter",
     "onoff"
   ],
   "mobile": {
@@ -23,7 +25,15 @@
       {
         "id": "sensor",
         "capabilities": [
+          "measure_power",
+          "meter_power",
           "measure_temperature"
+        ]
+      },
+      {
+        "id": "button",
+        "capabilities": [
+          "resetMeter"
         ]
       }
     ]
@@ -31,7 +41,7 @@
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 2,
-    "productId": 83,
+    "productId": 82,
     "associationGroups": [
       1
     ],

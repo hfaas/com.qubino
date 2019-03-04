@@ -1,7 +1,6 @@
 {
-  "id": "ZMNHAA",
   "name": {
-    "en": "Flush 1 Relay ({{driverId}})"
+    "en": "Flush 1 Relay (ZMNHAA)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

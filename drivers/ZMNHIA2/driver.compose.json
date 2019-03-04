@@ -1,60 +1,53 @@
 {
-  "id": "ZMNHDA",
   "name": {
-    "en": "Flush Dimmer ({{driverId}})"
+    "en": "Flush On/Off Thermostat (ZMNHIA)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "class": "light",
+  "class": "thermostat",
   "capabilities": [
-    "onoff",
-    "dim",
+    "offAutoThermostatMode",
+    "target_temperature",
+    "measure_temperature",
     "meter_power",
-    "measure_power",
-    "measure_temperature"
+    "measure_power"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "setOnDim": false
-    },
-    "dim": {
-      "opts": {
-        "duration": true
-      }
-    }
-  },
   "mobile": {
     "components": [
       {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
+        "capabilities": [],
+        "id": "icon"
       },
       {
-        "id": "slider",
         "capabilities": [
-          "dim"
-        ]
+          "offAutoThermostatMode"
+        ],
+        "id": "picker"
       },
       {
-        "id": "sensor",
         "capabilities": [
-          "measure_power",
+          "measure_temperature",
           "meter_power",
-          "measure_temperature"
-        ]
+          "measure_power"
+        ],
+        "id": "sensor"
+      },
+      {
+        "capabilities": [
+          "target_temperature"
+        ],
+        "id": "thermostat"
       }
     ]
   },
   "zwave": {
     "manufacturerId": 345,
-    "productTypeId": 1,
+    "productTypeId": 5,
     "productId": 1,
     "associationGroups": [
-      1,2,3,4
+      6
     ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",

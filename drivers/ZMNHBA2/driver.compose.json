@@ -1,30 +1,18 @@
 {
-  "id": "ZMNHDD",
   "name": {
-    "en": "Flush Dimmer ({{driverId}})"
+    "en": "Flush 2 Relay (ZMNHBA)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "class": "light",
+  "class": "socket",
   "capabilities": [
     "onoff",
-    "dim",
-    "meter_power",
     "measure_power",
+    "meter_power",
     "measure_temperature"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "setOnDim": false
-    },
-    "dim": {
-      "opts": {
-        "duration": true
-      }
-    }
-  },
   "mobile": {
     "components": [
       {
@@ -34,9 +22,9 @@
         ]
       },
       {
-        "id": "slider",
+        "id": "toggle",
         "capabilities": [
-          "dim"
+          "onoff"
         ]
       },
       {
@@ -51,11 +39,41 @@
   },
   "zwave": {
     "manufacturerId": 345,
-    "productTypeId": 1,
-    "productId": 81,
+    "productTypeId": 2,
+    "productId": 1,
     "associationGroups": [
-      1
+      1,
+      2,
+      3
     ],
+    "multiChannelNodes": {
+      "1": {
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power"
+        ],
+        "icon": "{{driverAssetsPath}}/icon.svg",
+        "name": {
+          "en": "{{driverNameEn}} - Relay 1",
+          "nl": "{{driverNameNl}} - Relais 1"
+        }
+      },
+      "2": {
+        "class": "socket",
+        "capabilities": [
+          "onoff",
+          "measure_power",
+          "meter_power"
+        ],
+        "icon": "{{driverAssetsPath}}/icon-2.svg",
+        "name": {
+          "en": "{{driverNameEn}} - Relay 2",
+          "nl": "{{driverNameNl}} - Relais 2"
+        }
+      }
+    },
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {

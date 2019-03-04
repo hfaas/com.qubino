@@ -1,51 +1,56 @@
 {
-  "id": "ZMNHKD",
   "name": {
-    "en": "Flush Heat & Cool Thermostat ({{driverId}})"
+    "en": "DIN Dimmer (ZMNHSD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "class": "thermostat",
+  "class": "light",
   "capabilities": [
-    "offAutoThermostatMode",
-    "target_temperature",
-    "measure_temperature",
+    "onoff",
+    "dim",
     "meter_power",
-    "measure_power"
+    "measure_power",
+    "measure_temperature"
   ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "setOnDim": false
+    },
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
   "mobile": {
     "components": [
       {
-        "capabilities": [],
-        "id": "icon"
+        "id": "icon",
+        "capabilities": [
+          "onoff"
+        ]
       },
       {
+        "id": "slider",
         "capabilities": [
-          "measure_temperature",
+          "dim"
+        ]
+      },
+      {
+        "id": "sensor",
+        "capabilities": [
+          "measure_power",
           "meter_power",
-          "measure_power"
-        ],
-        "id": "sensor"
-      },
-      {
-        "capabilities": [
-          "offAutoThermostatMode"
-        ],
-        "id": "picker"
-      },
-      {
-        "capabilities": [
-          "target_temperature"
-        ],
-        "id": "thermostat"
+          "measure_temperature"
+        ]
       }
     ]
   },
   "zwave": {
     "manufacturerId": 345,
-    "productTypeId": 5,
+    "productTypeId": 1,
     "productId": 82,
     "associationGroups": [
       1
@@ -64,5 +69,6 @@
       },
       "image": "{{driverAssetsPath}}/learnmode.svg"
     }
-  }
+  },
+  "settings": []
 }

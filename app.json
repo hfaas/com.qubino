@@ -55,7 +55,7 @@
         ]
       },
       {
-        "id": "resetMeter_ZMNHAA",
+        "id": "resetMeter_ZMNHAA2",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -68,12 +68,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA"
+            "filter": "driver_id=ZMNHAA2"
           }
         ]
       },
       {
-        "id": "resetMeter_ZMNHAD",
+        "id": "resetMeter_ZMNHAD1",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -86,12 +86,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAD"
+            "filter": "driver_id=ZMNHAD1"
           }
         ]
       },
       {
-        "id": "resetMeter_ZMNHBA",
+        "id": "resetMeter_ZMNHBA2",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -104,7 +104,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHBA"
+            "filter": "driver_id=ZMNHBA2"
           }
         ]
       },
@@ -127,7 +127,7 @@
         ]
       },
       {
-        "id": "resetMeter_ZMNHDA",
+        "id": "resetMeter_ZMNHDA2",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -140,12 +140,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDA"
+            "filter": "driver_id=ZMNHDA2"
           }
         ]
       },
       {
-        "id": "resetMeter_ZMNHDD",
+        "id": "resetMeter_ZMNHDD1",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -158,12 +158,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDD"
+            "filter": "driver_id=ZMNHDD1"
           }
         ]
       },
       {
-        "id": "resetMeter_ZMNHIA",
+        "id": "resetMeter_ZMNHIA2",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -176,7 +176,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHIA"
+            "filter": "driver_id=ZMNHIA2"
           }
         ]
       },
@@ -199,7 +199,7 @@
         ]
       },
       {
-        "id": "resetMeter_ZMNHKD",
+        "id": "resetMeter_ZMNHKD1",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -212,7 +212,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHKD"
+            "filter": "driver_id=ZMNHKD1"
           }
         ]
       },
@@ -274,7 +274,7 @@
     "triggers": [
       {
         "hint": null,
-        "id": "inputTwoTurnedOn_ZMNHAA",
+        "id": "inputTwoTurnedOn_ZMNHAA2",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -283,13 +283,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA"
+            "filter": "driver_id=ZMNHAA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputTwoTurnedOff_ZMNHAA",
+        "id": "inputTwoTurnedOff_ZMNHAA2",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -298,13 +298,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA"
+            "filter": "driver_id=ZMNHAA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputTwoToggled_ZMNHAA",
+        "id": "inputTwoToggled_ZMNHAA2",
         "title": {
           "en": "Input 2 was toggled",
           "nl": "Ingang 2 is geschakeld"
@@ -313,13 +313,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA"
+            "filter": "driver_id=ZMNHAA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOn_ZMNHAA",
+        "id": "inputThreeTurnedOn_ZMNHAA2",
         "title": {
           "en": "Input 3 turned on",
           "nl": "Ingang 3 is ingeschakeld"
@@ -328,13 +328,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA"
+            "filter": "driver_id=ZMNHAA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOff_ZMNHAA",
+        "id": "inputThreeTurnedOff_ZMNHAA2",
         "title": {
           "en": "Input 3 turned off",
           "nl": "Ingang 3 is uitgeschakeld"
@@ -343,13 +343,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA"
+            "filter": "driver_id=ZMNHAA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputThreeToggled_ZMNHAA",
+        "id": "inputThreeToggled_ZMNHAA2",
         "title": {
           "en": "Input 3 was toggled",
           "nl": "Ingang 3 is geschakeld"
@@ -358,210 +358,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHAA"
+            "filter": "driver_id=ZMNHAA2"
           }
         ]
       },
       {
-        "id": "inputTwoTurnedOn_ZMNHAD",
-        "title": {
-          "en": "Input 2 turned on",
-          "nl": "Ingang 2 is ingeschakeld"
-        },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHAD"
-          }
-        ]
-      },
-      {
-        "id": "inputTwoTurnedOff_ZMNHAD",
-        "title": {
-          "en": "Input 2 turned off",
-          "nl": "Ingang 2 is uitgeschakeld"
-        },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHAD"
-          }
-        ]
-      },
-      {
-        "id": "inputTwoToggled_ZMNHAD",
-        "title": {
-          "en": "Input 2 was toggled",
-          "nl": "Ingang 2 is geschakeld"
-        },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHAD"
-          }
-        ]
-      },
-      {
-        "id": "inputThreeTurnedOn_ZMNHAD",
-        "title": {
-          "en": "Input 3 turned on",
-          "nl": "Ingang 3 is ingeschakeld"
-        },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHAD"
-          }
-        ]
-      },
-      {
-        "id": "inputThreeTurnedOff_ZMNHAD",
-        "title": {
-          "en": "Input 3 turned off",
-          "nl": "Ingang 3 is uitgeschakeld"
-        },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHAD"
-          }
-        ]
-      },
-      {
-        "id": "inputThreeToggled_ZMNHAD",
-        "title": {
-          "en": "Input 3 was toggled",
-          "nl": "Ingang 3 is geschakeld"
-        },
-        "hint": {
-          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
-          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHAD"
-          }
-        ]
-      },
-      {
-        "hint": null,
-        "id": "inputTwoTurnedOn_ZMNHDA",
-        "title": {
-          "en": "Input 2 turned on",
-          "nl": "Ingang 2 is ingeschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDA"
-          }
-        ]
-      },
-      {
-        "hint": null,
-        "id": "inputTwoTurnedOff_ZMNHDA",
-        "title": {
-          "en": "Input 2 turned off",
-          "nl": "Ingang 2 is uitgeschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDA"
-          }
-        ]
-      },
-      {
-        "hint": null,
-        "id": "inputTwoToggled_ZMNHDA",
-        "title": {
-          "en": "Input 2 was toggled",
-          "nl": "Ingang 2 is geschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDA"
-          }
-        ]
-      },
-      {
-        "hint": null,
-        "id": "inputThreeTurnedOn_ZMNHDA",
-        "title": {
-          "en": "Input 3 turned on",
-          "nl": "Ingang 3 is ingeschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDA"
-          }
-        ]
-      },
-      {
-        "hint": null,
-        "id": "inputThreeTurnedOff_ZMNHDA",
-        "title": {
-          "en": "Input 3 turned off",
-          "nl": "Ingang 3 is uitgeschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDA"
-          }
-        ]
-      },
-      {
-        "hint": null,
-        "id": "inputThreeToggled_ZMNHDA",
-        "title": {
-          "en": "Input 3 was toggled",
-          "nl": "Ingang 3 is geschakeld"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=ZMNHDA"
-          }
-        ]
-      },
-      {
-        "id": "inputTwoTurnedOn_ZMNHDD",
+        "id": "inputTwoTurnedOn_ZMNHAD1",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -574,12 +376,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDD"
+            "filter": "driver_id=ZMNHAD1"
           }
         ]
       },
       {
-        "id": "inputTwoTurnedOff_ZMNHDD",
+        "id": "inputTwoTurnedOff_ZMNHAD1",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -592,12 +394,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDD"
+            "filter": "driver_id=ZMNHAD1"
           }
         ]
       },
       {
-        "id": "inputTwoToggled_ZMNHDD",
+        "id": "inputTwoToggled_ZMNHAD1",
         "title": {
           "en": "Input 2 was toggled",
           "nl": "Ingang 2 is geschakeld"
@@ -610,12 +412,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDD"
+            "filter": "driver_id=ZMNHAD1"
           }
         ]
       },
       {
-        "id": "inputThreeTurnedOn_ZMNHDD",
+        "id": "inputThreeTurnedOn_ZMNHAD1",
         "title": {
           "en": "Input 3 turned on",
           "nl": "Ingang 3 is ingeschakeld"
@@ -628,12 +430,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDD"
+            "filter": "driver_id=ZMNHAD1"
           }
         ]
       },
       {
-        "id": "inputThreeTurnedOff_ZMNHDD",
+        "id": "inputThreeTurnedOff_ZMNHAD1",
         "title": {
           "en": "Input 3 turned off",
           "nl": "Ingang 3 is uitgeschakeld"
@@ -646,12 +448,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDD"
+            "filter": "driver_id=ZMNHAD1"
           }
         ]
       },
       {
-        "id": "inputThreeToggled_ZMNHDD",
+        "id": "inputThreeToggled_ZMNHAD1",
         "title": {
           "en": "Input 3 was toggled",
           "nl": "Ingang 3 is geschakeld"
@@ -664,13 +466,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHDD"
+            "filter": "driver_id=ZMNHAD1"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputTwoTurnedOn_ZMNHIA",
+        "id": "inputTwoTurnedOn_ZMNHDA2",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -679,13 +481,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHIA"
+            "filter": "driver_id=ZMNHDA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputTwoTurnedOff_ZMNHIA",
+        "id": "inputTwoTurnedOff_ZMNHDA2",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -694,13 +496,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHIA"
+            "filter": "driver_id=ZMNHDA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputTwoToggled_ZMNHIA",
+        "id": "inputTwoToggled_ZMNHDA2",
         "title": {
           "en": "Input 2 was toggled",
           "nl": "Ingang 2 is geschakeld"
@@ -709,13 +511,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHIA"
+            "filter": "driver_id=ZMNHDA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOn_ZMNHIA",
+        "id": "inputThreeTurnedOn_ZMNHDA2",
         "title": {
           "en": "Input 3 turned on",
           "nl": "Ingang 3 is ingeschakeld"
@@ -724,13 +526,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHIA"
+            "filter": "driver_id=ZMNHDA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOff_ZMNHIA",
+        "id": "inputThreeTurnedOff_ZMNHDA2",
         "title": {
           "en": "Input 3 turned off",
           "nl": "Ingang 3 is uitgeschakeld"
@@ -739,13 +541,13 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHIA"
+            "filter": "driver_id=ZMNHDA2"
           }
         ]
       },
       {
         "hint": null,
-        "id": "inputThreeToggled_ZMNHIA",
+        "id": "inputThreeToggled_ZMNHDA2",
         "title": {
           "en": "Input 3 was toggled",
           "nl": "Ingang 3 is geschakeld"
@@ -754,7 +556,205 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHIA"
+            "filter": "driver_id=ZMNHDA2"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOn_ZMNHDD1",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoTurnedOff_ZMNHDD1",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "id": "inputTwoToggled_ZMNHDD1",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeTurnedOn_ZMNHDD1",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeTurnedOff_ZMNHDD1",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "id": "inputThreeToggled_ZMNHDD1",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings for more information.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen voor meer informatie."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoTurnedOn_ZMNHIA2",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoTurnedOff_ZMNHIA2",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoToggled_ZMNHIA2",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeTurnedOn_ZMNHIA2",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeTurnedOff_ZMNHIA2",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputThreeToggled_ZMNHIA2",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
           }
         ]
       },
@@ -763,7 +763,7 @@
           "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
         },
-        "id": "inputOneTurnedOn_ZMNHKD",
+        "id": "inputOneTurnedOn_ZMNHKD1",
         "title": {
           "en": "Input 1 turned on",
           "nl": "Ingang 1 is ingeschakeld"
@@ -772,7 +772,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHKD"
+            "filter": "driver_id=ZMNHKD1"
           }
         ]
       },
@@ -781,7 +781,7 @@
           "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
         },
-        "id": "inputOneTurnedOff_ZMNHKD",
+        "id": "inputOneTurnedOff_ZMNHKD1",
         "title": {
           "en": "Input 1 turned off",
           "nl": "Ingang 1 is uitgeschakeld"
@@ -790,7 +790,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHKD"
+            "filter": "driver_id=ZMNHKD1"
           }
         ]
       },
@@ -799,7 +799,7 @@
           "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
         },
-        "id": "inputOneToggled_ZMNHKD",
+        "id": "inputOneToggled_ZMNHKD1",
         "title": {
           "en": "Input 1 was toggled",
           "nl": "Ingang 1 is geschakeld"
@@ -808,7 +808,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHKD"
+            "filter": "driver_id=ZMNHKD1"
           }
         ]
       },
@@ -817,7 +817,7 @@
           "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
         },
-        "id": "inputTwoTurnedOn_ZMNHKD",
+        "id": "inputTwoTurnedOn_ZMNHKD1",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -826,7 +826,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHKD"
+            "filter": "driver_id=ZMNHKD1"
           }
         ]
       },
@@ -835,7 +835,7 @@
           "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
         },
-        "id": "inputTwoTurnedOff_ZMNHKD",
+        "id": "inputTwoTurnedOff_ZMNHKD1",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -844,7 +844,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHKD"
+            "filter": "driver_id=ZMNHKD1"
           }
         ]
       },
@@ -853,7 +853,7 @@
           "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
         },
-        "id": "inputTwoToggled_ZMNHKD",
+        "id": "inputTwoToggled_ZMNHKD1",
         "title": {
           "en": "Input 2 was toggled",
           "nl": "Ingang 2 is geschakeld"
@@ -862,7 +862,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHKD"
+            "filter": "driver_id=ZMNHKD1"
           }
         ]
       },
@@ -1029,7 +1029,7 @@
         ]
       },
       {
-        "id": "inputTwoTurnedOn_ZMNHND",
+        "id": "inputTwoTurnedOn_ZMNHND1",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -1042,12 +1042,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHND"
+            "filter": "driver_id=ZMNHND1"
           }
         ]
       },
       {
-        "id": "inputTwoTurnedOff_ZMNHND",
+        "id": "inputTwoTurnedOff_ZMNHND1",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -1060,12 +1060,12 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHND"
+            "filter": "driver_id=ZMNHND1"
           }
         ]
       },
       {
-        "id": "inputTwoToggled_ZMNHND",
+        "id": "inputTwoToggled_ZMNHND1",
         "title": {
           "en": "Input 2 was toggled",
           "nl": "Ingang 2 is geschakeld"
@@ -1078,7 +1078,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=ZMNHND"
+            "filter": "driver_id=ZMNHND1"
           }
         ]
       }
@@ -1086,13 +1086,12 @@
   },
   "drivers": [
     {
-      "id": "ZMNHAA",
       "name": {
         "en": "Flush 1 Relay (ZMNHAA)"
       },
       "images": {
-        "large": "/drivers/ZMNHAA/assets/images/large.png",
-        "small": "/drivers/ZMNHAA/assets/images/small.png"
+        "large": "/drivers/ZMNHAA2/assets/images/large.png",
+        "small": "/drivers/ZMNHAA2/assets/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -1136,7 +1135,7 @@
           4
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHAA/assets/learnmode.svg",
+          "image": "/drivers/ZMNHAA2/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush 1 Relay (ZMNHAA) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush 1 Relay (ZMNHAA) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -1147,9 +1146,10 @@
             "en": "Enable exclusion mode on the Flush 1 Relay (ZMNHAA) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush 1 Relay (ZMNHAA) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHAA/assets/learnmode.svg"
+          "image": "/drivers/ZMNHAA2/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHAA2",
       "settings": [
         {
           "id": "allOn",
@@ -1390,13 +1390,12 @@
       ]
     },
     {
-      "id": "ZMNHAD",
       "name": {
         "en": "Flush 1 Relay (ZMNHAD)"
       },
       "images": {
-        "large": "/drivers/ZMNHAD/assets/images/large.png",
-        "small": "/drivers/ZMNHAD/assets/images/small.png"
+        "large": "/drivers/ZMNHAD1/assets/images/large.png",
+        "small": "/drivers/ZMNHAD1/assets/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -1438,7 +1437,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHAD/assets/learnmode.svg",
+          "image": "/drivers/ZMNHAD1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -1449,9 +1448,10 @@
             "en": "Enable exclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHAD/assets/learnmode.svg"
+          "image": "/drivers/ZMNHAD1/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHAD1",
       "settings": [
         {
           "id": "allOn",
@@ -1993,13 +1993,12 @@
       ]
     },
     {
-      "id": "ZMNHBA",
       "name": {
         "en": "Flush 2 Relay (ZMNHBA)"
       },
       "images": {
-        "large": "/drivers/ZMNHBA/assets/images/large.png",
-        "small": "/drivers/ZMNHBA/assets/images/small.png"
+        "large": "/drivers/ZMNHBA2/assets/images/large.png",
+        "small": "/drivers/ZMNHBA2/assets/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -2049,10 +2048,10 @@
               "measure_power",
               "meter_power"
             ],
-            "icon": "/drivers/ZMNHBA/assets/icon.svg",
+            "icon": "/drivers/ZMNHBA2/assets/icon.svg",
             "name": {
-              "en": "Relay 1 (ZMNHBA)",
-              "nl": "Relais 1 (ZMNHBA)"
+              "en": "Flush 2 Relay (ZMNHBA) - Relay 1",
+              "nl": "Flush 2 Relay (ZMNHBA) - Relais 1"
             }
           },
           "2": {
@@ -2062,15 +2061,15 @@
               "measure_power",
               "meter_power"
             ],
-            "icon": "/drivers/ZMNHBA/assets/icon-2.svg",
+            "icon": "/drivers/ZMNHBA2/assets/icon-2.svg",
             "name": {
-              "en": "Relay 2 (ZMNHBA)",
-              "nl": "Relais 2 (ZMNHBA)"
+              "en": "Flush 2 Relay (ZMNHBA) - Relay 2",
+              "nl": "Flush 2 Relay (ZMNHBA) - Relais 2"
             }
           }
         },
         "learnmode": {
-          "image": "/drivers/ZMNHBA/assets/learnmode.svg",
+          "image": "/drivers/ZMNHBA2/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush 2 Relay (ZMNHBA) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush 2 Relay (ZMNHBA) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -2081,9 +2080,10 @@
             "en": "Enable exclusion mode on the Flush 2 Relay (ZMNHBA) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush 2 Relay (ZMNHBA) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHBA/assets/learnmode.svg"
+          "image": "/drivers/ZMNHBA2/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHBA2",
       "settings": [
         {
           "id": "allOn",
@@ -2367,13 +2367,12 @@
       ]
     },
     {
-      "id": "ZMNHBD",
       "name": {
         "en": "Flush 2 Relay (ZMNHBD)"
       },
       "images": {
-        "large": "/drivers/ZMNHBD/assets/images/large.png",
-        "small": "/drivers/ZMNHBD/assets/images/small.png"
+        "large": "/drivers/ZMNHBD1/assets/images/large.png",
+        "small": "/drivers/ZMNHBD1/assets/images/small.png"
       },
       "class": "other",
       "capabilities": [
@@ -2410,7 +2409,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHBD/assets/learnmode.svg",
+          "image": "/drivers/ZMNHBD1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush 2 Relay (ZMNHBD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush 2 Relay (ZMNHBD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -2421,7 +2420,7 @@
             "en": "Enable exclusion mode on the Flush 2 Relay (ZMNHBD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush 2 Relay (ZMNHBD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHBD/assets/learnmode.svg"
+          "image": "/drivers/ZMNHBD1/assets/learnmode.svg"
         },
         "multiChannelNodes": {
           "1": {
@@ -2432,10 +2431,10 @@
               "resetMeter",
               "onoff"
             ],
-            "icon": "/drivers/ZMNHBD/assets/icon.svg",
+            "icon": "/drivers/ZMNHBD1/assets/icon.svg",
             "name": {
-              "en": "Flush 2 Relay - Relay 1 (ZMNHBD)",
-              "nl": "Flush 2 Relay - Relais 1 (ZMNHBD)"
+              "en": "Flush 2 Relay (ZMNHBD) - Relay 1",
+              "nl": "Flush 2 Relay (ZMNHBD) - Relais 1"
             },
             "mobile": {
               "components": [
@@ -2475,10 +2474,10 @@
               "resetMeter",
               "onoff"
             ],
-            "icon": "/drivers/ZMNHBD/assets/icon.svg",
+            "icon": "/drivers/ZMNHBD1/assets/icon.svg",
             "name": {
-              "en": "Flush 2 Relay - Relay 2 (ZMNHBD)",
-              "nl": "Flush 2 Relay - Relais 2 (ZMNHBD)"
+              "en": "Flush 2 Relay (ZMNHBD) - Relay 2",
+              "nl": "Flush 2 Relay (ZMNHBD) - Relais 2"
             },
             "mobile": {
               "components": [
@@ -2512,6 +2511,7 @@
           }
         }
       },
+      "id": "ZMNHBD1",
       "settings": [
         {
           "id": "allOn",
@@ -3469,13 +3469,12 @@
       ]
     },
     {
-      "id": "ZMNHDA",
       "name": {
         "en": "Flush Dimmer (ZMNHDA)"
       },
       "images": {
-        "large": "/drivers/ZMNHDA/assets/images/large.png",
-        "small": "/drivers/ZMNHDA/assets/images/small.png"
+        "large": "/drivers/ZMNHDA2/assets/images/large.png",
+        "small": "/drivers/ZMNHDA2/assets/images/small.png"
       },
       "class": "light",
       "capabilities": [
@@ -3530,7 +3529,7 @@
           4
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHDA/assets/learnmode.svg",
+          "image": "/drivers/ZMNHDA2/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush Dimmer (ZMNHDA) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush Dimmer (ZMNHDA) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -3541,9 +3540,10 @@
             "en": "Enable exclusion mode on the Flush Dimmer (ZMNHDA) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush Dimmer (ZMNHDA) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHDA/assets/learnmode.svg"
+          "image": "/drivers/ZMNHDA2/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHDA2",
       "settings": [
         {
           "id": "allOn",
@@ -3838,13 +3838,12 @@
       ]
     },
     {
-      "id": "ZMNHDD",
       "name": {
         "en": "Flush Dimmer (ZMNHDD)"
       },
       "images": {
-        "large": "/drivers/ZMNHDD/assets/images/large.png",
-        "small": "/drivers/ZMNHDD/assets/images/small.png"
+        "large": "/drivers/ZMNHDD1/assets/images/large.png",
+        "small": "/drivers/ZMNHDD1/assets/images/small.png"
       },
       "class": "light",
       "capabilities": [
@@ -3896,7 +3895,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHDD/assets/learnmode.svg",
+          "image": "/drivers/ZMNHDD1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush Dimmer (ZMNHDD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush Dimmer (ZMNHDD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -3907,9 +3906,10 @@
             "en": "Enable exclusion mode on the Flush Dimmer (ZMNHDD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush Dimmer (ZMNHDD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHDD/assets/learnmode.svg"
+          "image": "/drivers/ZMNHDD1/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHDD1",
       "settings": [
         {
           "id": "allOn",
@@ -4661,13 +4661,12 @@
       ]
     },
     {
-      "id": "ZMNHIA",
       "name": {
         "en": "Flush On/Off Thermostat (ZMNHIA)"
       },
       "images": {
-        "large": "/drivers/ZMNHIA/assets/images/large.png",
-        "small": "/drivers/ZMNHIA/assets/images/small.png"
+        "large": "/drivers/ZMNHIA2/assets/images/large.png",
+        "small": "/drivers/ZMNHIA2/assets/images/small.png"
       },
       "class": "thermostat",
       "capabilities": [
@@ -4713,7 +4712,7 @@
           6
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHIA/assets/learnmode.svg",
+          "image": "/drivers/ZMNHIA2/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush On/Off Thermostat (ZMNHIA) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush On/Off Thermostat (ZMNHIA) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -4724,9 +4723,10 @@
             "en": "Enable exclusion mode on the Flush On/Off Thermostat (ZMNHIA) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush On/Off Thermostat (ZMNHIA) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHIA/assets/learnmode.svg"
+          "image": "/drivers/ZMNHIA2/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHIA2",
       "settings": [
         {
           "id": "allOn",
@@ -6463,13 +6463,12 @@
       ]
     },
     {
-      "id": "ZMNHKD",
       "name": {
         "en": "Flush Heat & Cool Thermostat (ZMNHKD)"
       },
       "images": {
-        "large": "/drivers/ZMNHKD/assets/images/large.png",
-        "small": "/drivers/ZMNHKD/assets/images/small.png"
+        "large": "/drivers/ZMNHKD1/assets/images/large.png",
+        "small": "/drivers/ZMNHKD1/assets/images/small.png"
       },
       "class": "thermostat",
       "capabilities": [
@@ -6515,7 +6514,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHKD/assets/learnmode.svg",
+          "image": "/drivers/ZMNHKD1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush Heat & Cool Thermostat (ZMNHKD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush Heat & Cool Thermostat (ZMNHKD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -6526,9 +6525,10 @@
             "en": "Enable exclusion mode on the Flush Heat & Cool Thermostat (ZMNHKD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush Heat & Cool Thermostat (ZMNHKD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHKD/assets/learnmode.svg"
+          "image": "/drivers/ZMNHKD1/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHKD1",
       "settings": [
         {
           "id": "allOn",
@@ -8912,13 +8912,12 @@
       ]
     },
     {
-      "id": "ZMNHND",
       "name": {
         "en": "Flush 1D Relay (ZMNHND)"
       },
       "images": {
-        "large": "/drivers/ZMNHND/assets/images/large.png",
-        "small": "/drivers/ZMNHND/assets/images/small.png"
+        "large": "/drivers/ZMNHND1/assets/images/large.png",
+        "small": "/drivers/ZMNHND1/assets/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -8949,7 +8948,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHND/assets/learnmode.svg",
+          "image": "/drivers/ZMNHND1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush 1D Relay (ZMNHND) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush 1D Relay (ZMNHND) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -8960,9 +8959,10 @@
             "en": "Enable exclusion mode on the Flush 1D Relay (ZMNHND) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush 1D Relay (ZMNHND) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHND/assets/learnmode.svg"
+          "image": "/drivers/ZMNHND1/assets/learnmode.svg"
         }
       },
+      "id": "ZMNHND1",
       "settings": [
         {
           "id": "allOn",
@@ -9811,13 +9811,13 @@
       ]
     },
     {
-      "id": "ZMNHSD",
+      "id": "ZMNHSD1",
       "name": {
         "en": "DIN Dimmer (ZMNHSD)"
       },
       "images": {
-        "large": "/drivers/ZMNHSD/assets/images/large.png",
-        "small": "/drivers/ZMNHSD/assets/images/small.png"
+        "large": "/drivers/ZMNHSD1/assets/images/large.png",
+        "small": "/drivers/ZMNHSD1/assets/images/small.png"
       },
       "class": "light",
       "capabilities": [
@@ -9869,7 +9869,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHSD/assets/learnmode.svg",
+          "image": "/drivers/ZMNHSD1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the DIN Dimmer (ZMNHSD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de DIN Dimmer (ZMNHSD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -9880,7 +9880,7 @@
             "en": "Enable exclusion mode on the DIN Dimmer (ZMNHSD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de DIN Dimmer (ZMNHSD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHSD/assets/learnmode.svg"
+          "image": "/drivers/ZMNHSD1/assets/learnmode.svg"
         }
       },
       "settings": [
@@ -10344,13 +10344,13 @@
       ]
     },
     {
-      "id": "ZMNHTD",
+      "id": "ZMNHTD1",
       "name": {
         "en": "Smart Meter (ZMNHTD)"
       },
       "images": {
-        "large": "/drivers/ZMNHTD/assets/images/large.png",
-        "small": "/drivers/ZMNHTD/assets/images/small.png"
+        "large": "/drivers/ZMNHTD1/assets/images/large.png",
+        "small": "/drivers/ZMNHTD1/assets/images/small.png"
       },
       "class": "socket",
       "capabilities": [
@@ -10418,7 +10418,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHTD/assets/learnmode.svg",
+          "image": "/drivers/ZMNHTD1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Smart Meter (ZMNHTD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Press and hold the S (Service) button for more than 2 seconds.",
             "nl": "Activeer inclusie modus op de Smart Meter (ZMNHTD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Houd de S (Service) knop langer dan 2 seconden ingedrukt."
@@ -10429,7 +10429,7 @@
             "en": "To enable exclusion mode on the Smart Meter (ZMNHTD) press and hold the S (Service) button for 2 to 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Smart Meter (ZMNHTD) door de S (Service) knop tussen de 2 en 6 seconden ingedrukt te houden.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingedrukt wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHTD/assets/learnmode.svg"
+          "image": "/drivers/ZMNHTD1/assets/learnmode.svg"
         }
       },
       "settings": [
@@ -10890,13 +10890,13 @@
       ]
     },
     {
-      "id": "ZMNHVD",
+      "id": "ZMNHVD1",
       "name": {
         "en": "Flush Dimmer 0 - 10V (ZMNHVD)"
       },
       "images": {
-        "large": "/drivers/ZMNHVD/assets/images/large.png",
-        "small": "/drivers/ZMNHVD/assets/images/small.png"
+        "large": "/drivers/ZMNHVD1/assets/images/large.png",
+        "small": "/drivers/ZMNHVD1/assets/images/small.png"
       },
       "class": "light",
       "capabilities": [
@@ -10944,7 +10944,7 @@
           1
         ],
         "learnmode": {
-          "image": "/drivers/ZMNHVD/assets/learnmode.svg",
+          "image": "/drivers/ZMNHVD1/assets/learnmode.svg",
           "instruction": {
             "en": "Enable inclusion mode on the Flush Dimmer 0 - 10V (ZMNHVD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
             "nl": "Activeer inclusie modus op de Flush Dimmer 0 - 10V (ZMNHVD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
@@ -10955,7 +10955,7 @@
             "en": "Enable exclusion mode on the Flush Dimmer 0 - 10V (ZMNHVD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
             "nl": "Activeer exclusie modus op de Flush Dimmer 0 - 10V (ZMNHVD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
-          "image": "/drivers/ZMNHVD/assets/learnmode.svg"
+          "image": "/drivers/ZMNHVD1/assets/learnmode.svg"
         }
       },
       "settings": [

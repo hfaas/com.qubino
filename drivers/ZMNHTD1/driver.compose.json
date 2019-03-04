@@ -1,7 +1,6 @@
 {
-  "id": "ZMNHTD",
   "name": {
-    "en": "Smart Meter ({{driverId}})"
+    "en": "Smart Meter (ZMNHTD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

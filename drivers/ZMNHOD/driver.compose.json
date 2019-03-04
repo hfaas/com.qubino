@@ -1,7 +1,7 @@
 {
   "id": "ZMNHOD",
   "name": {
-    "en": "Flush Shutter DC ({{driverId}})"
+    "en": "Flush Shutter DC (ZMNHOD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

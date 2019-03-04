@@ -1,54 +1,51 @@
 {
-  "id": "ZMNHVD",
   "name": {
-    "en": "Flush Dimmer 0 - 10V ({{driverId}})"
+    "en": "Flush Heat & Cool Thermostat (ZMNHKD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
   },
-  "class": "light",
+  "class": "thermostat",
   "capabilities": [
-    "onoff",
-    "dim",
-    "measure_temperature"
+    "offAutoThermostatMode",
+    "target_temperature",
+    "measure_temperature",
+    "meter_power",
+    "measure_power"
   ],
-  "capabilitiesOptions": {
-    "onoff": {
-      "setOnDim": false
-    },
-    "dim": {
-      "opts": {
-        "duration": true
-      }
-    }
-  },
   "mobile": {
     "components": [
       {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
+        "capabilities": [],
+        "id": "icon"
       },
       {
-        "id": "slider",
         "capabilities": [
-          "dim"
-        ]
+          "measure_temperature",
+          "meter_power",
+          "measure_power"
+        ],
+        "id": "sensor"
       },
       {
-        "id": "sensor",
         "capabilities": [
-          "measure_temperature"
-        ]
+          "offAutoThermostatMode"
+        ],
+        "id": "picker"
+      },
+      {
+        "capabilities": [
+          "target_temperature"
+        ],
+        "id": "thermostat"
       }
     ]
   },
   "zwave": {
     "manufacturerId": 345,
-    "productTypeId": 1,
-    "productId": 83,
+    "productTypeId": 5,
+    "productId": 82,
     "associationGroups": [
       1
     ],

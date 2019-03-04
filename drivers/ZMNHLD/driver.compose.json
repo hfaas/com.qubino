@@ -1,7 +1,7 @@
 {
   "id": "ZMNHLD",
   "name": {
-    "en": "Flush PWM Thermostat ({{driverId}})"
+    "en": "Flush PWM Thermostat (ZMNHLD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
