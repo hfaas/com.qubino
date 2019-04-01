@@ -2374,7 +2374,7 @@
         "large": "/drivers/ZMNHBD1/assets/images/large.png",
         "small": "/drivers/ZMNHBD1/assets/images/small.png"
       },
-      "class": "other",
+      "class": "socket",
       "capabilities": [
         "measure_temperature",
         "allOn",
@@ -3476,7 +3476,7 @@
         "large": "/drivers/ZMNHDA2/assets/images/large.png",
         "small": "/drivers/ZMNHDA2/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
@@ -3845,7 +3845,7 @@
         "large": "/drivers/ZMNHDD1/assets/images/large.png",
         "small": "/drivers/ZMNHDD1/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
@@ -9818,7 +9818,7 @@
         "large": "/drivers/ZMNHSD1/assets/images/large.png",
         "small": "/drivers/ZMNHSD1/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
@@ -10897,7 +10897,7 @@
         "large": "/drivers/ZMNHVD1/assets/images/large.png",
         "small": "/drivers/ZMNHVD1/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
