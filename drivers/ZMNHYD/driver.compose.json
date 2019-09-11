@@ -16,31 +16,6 @@
     "resetMeter",
     "onoff"
   ],
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
-      },
-      {
-        "id": "sensor",
-        "capabilities": [
-          "measure_power",
-          "measure_voltage",
-          "measure_current",
-          "meter_power"
-        ]
-      },
-      {
-        "id": "button",
-        "capabilities": [
-          "resetMeter"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 2,
