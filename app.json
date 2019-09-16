@@ -41,7 +41,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -62,7 +62,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -80,7 +80,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -98,7 +98,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -116,7 +116,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -134,7 +134,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -152,13 +152,31 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHDD1"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHHD",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHHD"
           }
         ]
       },
@@ -170,7 +188,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -188,7 +206,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -206,7 +224,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -224,7 +242,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -242,7 +260,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -260,7 +278,7 @@
         },
         "hint": {
           "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
-          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraait."
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
         },
         "args": [
           {
@@ -2374,7 +2392,7 @@
         "large": "/drivers/ZMNHBD1/assets/images/large.png",
         "small": "/drivers/ZMNHBD1/assets/images/small.png"
       },
-      "class": "other",
+      "class": "socket",
       "capabilities": [
         "measure_temperature",
         "allOn",
@@ -3476,7 +3494,7 @@
         "large": "/drivers/ZMNHDA2/assets/images/large.png",
         "small": "/drivers/ZMNHDA2/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
@@ -3845,7 +3863,7 @@
         "large": "/drivers/ZMNHDD1/assets/images/large.png",
         "small": "/drivers/ZMNHDD1/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
@@ -4654,6 +4672,417 @@
               "hint": {
                 "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
                 "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "en": "Mini Dimmer (ZMNHHD)"
+      },
+      "images": {
+        "large": "/drivers/ZMNHHD/assets/images/large.jpg",
+        "small": "/drivers/ZMNHHD/assets/images/small.jpg"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "meter_power",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "setOnDim": false
+        },
+        "dim": {
+          "opts": {
+            "duration": true
+          }
+        }
+      },
+      "zwave": {
+        "manufacturerId": 345,
+        "productTypeId": 1,
+        "productId": 85,
+        "associationGroups": [
+          1
+        ],
+        "learnmode": {
+          "image": "/drivers/ZMNHHD/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the Mini Dimmer (ZMNHHD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Mini Dimmer (ZMNHHD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the Mini Dimmer (ZMNHHD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Mini Dimmer (ZMNHHD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/ZMNHHD/assets/learnmode.svg"
+        }
+      },
+      "id": "ZMNHHD",
+      "settings": [
+        {
+          "id": "switchType",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type",
+            "nl": "Schakelaar type"
+          },
+          "zwave": {
+            "index": 1,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdrukschakelaar"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switch",
+                "nl": "Tuimelschakelaar"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (1) determines the type of switch connected to the Mini Dimmer (ZMNHHD).",
+            "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op de Mini Dimmer (ZMNHHD)."
+          }
+        },
+        {
+          "id": "autoOff",
+          "type": "number",
+          "label": {
+            "en": "Turn off automatically",
+            "nl": "Schakel automatisch uit"
+          },
+          "zwave": {
+            "index": 11,
+            "size": 2
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "hint": {
+            "en": "This parameter (11) defines the time after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+            "nl": "Deze parameter (11) bepaalt de tijd waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+          }
+        },
+        {
+          "id": "autoOn",
+          "type": "number",
+          "label": {
+            "en": "Turn on automatically",
+            "nl": "Schakel automatisch in"
+          },
+          "zwave": {
+            "index": 12,
+            "size": 2
+          },
+          "units": {
+            "en": "s",
+            "nl": "s"
+          },
+          "value": 0,
+          "attr": {
+            "min": 0,
+            "max": 32535
+          },
+          "hint": {
+            "en": "This parameter (12) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+            "nl": "Deze parameter (12) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+          }
+        },
+        {
+          "id": "restoreStatus",
+          "type": "checkbox",
+          "label": {
+            "en": "Restore light state after power failure",
+            "nl": "Herstel licht status na stroomonderbreking"
+          },
+          "zwave": {
+            "index": 30,
+            "size": 1
+          },
+          "value": true,
+          "hint": {
+            "en": "This parameter (30) determines whether after a power failure the light should be restored to the state it had before the power failure, else it will remain turned off.",
+            "nl": "Deze parameter (30) bepaalt of het licht na een stroomonderbreking moet worden ingesteld zoals deze voor de stroomonderbreking stond ingesteld, anders blijft hij uitgeschakelt."
+          }
+        },
+        {
+          "id": "workingMode",
+          "type": "dropdown",
+          "label": {
+            "en": "Working mode",
+            "nl": "Modus"
+          },
+          "zwave": {
+            "index": 5,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Dimmer",
+                "nl": "Dimmer"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Switch",
+                "nl": "Schakelaar"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (5) defines the working mode of the device, if mode is set to \"Switch\" the dimming functionality will be disabled. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+            "nl": "Deze parameter (5) bepaalt de modus van het apparaat, als de modus staat ingesteld op \"Schakelaar\" zal de dim functionaliteit niet langer werken. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+          }
+        },
+        {
+          "id": "doubleClick",
+          "type": "checkbox",
+          "label": {
+            "en": "Double click functionality",
+            "nl": "Dubbel klikken functionaliteit"
+          },
+          "zwave": {
+            "index": 21,
+            "size": 1
+          },
+          "value": false,
+          "hint": {
+            "en": "This parameter (21) determines if the double click functionality is enabled; when enabled a quick double click of the connected switch will set the light to the highest dim level. Note: this parameter is only applied if input 1 is configured as a momentary switch.",
+            "nl": "Deze parameter (21) bepaalt of de dubbel klikken functionaliteit is ingeschakeld; wanneer ingeschakeld zal een snelle dubbele klik op de aangesloten schakelaar het licht op het hoogste dim niveau instellen. Let op: deze parameter is alleen van toepassing als ingang 1 is ingesteld als pulsdrukschakelaar."
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Dimming",
+            "nl": "Dimmen"
+          },
+          "children": [
+            {
+              "value": 0,
+              "id": "minimumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Minimum dimming value (%)",
+                "nl": "Minimale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 60,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 98
+              },
+              "hint": {
+                "en": "This parameter (60) defines the lowest dim value that can be set. Note: the minimum dim value may not be higher than the maximum dim value.",
+                "nl": "Deze parameter (60) bepaalt de laagste dim waarde die kan worden ingesteld. Let op: de minimale dim waarde mag niet hoger zijn dan de maximale dim waarde."
+              }
+            },
+            {
+              "id": "maximumDimValue",
+              "type": "number",
+              "label": {
+                "en": "Maximum dimming value (%)",
+                "nl": "Maximale dim niveau (%)"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 61,
+                "size": 1
+              },
+              "value": 99,
+              "attr": {
+                "min": 2,
+                "max": 99
+              },
+              "hint": {
+                "en": "This parameter (61) defines the highest dim value that can be set. Note: the maximum dim value may not be lower than the minimum dim value.",
+                "nl": "Deze parameter (61) bepaalt de hoogste dim waarde die kan worden ingesteld. Let op: de maximale dim waarde mag niet lager zijn dan de minimale dim waarde."
+              }
+            },
+            {
+              "zwave": {
+                "index": 65,
+                "size": 1
+              },
+              "attr": {
+                "min": 1,
+                "max": 127
+              },
+              "id": "dimDuration",
+              "type": "number",
+              "label": {
+                "en": "Dim duration",
+                "nl": "Dim duur"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "value": 1,
+              "hint": {
+                "en": "This parameter (65) determines the time (in seconds) it takes to move between the maximum and minimum dim values when the switch connected to input 1 is clicked shortly or when controlled via Homey.",
+                "nl": "Deze parameter (65) bepaalt de tijd (in seconden) die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 kort is ingedrukt of wanneer aangestuurd via Homey."
+              }
+            },
+            {
+              "attr": {
+                "min": 1,
+                "max": 7560
+              },
+              "id": "dimDurationKeyPressed",
+              "type": "number",
+              "label": {
+                "en": "Dim duration when key pressed (s)",
+                "nl": "Dim duur bij lang indrukken (s)"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 66,
+                "size": 2
+              },
+              "value": 3,
+              "hint": {
+                "en": "This parameter (66) determines the time it takes to move between the maximum and minimum dim values when the switch connected to input 1 is pressed continuously or when controlled via an associated device.",
+                "nl": "Deze parameter (66) bepaalt de tijd die nodig is voor het dimmen van het maximale naar het minimale dim niveau wanneer de schakelaar aangesloten op ingang 1 lang wordt ingedrukt of wanneer aangestuurd via een geassocieerd apparaat."
+              }
+            },
+            {
+              "id": "dimDurationAssociated",
+              "type": "number",
+              "label": {
+                "en": "Dim duration association group 3",
+                "nl": "Dim duur voor associatiegroep 3"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 68,
+                "size": 1
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 127
+              },
+              "hint": {
+                "en": "This parameter (68) determines the dim transition duration time that is send to devices in association group 3.",
+                "nl": "Deze parameter (68) bepaalt de duur die wordt verstuurd naar apparaten in associatie groep 3."
+              }
+            },
+            {
+              "id": "ignoreStartLevel",
+              "type": "checkbox",
+              "label": {
+                "en": "Ignore dim start value",
+                "nl": "Negeer dim start niveau"
+              },
+              "zwave": {
+                "index": 67,
+                "size": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (67) determines whether the dim start value should be ignored or respected, when ignored the device will not start dimming from the currently set dim value. Note: this parameter is only relevant if the Mini Dimmer (ZMNHHD) is associated to other devices.",
+                "nl": "Deze parameter (67) bepaalt of het dim start niveau moet worden genegeerd of gerespecteerd, bij negeren zal het apparaat niet beginnen met dimmen vanaf het op dat moment ingestelde dim niveau. Let op: deze parameter is alleen relevant als de Mini Dimmer (ZMNHHD) is geassocieerd met andere apparaten."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 2 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 2 Watt is veranderd."
+              },
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              }
+            },
+            {
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Values from 1 to 29 are ignored to prevent network overload. Reports will only be send if there was a change compared to the last report. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Waarden van 1 tot 29 worden genegeerd om het netwerk niet te overbelasten. Reports worden alleen verstuurd als er een verschil is in gemeten waarde. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              },
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 32535
               }
             }
           ]
@@ -9818,7 +10247,7 @@
         "large": "/drivers/ZMNHSD1/assets/images/large.png",
         "small": "/drivers/ZMNHSD1/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
@@ -10897,7 +11326,7 @@
         "large": "/drivers/ZMNHVD1/assets/images/large.png",
         "small": "/drivers/ZMNHVD1/assets/images/small.png"
       },
-      "class": "light",
+      "class": "socket",
       "capabilities": [
         "onoff",
         "dim",
@@ -12231,31 +12660,6 @@
         "resetMeter",
         "onoff"
       ],
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "measure_voltage",
-              "measure_current",
-              "meter_power"
-            ]
-          },
-          {
-            "id": "button",
-            "capabilities": [
-              "resetMeter"
-            ]
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,

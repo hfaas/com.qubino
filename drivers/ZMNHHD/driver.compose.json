@@ -1,16 +1,17 @@
 {
   "name": {
-    "en": "Flush Dimmer 0 - 10V (ZMNHVD)"
+    "en": "Mini Dimmer (ZMNHHD)"
   },
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "{{driverAssetsPath}}/images/large.jpg",
+    "small": "{{driverAssetsPath}}/images/small.jpg"
   },
   "class": "socket",
   "capabilities": [
     "onoff",
     "dim",
-    "measure_temperature"
+    "meter_power",
+    "measure_power"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -22,32 +23,10 @@
       }
     }
   },
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
-      },
-      {
-        "id": "slider",
-        "capabilities": [
-          "dim"
-        ]
-      },
-      {
-        "id": "sensor",
-        "capabilities": [
-          "measure_temperature"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 1,
-    "productId": 83,
+    "productId": 85,
     "associationGroups": [
       1
     ],

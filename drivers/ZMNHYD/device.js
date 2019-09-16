@@ -5,8 +5,7 @@ const QubinoDevice = require('../../lib/QubinoDevice');
 
 /**
  * Smart Plug (ZMNHYD)
- * Extended manual: http://qubino.com/download/2302/
- * TODO: images/icons
+ * Extended manual: https://qubino.com/manuals/Smart_Plug_16A.pdf
  */
 class ZMNHYD extends QubinoDevice {
 
