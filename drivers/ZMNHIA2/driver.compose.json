@@ -14,34 +14,6 @@
     "meter_power",
     "measure_power"
   ],
-  "mobile": {
-    "components": [
-      {
-        "capabilities": [],
-        "id": "icon"
-      },
-      {
-        "capabilities": [
-          "offAutoThermostatMode"
-        ],
-        "id": "picker"
-      },
-      {
-        "capabilities": [
-          "measure_temperature",
-          "meter_power",
-          "measure_power"
-        ],
-        "id": "sensor"
-      },
-      {
-        "capabilities": [
-          "target_temperature"
-        ],
-        "id": "thermostat"
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 5,

@@ -7,6 +7,7 @@ const QubinoShutterDevice = require('../../lib/QubinoShutterDevice');
  * Flush Shutter (ZMNHCD)
  * Extended manual: http://qubino.com/download/2075/
  * Regular manual: http://qubino.com/download/1041/
+ * TODO: maintenance actions for calibration/reset meter
  */
 class ZMNHCD extends QubinoShutterDevice {
 

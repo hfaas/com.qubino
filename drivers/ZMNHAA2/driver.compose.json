@@ -13,30 +13,6 @@
     "meter_power",
     "measure_temperature"
   ],
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
-      },
-      {
-        "id": "toggle",
-        "capabilities": [
-          "onoff"
-        ]
-      },
-      {
-        "id": "sensor",
-        "capabilities": [
-          "measure_power",
-          "meter_power",
-          "measure_temperature"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 2,

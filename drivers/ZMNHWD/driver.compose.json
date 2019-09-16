@@ -26,31 +26,6 @@
       }
     }
   },
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
-      },
-      {
-        "id": "slider",
-        "capabilities": [
-          "dim"
-        ]
-      },
-      {
-        "id": "color",
-        "capabilities": [
-          "light_hue",
-          "light_saturation",
-          "light_temperature",
-          "light_mode"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 1,

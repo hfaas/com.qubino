@@ -7,6 +7,7 @@ const QubinoDevice = require('../../lib/QubinoDevice');
  * Smart Meter (ZMNHTD)
  * Extended manual: http://qubino.com/download/2069/
  * Regular manual: http://qubino.com/download/1093/
+ * TODO: maintenance action for reset meter
  */
 class ZMNHTD extends QubinoDevice {
 

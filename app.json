@@ -5,7 +5,7 @@
   },
   "sdk": 2,
   "version": "2.0.10",
-  "compatibility": ">=1.5.1",
+  "compatibility": ">=2.0.0",
   "description": {
     "en": "Qubino devices for Homey",
     "nl": "Qubino apparaten voor Homey"
@@ -1118,30 +1118,6 @@
         "meter_power",
         "measure_temperature"
       ],
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "toggle",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -1420,33 +1396,8 @@
         "measure_power",
         "meter_power",
         "measure_temperature",
-        "resetMeter",
         "onoff"
       ],
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          },
-          {
-            "id": "button",
-            "capabilities": [
-              "resetMeter"
-            ]
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -2025,30 +1976,6 @@
         "meter_power",
         "measure_temperature"
       ],
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "toggle",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -2398,27 +2325,6 @@
         "allOn",
         "allOff"
       ],
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": []
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_temperature"
-            ]
-          },
-          {
-            "id": "button",
-            "capabilities": [
-              "allOn",
-              "allOff"
-            ]
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -2446,42 +2352,12 @@
             "capabilities": [
               "measure_power",
               "meter_power",
-              "resetMeter",
               "onoff"
             ],
             "icon": "/drivers/ZMNHBD1/assets/icon.svg",
             "name": {
               "en": "Flush 2 Relay (ZMNHBD) - Relay 1",
               "nl": "Flush 2 Relay (ZMNHBD) - Relais 1"
-            },
-            "mobile": {
-              "components": [
-                {
-                  "id": "icon",
-                  "capabilities": [
-                    "onoff"
-                  ]
-                },
-                {
-                  "id": "toggle",
-                  "capabilities": [
-                    "onoff"
-                  ]
-                },
-                {
-                  "id": "sensor",
-                  "capabilities": [
-                    "measure_power",
-                    "meter_power"
-                  ]
-                },
-                {
-                  "id": "button",
-                  "capabilities": [
-                    "resetMeter"
-                  ]
-                }
-              ]
             }
           },
           "2": {
@@ -2489,42 +2365,12 @@
             "capabilities": [
               "measure_power",
               "meter_power",
-              "resetMeter",
               "onoff"
             ],
             "icon": "/drivers/ZMNHBD1/assets/icon.svg",
             "name": {
               "en": "Flush 2 Relay (ZMNHBD) - Relay 2",
               "nl": "Flush 2 Relay (ZMNHBD) - Relais 2"
-            },
-            "mobile": {
-              "components": [
-                {
-                  "id": "icon",
-                  "capabilities": [
-                    "onoff"
-                  ]
-                },
-                {
-                  "id": "toggle",
-                  "capabilities": [
-                    "onoff"
-                  ]
-                },
-                {
-                  "id": "sensor",
-                  "capabilities": [
-                    "measure_power",
-                    "meter_power"
-                  ]
-                },
-                {
-                  "id": "button",
-                  "capabilities": [
-                    "resetMeter"
-                  ]
-                }
-              ]
             }
           }
         }
@@ -3032,8 +2878,6 @@
       "class": "windowcoverings",
       "capabilities": [
         "dim",
-        "resetMeter",
-        "calibration",
         "meter_power",
         "measure_power",
         "measure_temperature",
@@ -3052,47 +2896,6 @@
             "nl": "Kanteling lamellen"
           }
         }
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": []
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "dim"
-            ],
-            "options": {
-              "showTitle": true
-            }
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "windowcoverings_tilt_set"
-            ],
-            "options": {
-              "showTitle": true
-            }
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          },
-          {
-            "id": "button",
-            "capabilities": [
-              "resetMeter",
-              "calibration"
-            ]
-          }
-        ]
       },
       "zwave": {
         "manufacturerId": 345,
@@ -3512,30 +3315,6 @@
           }
         }
       },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "dim"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 1,
@@ -3880,30 +3659,6 @@
             "duration": true
           }
         }
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "dim"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          }
-        ]
       },
       "zwave": {
         "manufacturerId": 345,
@@ -5105,34 +4860,6 @@
         "meter_power",
         "measure_power"
       ],
-      "mobile": {
-        "components": [
-          {
-            "capabilities": [],
-            "id": "icon"
-          },
-          {
-            "capabilities": [
-              "offAutoThermostatMode"
-            ],
-            "id": "picker"
-          },
-          {
-            "capabilities": [
-              "measure_temperature",
-              "meter_power",
-              "measure_power"
-            ],
-            "id": "sensor"
-          },
-          {
-            "capabilities": [
-              "target_temperature"
-            ],
-            "id": "thermostat"
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -5719,34 +5446,6 @@
         "meter_power",
         "measure_power"
       ],
-      "mobile": {
-        "components": [
-          {
-            "capabilities": [],
-            "id": "icon"
-          },
-          {
-            "capabilities": [
-              "offAutoThermostatMode"
-            ],
-            "id": "picker"
-          },
-          {
-            "capabilities": [
-              "measure_temperature",
-              "meter_power",
-              "measure_power"
-            ],
-            "id": "sensor"
-          },
-          {
-            "capabilities": [
-              "target_temperature"
-            ],
-            "id": "thermostat"
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -6907,34 +6606,6 @@
         "meter_power",
         "measure_power"
       ],
-      "mobile": {
-        "components": [
-          {
-            "capabilities": [],
-            "id": "icon"
-          },
-          {
-            "capabilities": [
-              "measure_temperature",
-              "meter_power",
-              "measure_power"
-            ],
-            "id": "sensor"
-          },
-          {
-            "capabilities": [
-              "offAutoThermostatMode"
-            ],
-            "id": "picker"
-          },
-          {
-            "capabilities": [
-              "target_temperature"
-            ],
-            "id": "thermostat"
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -8001,34 +7672,6 @@
         "meter_power",
         "measure_power"
       ],
-      "mobile": {
-        "components": [
-          {
-            "capabilities": [],
-            "id": "icon"
-          },
-          {
-            "capabilities": [
-              "offAutoThermostatMode"
-            ],
-            "id": "picker"
-          },
-          {
-            "capabilities": [
-              "measure_temperature",
-              "meter_power",
-              "measure_power"
-            ],
-            "id": "sensor"
-          },
-          {
-            "capabilities": [
-              "target_temperature"
-            ],
-            "id": "thermostat"
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -9353,22 +8996,6 @@
         "measure_temperature",
         "onoff"
       ],
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_temperature"
-            ]
-          }
-        ]
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -9777,8 +9404,6 @@
       "class": "windowcoverings",
       "capabilities": [
         "dim",
-        "resetMeter",
-        "calibration",
         "meter_power",
         "measure_power",
         "measure_temperature",
@@ -9797,47 +9422,6 @@
             "nl": "Kanteling lamellen"
           }
         }
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": []
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "dim"
-            ],
-            "options": {
-              "showTitle": true
-            }
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "windowcoverings_tilt_set"
-            ],
-            "options": {
-              "showTitle": true
-            }
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          },
-          {
-            "id": "button",
-            "capabilities": [
-              "resetMeter",
-              "calibration"
-            ]
-          }
-        ]
       },
       "zwave": {
         "manufacturerId": 345,
@@ -10264,30 +9848,6 @@
             "duration": true
           }
         }
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "dim"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_power",
-              "meter_power",
-              "measure_temperature"
-            ]
-          }
-        ]
       },
       "zwave": {
         "manufacturerId": 345,
@@ -10791,8 +10351,7 @@
         "powerReactive",
         "powerTotalReactive",
         "powerTotalApparent",
-        "powerFactor",
-        "resetMeter"
+        "powerFactor"
       ],
       "capabilitiesOptions": {
         "meter_power.import": {
@@ -10807,36 +10366,6 @@
             "nl": "Energiemeter (export)"
           }
         }
-      },
-      "mobile": {
-        "components": [
-          {
-            "capabilities": [
-              "onoff"
-            ],
-            "id": "icon"
-          },
-          {
-            "capabilities": [
-              "measure_voltage",
-              "measure_current",
-              "meter_power.import",
-              "meter_power.export",
-              "measure_power",
-              "powerReactive",
-              "powerTotalReactive",
-              "powerTotalApparent",
-              "powerFactor"
-            ],
-            "id": "sensor"
-          },
-          {
-            "capabilities": [
-              "resetMeter"
-            ],
-            "id": "button"
-          }
-        ]
       },
       "zwave": {
         "manufacturerId": 345,
@@ -11341,28 +10870,6 @@
             "duration": true
           }
         }
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "dim"
-            ]
-          },
-          {
-            "id": "sensor",
-            "capabilities": [
-              "measure_temperature"
-            ]
-          }
-        ]
       },
       "zwave": {
         "manufacturerId": 345,
@@ -11942,31 +11449,6 @@
             "duration": true
           }
         }
-      },
-      "mobile": {
-        "components": [
-          {
-            "id": "icon",
-            "capabilities": [
-              "onoff"
-            ]
-          },
-          {
-            "id": "slider",
-            "capabilities": [
-              "dim"
-            ]
-          },
-          {
-            "id": "color",
-            "capabilities": [
-              "light_hue",
-              "light_saturation",
-              "light_temperature",
-              "light_mode"
-            ]
-          }
-        ]
       },
       "zwave": {
         "manufacturerId": 345,
@@ -12657,7 +12139,6 @@
         "measure_current",
         "measure_power",
         "meter_power",
-        "resetMeter",
         "onoff"
       ],
       "zwave": {
@@ -13050,15 +12531,6 @@
       "getable": true,
       "setable": true
     },
-    "calibration": {
-      "type": "boolean",
-      "title": {
-        "en": "Start calibration",
-        "nl": "Begin kalibratie"
-      },
-      "getable": true,
-      "setable": true
-    },
     "offAutoThermostatMode": {
       "type": "enum",
       "title": {
@@ -13151,15 +12623,6 @@
       },
       "getable": true,
       "setable": false
-    },
-    "resetMeter": {
-      "type": "boolean",
-      "title": {
-        "en": "Reset power meter",
-        "nl": "Stel stroomverbuik opnieuw in"
-      },
-      "getable": true,
-      "setable": true
     }
   }
 }

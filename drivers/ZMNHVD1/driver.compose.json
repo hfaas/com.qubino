@@ -22,28 +22,6 @@
       }
     }
   },
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
-      },
-      {
-        "id": "slider",
-        "capabilities": [
-          "dim"
-        ]
-      },
-      {
-        "id": "sensor",
-        "capabilities": [
-          "measure_temperature"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 1,

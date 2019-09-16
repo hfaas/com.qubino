@@ -6,6 +6,7 @@ const QubinoDevice = require('../../lib/QubinoDevice');
 /**
  * Smart Plug (ZMNHYD)
  * Extended manual: https://qubino.com/manuals/Smart_Plug_16A.pdf
+ * TODO: add maintenance action for meter reset
  */
 class ZMNHYD extends QubinoDevice {
 

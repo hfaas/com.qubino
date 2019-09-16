@@ -1,9 +1,0 @@
-{
-  "type": "boolean",
-  "title": {
-    "en": "Reset power meter",
-    "nl": "Stel stroomverbuik opnieuw in"
-  },
-  "getable": true,
-  "setable": true
-}

@@ -12,27 +12,6 @@
     "allOn",
     "allOff"
   ],
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": []
-      },
-      {
-        "id": "sensor",
-        "capabilities": [
-          "measure_temperature"
-        ]
-      },
-      {
-        "id": "button",
-        "capabilities": [
-          "allOn",
-          "allOff"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 2,
@@ -60,42 +39,12 @@
         "capabilities": [
           "measure_power",
           "meter_power",
-          "resetMeter",
           "onoff"
         ],
         "icon": "{{driverAssetsPath}}/icon.svg",
         "name": {
           "en": "{{driverNameEn}} - Relay 1",
           "nl": "{{driverNameNl}} - Relais 1"
-        },
-        "mobile": {
-          "components": [
-            {
-              "id": "icon",
-              "capabilities": [
-                "onoff"
-              ]
-            },
-            {
-              "id": "toggle",
-              "capabilities": [
-                "onoff"
-              ]
-            },
-            {
-              "id": "sensor",
-              "capabilities": [
-                "measure_power",
-                "meter_power"
-              ]
-            },
-            {
-              "id": "button",
-              "capabilities": [
-                "resetMeter"
-              ]
-            }
-          ]
         }
       },
       "2": {
@@ -103,42 +52,12 @@
         "capabilities": [
           "measure_power",
           "meter_power",
-          "resetMeter",
           "onoff"
         ],
         "icon": "{{driverAssetsPath}}/icon.svg",
         "name": {
           "en": "{{driverNameEn}} - Relay 2",
           "nl": "{{driverNameNl}} - Relais 2"
-        },
-        "mobile": {
-          "components": [
-            {
-              "id": "icon",
-              "capabilities": [
-                "onoff"
-              ]
-            },
-            {
-              "id": "toggle",
-              "capabilities": [
-                "onoff"
-              ]
-            },
-            {
-              "id": "sensor",
-              "capabilities": [
-                "measure_power",
-                "meter_power"
-              ]
-            },
-            {
-              "id": "button",
-              "capabilities": [
-                "resetMeter"
-              ]
-            }
-          ]
         }
       }
     }

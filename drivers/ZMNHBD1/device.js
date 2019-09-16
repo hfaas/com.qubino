@@ -7,6 +7,7 @@ const QubinoDevice = require('../../lib/QubinoDevice');
  * Flush 2 Relay (ZMNHBD)
  * Extended manual: http://qubino.com/download/2044/
  * Regular manual: http://qubino.com/download/1029/
+ * TODO: add maintenance action for meter reset (both endpoints)
  */
 class ZMNHBD extends QubinoDevice {
 

@@ -17,8 +17,7 @@
     "powerReactive",
     "powerTotalReactive",
     "powerTotalApparent",
-    "powerFactor",
-    "resetMeter"
+    "powerFactor"
   ],
   "capabilitiesOptions": {
     "meter_power.import": {
@@ -33,36 +32,6 @@
         "nl": "Energiemeter (export)"
       }
     }
-  },
-  "mobile": {
-    "components": [
-      {
-        "capabilities": [
-          "onoff"
-        ],
-        "id": "icon"
-      },
-      {
-        "capabilities": [
-          "measure_voltage",
-          "measure_current",
-          "meter_power.import",
-          "meter_power.export",
-          "measure_power",
-          "powerReactive",
-          "powerTotalReactive",
-          "powerTotalApparent",
-          "powerFactor"
-        ],
-        "id": "sensor"
-      },
-      {
-        "capabilities": [
-          "resetMeter"
-        ],
-        "id": "button"
-      }
-    ]
   },
   "zwave": {
     "manufacturerId": 345,
