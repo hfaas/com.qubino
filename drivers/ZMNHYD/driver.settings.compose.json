@@ -1,18 +1,9 @@
 [
   {
-    "$extends": "allOn"
-  },
-  {
-    "$extends": "allOff"
-  },
-  {
     "$extends": "autoOff"
   },
   {
     "$extends": "autoOn"
-  },
-  {
-    "$extends": "autoOnOffUnit"
   },
   {
     "$extends": "restoreStatus"
@@ -180,23 +171,6 @@
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) defines the threshold of the overload safety switch which when exceeded for longer than 3.1 seconds will turn off the device.",
           "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de overbelasting beveiliging drempelwaarde die, wanneer overschreden voor langer dan 3,1 seconden, het apparaat zal uitschakelen.,"
-        }
-      },
-      {
-        "id": "enableReportingSetCommand",
-        "type": "checkbox",
-        "label": {
-          "en": "Enable reporting on set command",
-          "nl": "Schakel reporting in bij ontvangen van set commando"
-        },
-        "zwave": {
-          "index": 249,
-          "size": 1
-        },
-        "value": true,
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines whether the device should report after receiving a set command.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of het apparaat moet reporten naar aanleiding van het ontvangen van een set commando."
         }
       }
     ]

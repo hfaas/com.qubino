@@ -10,6 +10,10 @@ const QubinoDevice = require('../../lib/QubinoDevice');
  */
 class ZMNHYD extends QubinoDevice {
 
+	get multiChannelConfigurationDisabled() {
+		return true;
+	}
+
 	/**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private

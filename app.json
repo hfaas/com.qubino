@@ -12151,45 +12151,19 @@
         "learnmode": {
           "image": "/drivers/ZMNHYD/assets/learnmode.svg",
           "instruction": {
-            "en": "Enable inclusion mode on the Smart Plug (ZMNHYD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Press the S (Service) button 3 times within 3 seconds.",
-            "nl": "Activeer inclusie modus op de Smart Plug (ZMNHYD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Klik 3 keer binnen 3 seconden op de S (Service) knop."
+            "en": "Enable inclusion mode on the Smart Plug (ZMNHYD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Smart Plug (ZMNHYD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Houd 2 tot 6 seconden de S (Service) knop ingedrukt."
           }
         },
         "unlearnmode": {
           "instruction": {
-            "en": "Enable exclusion mode on the Smart Plug (ZMNHYD) by pressing the S (Service) button 3 times within 3 seconds.\n\nNote: pressing the S button 5 times within 3 seconds will reset the device completely.",
-            "nl": "Activeer exclusie modus op de Smart Plug (ZMNHYD) door binnen 3 seconden 3 keer op de S (Service) knop te drukken.\n\nLet op: wanneer de S knop 5 keer binnen 3 seconden wordt ingedrukt wordt het apparaat teruggezet naar fabrieksinstellingen."
+            "en": "Enable exclusion mode on the Smart Plug (ZMNHYD) by pressing and holding the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely. Resetting the device is only possible the first minute after connecting it to the power supply.",
+            "nl": "Activeer exclusie modus op de Smart Plug (ZMNHYD) door 2 tot 6 seconden de S (Service) knop ingedrukt te houden.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen. Terugzetten naar fabrieksinstellingen is alleen mogelijk de eerste minuut na het aansluiten op de stroomtoevoer."
           },
           "image": "/drivers/ZMNHYD/assets/learnmode.svg"
         }
       },
       "settings": [
-        {
-          "id": "allOn",
-          "type": "checkbox",
-          "label": {
-            "en": "Turn on when 'all on' command is received",
-            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
-          },
-          "hint": {
-            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
-            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
-          },
-          "value": true
-        },
-        {
-          "id": "allOff",
-          "type": "checkbox",
-          "label": {
-            "en": "Turn off when 'all off' command is received",
-            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
-          },
-          "hint": {
-            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
-            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
-          },
-          "value": true
-        },
         {
           "id": "autoOff",
           "type": "number",
@@ -12238,39 +12212,6 @@
           "hint": {
             "en": "This parameter (12) defines the time after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
             "nl": "Deze parameter (12) bepaalt de tijd waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
-          }
-        },
-        {
-          "id": "autoOnOffUnit",
-          "type": "dropdown",
-          "label": {
-            "en": "Turn on/off automatically setting unit",
-            "nl": "Schakel automatisch aan/uit parameter eenheid"
-          },
-          "zwave": {
-            "index": 15,
-            "size": 1
-          },
-          "value": "0",
-          "values": [
-            {
-              "id": "0",
-              "label": {
-                "en": "Seconds",
-                "nl": "Seconden"
-              }
-            },
-            {
-              "id": "1",
-              "label": {
-                "en": "Miliseconds",
-                "nl": "Miliseconden"
-              }
-            }
-          ],
-          "hint": {
-            "en": "This parameter (15) defines the unit of time used for the \"Turn on/off automatically\" settings (parameters 11 and 12).",
-            "nl": "Deze parameter (15) bepaalt de tijdseenheid die gebruikt wordt voor de \"Schakel automatisch aan/uit\" instellingen (parameters 11 en 12)."
           }
         },
         {
@@ -12488,23 +12429,6 @@
               "hint": {
                 "en": "This parameter (70) defines the threshold of the overload safety switch which when exceeded for longer than 3.1 seconds will turn off the device.",
                 "nl": "Deze parameter (70) bepaalt de overbelasting beveiliging drempelwaarde die, wanneer overschreden voor langer dan 3,1 seconden, het apparaat zal uitschakelen.,"
-              }
-            },
-            {
-              "id": "enableReportingSetCommand",
-              "type": "checkbox",
-              "label": {
-                "en": "Enable reporting on set command",
-                "nl": "Schakel reporting in bij ontvangen van set commando"
-              },
-              "zwave": {
-                "index": 249,
-                "size": 1
-              },
-              "value": true,
-              "hint": {
-                "en": "This parameter (249) determines whether the device should report after receiving a set command.",
-                "nl": "Deze parameter (249) bepaalt of het apparaat moet reporten naar aanleiding van het ontvangen van een set commando."
               }
             }
           ]
