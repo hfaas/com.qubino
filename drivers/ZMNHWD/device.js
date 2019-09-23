@@ -1,15 +1,17 @@
 'use strict';
 
-const util = require('homey-meshdriver').Util;
+const { Util } = require('homey-meshdriver');
+
 const constants = require('../../lib/constants');
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
 
 const FACTORY_DEFAULT_COLOR_DURATION = 255;
+const COLOR_REPORT_DEBOUNCE_TIMEOUT = 500; //ms
+const MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT = 500; //ms
 
 /**
  * Flush RGBW Dimmer (ZMNHWD)
- * Extended manual: http://qubino.com/download/2063/
- * Regular manual: http://qubino.com/download/1537/
+ * Extended manual: https://qubino.com/manuals/Flush_RGBW_Dimmer.pdf
  */
 class ZMNHWD extends QubinoDimDevice {
 
@@ -17,146 +19,353 @@ class ZMNHWD extends QubinoDimDevice {
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
-	registerCapabilities() {
+	async registerCapabilities() {
 
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.basic);
-		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
+		// Keep track of color reports
+		this._colorReportsQueue = [];
 
-		let debounceColorMode;
-		this.registerMultipleCapabilityListener([constants.capabilities.lightHue, constants.capabilities.lightSaturation], async (values = {}, options = {}) => {
-			let hue;
-			let saturation;
+		// Set empty color component state
+		this._colorComponentsState = {
+			white: null,
+			red: null,
+			green: null,
+			blue: null,
+			dim: null,
+		};
 
-			typeof values.light_hue === 'number' ? hue = values.light_hue : hue = this.getCapabilityValue(constants.capabilities.lightHue);
-			typeof values.light_saturation === 'number' ? saturation = values.light_saturation : saturation = this.getCapabilityValue(constants.capabilities.lightSaturation);
-			const value = 1; // brightness value is not determined in SWITCH_COLOR but with SWITCH_MULTILEVEL, changing this throws the dim value vs real life brightness out of sync
-
-			const rgb = util.convertHSVToRGB({ hue, saturation, value });
-
-			debounceColorMode = setTimeout(() => {
-				debounceColorMode = false;
-			}, 200);
-
-			let duration = null;
-			if (options.hasOwnProperty(constants.capabilities.lightHue) && options.light_hue.hasOwnProperty('duration')) {
-				duration = options.light_hue.duration;
+		// Register onoff capability
+		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchMultilevel, {
+			getOpts: {
+				getOnStart: false // onoff value is retrieved manually in _getCapabilityValuesOnStart()
 			}
-			if (!duration && options.hasOwnProperty(constants.capabilities.lightSaturation) && options.light_saturation.hasOwnProperty('duration')) {
-				duration = options.light_saturation.duration;
+		});
+
+		// Register dim capability
+		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel, {
+			getOpts: {
+				getOnStart: false // dim value is retrieved manually in _getCapabilityValuesOnStart()
 			}
+		});
 
-			return await this._sendColors({
-				warm: 0,
-				cold: 0,
-				red: rgb.red,
-				green: rgb.green,
-				blue: rgb.blue,
-				duration,
+		// Register report listener for switch color command class, the reports are debounced
+		this.registerReportListener(constants.commandClasses.switchColor, constants.commandClasses.switchColorReport, report => {
+			if (this._colorReportDebounce) clearTimeout(this._colorReportDebounce);
+			this._colorReportsQueue.push(report);
+			this._colorReportDebounce = setTimeout(this._debouncedColorReportListener.bind(this), COLOR_REPORT_DEBOUNCE_TIMEOUT);
+		});
+
+		// Register capability listener for all capabilities which affect each other
+		this.registerMultipleCapabilityListener(['onoff', 'dim', 'light_hue', 'light_saturation', 'light_mode', 'light_temperature'], this._multipleCapabilitiesHandler.bind(this), MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT);
+
+		// Fetch capability values from device
+		await this._getCapabilityValuesOnStart();
+	}
+
+	/**
+	 * This method is debounced and loops all registered color reports and updates the device capabilities accordingly.
+	 * @returns {Promise<void>}
+	 * @private
+	 */
+	_debouncedColorReportListener() {
+		this.log('_debouncedColorReportListener()');
+
+		let red = null;
+		let green = null;
+		let blue = null;
+		let white = null;
+
+		// Loop all color reports to find all RGBW values
+		let dim = this.getCapabilityValue(constants.capabilities.dim);
+		for (let i = 0; i < this._colorReportsQueue.length; i++) {
+			let report = this._colorReportsQueue[i];
+			if (report['Color Component ID'] === 0) { // white
+				white = report['Value'];
+			} else if (report['Color Component ID'] === 2) { // red
+				red = report['Value'];
+			} else if (report['Color Component ID'] === 3) { // green
+				green = report['Value'];
+			} else if (report['Color Component ID'] === 4) { // blue
+				blue = report['Value'];
+			}
+		}
+
+		// If not all color components are received abort
+		if (red === null || green === null || blue === null || white === null) {
+			this.log('_debouncedColorReportListener() -> missing a RGBW value, abort');
+			return;
+		}
+
+		// Clear reports
+		this._colorReportsQueue = [];
+		return this._processColorUpdates({ white, red, green, blue, dim });
+	}
+
+	/**
+	 * Method that determines the desired capability value for a given capabilityId. It looks in the
+	 * newCapabilitiesValuesObject and currentCapabilitiesValuesObject and compares if a new value is available, if
+	 * not the current value is returned.
+	 * @param {string} capabilityId
+	 * @param {Object} newCapabilitiesValuesObject
+	 * @param {Object} currentCapabilitiesValuesObject
+	 * @returns {*}
+	 * @private
+	 */
+	_getDesiredCapabilityValue(capabilityId, newCapabilitiesValuesObject, currentCapabilitiesValuesObject) {
+		if (typeof newCapabilitiesValuesObject[capabilityId] !== 'undefined') {
+			return newCapabilitiesValuesObject[capabilityId];
+		}
+		return currentCapabilitiesValuesObject[capabilityId];
+	}
+
+	/**
+	 * Method that generates a color component object which is then set on the device. This color component object is
+	 * generated based on the current and new capability values.
+	 * @param {Object} newCapabilitiesValuesObject
+	 * @param {Object} currentCapabilitiesValuesObject
+	 * @returns {{red: number, green: number, blue: number, white: number}}
+	 * @private
+	 */
+	_generateColorComponents(newCapabilitiesValuesObject, currentCapabilitiesValuesObject) {
+
+		// Get desired capability values from new/current
+		const onoff = this._getDesiredCapabilityValue('onoff', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+		const dim = this._getDesiredCapabilityValue('dim', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+		const hue = this._getDesiredCapabilityValue('light_hue', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+		const mode = this._getDesiredCapabilityValue('light_mode', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+		const saturation = this._getDesiredCapabilityValue('light_saturation', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+		const temperature = this._getDesiredCapabilityValue('light_temperature', newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+
+		// Calculate RGB values based on dim value 1, RGB is scaled for dim later
+		let { red, green, blue } = Util.convertHSVToRGB({ hue, saturation, value: 1 });
+		let white = 255;
+
+		// If mode is color set white mode to zero
+		if (mode === 'color') {
+			white = 0;
+		} else if (mode === 'temperature') {
+			blue = (1 - temperature) * 255; // In temperature mode mix in blue to imitate cool white mode
+			red = 0; // Set red to zero since we don't want colors
+			green = 0; // Set red to zero since we don't want colors
+		}
+
+		// Store colorComponent values when device is off
+		if (onoff === false) {
+			this._colorComponentsState.red = red;
+			this._colorComponentsState.green = green;
+			this._colorComponentsState.blue = blue;
+			this._colorComponentsState.white = white;
+			this.log('stored colorComponent values\n', this._colorComponentsState);
+		}
+
+		const colorComponentsObject = {
+			red: red * dim,
+			green: green * dim,
+			blue: blue * dim,
+			white: white * dim,
+		};
+		this.log(`_generateColorComponents() -> rgbw(${colorComponentsObject.red},${colorComponentsObject.green},${colorComponentsObject.blue},${colorComponentsObject.white})`);
+		return colorComponentsObject;
+	}
+
+	/**
+	 * Method that is called when one of the device's capabilities is changed. It combines the capabilities into a single
+	 * command to the device.
+	 * @param {Object} values
+	 * @param {Object} options
+	 * @returns {Promise<*|undefined>}
+	 * @private
+	 */
+	async _multipleCapabilitiesHandler(values, options = {}) {
+		this.log('_multipleCapabilitiesHandler()', values, options);
+
+		// Updated capabilities object
+		const newCapabilitiesValuesObject = {
+			onoff: values.onoff,
+			dim: values.dim,
+			light_hue: values.light_hue,
+			light_saturation: values.light_saturation,
+			light_temperature: values.light_temperature,
+			light_mode: values.light_mode,
+		};
+
+		// Current capability values
+		const currentCapabilitiesValuesObject = {
+			onoff: this.getCapabilityValue('onoff'),
+			dim: this.getCapabilityValue('dim'),
+			light_hue: this.getCapabilityValue('light_hue'),
+			light_saturation: this.getCapabilityValue('light_saturation'),
+			light_temperature: this.getCapabilityValue('light_temperature'),
+			light_mode: this.getCapabilityValue('light_mode'),
+		};
+
+		// Filter newCapabilityValues for undefined properties, resulting in object with updated capability values
+		const updatedCapabilities = {};
+		for (let [key, value] of Object.entries(newCapabilitiesValuesObject)) {
+			if (typeof value !== 'undefined') updatedCapabilities[key] = value;
+		}
+
+		// Merged capabilities object represents the desired state of the device
+		const mergedCapabilitiesValuesObject = { ...currentCapabilitiesValuesObject, ...updatedCapabilities };
+		this.log('_multipleCapabilitiesHandler() -> current capabilities values\n', currentCapabilitiesValuesObject);
+		this.log('_multipleCapabilitiesHandler() -> new capabilities values\n', newCapabilitiesValuesObject);
+		this.log('_multipleCapabilitiesHandler() -> merged capabilities values\n', mergedCapabilitiesValuesObject);
+
+		// Generate color components
+		const colorComponents = this._generateColorComponents(newCapabilitiesValuesObject, currentCapabilitiesValuesObject);
+
+		// Store set dim value for later reference (if not zero, else device is not turned on after dimming to off)
+		if (typeof newCapabilitiesValuesObject.dim !== 'undefined' && newCapabilitiesValuesObject.dim) {
+			this.log('_multipleCapabilitiesHandler() -> stored dim value', newCapabilitiesValuesObject.dim);
+			this._colorComponentsState.dim = newCapabilitiesValuesObject.dim;
+		}
+
+		// Only dim changed
+		if (Object.prototype.hasOwnProperty.call(values, constants.capabilities.dim) && Object.keys(values).length === 1) {
+			let dimDuration = null;
+			if (Object.prototype.hasOwnProperty.call(options, constants.capabilities.dim) && Object.prototype.hasOwnProperty.call(options.dim, 'duration')) {
+				dimDuration = options.dim.duration;
+			}
+			this.log('_multipleCapabilitiesHandler() -> only dim changed', mergedCapabilitiesValuesObject.dim, dimDuration);
+
+			// Execute dim only
+			return this.executeCapabilitySetCommand(constants.capabilities.dim, constants.commandClasses.switchMultilevel, mergedCapabilitiesValuesObject.dim, {
+				duration: dimDuration
 			});
-		});
+		}
 
-		this.registerCapabilityListener(constants.capabilities.lightTemperature, async (value, options) => {
-			const warm = Math.floor(value * 255);
-			const cold = Math.floor((1 - value) * 255);
+		// Is turned off
+		if (mergedCapabilitiesValuesObject.onoff === false && (typeof newCapabilitiesValuesObject.dim === 'undefined' || newCapabilitiesValuesObject.dim === 0)) {
+			this.log('_multipleCapabilitiesHandler() -> turn off hard');
+			return this.executeCapabilitySetCommand(constants.capabilities.onoff, constants.commandClasses.switchMultilevel, false);
+		}
 
-			debounceColorMode = setTimeout(() => {
-				debounceColorMode = false;
-			}, 200);
+		// Is turned on
+		if (currentCapabilitiesValuesObject.onoff === false && mergedCapabilitiesValuesObject.onoff === true) {
+			this.log('_multipleCapabilitiesHandler() -> device is turned on, restore last known color components state\n', this._colorComponentsState);
 
-			let duration = null;
-			if (options.hasOwnProperty('duration')) duration = options.duration;
+			// Override colorComponent object with stored values
+			colorComponents.red = this._colorComponentsState.red;
+			colorComponents.green = this._colorComponentsState.green;
+			colorComponents.blue = this._colorComponentsState.blue;
+			colorComponents.white = this._colorComponentsState.white;
 
-			return await this._sendColors({
-				warm,
-				cold,
-				red: 0,
-				green: 0,
-				blue: 0,
-				duration,
-			});
-		});
+			if (typeof this._colorComponentsState.dim === 'number') this.setCapabilityValue(constants.capabilities.dim, this._colorComponentsState.dim);
+			else this.setCapabilityValue(constants.capabilities.dim, 1);
+		}
 
-		this.registerCapability(constants.capabilities.lightMode, constants.capabilities.switchColor, {
-			set: 'SWITCH_COLOR_SET',
-			setParser: (value, options) => {
+		// Set onoff to false when the rgbw values are zero
+		if (mergedCapabilitiesValuesObject.light_mode === 'color' && colorComponents.red === 0 && colorComponents.green === 0 && colorComponents.blue === 0) {
+			this.setCapabilityValue(constants.capabilities.onoff, false);
+		} else if (mergedCapabilitiesValuesObject.light_mode === 'temperature' && colorComponents.white === 0 && colorComponents.blue === 0) {
+			this.setCapabilityValue(constants.capabilities.onoff, false);
+		}
 
-				// set light_mode is always triggered with the set color/temperature flow cards, timeout is needed because of homey's async nature surpassing the debounce
-				setTimeout(async () => {
-					if (debounceColorMode) {
-						clearTimeout(debounceColorMode);
-						debounceColorMode = false;
-						return this.setCapabilityValue(constants.capabilities.lightMode, value);
-					}
+		// Set onoff to true if the device is turned on via dimming
+		if (mergedCapabilitiesValuesObject.dim > 0 && mergedCapabilitiesValuesObject.onoff === false) {
+			this.setCapabilityValue(constants.capabilities.onoff, true);
+		}
 
-					if (value === 'color') {
-						const hue = this.getCapabilityValue(constants.capabilities.lightHue) || 1;
-						const saturation = this.getCapabilityValue(constants.capabilities.lightSaturation) || 1;
-						const _value = 1; // brightness value is not determined in SWITCH_COLOR but with SWITCH_MULTILEVEL, changing this throws the dim value vs reallife brightness out of sync
+		return this._sendColors({ ...colorComponents });
+	}
 
-						const rgb = util.convertHSVToRGB({ hue, saturation, _value });
+	/**
+	 * Method that first fetches the dim value from the module. Following, the color component values will be retrieved.
+	 * Based on these values the capabilities will be updated (in case they changed externally).
+	 * @returns {Promise<*>}
+	 * @private
+	 */
+	async _getCapabilityValuesOnStart() {
+		this.log('_getCapabilityValuesOnStart()');
 
-						return await this._sendColors({
-							warm: 0,
-							cold: 0,
-							red: rgb.red,
-							green: rgb.green,
-							blue: rgb.blue,
-							duration: options.duration || null,
-						});
+		// Get dim value from device
+		let dim = null;
+		try {
+			dim = await this.refreshCapabilityValue(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
+			await this.setCapabilityValue(constants.capabilities.onoff, dim > 0);
+			this.log('_getCapabilityValuesOnStart() -> dim:', dim);
+		} catch (err) {
+			return this.error('failed to retrieve dim capability value', err);
+		}
 
-					} else if (value === 'temperature') {
-						const temperature = this.getCapabilityValue(constants.capabilities.lightTemperature) || 1;
-						const warm = temperature * 255;
-						const cold = (1 - temperature) * 255;
-
-						return await this._sendColors({
-							warm,
-							cold,
-							red: 0,
-							green: 0,
-							blue: 0,
-							duration: options.duration || null,
-						});
-					}
-				}, 50);
-			},
-		});
-
-		// Getting all color values during boot
+		// Color components [white = 0, cold white = 1, red = 2, green = 3, blue = 4]
 		const commandClassColorSwitch = this.getCommandClass(constants.commandClasses.switchColor);
 		if (!(commandClassColorSwitch instanceof Error) && typeof commandClassColorSwitch.SWITCH_COLOR_GET === 'function') {
 
-			// Timeout mandatory for stability, often fails getting 1 (or more) value without it
-			setTimeout(() => {
+			// Get all color component values
+			Promise.all([
+				this._getColorValue(0), // white
+				this._getColorValue(2), // red
+				this._getColorValue(3), // green
+				this._getColorValue(4), // blue
+			])
+				.then(async result => {
+					const [white, red, green, blue] = result;
+					this.log(`_getCapabilityValuesOnStart() -> rgbw(${red},${green},${blue},${white})`);
 
-				// Wait for all color values to arrive
-				Promise.all([this._getColorValue(0), this._getColorValue(1), this._getColorValue(2), this._getColorValue(3), this._getColorValue(4)])
-					.then(result => {
-						if (result[0] === 0 && result[1] === 0) {
-							const hsv = util.convertRGBToHSV({
-								red: result[2],
-								green: result[3],
-								blue: result[4],
-							});
+					//Store color components in state object
+					this._colorComponentsState.red = red;
+					this._colorComponentsState.green = green;
+					this._colorComponentsState.blue = blue;
+					this._colorComponentsState.white = white;
 
-							this.setCapabilityValue(constants.capabilities.lightMode, 'color');
-							this.setCapabilityValue(constants.capabilities.lightHue, hsv.hue);
-							this.setCapabilityValue(constants.capabilities.lightSaturation, hsv.saturation);
-						} else {
-							const temperature = Math.round(result[0] / 255 * 100) / 100;
-
-							this.setCapabilityValue(constants.capabilities.lightMode, 'temperature');
-							this.setCapabilityValue(constants.capabilities.lightTemperature, temperature);
-						}
-					});
-			}, 500);
+					// Update device capabilities
+					return this._processColorUpdates({ white, red, green, blue, dim });
+				})
+				.catch(err => this.error(`_getCapabilityValuesOnStart() -> failed to get color value(s)`, err));
 		}
 	}
 
+	/**
+	 * Method that processes an RGBW object and updates the device capabilities accordingly.
+	 * @param {number} white - Range 0 - 255
+	 * @param {number} red - Range 0 - 255
+	 * @param {number} green - Range 0 - 255
+	 * @param {number} blue - Range 0 - 255
+	 * @param {number} dim - Range 0 - 1
+	 * @returns {Promise<void>}
+	 * @private
+	 */
+	async _processColorUpdates({ white, red, green, blue, dim }) {
+		this.log(`_processColorUpdates() -> rgbw(${red},${green},${blue},${white})`);
+
+		// Detect color mode
+		if (red > 0 || green > 0 || (blue > 0 && white === 0)) {
+			this.setCapabilityValue('light_mode', 'color');
+			this.log('_processColorUpdates() -> light_mode: color');
+		} else if (white > 0) {
+			this.setCapabilityValue('light_mode', 'temperature');
+			this.log('_processColorUpdates() -> light_mode: temperature');
+		}
+
+		// Get hue and saturation from RGB values
+		const { hue, saturation } = Util.convertRGBToHSV({
+			red: red,
+			green: green,
+			blue: blue,
+		});
+
+		this.setCapabilityValue('light_hue', hue);
+		this.setCapabilityValue('light_saturation', saturation);
+		this.log('_processColorUpdates() -> light_hue:', hue);
+		this.log('_processColorUpdates() -> light_saturation:', saturation);
+
+		// Calculate light temperature value
+		let lightTemperature = null;
+		if (dim === 0) lightTemperature = 0; // Prevent NaN
+		else lightTemperature = Util.mapValueRange(0, 255, 1, 0, blue / dim);
+		this.setCapabilityValue('light_temperature', lightTemperature);
+		this.log('_processColorUpdates() -> light_temperature:', lightTemperature);
+	}
+
+	/**
+	 * Method that executes the SWITCH_COLOR_GET command.
+	 * @param {number} colorComponentID - [white = 0, cold white = 1, red = 2, green = 3, blue = 4]
+	 * @returns {Promise<number>}
+	 * @private
+	 */
 	async _getColorValue(colorComponentID) {
 		const commandClassColorSwitch = this.getCommandClass('SWITCH_COLOR');
 		if (!(commandClassColorSwitch instanceof Error) && typeof commandClassColorSwitch.SWITCH_COLOR_GET === 'function') {
-
 			try {
 				const result = await commandClassColorSwitch.SWITCH_COLOR_GET({ 'Color Component ID': colorComponentID });
 				return (result && typeof result.Value === 'number') ? result.Value : 0;
@@ -168,21 +377,28 @@ class ZMNHWD extends QubinoDimDevice {
 		return 0;
 	}
 
-	async _sendColors({ warm, cold, red, green, blue, duration }) {
-		const commandClassSwitchColorVersion = this.getCommandClass(constants.commandClasses.switchColor).version || 1;
+	/**
+	 * Method that executes the SWITCH_COLOR_SET command and stores the last known color component values in
+	 * this._colorComponentsState.
+	 * @param {number} white - Range 0 - 255
+	 * @param {number} red - Range 0 - 255
+	 * @param {number} green - Range 0 - 255
+	 * @param {number} blue - Range 0 - 255
+	 * @returns {Promise<*>}
+	 * @private
+	 */
+	async _sendColors({ white, red, green, blue }) {
+		this.log(`_sendColors() -> r: ${Math.round(red)}, g: ${Math.round(green)}, b: ${Math.round(blue)}, w: ${Math.round(white)}`);
+		const SwitchColorVersion = this.getCommandClass('SWITCH_COLOR').version || 1;
 
 		let setCommand = {
 			Properties1: {
-				'Color Component Count': 5,
+				'Color Component Count': 4,
 			},
 			vg1: [
 				{
 					'Color Component ID': 0,
-					Value: Math.round(warm),
-				},
-				{
-					'Color Component ID': 1,
-					Value: Math.round(cold),
+					Value: Math.round(white),
 				},
 				{
 					'Color Component ID': 2,
@@ -199,13 +415,15 @@ class ZMNHWD extends QubinoDimDevice {
 			],
 		};
 
-		if (commandClassSwitchColorVersion > 1) {
-			setCommand.duration = typeof duration !== 'number' ? FACTORY_DEFAULT_COLOR_DURATION : util.calculateZwaveDimDuration(duration);
-		}
+		this._colorComponentsState.white = setCommand.vg1[0].Value;
+		this._colorComponentsState.red = setCommand.vg1[1].Value;
+		this._colorComponentsState.green = setCommand.vg1[2].Value;
+		this._colorComponentsState.blue = setCommand.vg1[3].Value;
 
-		// Workaround for broken CC_SWITCH_COLOR_V2 parser
-		if (commandClassSwitchColorVersion === 2) {
-			setCommand = new Buffer([setCommand.Properties1['Color Component Count'], 0, setCommand.vg1[0].Value, 1, setCommand.vg1[1].Value, 2, setCommand.vg1[2].Value, 3, setCommand.vg1[3].Value, 4, setCommand.vg1[4].Value, setCommand.duration]);
+		// Fix broken CC_SWITCH_COLOR_V2 parser
+		if (SwitchColorVersion === 2) {
+			this.log('_sendColors() -> create buffer manually');
+			setCommand = new Buffer([setCommand.Properties1['Color Component Count'], 0, setCommand.vg1[0].Value, 2, setCommand.vg1[1].Value, 3, setCommand.vg1[2].Value, 4, setCommand.vg1[3].Value]);
 		}
 
 		return this.node.CommandClass.COMMAND_CLASS_SWITCH_COLOR.SWITCH_COLOR_SET(setCommand);
@@ -220,6 +438,8 @@ class ZMNHWD extends QubinoDimDevice {
 	 * @returns {Promise<T>}
 	 */
 	async onSettings(oldSettings, newSettings, changedKeysArr) {
+		// Multiply dim duration by 10 instead of default 100
+		this.registerSetting(constants.settings.dimDuration, value => value * 10);
 
 		// Get updated duration unit
 		let autoSceneModeTransitionDurationUnit = oldSettings[constants.settings.autoSceneModeTransitionDurationUnit];
@@ -227,7 +447,9 @@ class ZMNHWD extends QubinoDimDevice {
 			autoSceneModeTransitionDurationUnit = newSettings[constants.settings.autoSceneModeTransitionDurationUnit];
 
 			// If unit changed make sure duration is also added as changed
-			changedKeysArr.push(constants.settings.autoSceneModeTransitionDuration);
+			if (!changedKeysArr.includes(constants.settings.autoSceneModeTransitionDuration)) {
+				changedKeysArr.push(constants.settings.autoSceneModeTransitionDuration);
+			}
 		}
 
 		// Get updated transition duration value
