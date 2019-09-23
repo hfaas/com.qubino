@@ -44,10 +44,10 @@
           "index": 86,
           "size": 1
         },
-        "value": 8,
+        "value": 0.8,
         "attr": {
-          "min": 3,
-          "max": 50
+          "min": 0.3,
+          "max": 5
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the delay (in seconds), after the power consumption has dropped below the value specified in parameter 76, before the motor is turned off.",
@@ -93,7 +93,11 @@
       },
       {
         "$extends": "powerReportDelayTime",
-        "value": 8
+        "value": 0.8,
+        "attr": {
+          "min": 0.3,
+          "max": 5
+        }
       }
     ]
   },

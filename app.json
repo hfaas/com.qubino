@@ -9583,10 +9583,10 @@
                 "index": 86,
                 "size": 1
               },
-              "value": 8,
+              "value": 0.8,
               "attr": {
-                "min": 3,
-                "max": 50
+                "min": 0.3,
+                "max": 5
               },
               "hint": {
                 "en": "This parameter (86) determines the delay (in seconds), after the power consumption has dropped below the value specified in parameter 76, before the motor is turned off.",
@@ -9734,7 +9734,11 @@
               }
             },
             {
-              "value": 8,
+              "value": 0.8,
+              "attr": {
+                "min": 0.3,
+                "max": 5
+              },
               "id": "powerReportDelayTime",
               "type": "number",
               "label": {
@@ -9748,10 +9752,6 @@
               "zwave": {
                 "index": 85,
                 "size": 1
-              },
-              "attr": {
-                "min": 3,
-                "max": 50
               },
               "hint": {
                 "en": "This parameter (85) determines the maximum delay (in seconds) of a power consumption report after the motor has moved.",

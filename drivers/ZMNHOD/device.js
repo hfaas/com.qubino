@@ -8,6 +8,7 @@ const QubinoShutterDevice = require('../../lib/QubinoShutterDevice');
  * Extended manual: http://qubino.com/download/2066/
  * Regular manual: http://qubino.com/download/1055/
  * TODO: maintenance actions for calibration/reset meter
+ * TODO: remove/add capability tilt_set based on configuration
  */
 class ZMNHOD extends QubinoShutterDevice {
 
