@@ -9,26 +9,12 @@
   },
   "class": "windowcoverings",
   "capabilities": [
-    "dim",
+    "windowcoverings_set",
     "meter_power",
     "measure_power",
     "measure_temperature",
     "windowcoverings_tilt_set"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "title": {
-        "en": "Position",
-        "nl": "Positie"
-      }
-    },
-    "windowcoverings_tilt_set": {
-      "title": {
-        "en": "Tilt slats",
-        "nl": "Kanteling lamellen"
-      }
-    }
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 3,

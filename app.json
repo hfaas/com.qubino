@@ -2877,26 +2877,12 @@
       },
       "class": "windowcoverings",
       "capabilities": [
-        "dim",
+        "windowcoverings_set",
         "meter_power",
         "measure_power",
         "measure_temperature",
         "windowcoverings_tilt_set"
       ],
-      "capabilitiesOptions": {
-        "dim": {
-          "title": {
-            "en": "Position",
-            "nl": "Positie"
-          }
-        },
-        "windowcoverings_tilt_set": {
-          "title": {
-            "en": "Tilt slats",
-            "nl": "Kanteling lamellen"
-          }
-        }
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 3,
@@ -2947,23 +2933,6 @@
           "value": true
         },
         {
-          "id": "inclusionMode",
-          "type": "checkbox",
-          "label": {
-            "en": "Secure inclusion",
-            "nl": "Beveiligde modus"
-          },
-          "zwave": {
-            "index": 250,
-            "size": 1
-          },
-          "value": false,
-          "hint": {
-            "en": "This parameter (250) determines if the device will be included as a secure device during the next inclusion. Note: to use secure inclusion the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
-            "nl": "Deze parameter (250) bepaalt of het apparaat tijdens de volgende inclusie in beveiligde modus wordt toegevoegd. Let op: om gebruik te maken van de beveiligde modus moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
-          }
-        },
-        {
           "type": "group",
           "label": {
             "en": "Roller shutter",
@@ -3009,6 +2978,11 @@
               }
             },
             {
+              "value": 0.6,
+              "attr": {
+                "min": 0,
+                "max": 10
+              },
               "id": "motorOperationDetection",
               "type": "number",
               "label": {
@@ -3022,11 +2996,6 @@
               "zwave": {
                 "index": 76,
                 "size": 1
-              },
-              "value": 30,
-              "attr": {
-                "min": 0,
-                "max": 127
               },
               "hint": {
                 "en": "This parameter (76) determines the threshold value in Watts after which the device detects that it can not move any higher or lower.",
@@ -3057,6 +3026,31 @@
               "hint": {
                 "en": "This parameter (90) determines the minimum time delay between successive motor movements.",
                 "nl": "Deze parameter (90) bepaalt de minimale vertraging tussen opeenvolgende motor bewegingen."
+              }
+            },
+            {
+              "id": "motorOffDelayLimitSwitch",
+              "type": "number",
+              "label": {
+                "en": "Delay after reaching limit switch",
+                "nl": "Vertraging na bereiken limiet"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 86,
+                "size": 1
+              },
+              "value": 0.8,
+              "attr": {
+                "min": 0.3,
+                "max": 5
+              },
+              "hint": {
+                "en": "This parameter (86) determines the delay (in seconds), after the power consumption has dropped below the value specified in parameter 76, before the motor is turned off.",
+                "nl": "Deze parameter (86) bepaalt de vertraging (in seconden), nadat het stroomverbruik is afgenomen tot onder de in parameter 76 ingestelde drempelwaarde, voordat de motor wordt uitgeschakelt."
               }
             }
           ]
@@ -3175,6 +3169,7 @@
               }
             },
             {
+              "value": 300,
               "id": "powerReportingInterval",
               "type": "number",
               "label": {
@@ -3189,7 +3184,6 @@
                 "index": 42,
                 "size": 2
               },
-              "value": 0,
               "attr": {
                 "min": 0,
                 "max": 32535
@@ -3200,6 +3194,11 @@
               }
             },
             {
+              "value": 0.8,
+              "attr": {
+                "min": 0.3,
+                "max": 5
+              },
               "id": "powerReportDelayTime",
               "type": "number",
               "label": {
@@ -3213,11 +3212,6 @@
               "zwave": {
                 "index": 85,
                 "size": 1
-              },
-              "value": 30,
-              "attr": {
-                "min": 3,
-                "max": 50
               },
               "hint": {
                 "en": "This parameter (85) determines the maximum delay (in seconds) of a power consumption report after the motor has moved.",
@@ -9403,26 +9397,12 @@
       },
       "class": "windowcoverings",
       "capabilities": [
-        "dim",
+        "windowcoverings_set",
         "meter_power",
         "measure_power",
         "measure_temperature",
         "windowcoverings_tilt_set"
       ],
-      "capabilitiesOptions": {
-        "dim": {
-          "title": {
-            "en": "Position",
-            "nl": "Positie"
-          }
-        },
-        "windowcoverings_tilt_set": {
-          "title": {
-            "en": "Tilt slats",
-            "nl": "Kanteling lamellen"
-          }
-        }
-      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 3,

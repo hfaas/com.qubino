@@ -6,9 +6,6 @@
     "$extends": "allOff"
   },
   {
-    "$extends": "inclusionMode"
-  },
-  {
     "type": "group",
     "label": {
       "en": "Roller shutter",
@@ -22,10 +19,18 @@
         "$extends": "motorMovingTime"
       },
       {
-        "$extends": "motorOperationDetection"
+        "$extends": "motorOperationDetection",
+        "value": 0.6,
+        "attr": {
+          "min": 0,
+          "max": 10
+        }
       },
       {
         "$extends": "delayBetweenMotorMovement"
+      },
+      {
+        "$extends": "motorOffDelayLimitSwitch"
       }
     ]
   },
@@ -61,10 +66,16 @@
         "$extends": "powerReportingThreshold"
       },
       {
-        "$extends": "powerReportingInterval"
+        "$extends": "powerReportingInterval",
+        "value": 300
       },
       {
-        "$extends": "powerReportDelayTime"
+        "$extends": "powerReportDelayTime",
+        "value": 0.8,
+        "attr": {
+          "min": 0.3,
+          "max": 5
+        }
       }
     ]
   },
