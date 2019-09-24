@@ -16,6 +16,16 @@ const MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT = 500; //ms
 class ZMNHWD extends QubinoDimDevice {
 
 	/**
+	 * Method that registers custom setting parsers.
+	 */
+	registerSettings() {
+		super.registerSettings();
+
+		// Multiply dim duration by 10 instead of default 100
+		this.registerSetting(constants.settings.dimDuration, value => value * 10);
+	}
+
+	/**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
@@ -438,8 +448,6 @@ class ZMNHWD extends QubinoDimDevice {
 	 * @returns {Promise<T>}
 	 */
 	async onSettings(oldSettings, newSettings, changedKeysArr) {
-		// Multiply dim duration by 10 instead of default 100
-		this.registerSetting(constants.settings.dimDuration, value => value * 10);
 
 		// Get updated duration unit
 		let autoSceneModeTransitionDurationUnit = oldSettings[constants.settings.autoSceneModeTransitionDurationUnit];
