@@ -781,6 +781,168 @@
           "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
         },
+        "id": "inputOneTurnedOn_ZMNHID",
+        "title": {
+          "en": "Input 1 turned on",
+          "nl": "Ingang 1 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputOneTurnedOff_ZMNHID",
+        "title": {
+          "en": "Input 1 turned off",
+          "nl": "Ingang 1 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputOneToggled_ZMNHID",
+        "title": {
+          "en": "Input 1 was toggled",
+          "nl": "Ingang 1 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputTwoTurnedOn_ZMNHID",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputTwoTurnedOff_ZMNHID",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputTwoToggled_ZMNHID",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 2 is enabled on the device, please see the device settings (parameter 101 and 12) for more information. Note: input 2 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 2 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 101 en 12) voor meer informatie. Let op: ingang 2 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputThreeTurnedOn_ZMNHID",
+        "title": {
+          "en": "Input 3 turned on",
+          "nl": "Ingang 3 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings (parameter 102 and 13) for more information. Note: input 3 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 102 en 13) voor meer informatie. Let op: ingang 3 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputThreeTurnedOff_ZMNHID",
+        "title": {
+          "en": "Input 3 turned off",
+          "nl": "Ingang 3 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 3 is enabled on the device, please see the device settings (parameter 102 and 13) for more information. Note: input 3 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 3 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 102 en 13) voor meer informatie. Let op: ingang 3 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
+        "id": "inputThreeToggled_ZMNHID",
+        "title": {
+          "en": "Input 3 was toggled",
+          "nl": "Ingang 3 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "hint": {
+          "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
+          "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
+        },
         "id": "inputOneTurnedOn_ZMNHKD1",
         "title": {
           "en": "Input 1 turned on",
@@ -5883,6 +6045,22 @@
                 "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
+              "values": [
+                {
+                  "id": "0",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld"
+                  }
+                },
+                {
+                  "id": "9",
+                  "label": {
+                    "en": "Sensor binary report",
+                    "nl": "Binaire sensor melding"
+                  }
+                }
+              ],
               "id": "enableInput1",
               "type": "dropdown",
               "label": {
@@ -5893,65 +6071,7 @@
                 "index": 100,
                 "size": 1
               },
-              "value": "0",
-              "values": [
-                {
-                  "id": "0",
-                  "label": {
-                    "en": "Disabled",
-                    "nl": "Uitgeschakeld"
-                  }
-                },
-                {
-                  "id": "1",
-                  "label": {
-                    "en": "Home Security; Motion Detection, unknown location",
-                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "CO; Carbon Monoxide detected, unknown location",
-                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "3",
-                  "label": {
-                    "en": "CO2; Carbon Dioxide detected, unknown location",
-                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "4",
-                  "label": {
-                    "en": "Water Alarm; Water Leak detected, unknown location",
-                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "5",
-                  "label": {
-                    "en": "Heat Alarm; Overheat detected, unknown location",
-                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "6",
-                  "label": {
-                    "en": "Smoke Alarm; Smoke detected, unknown location",
-                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "9",
-                  "label": {
-                    "en": "Sensor binary report",
-                    "nl": "Binaire sensor melding"
-                  }
-                }
-              ]
+              "value": "0"
             },
             {
               "zwave": {
@@ -5962,13 +6082,6 @@
                 "en": "This parameter (101) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. If input 2 is enabled parameter 12 must be set to influence heating and cooling according to the condense sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (101) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 2 is ingeschakeld moet parameter 12 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "id": "enableInput2",
-              "type": "dropdown",
-              "label": {
-                "en": "Input 2 notification type and event",
-                "nl": "Ingang 2 notificatie type en event"
-              },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -5978,55 +6091,20 @@
                   }
                 },
                 {
-                  "id": "1",
-                  "label": {
-                    "en": "Home Security; Motion Detection, unknown location",
-                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "CO; Carbon Monoxide detected, unknown location",
-                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "3",
-                  "label": {
-                    "en": "CO2; Carbon Dioxide detected, unknown location",
-                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "4",
-                  "label": {
-                    "en": "Water Alarm; Water Leak detected, unknown location",
-                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "5",
-                  "label": {
-                    "en": "Heat Alarm; Overheat detected, unknown location",
-                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "6",
-                  "label": {
-                    "en": "Smoke Alarm; Smoke detected, unknown location",
-                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
                   "id": "9",
                   "label": {
                     "en": "Sensor binary report",
                     "nl": "Binaire sensor melding"
                   }
                 }
-              ]
+              ],
+              "id": "enableInput2",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 2 notification type and event",
+                "nl": "Ingang 2 notificatie type en event"
+              },
+              "value": "0"
             },
             {
               "zwave": {
@@ -6037,13 +6115,6 @@
                 "en": "This parameter (102) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. If input 3 is enabled parameter 13 must be set to influence heating and cooling according to the flood sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (102) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 3 is ingeschakeld moet parameter 13 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "id": "enableInput3",
-              "type": "dropdown",
-              "label": {
-                "en": "Input 3 notification type and event",
-                "nl": "Ingang 3 notificatie type en event"
-              },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -6053,55 +6124,20 @@
                   }
                 },
                 {
-                  "id": "1",
-                  "label": {
-                    "en": "Home Security; Motion Detection, unknown location",
-                    "nl": "Huis Beveiliging; Bewegings Detectie, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "2",
-                  "label": {
-                    "en": "CO; Carbon Monoxide detected, unknown location",
-                    "nl": "CO; koolstofmonoxide gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "3",
-                  "label": {
-                    "en": "CO2; Carbon Dioxide detected, unknown location",
-                    "nl": "CO2; koolstofdioxide gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "4",
-                  "label": {
-                    "en": "Water Alarm; Water Leak detected, unknown location",
-                    "nl": "Water Alarm; Water Lek gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "5",
-                  "label": {
-                    "en": "Heat Alarm; Overheat detected, unknown location",
-                    "nl": "Hitte Alarm; Oververhitting gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
-                  "id": "6",
-                  "label": {
-                    "en": "Smoke Alarm; Smoke detected, unknown location",
-                    "nl": "Rook Alarm; Rook gedetecteerd, onbekende locatie"
-                  }
-                },
-                {
                   "id": "9",
                   "label": {
                     "en": "Sensor binary report",
                     "nl": "Binaire sensor melding"
                   }
                 }
-              ]
+              ],
+              "id": "enableInput3",
+              "type": "dropdown",
+              "label": {
+                "en": "Input 3 notification type and event",
+                "nl": "Ingang 3 notificatie type en event"
+              },
+              "value": "0"
             },
             {
               "id": "statusOnDelayInput1",

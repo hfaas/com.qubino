@@ -9,16 +9,13 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
  * Extended manual: http://qubino.com/download/2057/
  * Regular manual: http://qubino.com/download/1061/
  *
- * Note: this device sends NOTIFICATION_REPORTS but does not advertise this as a support command class in its NIF.
+ * Note: this device sends ALARM_REPORTS but does not advertise this as a support command class in its NIF.
  * Therefore, the settings enableInput1/enableInput2/enableInput3 can only accept value 9 SENSOR_BINARY_REPORT.
+ *
+ * Note 2: this device sends ALARM_REPORTS but does not advertise this as a support command class in its NIF.
+ * Therefore, the status of the thermostat mode can not be updated when switched manually.
  */
 class ZMNHID extends QubinoDevice {
-	async onMeshInit() {
-		await super.onMeshInit();
-
-		// Register custom settings parsers
-		this.registerSettings();
-	}
 
 	/**
 	 * Expose input configuration, three possible inputs (input 1, input 2 and input 3).
