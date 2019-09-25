@@ -143,8 +143,7 @@
         "$extends": "integralSamplingTime"
       },
       {
-        "$extends": "pParameter",
-        "value": 100
+        "$extends": "pParameter"
       },
       {
         "$extends": "iParameter"

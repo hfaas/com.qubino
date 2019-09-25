@@ -8,14 +8,11 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
  * Flush On/Off Thermostat (ZMNHLD)
  * Extended manual: http://qubino.com/download/2060/
  * Regular manual: http://qubino.com/download/1084/
+ *
+ * Note: this device sends NOTIFICATION_REPORTS but does not advertise this as a support command class in its NIF.
+ * Therefore, the settings enableInput1/enableInput2/enableInput3 can only accept value 9 SENSOR_BINARY_REPORT.
  */
 class ZMNHLD extends QubinoDevice {
-	async onMeshInit() {
-		await super.onMeshInit();
-
-		// Register custom settings parsers
-		this.registerSettings();
-	}
 
 	/**
 	 * Expose input configuration, three possible inputs (input 1, input 2 and input 3).
@@ -112,7 +109,7 @@ class ZMNHLD extends QubinoDevice {
 					typeof report.Level.Mode !== 'undefined') {
 					if (report.Level.Mode.toLowerCase() === 'heat' || report.Level.Mode.toLowerCase() === 'cool') {
 
-						// Update the thermostatMode since it may be override by input 3
+						// Update the thermostatMode since it may be overriden by input 3
 						this.setSettings({ thermostatMode: report.Level.Mode === 'Heat' ? '0' : '1' });
 						this.setStoreValue('thermostatMode', report.Level.Mode);
 						return 'auto';
@@ -146,7 +143,7 @@ class ZMNHLD extends QubinoDevice {
 			newSettings[constants.settings.antifreeze] = antifreezeValue;
 		}
 
-		return await super.onSettings(oldSettings, newSettings, changedKeysArr);
+		return super.onSettings(oldSettings, newSettings, changedKeysArr);
 	}
 
 	/**

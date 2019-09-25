@@ -8,6 +8,9 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
  * Flush On/Off Thermostat (ZMNHID)
  * Extended manual: http://qubino.com/download/2057/
  * Regular manual: http://qubino.com/download/1061/
+ *
+ * Note: this device sends NOTIFICATION_REPORTS but does not advertise this as a support command class in its NIF.
+ * Therefore, the settings enableInput1/enableInput2/enableInput3 can only accept value 9 SENSOR_BINARY_REPORT.
  */
 class ZMNHID extends QubinoDevice {
 	async onMeshInit() {
