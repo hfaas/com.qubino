@@ -292,7 +292,7 @@
     "triggers": [
       {
         "hint": null,
-        "id": "inputTwoTurnedOn_ZMNHAA2",
+        "id": "ZMNHAA2_I2_on",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -307,7 +307,7 @@
       },
       {
         "hint": null,
-        "id": "inputTwoTurnedOff_ZMNHAA2",
+        "id": "ZMNHAA2_I2_off",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -337,7 +337,7 @@
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOn_ZMNHAA2",
+        "id": "ZMNHAA2_I3_on",
         "title": {
           "en": "Input 3 turned on",
           "nl": "Ingang 3 is ingeschakeld"
@@ -352,7 +352,7 @@
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOff_ZMNHAA2",
+        "id": "ZMNHAA2_I3_off",
         "title": {
           "en": "Input 3 turned off",
           "nl": "Ingang 3 is uitgeschakeld"
@@ -1567,17 +1567,29 @@
         "associationGroups": [
           1
         ],
+        "defaultConfiguration": [
+          {
+            "id": 100,
+            "size": 1,
+            "value": 9
+          },
+          {
+            "id": 101,
+            "size": 1,
+            "value": 9
+          }
+        ],
         "learnmode": {
           "image": "/drivers/ZMNHAD1/assets/learnmode.svg",
           "instruction": {
-            "en": "Enable inclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
-            "nl": "Activeer inclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+            "en": "Enable inclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within five seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen vijf seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
           }
         },
         "unlearnmode": {
           "instruction": {
-            "en": "Enable exclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
-            "nl": "Activeer exclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+            "en": "Enable exclusion mode on the Flush 1 Relay (ZMNHAD) via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within five seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de Flush 1 Relay (ZMNHAD) via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen vijf seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
           },
           "image": "/drivers/ZMNHAD1/assets/learnmode.svg"
         }
@@ -2034,7 +2046,6 @@
               }
             },
             {
-              "value": 300,
               "id": "powerReportingInterval",
               "type": "number",
               "label": {
@@ -2049,6 +2060,7 @@
                 "index": 42,
                 "size": 2
               },
+              "value": 0,
               "attr": {
                 "min": 0,
                 "max": 32535

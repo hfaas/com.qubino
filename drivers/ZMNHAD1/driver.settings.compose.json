@@ -72,8 +72,7 @@
         "$extends": "powerReportingThreshold"
       },
       {
-        "$extends": "powerReportingInterval",
-        "value": 300
+        "$extends": "powerReportingInterval"
       }
     ]
   },

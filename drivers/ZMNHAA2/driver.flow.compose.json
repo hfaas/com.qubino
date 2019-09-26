@@ -2,10 +2,12 @@
   "triggers": [
     {
       "$extends": "inputTwoTurnedOn",
+      "$id": "ZMNHAA2_I2_on",
       "hint": null
     },
     {
       "$extends": "inputTwoTurnedOff",
+      "$id": "ZMNHAA2_I2_off",
       "hint": null
     },
     {
@@ -14,10 +16,12 @@
     },
     {
       "$extends": "inputThreeTurnedOn",
+      "$id": "ZMNHAA2_I3_on",
       "hint": null
     },
     {
       "$extends": "inputThreeTurnedOff",
+      "$id": "ZMNHAA2_I3_off",
       "hint": null
     },
     {

@@ -6,6 +6,7 @@ const QubinoDevice = require('../../lib/QubinoDevice');
 /**
  * Flush 1 Relay (ZMNHAA)
  * Manual: http://www.benext.eu/static/manual/qubino/flush-1-relay-ZMNHAA2.pdf
+ * TODO: add meter reset maintenance action
  */
 class ZMNHAA extends QubinoDevice {
 
@@ -40,6 +41,24 @@ class ZMNHAA extends QubinoDevice {
 				defaultEnabled: true,
 			},
 		];
+	}
+
+	/**
+	 * Override settings migration map
+	 * @private
+	 */
+	_settingsMigrationMap() {
+		const migrationMap = {};
+		if (this.getSetting('automatic_turning_off_output_q1_after_set_time') !== null) {
+			migrationMap.autoOff = () => Math.min(this.getSetting('automatic_turning_off_output_q1_after_set_time'), 655)
+		}
+		if (this.getSetting('power_report_on_power_change_q1') !== null) {
+			migrationMap.powerReportingThreshold = () => this.getSetting('power_report_on_power_change_q1');
+		}
+		if (this.getSetting('power_report_by_time_interval_q1') !== null) {
+			migrationMap.powerReportingInterval = () => this.getSetting('power_report_by_time_interval_q1');
+		}
+		return migrationMap
 	}
 
 	/**
