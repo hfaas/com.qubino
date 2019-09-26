@@ -54,7 +54,7 @@
           "meter_power",
           "onoff"
         ],
-        "icon": "{{driverAssetsPath}}/icon.svg",
+        "icon": "{{driverAssetsPath}}/icon-2.svg",
         "name": {
           "en": "{{driverNameEn}} - Relay 2",
           "nl": "{{driverNameNl}} - Relais 2"

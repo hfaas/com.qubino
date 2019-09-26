@@ -34,7 +34,7 @@
   "flow": {
     "actions": [
       {
-        "id": "resetMeter_ZMNHBD",
+        "id": "resetMeter_ZMNHBD1",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -48,7 +48,7 @@
             "name": "device",
             "type": "device",
             "filter": {
-              "driver_id": "ZMNHBD",
+              "driver_id": "ZMNHBD1",
               "flags": "zwaveMultiChannel"
             }
           }
@@ -1676,8 +1676,8 @@
           "id": "autoOnOffUnit",
           "type": "dropdown",
           "label": {
-            "en": "Turn on/off automatically setting unit",
-            "nl": "Schakel automatisch aan/uit parameter eenheid"
+            "en": "On/off automatically setting unit",
+            "nl": "Automatisch aan/uit parameter eenheid"
           },
           "zwave": {
             "index": 15,
@@ -2541,7 +2541,7 @@
               "meter_power",
               "onoff"
             ],
-            "icon": "/drivers/ZMNHBD1/assets/icon.svg",
+            "icon": "/drivers/ZMNHBD1/assets/icon-2.svg",
             "name": {
               "en": "Flush 2 Relay (ZMNHBD) - Relay 2",
               "nl": "Flush 2 Relay (ZMNHBD) - Relais 2"
@@ -2681,8 +2681,8 @@
           "id": "autoOnOffUnitQ1Q2",
           "type": "dropdown",
           "label": {
-            "en": "Turn on/off automatically setting unit",
-            "nl": "Schakel automatisch aan/uit parameter eenheid"
+            "en": "On/off automatically setting unit",
+            "nl": "Automatisch aan/uit parameter eenheid"
           },
           "zwave": {
             "index": 15,
@@ -9016,8 +9016,8 @@
           "id": "autoOnOffUnit",
           "type": "dropdown",
           "label": {
-            "en": "Turn on/off automatically setting unit",
-            "nl": "Schakel automatisch aan/uit parameter eenheid"
+            "en": "On/off automatically setting unit",
+            "nl": "Automatisch aan/uit parameter eenheid"
           },
           "zwave": {
             "index": 15,
@@ -12345,7 +12345,7 @@
         "en": "All off",
         "nl": "Alles uit"
       },
-      "getable": true,
+      "getable": false,
       "setable": true
     },
     "allOn": {
@@ -12354,7 +12354,7 @@
         "en": "All on",
         "nl": "Alles aan"
       },
-      "getable": true,
+      "getable": false,
       "setable": true
     },
     "offAutoThermostatMode": {

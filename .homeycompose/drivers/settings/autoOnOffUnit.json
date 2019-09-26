@@ -1,8 +1,8 @@
 {
   "type": "dropdown",
   "label": {
-    "en": "Turn on/off automatically setting unit",
-    "nl": "Schakel automatisch aan/uit parameter eenheid"
+    "en": "On/off automatically setting unit",
+    "nl": "Automatisch aan/uit parameter eenheid"
   },
   "zwave": {
     "index": 15,
