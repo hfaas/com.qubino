@@ -8,7 +8,6 @@ const QubinoShutterDevice = require('../../lib/QubinoShutterDevice');
  * Extended manual: http://qubino.com/download/2066/
  * Regular manual: http://qubino.com/download/1055/
  * TODO: maintenance actions for calibration/reset meter
- * TODO: remove/add capability tilt_set based on configuration
  * TODO: calibration, blinds need to be lowered all the way down before calibration starts
  */
 class ZMNHOD extends QubinoShutterDevice {
@@ -17,7 +16,7 @@ class ZMNHOD extends QubinoShutterDevice {
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
-	registerCapabilities() {
+	async registerCapabilities() {
 
 		// Always register meter power and measure power on root node
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
@@ -43,28 +42,19 @@ class ZMNHOD extends QubinoShutterDevice {
 					multiChannelNodeId: windowCoveringsSetMultiChannelNodeIds[1]
 				});
 			} else {
-				// Ventian blind mode disabled
-				this._disableVenetianBlindMode();
+				// Venetian blind mode disabled
+				this.removeCapability(constants.capabilities.windowCoveringsTiltSet).catch(err => this.error(`Error removing ${constants.capabilities.windowCoveringsTiltSet} capability`, err))
 			}
 		} else {
 			// No multi channel configuration
 			this.log('no multi channel configuration');
 
-			// Ventian blind mode disabled
-			this._disableVenetianBlindMode();
+			// Venetian blind mode disabled
+			this.removeCapability(constants.capabilities.windowCoveringsTiltSet).catch(err => this.error(`Error removing ${constants.capabilities.windowCoveringsTiltSet} capability`, err))
 
 			// Register windowcoverings_set on root node
 			this.registerCapability(constants.capabilities.windowcoveringsSet, constants.commandClasses.switchMultilevel);
 		}
-	}
-
-	_disableVenetianBlindMode() {
-		this.log('venetian blind mode is disabled');
-		// Set venetian blind motor control slider to zero, since it can not be used.
-		this.setCapabilityValue(constants.capabilities.windowCoveringsTiltSet, 0).catch(err => this.error('windowCoveringsTiltSet failed', err));
-
-		// Throw and show an error when user tries to control venetian blinds when venetian blind mode is disabled
-		this.registerCapabilityListener(constants.capabilities.windowCoveringsTiltSet, this.handleUnconfiguredTiltSet.bind(this));
 	}
 }
 
