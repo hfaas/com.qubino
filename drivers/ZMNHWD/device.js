@@ -12,6 +12,7 @@ const MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT = 500; //ms
 /**
  * Flush RGBW Dimmer (ZMNHWD)
  * Extended manual: https://qubino.com/manuals/Flush_RGBW_Dimmer.pdf
+ * TODO: add support for 4 Dimmer mode using add/remove capability
  */
 class ZMNHWD extends QubinoDimDevice {
 
