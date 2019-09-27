@@ -4,7 +4,7 @@
     "en": "Qubino"
   },
   "sdk": 2,
-  "version": "2.0.10",
+  "version": "2.0.11",
   "compatibility": ">=3.0.0",
   "description": {
     "en": "Qubino devices for Homey",
@@ -1334,6 +1334,11 @@
           "value": true
         },
         {
+          "zwave": {
+            "index": 11,
+            "size": 2,
+            "signed": false
+          },
           "attr": {
             "min": 0,
             "max": 655
@@ -1343,10 +1348,6 @@
           "label": {
             "en": "Turn off automatically",
             "nl": "Schakel automatisch uit"
-          },
-          "zwave": {
-            "index": 11,
-            "size": 2
           },
           "value": 0,
           "units": {
@@ -2248,6 +2249,11 @@
           }
         },
         {
+          "zwave": {
+            "index": 11,
+            "size": 2,
+            "signed": false
+          },
           "attr": {
             "min": 0,
             "max": 655
@@ -2257,10 +2263,6 @@
           "label": {
             "en": "Turn off output 1 automatically",
             "nl": "Schakel uitgang 1 automatisch uit"
-          },
-          "zwave": {
-            "index": 11,
-            "size": 2
           },
           "value": 0,
           "units": {
@@ -2275,7 +2277,8 @@
         {
           "zwave": {
             "index": 12,
-            "size": 2
+            "size": 2,
+            "signed": false
           },
           "attr": {
             "min": 0,
@@ -2458,7 +2461,7 @@
             {
               "value": 300,
               "zwave": {
-                "index": 42,
+                "index": 43,
                 "size": 2,
                 "signed": false
               },
@@ -2477,8 +2480,8 @@
                 "nl": "s"
               },
               "hint": {
-                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts of output 2 is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
-                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update van uitgang 2 moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+                "en": "This parameter (43) defines the interval in seconds with which the power consumption in Watts of output 2 is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (43) bepaalt op welk interval (in seconden) een stroomverbruik update van uitgang 2 moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
               }
             }
           ]

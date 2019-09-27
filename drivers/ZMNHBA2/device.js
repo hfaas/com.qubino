@@ -26,6 +26,34 @@ class ZMNHBA extends QubinoDevice {
 	}
 
 	/**
+	 * Override settings migration map
+	 * @private
+	 */
+	_settingsMigrationMap() {
+		const migrationMap = {};
+		if (this.getSetting('automatic_turning_off_output_q1_after_set_time') !== null) {
+			migrationMap.autoOffQ1 = () => Math.min(this.getSetting('automatic_turning_off_output_q1_after_set_time') / 100, 655)
+		}
+		if (this.getSetting('automatic_turning_off_output_q2_after_set_time') !== null) {
+			migrationMap.autoOffQ2 = () => Math.min(this.getSetting('automatic_turning_off_output_q2_after_set_time') / 100, 655)
+		}
+		if (this.getSetting('power_report_on_power_change_q1') !== null) {
+			migrationMap.powerReportingThresholdQ1 = () => this.getSetting('power_report_on_power_change_q1');
+		}
+		if (this.getSetting('power_report_on_power_change_q2') !== null) {
+			migrationMap.powerReportingThresholdQ2 = () => this.getSetting('power_report_on_power_change_q2');
+		}
+		if (this.getSetting('power_report_by_time_interval_q1') !== null) {
+			migrationMap.powerReportingIntervalQ1 = () => this.getSetting('power_report_by_time_interval_q1');
+		}
+		if (this.getSetting('power_report_by_time_interval_q2') !== null) {
+			migrationMap.powerReportingIntervalQ2 = () => this.getSetting('power_report_by_time_interval_q2');
+		}
+
+		return migrationMap
+	}
+
+	/**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */

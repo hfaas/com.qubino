@@ -10,6 +10,11 @@
   },
   {
     "$extends": ["autoOff", "autoOffQ1"],
+    "zwave": {
+      "index": 11,
+      "size": 2,
+      "signed": false
+    },
     "attr": {
       "min": 0,
       "max": 655
@@ -19,7 +24,8 @@
     "$extends": ["autoOff", "autoOffQ2"],
     "zwave": {
       "index": 12,
-      "size": 2
+      "size": 2,
+      "signed": false
     },
     "attr": {
       "min": 0,
@@ -75,7 +81,7 @@
         "$extends": ["powerReportingInterval", "powerReportingIntervalQ2"],
         "value": 300,
         "zwave": {
-          "index": 42,
+          "index": 43,
           "size": 2,
           "signed": false
         },
