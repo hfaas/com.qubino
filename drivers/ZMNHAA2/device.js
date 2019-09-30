@@ -35,10 +35,20 @@ class ZMNHAA extends QubinoDevice {
 			{
 				id: 2,
 				defaultEnabled: true,
+				flowTriggers: {
+					on: 'I2_on',
+					off: 'I2_off',
+					toggle: 'inputTwoToggled',
+				},
 			},
 			{
 				id: 3,
 				defaultEnabled: true,
+				flowTriggers: {
+					on: 'I3_on',
+					off: 'I3_off',
+					toggle: 'inputThreeToggled',
+				},
 			},
 		];
 	}
