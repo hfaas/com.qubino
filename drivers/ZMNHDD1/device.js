@@ -35,7 +35,7 @@ class ZMNHDD extends QubinoDimDevice {
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.basic);
+		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.basic); // TODO test reversed state
 	}
 }
 
