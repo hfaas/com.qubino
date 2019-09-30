@@ -490,7 +490,7 @@
       },
       {
         "hint": null,
-        "id": "inputTwoTurnedOn_ZMNHDA2",
+        "id": "ZMNHDA2_I2_on",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -505,7 +505,7 @@
       },
       {
         "hint": null,
-        "id": "inputTwoTurnedOff_ZMNHDA2",
+        "id": "ZMNHDA2_I2_off",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -535,7 +535,7 @@
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOn_ZMNHDA2",
+        "id": "ZMNHDA2_I3_on",
         "title": {
           "en": "Input 3 turned on",
           "nl": "Ingang 3 is ingeschakeld"
@@ -550,7 +550,7 @@
       },
       {
         "hint": null,
-        "id": "inputThreeTurnedOff_ZMNHDA2",
+        "id": "ZMNHDA2_I3_off",
         "title": {
           "en": "Input 3 turned off",
           "nl": "Ingang 3 is uitgeschakeld"
@@ -3557,6 +3557,39 @@
           }
         },
         {
+          "id": "switchTypeInput1",
+          "type": "dropdown",
+          "label": {
+            "en": "Switch type input 1",
+            "nl": "Schakelaar type ingang 1"
+          },
+          "zwave": {
+            "index": 1,
+            "size": 1
+          },
+          "value": "0",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Momentary switch",
+                "nl": "Pulsdrukschakelaar"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Toggle switch",
+                "nl": "Tuimelschakelaar"
+              }
+            }
+          ],
+          "hint": {
+            "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush Dimmer (ZMNHDA).",
+            "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush Dimmer (ZMNHDA)."
+          }
+        },
+        {
           "type": "group",
           "label": {
             "en": "Inputs",
@@ -3689,11 +3722,6 @@
               }
             },
             {
-              "zwave": {
-                "index": 65,
-                "size": 1,
-                "signed": false
-              },
               "id": "dimDuration",
               "type": "number",
               "label": {
@@ -3703,6 +3731,10 @@
               "units": {
                 "en": "s",
                 "nl": "s"
+              },
+              "zwave": {
+                "index": 65,
+                "size": 2
               },
               "value": 1,
               "attr": {
@@ -3716,11 +3748,6 @@
               }
             },
             {
-              "zwave": {
-                "index": 66,
-                "size": 1,
-                "signed": false
-              },
               "id": "dimDurationKeyPressed",
               "type": "number",
               "label": {
@@ -3730,6 +3757,10 @@
               "units": {
                 "en": "s",
                 "nl": "s"
+              },
+              "zwave": {
+                "index": 66,
+                "size": 2
               },
               "value": 3,
               "attr": {
@@ -3776,16 +3807,7 @@
               }
             },
             {
-              "zwave": {
-                "index": 42,
-                "size": 2,
-                "signed": false
-              },
               "value": 300,
-              "attr": {
-                "min": 0,
-                "max": 65535
-              },
               "id": "powerReportingInterval",
               "type": "number",
               "label": {
@@ -3795,6 +3817,14 @@
               "units": {
                 "en": "s",
                 "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32535
               },
               "hint": {
                 "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",

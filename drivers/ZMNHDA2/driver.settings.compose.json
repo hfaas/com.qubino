@@ -9,6 +9,9 @@
     "$extends": "restoreStatus"
   },
   {
+    "$extends": "switchTypeInput1"
+  },
+  {
     "type": "group",
     "label": {
       "en": "Inputs",
@@ -45,20 +48,10 @@
         "$extends": "maximumDimValue"
       },
       {
-        "$extends": "dimDuration",
-        "zwave": {
-          "index": 65,
-          "size": 1,
-          "signed": false
-        }
+        "$extends": "dimDuration"
       },
       {
-        "$extends": "dimDurationKeyPressed",
-        "zwave": {
-          "index": 66,
-          "size": 1,
-          "signed": false
-        }
+        "$extends": "dimDurationKeyPressed"
       }
     ]
   },
@@ -75,16 +68,7 @@
       },
       {
         "$extends": "powerReportingInterval",
-        "zwave": {
-          "index": 42,
-          "size": 2,
-          "signed": false
-        },
-        "value": 300,
-        "attr": {
-          "min": 0,
-          "max": 65535
-        }
+        "value": 300
       }
     ]
   }
