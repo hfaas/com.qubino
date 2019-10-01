@@ -32,9 +32,6 @@
     }
   },
   {
-    "$extends": "inclusionMode"
-  },
-  {
     "type": "group",
     "label": {
       "en": "Inputs",
@@ -97,10 +94,12 @@
         "$extends": "doubleClick"
       },
       {
-        "$extends": "enableInput2"
+        "$extends": "enableInput2",
+        "value": "9"
       },
       {
-        "$extends": "enableInput3"
+        "$extends": "enableInput3",
+        "value": "9"
       }
     ]
   },
@@ -157,7 +156,11 @@
         "$extends": "temperatureSensorOffset"
       },
       {
-        "$extends": "temperatureSensorReportingThreshold"
+        "$extends": "temperatureSensorReportingThreshold",
+        "zwave": {
+          "index": 120,
+          "size": 2
+        }
       }
     ]
   }

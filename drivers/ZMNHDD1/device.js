@@ -19,10 +19,20 @@ class ZMNHDD extends QubinoDimDevice {
 			{
 				id: 2,
 				parameterIndex: 100,
+				flowTriggers: {
+					on: 'I2_on',
+					off: 'I2_off',
+					toggle: 'inputTwoToggled',
+				},
 			},
 			{
 				id: 3,
 				parameterIndex: 101,
+				flowTriggers: {
+					on: 'I3_on',
+					off: 'I3_off',
+					toggle: 'inputThreeToggled',
+				},
 			},
 		];
 	}
@@ -35,7 +45,7 @@ class ZMNHDD extends QubinoDimDevice {
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.basic); // TODO test reversed state
+		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
 	}
 }
 

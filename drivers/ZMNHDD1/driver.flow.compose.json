@@ -1,19 +1,23 @@
 {
   "triggers": [
     {
-      "$extends": "inputTwoTurnedOn"
+      "$extends": "inputTwoTurnedOn",
+      "$id": "ZMNHDD1_I2_on"
     },
     {
-      "$extends": "inputTwoTurnedOff"
+      "$extends": "inputTwoTurnedOff",
+      "$id": "ZMNHDD1_I2_off"
     },
     {
       "$extends": "inputTwoToggled"
     },
     {
-      "$extends": "inputThreeTurnedOn"
+      "$extends": "inputThreeTurnedOn",
+      "$id": "ZMNHDD1_I3_on"
     },
     {
-      "$extends": "inputThreeTurnedOff"
+      "$extends": "inputThreeTurnedOff",
+      "$id": "ZMNHDD1_I3_off"
     },
     {
       "$extends": "inputThreeToggled"
