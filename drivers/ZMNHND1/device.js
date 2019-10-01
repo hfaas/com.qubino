@@ -19,6 +19,11 @@ class ZMNHND extends QubinoDevice {
 			{
 				id: 2,
 				parameterIndex: 100,
+				flowTriggers: {
+					on: 'I2_on',
+					off: 'I2_off',
+					toggle: 'inputTwoToggled',
+				},
 			},
 		];
 	}

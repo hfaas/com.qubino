@@ -43,7 +43,8 @@
         }
       },
       {
-        "$extends": "enableInput2"
+        "$extends": "enableInput2",
+        "value": "9"
       }
     ]
   },
