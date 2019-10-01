@@ -37,7 +37,7 @@ class ZMNHSD extends QubinoDimDevice {
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.basic); // TODO test reversed state
+		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
 
 		// Fetch working mode setting
 		const workingMode = await this._getWorkingModeSetting();
