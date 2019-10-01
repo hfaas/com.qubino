@@ -271,6 +271,24 @@
         ]
       },
       {
+        "id": "resetMeter_ZMNHSD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHSD1"
+          }
+        ]
+      },
+      {
         "id": "resetMeter_ZMNHYD",
         "title": {
           "en": "Reset power meter",
@@ -579,7 +597,7 @@
         ]
       },
       {
-        "id": "inputTwoTurnedOn_ZMNHDD1",
+        "id": "ZMNHDD1_I2_on",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -597,7 +615,7 @@
         ]
       },
       {
-        "id": "inputTwoTurnedOff_ZMNHDD1",
+        "id": "ZMNHDD1_I2_off",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -633,7 +651,7 @@
         ]
       },
       {
-        "id": "inputThreeTurnedOn_ZMNHDD1",
+        "id": "ZMNHDD1_I3_on",
         "title": {
           "en": "Input 3 turned on",
           "nl": "Ingang 3 is ingeschakeld"
@@ -651,7 +669,7 @@
         ]
       },
       {
-        "id": "inputThreeTurnedOff_ZMNHDD1",
+        "id": "ZMNHDD1_I3_off",
         "title": {
           "en": "Input 3 turned off",
           "nl": "Ingang 3 is uitgeschakeld"
@@ -1209,7 +1227,7 @@
         ]
       },
       {
-        "id": "inputTwoTurnedOn_ZMNHND1",
+        "id": "ZMNHND1_I2_on",
         "title": {
           "en": "Input 2 turned on",
           "nl": "Ingang 2 is ingeschakeld"
@@ -1227,7 +1245,7 @@
         ]
       },
       {
-        "id": "inputTwoTurnedOff_ZMNHND1",
+        "id": "ZMNHND1_I2_off",
         "title": {
           "en": "Input 2 turned off",
           "nl": "Ingang 2 is uitgeschakeld"
@@ -1863,6 +1881,7 @@
               ]
             },
             {
+              "value": "9",
               "id": "enableInput2",
               "type": "dropdown",
               "label": {
@@ -1873,7 +1892,6 @@
                 "index": 100,
                 "size": 1
               },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -1933,11 +1951,12 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               }
             },
             {
+              "value": "9",
               "id": "enableInput3",
               "type": "dropdown",
               "label": {
@@ -1948,7 +1967,6 @@
                 "index": 101,
                 "size": 1
               },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -2008,7 +2026,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (101) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "en": "This parameter (101) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (101) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               }
             }
@@ -2369,7 +2387,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush 2 Relay (ZMNHBA). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush 2 Relay (ZMNHBA). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush 2 Relay (ZMNHBA). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             }
@@ -2865,7 +2883,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush 2 Relay (ZMNHBD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush 2 Relay (ZMNHBD). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush 2 Relay (ZMNHBD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             }
@@ -3868,6 +3886,18 @@
         "associationGroups": [
           1
         ],
+        "defaultConfiguration": [
+          {
+            "id": 100,
+            "size": 1,
+            "value": 9
+          },
+          {
+            "id": 101,
+            "size": 1,
+            "value": 9
+          }
+        ],
         "learnmode": {
           "image": "/drivers/ZMNHDD1/assets/learnmode.svg",
           "instruction": {
@@ -3996,23 +4026,6 @@
           }
         },
         {
-          "id": "inclusionMode",
-          "type": "checkbox",
-          "label": {
-            "en": "Secure inclusion",
-            "nl": "Beveiligde modus"
-          },
-          "zwave": {
-            "index": 250,
-            "size": 1
-          },
-          "value": false,
-          "hint": {
-            "en": "This parameter (250) determines if the device will be included as a secure device during the next inclusion. Note: to use secure inclusion the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
-            "nl": "Deze parameter (250) bepaalt of het apparaat tijdens de volgende inclusie in beveiligde modus wordt toegevoegd. Let op: om gebruik te maken van de beveiligde modus moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
-          }
-        },
-        {
           "type": "group",
           "label": {
             "en": "Inputs",
@@ -4081,7 +4094,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush Dimmer (ZMNHDD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush Dimmer (ZMNHDD). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush Dimmer (ZMNHDD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -4209,6 +4222,7 @@
               }
             },
             {
+              "value": "9",
               "id": "enableInput2",
               "type": "dropdown",
               "label": {
@@ -4219,7 +4233,6 @@
                 "index": 100,
                 "size": 1
               },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -4279,11 +4292,12 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               }
             },
             {
+              "value": "9",
               "id": "enableInput3",
               "type": "dropdown",
               "label": {
@@ -4294,7 +4308,6 @@
                 "index": 101,
                 "size": 1
               },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -4354,7 +4367,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (101) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "en": "This parameter (101) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (101) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               }
             }
@@ -4605,6 +4618,10 @@
               }
             },
             {
+              "zwave": {
+                "index": 120,
+                "size": 2
+              },
               "id": "temperatureSensorReportingThreshold",
               "type": "number",
               "label": {
@@ -4614,10 +4631,6 @@
               "units": {
                 "en": "°C",
                 "nl": "°C"
-              },
-              "zwave": {
-                "index": 120,
-                "size": 1
               },
               "value": 0.5,
               "attr": {
@@ -4812,7 +4825,7 @@
             }
           ],
           "hint": {
-            "en": "This parameter (5) defines the working mode of the device, if mode is set to \"Switch\" the dimming functionality will be disabled. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+            "en": "This parameter (5) defines the working mode of the device, if mode is set to \"Switch\" the dimming functionality will be disabled. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
             "nl": "Deze parameter (5) bepaalt de modus van het apparaat, als de modus staat ingesteld op \"Schakelaar\" zal de dim functionaliteit niet langer werken. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
           }
         },
@@ -5230,7 +5243,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush On/Off Thermostat (ZMNHIA). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush On/Off Thermostat (ZMNHIA). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush On/Off Thermostat (ZMNHIA). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -5263,7 +5276,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush On/Off Thermostat (ZMNHIA). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush On/Off Thermostat (ZMNHIA). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (3) specificeert het type schakelaar dat is aangesloten op ingang 3 van de Flush On/Off Thermostat (ZMNHIA). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -5654,6 +5667,23 @@
         "associationGroups": [
           1
         ],
+        "defaultConfiguration": [
+          {
+            "id": 100,
+            "size": 1,
+            "value": 9
+          },
+          {
+            "id": 101,
+            "size": 1,
+            "value": 9
+          },
+          {
+            "id": 102,
+            "size": 1,
+            "value": 9
+          }
+        ],
         "learnmode": {
           "image": "/drivers/ZMNHID/assets/learnmode.svg",
           "instruction": {
@@ -5848,7 +5878,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush On/Off Thermostat (ZMNHID). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush On/Off Thermostat (ZMNHID). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush On/Off Thermostat (ZMNHID). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -5881,7 +5911,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush On/Off Thermostat (ZMNHID). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush On/Off Thermostat (ZMNHID). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (3) specificeert het type schakelaar dat is aangesloten op ingang 3 van de Flush On/Off Thermostat (ZMNHID). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -6090,6 +6120,7 @@
                 "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
+              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -6115,8 +6146,7 @@
               "zwave": {
                 "index": 100,
                 "size": 1
-              },
-              "value": "0"
+              }
             },
             {
               "zwave": {
@@ -6127,6 +6157,7 @@
                 "en": "This parameter (101) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. If input 2 is enabled parameter 12 must be set to influence heating and cooling according to the condense sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (101) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 2 is ingeschakeld moet parameter 12 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
+              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -6148,8 +6179,7 @@
               "label": {
                 "en": "Input 2 notification type and event",
                 "nl": "Ingang 2 notificatie type en event"
-              },
-              "value": "0"
+              }
             },
             {
               "zwave": {
@@ -6160,6 +6190,7 @@
                 "en": "This parameter (102) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. If input 3 is enabled parameter 13 must be set to influence heating and cooling according to the flood sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (102) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 3 is ingeschakeld moet parameter 13 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
+              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -6181,8 +6212,7 @@
               "label": {
                 "en": "Input 3 notification type and event",
                 "nl": "Ingang 3 notificatie type en event"
-              },
-              "value": "0"
+              }
             },
             {
               "id": "statusOnDelayInput1",
@@ -6372,7 +6402,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (59) determines the operating mode of the device. Note: when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "en": "This parameter (59) determines the operating mode of the device. Note: when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (59) bepaalt de werking van het apparaat. Let op: na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               }
             },
@@ -6688,6 +6718,18 @@
         "associationGroups": [
           1
         ],
+        "defaultConfiguration": [
+          {
+            "id": 100,
+            "size": 1,
+            "value": 9
+          },
+          {
+            "id": 101,
+            "size": 1,
+            "value": 9
+          }
+        ],
         "learnmode": {
           "image": "/drivers/ZMNHKD1/assets/learnmode.svg",
           "instruction": {
@@ -6916,7 +6958,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush Heat & Cool Thermostat (ZMNHKD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush Heat & Cool Thermostat (ZMNHKD). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush Heat & Cool Thermostat (ZMNHKD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -7048,6 +7090,7 @@
               }
             },
             {
+              "value": "9",
               "hint": {
                 "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
@@ -7062,7 +7105,6 @@
                 "index": 100,
                 "size": 1
               },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -7123,6 +7165,7 @@
               ]
             },
             {
+              "value": "9",
               "zwave": {
                 "index": 101,
                 "size": 1
@@ -7137,7 +7180,6 @@
                 "en": "Input 2 notification type and event",
                 "nl": "Ingang 2 notificatie type en event"
               },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -7754,6 +7796,23 @@
         "associationGroups": [
           1
         ],
+        "defaultConfiguration": [
+          {
+            "id": 100,
+            "size": 1,
+            "value": 9
+          },
+          {
+            "id": 101,
+            "size": 1,
+            "value": 9
+          },
+          {
+            "id": 102,
+            "size": 1,
+            "value": 9
+          }
+        ],
         "learnmode": {
           "image": "/drivers/ZMNHLD/assets/learnmode.svg",
           "instruction": {
@@ -8023,7 +8082,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush PWM Thermostat (ZMNHLD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (2) determines the type of switch connected to input 2 of the Flush PWM Thermostat (ZMNHLD). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (2) specificeert het type schakelaar dat is aangesloten op ingang 2 van de Flush PWM Thermostat (ZMNHLD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -8056,7 +8115,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush PWM Thermostat (ZMNHLD). Note: to enable this input parameter 20 or 100 has to be configured.",
+                "en": "This parameter (3) determines the type of switch connected to input 3 of the Flush PWM Thermostat (ZMNHLD). Note: to enable this input, parameter 20 or 100 has to be configured.",
                 "nl": "Deze parameter (3) specificeert het type schakelaar dat is aangesloten op ingang 3 van de Flush PWM Thermostat (ZMNHLD). Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
               }
             },
@@ -8265,6 +8324,7 @@
                 "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
+              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -8290,8 +8350,7 @@
               "zwave": {
                 "index": 100,
                 "size": 1
-              },
-              "value": "0"
+              }
             },
             {
               "zwave": {
@@ -8302,6 +8361,7 @@
                 "en": "This parameter (101) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. If input 2 is enabled parameter 12 must be set to influence heating and cooling according to the condense sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (101) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 2 is ingeschakeld moet parameter 12 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
+              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -8323,8 +8383,7 @@
               "label": {
                 "en": "Input 2 notification type and event",
                 "nl": "Ingang 2 notificatie type en event"
-              },
-              "value": "0"
+              }
             },
             {
               "zwave": {
@@ -8335,6 +8394,7 @@
                 "en": "This parameter (102) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. If input 3 is enabled parameter 13 must be set to influence heating and cooling according to the flood sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (102) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 3 is ingeschakeld moet parameter 13 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
+              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -8356,8 +8416,7 @@
               "label": {
                 "en": "Input 3 notification type and event",
                 "nl": "Ingang 3 notificatie type en event"
-              },
-              "value": "0"
+              }
             },
             {
               "id": "statusOnDelayInput1",
@@ -8547,7 +8606,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (59) determines the operating mode of the device. Note: when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "en": "This parameter (59) determines the operating mode of the device. Note: when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (59) bepaalt de werking van het apparaat. Let op: na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               }
             },
@@ -8952,6 +9011,13 @@
         "associationGroups": [
           1
         ],
+        "defaultConfiguration": [
+          {
+            "id": 100,
+            "size": 1,
+            "value": 9
+          }
+        ],
         "learnmode": {
           "image": "/drivers/ZMNHND1/assets/learnmode.svg",
           "instruction": {
@@ -9202,6 +9268,7 @@
               ]
             },
             {
+              "value": "9",
               "id": "enableInput2",
               "type": "dropdown",
               "label": {
@@ -9212,7 +9279,6 @@
                 "index": 100,
                 "size": 1
               },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -9272,7 +9338,7 @@
                 }
               ],
               "hint": {
-                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "en": "This parameter (100) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               }
             }
@@ -9912,7 +9978,7 @@
             }
           ],
           "hint": {
-            "en": "This parameter (5) defines the working mode of the device, if mode is set to \"Switch\" the dimming functionality will be disabled. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+            "en": "This parameter (5) defines the working mode of the device, if mode is set to \"Switch\" the dimming functionality will be disabled. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
             "nl": "Deze parameter (5) bepaalt de modus van het apparaat, als de modus staat ingesteld op \"Schakelaar\" zal de dim functionaliteit niet langer werken. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
           }
         },
@@ -10924,23 +10990,6 @@
           }
         },
         {
-          "id": "inclusionMode",
-          "type": "checkbox",
-          "label": {
-            "en": "Secure inclusion",
-            "nl": "Beveiligde modus"
-          },
-          "zwave": {
-            "index": 250,
-            "size": 1
-          },
-          "value": false,
-          "hint": {
-            "en": "This parameter (250) determines if the device will be included as a secure device during the next inclusion. Note: to use secure inclusion the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
-            "nl": "Deze parameter (250) bepaalt of het apparaat tijdens de volgende inclusie in beveiligde modus wordt toegevoegd. Let op: om gebruik te maken van de beveiligde modus moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
-          }
-        },
-        {
           "type": "group",
           "label": {
             "en": "Inputs",
@@ -10948,17 +10997,6 @@
           },
           "children": [
             {
-              "id": "switchTypeInput1",
-              "type": "dropdown",
-              "label": {
-                "en": "Switch type input 1",
-                "nl": "Schakelaar type ingang 1"
-              },
-              "zwave": {
-                "index": 1,
-                "size": 1
-              },
-              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -10973,12 +11011,51 @@
                     "en": "Toggle switch",
                     "nl": "Tuimelschakelaar"
                   }
+                },
+                {
+                  "id": "2",
+                  "label": {
+                    "en": "Potentiometer",
+                    "nl": "Potentiometer"
+                  }
+                },
+                {
+                  "id": "3",
+                  "label": {
+                    "en": "0-10V Temperature sensor",
+                    "nl": "0-10V Temperatuur sensor"
+                  }
+                },
+                {
+                  "id": "4",
+                  "label": {
+                    "en": "0-10V Illumination sensor",
+                    "nl": "0-10V Lichtsterkte sensor"
+                  }
+                },
+                {
+                  "id": "5",
+                  "label": {
+                    "en": "0-10V General propose sensor",
+                    "nl": "0-10V Algemene sensor"
+                  }
                 }
               ],
               "hint": {
-                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush Dimmer 0 - 10V (ZMNHVD).",
-                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush Dimmer 0 - 10V (ZMNHVD)."
-              }
+                "en": "This parameter (1) determines the type of switch connected to input 1 of the Flush Dimmer 0 - 10V (ZMNHVD). When this parameter is changed, the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+                "nl": "Deze parameter (1) specificeert het type schakelaar dat is aangesloten op ingang 1 van de Flush Dimmer 0 - 10V (ZMNHVD). Na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+              },
+              "id": "switchTypeInput1",
+              "type": "dropdown",
+              "label": {
+                "en": "Switch type input 1",
+                "nl": "Schakelaar type ingang 1"
+              },
+              "zwave": {
+                "index": 1,
+                "size": 1
+              },
+              "value": "0"
             },
             {
               "id": "doubleClick",
