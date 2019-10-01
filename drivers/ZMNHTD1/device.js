@@ -19,11 +19,61 @@ class ZMNHTD extends QubinoDevice {
 	}
 
 	/**
+	 * Override settings migration map
+	 * @private
+	 */
+	_settingsMigrationMap() {
+		const migrationMap = {};
+		if (this.getSetting('automatic_turning_off_ir_output_after_set_time') !== null) {
+			migrationMap.autoOffQ1 = () => Math.min(this.getSetting('automatic_turning_off_ir_output_after_set_time'), 32535)
+		}
+		if (this.getSetting('automatic_turning_on_ir_output_after_set_time') !== null) {
+			migrationMap.autoOnQ1 = () => Math.min(this.getSetting('automatic_turning_on_ir_output_after_set_time'), 32535)
+		}
+		if (this.getSetting('automatic_turning_off_relay_output_after_set_time') !== null) {
+			migrationMap.autoOffQ2 = () => Math.min(this.getSetting('automatic_turning_off_relay_output_after_set_time'), 32535)
+		}
+		if (this.getSetting('automatic_turning_on_relay_output_after_set_time') !== null) {
+			migrationMap.autoOnQ2 = () => Math.min(this.getSetting('automatic_turning_on_relay_output_after_set_time'), 32535)
+		}
+		if (this.getSetting('enable_disable_endpoints') !== null) {
+			migrationMap.enableInput1 = () => this.getSetting('enable_disable_endpoints')
+		}
+		return migrationMap
+	}
+
+	/**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
-	registerCapabilities() {
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+	async registerCapabilities() {
+
+		if (this.hasCapability(constants.capabilities.onoff)) {
+			this.removeCapability(constants.capabilities.onoff).catch(err => this.error(`Error removing ${constants.capabilities.onoff} capability`, err))
+		}
+		if (this.hasCapability(constants.capabilities.meterPower)) {
+			this.removeCapability(constants.capabilities.meterPower).catch(err => this.error(`Error removing ${constants.capabilities.meterPower} capability`, err))
+		}
+
+		// Loop all current capabilities and add if necessary
+		const currentCapabilities = [
+			constants.capabilities.measureVoltage,
+			constants.capabilities.measureCurrent,
+			constants.capabilities.meterPowerImport,
+			constants.capabilities.meterPowerExport,
+			constants.capabilities.powerReactive,
+			constants.capabilities.powerTotalReactive,
+			constants.capabilities.powerTotalApparent,
+			constants.capabilities.powerFactor
+		];
+		for (let i in currentCapabilities) {
+			let currentCapability = currentCapabilities[i];
+			if (!this.hasCapability(currentCapability)) {
+				await this.addCapability(currentCapability).catch(err => this.error(`Error adding ${currentCapability} capability`, err))
+			}
+		}
+
+		// Register capabilities
 		this.registerCapability(constants.capabilities.measureVoltage, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measureCurrent, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);

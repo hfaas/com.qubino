@@ -289,6 +289,24 @@
         ]
       },
       {
+        "id": "resetMeter_ZMNHTD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHTD1"
+          }
+        ]
+      },
+      {
         "id": "resetMeter_ZMNHYD",
         "title": {
           "en": "Reset power meter",
@@ -10343,7 +10361,6 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff",
         "measure_voltage",
         "measure_current",
         "measure_power",
@@ -10392,32 +10409,6 @@
       },
       "id": "ZMNHTD1",
       "settings": [
-        {
-          "id": "allOn",
-          "type": "checkbox",
-          "label": {
-            "en": "Turn on when 'all on' command is received",
-            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
-          },
-          "hint": {
-            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
-            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
-          },
-          "value": true
-        },
-        {
-          "id": "allOff",
-          "type": "checkbox",
-          "label": {
-            "en": "Turn off when 'all off' command is received",
-            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
-          },
-          "hint": {
-            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
-            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
-          },
-          "value": true
-        },
         {
           "label": {
             "en": "Turn off IR external relay automatically",
@@ -10724,14 +10715,6 @@
               "value": "0"
             }
           ]
-        },
-        {
-          "type": "group",
-          "label": {
-            "en": "Temperature",
-            "nl": "Temperatuur"
-          },
-          "children": []
         },
         {
           "type": "group",

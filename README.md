@@ -7,6 +7,7 @@ Version 2.0.11
 * Finalized SDKv3 update
 * Note: a breaking change had to be implemented for Flush 2 Relays (ZMNHBD). The capabilities `onoff`, `meter_power` and `measure_power` have been removed and their corresponding Flow cards.
 * Note: a breaking change had to be implemented for Flush Dimmer (ZMNHDA). The capability `alarm_contact` has been removed and the corresponding Flow cards.
+* Note: a breaking change had to be implemented for Smart Meter (ZMNHTD). The capabilities `onoff` and `meter_power` have been removed and the corresponding Flow cards.
 
 Version 2.0.10
 * Added support for ZMNHWD (Flush RGBW Dimmer)

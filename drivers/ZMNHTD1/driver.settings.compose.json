@@ -1,11 +1,5 @@
 [
   {
-    "$extends": "allOn"
-  },
-  {
-    "$extends": "allOff"
-  },
-  {
     "$extends": [
       "autoOff",
       "autoOffQ1"
@@ -251,15 +245,6 @@
           "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of de externe relais of externe IR relais zijn ingeschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
         }
       }
-    ]
-  },
-  {
-    "type": "group",
-    "label": {
-      "en": "Temperature",
-      "nl": "Temperatuur"
-    },
-    "children": [
     ]
   },
   {

@@ -8,7 +8,6 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
     "measure_voltage",
     "measure_current",
     "measure_power",
