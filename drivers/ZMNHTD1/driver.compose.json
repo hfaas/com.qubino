@@ -32,6 +32,9 @@
       }
     }
   },
+  "energy": {
+    "cumulative": true
+  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 7,
