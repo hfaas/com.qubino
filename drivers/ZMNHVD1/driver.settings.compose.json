@@ -15,9 +15,6 @@
     "$extends": "restoreStatus"
   },
   {
-    "$extends": "inclusionMode"
-  },
-  {
     "type": "group",
     "label": {
       "en": "Inputs",
@@ -25,7 +22,55 @@
     },
     "children": [
       {
-        "$extends": "switchTypeInput1"
+        "$extends": "switchTypeInput1",
+        "values": [
+          {
+            "id": "0",
+            "label": {
+              "en": "Momentary switch",
+              "nl": "Pulsdrukschakelaar"
+            }
+          },
+          {
+            "id": "1",
+            "label": {
+              "en": "Toggle switch",
+              "nl": "Tuimelschakelaar"
+            }
+          },
+          {
+            "id": "2",
+            "label": {
+              "en": "Potentiometer",
+              "nl": "Potentiometer"
+            }
+          },
+          {
+            "id": "3",
+            "label": {
+              "en": "0-10V Temperature sensor",
+              "nl": "0-10V Temperatuur sensor"
+            }
+          },
+          {
+            "id": "4",
+            "label": {
+              "en": "0-10V Illumination sensor",
+              "nl": "0-10V Lichtsterkte sensor"
+            }
+          },
+          {
+            "id": "5",
+            "label": {
+              "en": "0-10V General propose sensor",
+              "nl": "0-10V Algemene sensor"
+            }
+          }
+        ],
+        "hint": {
+          "en": "This parameter ({{zwaveParameterIndex}}) determines the type of switch connected to input 1 of the {{driverNameEn}}. When this parameter is changed, the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+          "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert het type schakelaar dat is aangesloten op ingang 1 van de {{driverNameNl}}. Na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
+        }
       },
       {
         "$extends": "doubleClick"

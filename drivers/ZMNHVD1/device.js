@@ -26,7 +26,7 @@ class ZMNHVD extends QubinoDimDevice {
 	 */
 	registerCapabilities() {
 		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.basic); // TODO test reversed state
+		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
 		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);
 	}
 }
