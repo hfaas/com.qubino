@@ -1,0 +1,29 @@
+{
+  "$id": "offAutoThermostatModeChanged_{{driverId}}",
+  "title": {
+    "en": "Thermostat mode changed",
+    "nl": "Thermostaat modus is veranderd"
+  },
+  "args": [
+    {
+      "name": "mode",
+      "type": "dropdown",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto",
+            "nl": "Auto"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "nl": "Uit"
+          }
+        }
+      ]
+    }
+  ]
+}

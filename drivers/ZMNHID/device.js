@@ -1,7 +1,7 @@
 'use strict';
 
 const constants = require('../../lib/constants');
-const QubinoDevice = require('../../lib/QubinoDevice');
+const QubinoThermostatDevice = require('../../lib/QubinoThermostatDevice');
 const MeshDriverUtil = require('homey-meshdriver').Util;
 
 /**
@@ -15,7 +15,7 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
  * Note 2: this device sends ALARM_REPORTS but does not advertise this as a support command class in its NIF.
  * Therefore, the status of the thermostat mode can not be updated when switched manually.
  */
-class ZMNHID extends QubinoDevice {
+class ZMNHID extends QubinoThermostatDevice {
 
 	/**
 	 * Expose input configuration, three possible inputs (input 1, input 2 and input 3).
@@ -110,11 +110,16 @@ class ZMNHID extends QubinoDevice {
 					typeof report.Level.Mode !== 'undefined') {
 					if (report.Level.Mode.toLowerCase() === 'heat' || report.Level.Mode.toLowerCase() === 'cool') {
 
-						// Update the thermostatMode since it may be override by input 3
+						// Update the thermostatMode since it may be overriden by input 3
 						this.setSettings({ thermostatMode: report.Level.Mode === 'Heat' ? '0' : '1' });
 						this.setStoreValue('thermostatMode', report.Level.Mode);
+
+						// Trigger flow
+						this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: 'auto' }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
 						return 'auto';
 					}
+					// Trigger flow
+					this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: report.Level.Mode.toLowerCase() }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
 					return report.Level.Mode.toLowerCase();
 				}
 				return null;

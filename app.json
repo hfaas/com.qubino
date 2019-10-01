@@ -199,6 +199,40 @@
         ]
       },
       {
+        "id": "setOffAutoThermostatMode_ZMNHIA2",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "resetMeter_ZMNHID",
         "title": {
           "en": "Reset power meter",
@@ -213,6 +247,40 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHID"
+          }
+        ]
+      },
+      {
+        "id": "setOffAutoThermostatMode_ZMNHID",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
           }
         ]
       },
@@ -235,6 +303,40 @@
         ]
       },
       {
+        "id": "setOffAutoThermostatMode_ZMNHKD1",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD1"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "resetMeter_ZMNHLD",
         "title": {
           "en": "Reset power meter",
@@ -249,6 +351,40 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "id": "setOffAutoThermostatMode_ZMNHLD",
+        "title": {
+          "en": "Change thermostat mode",
+          "nl": "Stel thermostaat modus"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
           }
         ]
       },
@@ -813,6 +949,40 @@
         ]
       },
       {
+        "id": "offAutoThermostatModeChanged_ZMNHIA2",
+        "title": {
+          "en": "Thermostat mode changed",
+          "nl": "Thermostaat modus is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHIA2"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "hint": {
           "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
@@ -975,6 +1145,40 @@
         ]
       },
       {
+        "id": "offAutoThermostatModeChanged_ZMNHID",
+        "title": {
+          "en": "Thermostat mode changed",
+          "nl": "Thermostaat modus is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHID"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "hint": {
           "en": "This Flow Trigger is only active if input 1 is enabled on the device, please see the device settings (parameter 100 and 11) for more information. Note: input 1 needs to be switched once before it will report its status correctly.",
           "nl": "Deze Flow Trigger werkt alleen wanneer ingang 1 is geactiveerd op het apparaat, zie de apparaatinstellingen (parameter 100 en 11) voor meer informatie. Let op: ingang 1 moet een keer worden geschakeld voordat het de correcte status doorgeeft."
@@ -1079,6 +1283,40 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHKD1"
+          }
+        ]
+      },
+      {
+        "id": "offAutoThermostatModeChanged_ZMNHKD1",
+        "title": {
+          "en": "Thermostat mode changed",
+          "nl": "Thermostaat modus is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHKD1"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
           }
         ]
       },
@@ -1241,6 +1479,40 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHLD"
+          }
+        ]
+      },
+      {
+        "id": "offAutoThermostatModeChanged_ZMNHLD",
+        "title": {
+          "en": "Thermostat mode changed",
+          "nl": "Thermostaat modus is veranderd"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHLD"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Auto"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
           }
         ]
       },
@@ -10384,6 +10656,9 @@
             "nl": "Energiemeter (export)"
           }
         }
+      },
+      "energy": {
+        "cumulative": true
       },
       "zwave": {
         "manufacturerId": 345,

@@ -1,15 +1,16 @@
 'use strict';
 
 const constants = require('../../lib/constants');
-const QubinoDevice = require('../../lib/QubinoDevice');
+const QubinoThermostatDevice = require('../../lib/QubinoThermostatDevice');
 const MeshDriverUtil = require('homey-meshdriver').Util;
 
 /**
  * Flush Heat & Cool Thermostat (ZMNHKD)
  * Extended manual: http://qubino.com/download/2054/
  * Regular manual: http://qubino.com/download/1071/
+ * TODO: migrate capabilities
  */
-class ZMNHKD extends QubinoDevice {
+class ZMNHKD extends QubinoThermostatDevice {
 
 	/**
 	 * Expose input configuration, two possible inputs (input 1 and input 2).
@@ -60,6 +61,9 @@ class ZMNHKD extends QubinoDevice {
 				if (report && report.hasOwnProperty('Level') &&
 					report.Level.hasOwnProperty('Mode') &&
 					typeof report.Level.Mode !== 'undefined') {
+
+					// Trigger flow
+					this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: report.Level.Mode.toLowerCase() }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
 					return report.Level.Mode.toLowerCase();
 				}
 				return null;

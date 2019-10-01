@@ -1,19 +1,14 @@
 'use strict';
 
 const constants = require('../../lib/constants');
-const QubinoDevice = require('../../lib/QubinoDevice');
+const QubinoThermostatDevice = require('../../lib/QubinoThermostatDevice');
 const MeshDriverUtil = require('homey-meshdriver').Util;
 
 /**
  * Flush On/Off Thermostat (ZMNHIA)
+ * TODO: migrate capabilities
  */
-class ZMNHIA extends QubinoDevice {
-	async onMeshInit() {
-		await super.onMeshInit();
-
-		// Register custom settings parsers
-		this.registerSettings();
-	}
+class ZMNHIA extends QubinoThermostatDevice {
 
 	/**
 	 * Override allOnAllOff Z-Wave setting size.
@@ -156,6 +151,9 @@ class ZMNHIA extends QubinoDevice {
 				if (report && report.hasOwnProperty('Level') &&
 					report.Level.hasOwnProperty('Mode') &&
 					typeof report.Level.Mode !== 'undefined') {
+
+					// Trigger flow
+					this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: report.Level.Mode.toLowerCase() }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
 					return report.Level.Mode.toLowerCase();
 				}
 				return null;
