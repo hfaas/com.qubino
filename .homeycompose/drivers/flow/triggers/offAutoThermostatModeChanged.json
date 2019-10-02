@@ -4,6 +4,10 @@
     "en": "Thermostat mode changed",
     "nl": "Thermostaat modus is veranderd"
   },
+  "titleFormatted": {
+    "en": "Thermostat mode changed to [[mode]]",
+    "nl": "Thermostaat modus is veranderd naar [[mode]]"
+  },
   "args": [
     {
       "name": "mode",
