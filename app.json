@@ -12761,6 +12761,7 @@
         "en": "Power Factor (PF)",
         "nl": "Power Factor (PF)"
       },
+      "icon": "/assets/measure_power.svg",
       "getable": true,
       "setable": false
     },
@@ -12779,6 +12780,7 @@
         "en": "Reactive Power (kVar)",
         "nl": "Reactief Vermogen (kVar)"
       },
+      "icon": "/assets/meter_power.svg",
       "getable": true,
       "setable": false
     },
@@ -12797,6 +12799,7 @@
         "en": "Total Apparent Power (kVAh)",
         "nl": "Totaal Schijnbaar Vermogen (kVAh)"
       },
+      "icon": "/assets/meter_power.svg",
       "getable": true,
       "setable": false
     },
@@ -12809,12 +12812,13 @@
       "decimals": 2,
       "chartType": "spline",
       "units": {
-        "en": "kvarh"
+        "en": "kVARh"
       },
       "desc": {
-        "en": "Total Reactive Power (kVarh)",
-        "nl": "Totaal Reactief Vermogen (kVarh)"
+        "en": "Total Reactive Power (kVARh)",
+        "nl": "Totaal Reactief Vermogen (kVARh)"
       },
+      "icon": "/assets/meter_power.svg",
       "getable": true,
       "setable": false
     }
