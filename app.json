@@ -202,7 +202,7 @@
         "id": "setOffAutoThermostatMode_ZMNHIA2",
         "title": {
           "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus"
+          "nl": "Stel thermostaat modus in"
         },
         "args": [
           {
@@ -254,7 +254,7 @@
         "id": "setOffAutoThermostatMode_ZMNHID",
         "title": {
           "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus"
+          "nl": "Stel thermostaat modus in"
         },
         "args": [
           {
@@ -306,7 +306,7 @@
         "id": "setOffAutoThermostatMode_ZMNHKD1",
         "title": {
           "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus"
+          "nl": "Stel thermostaat modus in"
         },
         "args": [
           {
@@ -358,7 +358,7 @@
         "id": "setOffAutoThermostatMode_ZMNHLD",
         "title": {
           "en": "Change thermostat mode",
-          "nl": "Stel thermostaat modus"
+          "nl": "Stel thermostaat modus in"
         },
         "args": [
           {
