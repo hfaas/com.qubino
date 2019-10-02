@@ -6,7 +6,6 @@ const MeshDriverUtil = require('homey-meshdriver').Util;
 
 /**
  * Flush On/Off Thermostat (ZMNHIA)
- * TODO: migrate capabilities
  */
 class ZMNHIA extends QubinoThermostatDevice {
 
@@ -42,6 +41,99 @@ class ZMNHIA extends QubinoThermostatDevice {
 			},
 		];
 	}
+
+  /**
+   * Override settings migration map
+   * @private
+   */
+  _settingsMigrationMap() {
+    const migrationMap = {};
+
+    if (this.getSetting(constants.settings.setpointInput2Enabled) !== null) {
+      migrationMap.setpointInput2Enabled = () => {
+        let currentValue = this.getSetting('input_2_set_point');
+        if (currentValue !== 65535) return true
+        return false;
+      }
+    }
+    if (this.getSetting('input_2_set_point') !== null) {
+      migrationMap.setpointInput2 = () => {
+        let currentValue = this.getSetting('input_2_set_point');
+        if (currentValue === 65535) return 20;
+        if (currentValue <= 990) {
+          return currentValue / 10;
+        }
+        if (currentValue >= 1001) {
+          return MeshDriverUtil.mapValueRange(1001, 1150, 0.1, 15.0, currentValue) * -1;
+        }
+      }
+    }
+    if (this.getSetting(constants.settings.setpointInput3Enabled) !== null) {
+      migrationMap.setpointInput3Enabled = () => {
+        let currentValue = this.getSetting('input_3_set_point');
+        if (currentValue !== 65535) return true
+        return false;
+      }
+    }
+    if (this.getSetting('input_3_set_point') !== null) {
+      migrationMap.setpointInput3 = () => {
+        let currentValue = this.getSetting('input_3_set_point');
+        if (currentValue === 65535) return 20;
+        if (currentValue <= 990) {
+          return currentValue / 10;
+        }
+        if (currentValue >= 1001) {
+          return MeshDriverUtil.mapValueRange(1001, 1150, 0.1, 15.0, currentValue) * -1;
+        }
+      }
+    }
+    if (this.getSetting('power_report_by_time_interval') !== null) {
+      migrationMap.powerReportingInterval = () => this.getSetting('power_report_by_time_interval');
+    }
+    if (this.getSetting('temperature_hysteresis_on') !== null) {
+      migrationMap.temperatureHysteresisOn = () => {
+        let currentValue = this.getSetting('temperature_hysteresis_on');
+        if (currentValue >= 128) return MeshDriverUtil.mapValueRange(128, 255, 0.1, 12.7, currentValue) * -1;
+        return currentValue / 10;
+      }
+    }
+    if (this.getSetting('temperature_hysteresis_off') !== null) {
+      migrationMap.temperatureHysteresisOff = () => {
+        let currentValue = this.getSetting('temperature_hysteresis_off');
+        if (currentValue >= 128) return MeshDriverUtil.mapValueRange(128, 255, 0.1, 12.7, currentValue) * -1;
+        return currentValue / 10;
+      }
+    }
+    if (this.getSetting(constants.settings.antifreezeEnabled) !== null) {
+      migrationMap.antifreezeEnabled = () => {
+        let currentValue = this.getSetting('antifreeze');
+        if (currentValue !== 255) return true
+        return false;
+      }
+    }
+    if (this.getSetting('antifreeze') !== null) {
+      migrationMap.antifreeze = () => {
+        let currentValue = this.getSetting('antifreeze');
+        if (currentValue === 255) return 0;
+        if (currentValue >= 128) return MeshDriverUtil.mapValueRange(128, 254, 0.1, 12.6, currentValue) * -1;
+        return currentValue / 10;
+      }
+    }
+    if (this.getSetting('too_low_temperature_limit')) {
+      migrationMap.tooLowTemperatureLimit = () => {
+        return this.getSetting('too_low_temperature_limit') / 10;
+      }
+    }
+    if (this.getSetting('too_high_temperature_limit')) {
+      migrationMap.tooHighTemperatureLimit = () => {
+        return this.getSetting('too_high_temperature_limit') / 10;
+      }
+    }
+    if (this.getSetting('output_switch_selection') !== null) {
+      migrationMap.relayType = () => this.getSetting('output_switch_selection');
+    }
+    return migrationMap
+  }
 
 	/**
 	 * Override onSettings to handle combined z-wave settings.
@@ -116,7 +208,22 @@ class ZMNHIA extends QubinoThermostatDevice {
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
-	registerCapabilities() {
+	async registerCapabilities() {
+
+	  // Migrate capabilities
+	  if (this.hasCapability('custom_thermostat_mode')) {
+      await this.removeCapability('custom_thermostat_mode').catch(err => this.error('Error removing custom_thermostat_mode capability', err))
+    }
+    if (!this.hasCapability(constants.capabilities.meterPower)) {
+      await this.addCapability(constants.capabilities.meterPower).catch(err => this.error(`Error adding ${constants.capabilities.meterPower} capability`, err))
+    }
+    if (!this.hasCapability(constants.capabilities.measurePower)) {
+      await this.addCapability(constants.capabilities.measurePower).catch(err => this.error(`Error adding ${constants.capabilities.measurePower} capability`, err))
+    }
+    if (!this.hasCapability(constants.capabilities.offAutoThermostatMode)) {
+      await this.addCapability(constants.capabilities.offAutoThermostatMode).catch(err => this.error(`Error adding ${constants.capabilities.offAutoThermostatMode} capability`, err))
+    }
+
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);
