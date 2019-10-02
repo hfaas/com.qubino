@@ -44,38 +44,6 @@ class ZMNHLD extends QubinoThermostatDevice {
 	}
 
 	/**
-	 * Method that registers custom setting parsers.
-	 */
-	registerSettings() {
-		super.registerSettings();
-
-		this.registerSetting(constants.settings.temperatureHysteresisOn, value => {
-			if (value >= 0) return value * 10;
-			return MeshDriverUtil.mapValueRange(-0.1, -25.5, 1001, 1255, value);
-		});
-
-		this.registerSetting(constants.settings.temperatureHysteresisOff, value => {
-			if (value >= 0) return value * 10;
-			return MeshDriverUtil.mapValueRange(-0.1, -25.5, 1001, 1255, value);
-		});
-
-		this.registerSetting(constants.settings.antifreeze, value => {
-			if (!value || value === 255) return value;
-			if (value >= 0) return value * 10;
-			return MeshDriverUtil.mapValueRange(-0.1, -12.6, 1001, 1126, value);
-		});
-
-		this.registerSetting(constants.settings.tooLowTemperatureLimit, value => {
-			if (value >= 0) return value * 10;
-			return MeshDriverUtil.mapValueRange(-0.1, -15, 1001, 1150, value);
-		});
-
-		this.registerSetting(constants.settings.pidDeadband, value => value * 10);
-
-		this.registerSetting(constants.settings.tooHighTemperatureLimit, value => value * 10);
-	}
-
-	/**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
@@ -91,6 +59,7 @@ class ZMNHLD extends QubinoThermostatDevice {
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);
 		this.registerCapability(constants.capabilities.targetTemperature, constants.commandClasses.thermostatSetpoint);
+    let preReportValue = null;
 		this.registerCapability(constants.capabilities.offAutoThermostatMode, constants.commandClasses.thermostatMode, {
 			get: 'THERMOSTAT_MODE_GET',
 			getOpts: {
@@ -113,43 +82,26 @@ class ZMNHLD extends QubinoThermostatDevice {
 						this.setSettings({ thermostatMode: report.Level.Mode === 'Heat' ? '0' : '1' });
 						this.setStoreValue('thermostatMode', report.Level.Mode);
 
-						// Trigger flow
-						this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: 'auto' }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
-						return 'auto';
+            // Trigger flow
+            const newCapabilityValue = 'auto';
+            if (typeof preReportValue !== 'undefined' && preReportValue !== null && preReportValue !== newCapabilityValue) {
+              this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
+            }
+            preReportValue = newCapabilityValue;
+            return newCapabilityValue;
 					}
 
-					// Trigger flow
-					this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: report.Level.Mode.toLowerCase() }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
-					return report.Level.Mode.toLowerCase();
+          // Trigger flow
+          const newCapabilityValue = report.Level.Mode.toLowerCase();
+          if (typeof preReportValue !== 'undefined' && preReportValue !== null && preReportValue !== newCapabilityValue) {
+            this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
+          }
+          preReportValue = newCapabilityValue;
+          return newCapabilityValue;
 				}
 				return null;
 			},
 		});
-	}
-
-	/**
-	 * Override onSettings to handle combined z-wave settings.
-	 * @param oldSettings
-	 * @param newSettings
-	 * @param changedKeysArr
-	 * @returns {Promise<T>}
-	 */
-	async onSettings(oldSettings, newSettings, changedKeysArr) {
-
-		// If enabled/disabled
-		if (changedKeysArr.includes(constants.settings.antifreezeEnabled)) {
-
-			let antifreezeValue = 255;
-			if (newSettings[constants.settings.antifreezeEnabled]) {
-				// Get value from newSettings if possible, else use stored setting value
-				antifreezeValue = newSettings.hasOwnProperty(constants.settings.antifreeze) ? newSettings[constants.settings.antifreeze] : oldSettings[constants.settings.antifreeze];
-			}
-
-			if (!(constants.settings.antifreeze in changedKeysArr)) changedKeysArr.push(constants.settings.antifreeze);
-			newSettings[constants.settings.antifreeze] = antifreezeValue;
-		}
-
-		return super.onSettings(oldSettings, newSettings, changedKeysArr);
 	}
 
 	/**
