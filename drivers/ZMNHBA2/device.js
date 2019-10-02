@@ -32,10 +32,10 @@ class ZMNHBA extends QubinoDevice {
 	_settingsMigrationMap() {
 		const migrationMap = {};
 		if (this.getSetting('automatic_turning_off_output_q1_after_set_time') !== null) {
-			migrationMap.autoOffQ1 = () => Math.min(this.getSetting('automatic_turning_off_output_q1_after_set_time') / 100, 655)
+			migrationMap.autoOffQ1 = () => this.getSetting('automatic_turning_off_output_q1_after_set_time') / 100
 		}
 		if (this.getSetting('automatic_turning_off_output_q2_after_set_time') !== null) {
-			migrationMap.autoOffQ2 = () => Math.min(this.getSetting('automatic_turning_off_output_q2_after_set_time') / 100, 655)
+			migrationMap.autoOffQ2 = () => this.getSetting('automatic_turning_off_output_q2_after_set_time') / 100
 		}
 		if (this.getSetting('power_report_on_power_change_q1') !== null) {
 			migrationMap.powerReportingThresholdQ1 = () => this.getSetting('power_report_on_power_change_q1');

@@ -25,16 +25,16 @@ class ZMNHTD extends QubinoDevice {
 	_settingsMigrationMap() {
 		const migrationMap = {};
 		if (this.getSetting('automatic_turning_off_ir_output_after_set_time') !== null) {
-			migrationMap.autoOffQ1 = () => Math.min(this.getSetting('automatic_turning_off_ir_output_after_set_time'), 32535)
+			migrationMap.autoOffQ1 = () => this.getSetting('automatic_turning_off_ir_output_after_set_time')
 		}
 		if (this.getSetting('automatic_turning_on_ir_output_after_set_time') !== null) {
-			migrationMap.autoOnQ1 = () => Math.min(this.getSetting('automatic_turning_on_ir_output_after_set_time'), 32535)
+			migrationMap.autoOnQ1 = () => this.getSetting('automatic_turning_on_ir_output_after_set_time')
 		}
 		if (this.getSetting('automatic_turning_off_relay_output_after_set_time') !== null) {
-			migrationMap.autoOffQ2 = () => Math.min(this.getSetting('automatic_turning_off_relay_output_after_set_time'), 32535)
+			migrationMap.autoOffQ2 = () => this.getSetting('automatic_turning_off_relay_output_after_set_time')
 		}
 		if (this.getSetting('automatic_turning_on_relay_output_after_set_time') !== null) {
-			migrationMap.autoOnQ2 = () => Math.min(this.getSetting('automatic_turning_on_relay_output_after_set_time'), 32535)
+			migrationMap.autoOnQ2 = () => this.getSetting('automatic_turning_on_relay_output_after_set_time')
 		}
 		if (this.getSetting('enable_disable_endpoints') !== null) {
 			migrationMap.enableInput1 = () => this.getSetting('enable_disable_endpoints')
