@@ -70,7 +70,8 @@
         },
         "zwave": {
           "index": 11,
-          "size": 2
+          "size": 2,
+          "signed": false
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the target temperature that will be set when input 2 is switched. Note: make sure this functionality is enabled, see the setting above.",
@@ -97,7 +98,7 @@
         "value": false
       },
       {
-        "id": "setpointInput2",
+        "id": "setpointInput3",
         "type": "number",
         "label": {
           "en": "Set point set by input 3",
@@ -109,7 +110,8 @@
         },
         "zwave": {
           "index": 12,
-          "size": 2
+          "size": 2,
+          "signed": false
         },
         "hint": {
           "en": "This parameter ({{zwaveParameterIndex}}) determines the target temperature that will be set when input 3 is switched. Note: make sure this functionality is enabled, see the setting above.",

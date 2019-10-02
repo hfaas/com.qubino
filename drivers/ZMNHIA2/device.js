@@ -53,19 +53,6 @@ class ZMNHIA extends QubinoThermostatDevice {
 	async onSettings(oldSettings, newSettings, changedKeysArr) {
 
 		// If enabled/disabled
-		if (changedKeysArr.includes(constants.settings.antifreezeEnabled)) {
-
-			let antifreezeValue = 255;
-			if (newSettings[constants.settings.antifreezeEnabled]) {
-				// Get value from newSettings if possible, else use stored setting value
-				antifreezeValue = newSettings.hasOwnProperty(constants.settings.antifreeze) ? newSettings[constants.settings.antifreeze] : oldSettings[constants.settings.antifreeze];
-			}
-
-			if (!(constants.settings.antifreeze in changedKeysArr)) changedKeysArr.push(constants.settings.antifreeze);
-			newSettings[constants.settings.antifreeze] = antifreezeValue;
-		}
-
-		// If enabled/disabled
 		if (changedKeysArr.includes(constants.settings.setpointInput2Enabled)) {
 
 			let setpointInput2Value = 65535;
@@ -122,9 +109,8 @@ class ZMNHIA extends QubinoThermostatDevice {
 			return MeshDriverUtil.mapValueRange(-0.1, -12.6, 128, 254, value);
 		});
 
-		this.registerSetting(constants.settings.tooLowTemperatureLimit, value => value * 10);
-		this.registerSetting(constants.settings.tooHighTemperatureLimit, value => value * 10);
-	}
+    this.registerSetting(constants.settings.tooLowTemperatureLimit, value => value * 10);
+  }
 
 	/**
 	 * Method that will register capabilities of the device based on its configuration.
@@ -135,6 +121,8 @@ class ZMNHIA extends QubinoThermostatDevice {
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);
 		this.registerCapability(constants.capabilities.targetTemperature, constants.commandClasses.thermostatSetpoint);
+
+		let preReportValue = this.getCapabilityValue(constants.capabilities.offAutoThermostatMode);
 		this.registerCapability(constants.capabilities.offAutoThermostatMode, constants.commandClasses.thermostatMode, {
 			get: 'THERMOSTAT_MODE_GET',
 			getOpts: {
@@ -152,9 +140,16 @@ class ZMNHIA extends QubinoThermostatDevice {
 					report.Level.hasOwnProperty('Mode') &&
 					typeof report.Level.Mode !== 'undefined') {
 
-					// Trigger flow
-					this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: report.Level.Mode.toLowerCase() }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
-					return report.Level.Mode.toLowerCase();
+					// Trigger flow and check if value actually changed
+          const newCapabilityValue = report.Level.Mode.toLowerCase();
+          if (typeof preReportValue !== 'undefined' && preReportValue !== null && preReportValue !== newCapabilityValue) {
+            this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
+          }
+
+          // Update pre report value
+          preReportValue = newCapabilityValue;
+
+					return newCapabilityValue;
 				}
 				return null;
 			},
