@@ -3,7 +3,7 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
-Version 2.0.11
+Version 3.0.0
 * Finalized SDKv3 update
 * Note: a breaking change had to be implemented for Flush 2 Relays (ZMNHBD). The capabilities `onoff`, `meter_power` and `measure_power` have been removed and their corresponding Flow cards.
 * Note: a breaking change had to be implemented for Flush Dimmer (ZMNHDA). The capability `alarm_contact` has been removed and the corresponding Flow cards.
