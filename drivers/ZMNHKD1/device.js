@@ -9,8 +9,6 @@ const {
 
 /**
  * Flush Heat & Cool Thermostat (ZMNHKD)
- * Extended manual: http://qubino.com/download/2054/
- * Regular manual: http://qubino.com/download/1071/
  */
 class ZMNHKD extends QubinoThermostatDevice {
   /**

@@ -5,8 +5,7 @@ const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Flush 1 Relay (ZMNHAD)
- * Extended manual: http://qubino.com/download/1959/
- * Regular manual: http://qubino.com/download/1002/
+ * Extended manual: https://qubino.com/manuals/Flush_1_Relay.pdf
  */
 class ZMNHAD extends QubinoDevice {
   /**

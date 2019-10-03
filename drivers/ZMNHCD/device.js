@@ -5,8 +5,7 @@ const { CAPABILITIES, COMMAND_CLASSES, DEVICE_CLASS_GENERIC } = require('../../l
 
 /**
  * Flush Shutter (ZMNHCD)
- * Extended manual: http://qubino.com/download/2075/
- * Regular manual: http://qubino.com/download/1041/
+ * Manual: https://qubino.com/manuals/Flush_Shutter.pdf
  * TODO: maintenance actions for calibration/reset meter
  * TODO: calibration, blinds need to be lowered all the way down before calibration starts
  */

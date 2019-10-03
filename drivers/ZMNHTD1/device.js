@@ -5,8 +5,7 @@ const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Smart Meter (ZMNHTD)
- * Extended manual: http://qubino.com/download/2069/
- * Regular manual: http://qubino.com/download/1093/
+ * Manual: https://qubino.com/manuals/Smart_Meter.pdf
  * TODO: maintenance action for reset meter
  */
 class ZMNHTD extends QubinoDevice {

@@ -7,9 +7,7 @@ const {
 
 /**
  * Flush On/Off Thermostat (ZMNHID)
- * Extended manual: http://qubino.com/download/2057/
- * Regular manual: http://qubino.com/download/1061/
- *
+ * Manual: https://qubino.com/manuals/Flush_On%20Off_Thermostat.pdf
  * Note: this device sends ALARM_REPORTS but does not advertise this as a support command class in its NIF.
  * Therefore, the settings enableInput1/enableInput2/enableInput3 can only accept value 9 SENSOR_BINARY_REPORT.
  *

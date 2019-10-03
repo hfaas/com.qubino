@@ -5,8 +5,7 @@ const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Flush 2 Relay (ZMNHBD)
- * Extended manual: http://qubino.com/download/2044/
- * Regular manual: http://qubino.com/download/1029/
+ * Manual: https://qubino.com/manuals/Flush_2_Relay.pdf
  * TODO: add maintenance action for meter reset (both endpoints)
  */
 class ZMNHBD extends QubinoDevice {

@@ -5,8 +5,7 @@ const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Flush Dimmer (ZMNHDD)
- * Extended manual: http://qubino.com/download/2051/
- * Regular manual: http://qubino.com/download/990/
+ * Manual: https://qubino.com/manuals/Flush_Dimmer.pdf
  */
 class ZMNHDD extends QubinoDimDevice {
   /**

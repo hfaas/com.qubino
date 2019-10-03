@@ -6,10 +6,8 @@ const {
 } = require('../../lib/constants');
 
 /**
- * Flush On/Off Thermostat (ZMNHLD)
- * Extended manual: http://qubino.com/download/2060/
- * Regular manual: http://qubino.com/download/1084/
- *
+ * Flush PWM Thermostat (ZMNHLD)
+ * Manual: https://qubino.com/manuals/Flush_PWM_Thermostat.pdf
  * Note: this device sends NOTIFICATION_REPORTS but does not advertise this as a support command class in its NIF.
  * Therefore, the settings enableInput1/enableInput2/enableInput3 can only accept value 9 SENSOR_BINARY_REPORT.
  */

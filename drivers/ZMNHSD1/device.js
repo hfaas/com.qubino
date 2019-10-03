@@ -7,8 +7,7 @@ const { CAPABILITIES, COMMAND_CLASSES, SETTINGS } = require('../../lib/constants
 
 /**
  * DIN Dimmer (ZMNHSD)
- * Regular manual: http://qubino.com/download/984/
- * Extended manual: http://qubino.com/download/2038/
+ * Manual: https://qubino.com/manuals/DIN_Dimmer.pdf
  */
 class ZMNHSD extends QubinoDimDevice {
   /**
