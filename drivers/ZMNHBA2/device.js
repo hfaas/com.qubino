@@ -61,7 +61,6 @@ class ZMNHBA extends QubinoDevice {
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
-		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);
 	}
 
 	/**

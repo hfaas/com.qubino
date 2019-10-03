@@ -88,7 +88,6 @@ class ZMNHBD extends QubinoDevice {
 		if (this.hasCapability(constants.capabilities.meterPower)) this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		if (this.hasCapability(constants.capabilities.measurePower)) this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
 		if (this.hasCapability(constants.capabilities.onoff)) this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
-		if (this.hasCapability(constants.capabilities.measureTemperature)) this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel, constants.multiChannelNodeIdThree);
 
 	}
 

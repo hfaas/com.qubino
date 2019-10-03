@@ -92,7 +92,6 @@ class ZMNHDA extends QubinoDimDevice {
 				return null;
 			},
 		});
-		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);
 	}
 }
 

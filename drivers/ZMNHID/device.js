@@ -60,7 +60,6 @@ class ZMNHID extends QubinoThermostatDevice {
 
 		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
 		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measureTemperature, constants.commandClasses.sensorMultilevel);
 		this.registerCapability(constants.capabilities.targetTemperature, constants.commandClasses.thermostatSetpoint);
 
 		let preReportValue = this.getCapabilityValue(constants.capabilities.offAutoThermostatMode);
