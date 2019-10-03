@@ -1,7 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDevice = require('../../lib/QubinoDevice');
+const { CAPABILITIES, COMMAND_CLASSES, SETTINGS } = require('../../lib/constants');
 
 /**
  * Flush 1 Relay (ZMNHAA)
@@ -33,21 +33,21 @@ class ZMNHAA extends QubinoDevice {
 	get inputConfiguration() {
 		return [
 			{
-				id: 2,
-				defaultEnabled: true,
-				flowTriggers: {
-					on: 'I2_on',
-					off: 'I2_off',
-					toggle: 'inputTwoToggled',
+        INPUT_ID: 2,
+        DEFAULT_ENABLED: true,
+				FLOW_TRIGGERS: {
+          ON: 'I2_on',
+          OFF: 'I2_off',
+          TOGGLE: 'inputTwoToggled',
 				},
 			},
 			{
-				id: 3,
-				defaultEnabled: true,
-				flowTriggers: {
-					on: 'I3_on',
-					off: 'I3_off',
-					toggle: 'inputThreeToggled',
+        INPUT_ID: 3,
+        DEFAULT_ENABLED: true,
+        FLOW_TRIGGERS: {
+					ON: 'I3_on',
+					OFF: 'I3_off',
+					TOGGLE: 'inputThreeToggled',
 				},
 			},
 		];
@@ -76,9 +76,9 @@ class ZMNHAA extends QubinoDevice {
 	 * @private
 	 */
 	registerCapabilities() {
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 	}
 
 	/**
@@ -86,7 +86,7 @@ class ZMNHAA extends QubinoDevice {
 	 */
 	registerSettings() {
 		super.registerSettings();
-		this.registerSetting(constants.settings.autoOff, value => value * 100);
+		this.registerSetting(SETTINGS.AUTO_OFF, value => value * 100);
 	}
 }
 

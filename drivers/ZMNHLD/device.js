@@ -1,8 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoThermostatDevice = require('../../lib/QubinoThermostatDevice');
-const MeshDriverUtil = require('homey-meshdriver').Util;
+const { CAPABILITIES, COMMAND_CLASSES, FLOWS, DEVICE_CLASS_GENERIC } = require('../../lib/constants');
 
 /**
  * Flush On/Off Thermostat (ZMNHLD)
@@ -21,16 +20,16 @@ class ZMNHLD extends QubinoThermostatDevice {
 	get inputConfiguration() {
 		return [
 			{
-				id: 1,
-				parameterIndex: 100,
+        INPUT_ID: 1,
+        PARAMETER_INDEX: 100,
 			},
 			{
-				id: 2,
-				parameterIndex: 101,
+        INPUT_ID: 2,
+        PARAMETER_INDEX: 101,
 			},
 			{
-				id: 3,
-				parameterIndex: 102,
+        INPUT_ID: 3,
+        PARAMETER_INDEX: 102,
 			},
 		];
 	}
@@ -40,7 +39,7 @@ class ZMNHLD extends QubinoThermostatDevice {
 	 * @returns {string}
 	 */
 	get rootDeviceClassGeneric() {
-		return constants.deviceClassGeneric.thermostat;
+		return DEVICE_CLASS_GENERIC.THERMOSTAT;
 	}
 
 	/**
@@ -55,11 +54,11 @@ class ZMNHLD extends QubinoThermostatDevice {
 		this.thermostatSetpointType = `${thermostatMode}ing 1`;
 		this.log(`determined thermostatSetpointType: ${this.thermostatSetpointType}`);
 
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.targetTemperature, constants.commandClasses.thermostatSetpoint);
-    let preReportValue = this.getCapabilityValue(constants.capabilities.offAutoThermostatMode);
-		this.registerCapability(constants.capabilities.offAutoThermostatMode, constants.commandClasses.thermostatMode, {
+		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.TARGET_TEMPERATURE, COMMAND_CLASSES.THERMOSTAT_SETPOINT);
+    let preReportValue = this.getCapabilityValue(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE);
+		this.registerCapability(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE, COMMAND_CLASSES.THERMOSTAT_MODE, {
 			get: 'THERMOSTAT_MODE_GET',
 			getOpts: {
 				getOnStart: true,
@@ -78,13 +77,13 @@ class ZMNHLD extends QubinoThermostatDevice {
 					if (report.Level.Mode.toLowerCase() === 'heat' || report.Level.Mode.toLowerCase() === 'cool') {
 
 						// Update the thermostatMode since it may be overriden by input 3
-						this.setSettings({ thermostatMode: report.Level.Mode === 'Heat' ? '0' : '1' });
+						this.setSettings({ [SETTINGS.THERMOSTAT_MODE]: report.Level.Mode === 'Heat' ? '0' : '1' });
 						this.setStoreValue('thermostatMode', report.Level.Mode);
 
             // Trigger flow
             const newCapabilityValue = 'auto';
             if (typeof preReportValue !== 'undefined' && preReportValue !== null && preReportValue !== newCapabilityValue) {
-              this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
+              this.driver.triggerFlow(FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, err));
             }
             preReportValue = newCapabilityValue;
             return newCapabilityValue;
@@ -93,7 +92,7 @@ class ZMNHLD extends QubinoThermostatDevice {
           // Trigger flow
           const newCapabilityValue = report.Level.Mode.toLowerCase();
           if (typeof preReportValue !== 'undefined' && preReportValue !== null && preReportValue !== newCapabilityValue) {
-            this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
+            this.driver.triggerFlow(FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, err));
           }
           preReportValue = newCapabilityValue;
           return newCapabilityValue;
@@ -113,7 +112,7 @@ class ZMNHLD extends QubinoThermostatDevice {
 			const thermostatMode = await this.safeConfigurationGet(59);
 			if (thermostatMode && thermostatMode.hasOwnProperty('Configuration Value')) {
 				const result = thermostatMode['Configuration Value'][0] ? 'Cool' : 'Heat';
-				this.setSettings({ thermostatMode: result === 'Heat' ? '0' : '1' });
+				this.setSettings({ [SETTINGS.THERMOSTAT_MODE]: result === 'Heat' ? '0' : '1' });
 				this.setStoreValue('thermostatMode', result);
 				return result;
 			}

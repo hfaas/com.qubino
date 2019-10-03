@@ -1,7 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDevice = require('../../lib/QubinoDevice');
+const { CAPABILITIES, COMMAND_CLASSES, SETTINGS } = require('../../lib/constants');
 
 /**
  * Flush 2 Relay (ZMNHBA)
@@ -58,9 +58,9 @@ class ZMNHBA extends QubinoDevice {
 	 * @private
 	 */
 	registerCapabilities() {
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 	}
 
 	/**
@@ -68,8 +68,8 @@ class ZMNHBA extends QubinoDevice {
 	 */
 	registerSettings() {
 		super.registerSettings();
-		this.registerSetting(constants.settings.autoOffQ1, value => value * 100);
-		this.registerSetting(constants.settings.autoOffQ2, value => value * 100);
+		this.registerSetting(SETTINGS.AUTO_OFF_Q1, value => value * 100);
+		this.registerSetting(SETTINGS.AUTO_OFF_Q2, value => value * 100);
 	}
 }
 

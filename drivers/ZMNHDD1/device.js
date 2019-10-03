@@ -1,7 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
+const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Flush Dimmer (ZMNHDD)
@@ -17,21 +17,21 @@ class ZMNHDD extends QubinoDimDevice {
 	get inputConfiguration() {
 		return [
 			{
-				id: 2,
-				parameterIndex: 100,
-				flowTriggers: {
-					on: 'I2_on',
-					off: 'I2_off',
-					toggle: 'inputTwoToggled',
+				INPUT_ID: 2,
+				PARAMETER_INDEX: 100,
+        FLOW_TRIGGERS: {
+          ON: 'I2_on',
+          OFF: 'I2_off',
+          TOGGLE: 'inputTwoToggled',
 				},
 			},
 			{
-				id: 3,
-				parameterIndex: 101,
-				flowTriggers: {
-					on: 'I3_on',
-					off: 'I3_off',
-					toggle: 'inputThreeToggled',
+        INPUT_ID: 3,
+        PARAMETER_INDEX: 101,
+        FLOW_TRIGGERS: {
+          ON: 'I3_on',
+          OFF: 'I3_off',
+          TOGGLE: 'inputThreeToggled',
 				},
 			},
 		];
@@ -42,10 +42,10 @@ class ZMNHDD extends QubinoDimDevice {
 	 * @private
 	 */
 	registerCapabilities() {
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 	}
 }
 

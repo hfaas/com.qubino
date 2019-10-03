@@ -1,14 +1,14 @@
 'use strict';
 
-const constants = require('../../lib/constants');
+const { Util } = require('homey-meshdriver');
+
 const QubinoThermostatDevice = require('../../lib/QubinoThermostatDevice');
-const MeshDriverUtil = require('homey-meshdriver').Util;
+const { CAPABILITIES, COMMAND_CLASSES, SETTINGS, FLOWS, DEVICE_CLASS_GENERIC } = require('../../lib/constants');
 
 /**
  * Flush Heat & Cool Thermostat (ZMNHKD)
  * Extended manual: http://qubino.com/download/2054/
  * Regular manual: http://qubino.com/download/1071/
- * TODO: migrate capabilities
  */
 class ZMNHKD extends QubinoThermostatDevice {
 
@@ -19,12 +19,12 @@ class ZMNHKD extends QubinoThermostatDevice {
 	get inputConfiguration() {
 		return [
 			{
-				id: 1,
-				parameterIndex: 100,
+        INPUT_ID: 1,
+        PARAMETER_INDEX: 100,
 			},
 			{
-				id: 2,
-				parameterIndex: 101,
+        INPUT_ID: 2,
+        PARAMETER_INDEX: 101,
 			},
 		];
 	}
@@ -34,33 +34,44 @@ class ZMNHKD extends QubinoThermostatDevice {
 	 * @returns {string}
 	 */
 	get rootDeviceClassGeneric() {
-		return constants.deviceClassGeneric.thermostat;
+		return DEVICE_CLASS_GENERIC.THERMOSTAT;
 	}
 
-	/**
+  /**
+   * Method that handles migration of capabilities.
+   * @returns {Promise<void>}
+   */
+  async migrateCapabilities() {
+    await super.migrateCapabilities();
+
+    if (this.hasCapability(CAPABILITIES.CUSTOM_THERMOSTAT_MODE)) {
+      await this.removeCapability(CAPABILITIES.CUSTOM_THERMOSTAT_MODE).catch(err => this.error(`Error removing ${CAPABILITIES.CUSTOM_THERMOSTAT_MODE} capability`, err))
+      this.log('removed capability', CAPABILITIES.CUSTOM_THERMOSTAT_MODE);
+    }
+    if (!this.hasCapability(CAPABILITIES.METER_POWER)) {
+      await this.addCapability(CAPABILITIES.METER_POWER).catch(err => this.error(`Error adding ${CAPABILITIES.METER_POWER} capability`, err))
+      this.log('added capability', CAPABILITIES.METER_POWER);
+    }
+    if (!this.hasCapability(CAPABILITIES.MEASURE_POWER)) {
+      await this.addCapability(CAPABILITIES.MEASURE_POWER).catch(err => this.error(`Error adding ${CAPABILITIES.MEASURE_POWER} capability`, err))
+      this.log('added capability', CAPABILITIES.MEASURE_POWER);
+    }
+    if (!this.hasCapability(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE)) {
+      await this.addCapability(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE).catch(err => this.error(`Error adding ${CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE} capability`, err))
+      this.log('added capability', CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE);
+    }
+  }
+
+    /**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
 	async registerCapabilities() {
-    // Migrate capabilities
-    if (this.hasCapability('custom_thermostat_mode')) {
-      await this.removeCapability('custom_thermostat_mode').catch(err => this.error('Error removing custom_thermostat_mode capability', err))
-    }
-    if (!this.hasCapability(constants.capabilities.meterPower)) {
-      await this.addCapability(constants.capabilities.meterPower).catch(err => this.error(`Error adding ${constants.capabilities.meterPower} capability`, err))
-    }
-    if (!this.hasCapability(constants.capabilities.measurePower)) {
-      await this.addCapability(constants.capabilities.measurePower).catch(err => this.error(`Error adding ${constants.capabilities.measurePower} capability`, err))
-    }
-    if (!this.hasCapability(constants.capabilities.offAutoThermostatMode)) {
-      await this.addCapability(constants.capabilities.offAutoThermostatMode).catch(err => this.error(`Error adding ${constants.capabilities.offAutoThermostatMode} capability`, err))
-    }
-
-    this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.targetTemperature, constants.commandClasses.thermostatSetpoint);
-		let preReportValue = this.getCapabilityValue(constants.capabilities.offAutoThermostatMode);
-		this.registerCapability(constants.capabilities.offAutoThermostatMode, constants.commandClasses.thermostatMode, {
+    this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.TARGET_TEMPERATURE, COMMAND_CLASSES.THERMOSTAT_SETPOINT);
+		let preReportValue = this.getCapabilityValue(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE);
+		this.registerCapability(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE, COMMAND_CLASSES.THERMOSTAT_MODE, {
 			get: 'THERMOSTAT_MODE_GET',
 			getOpts: {
 				getOnStart: true,
@@ -80,7 +91,7 @@ class ZMNHKD extends QubinoThermostatDevice {
           // Trigger flow
           const newCapabilityValue = report.Level.Mode.toLowerCase();
           if (typeof preReportValue !== 'undefined' && preReportValue !== null && preReportValue !== newCapabilityValue) {
-            this.driver.triggerFlow(constants.flows.offAutoThermostatModeChanged, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', constants.flows.offAutoThermostatModeChanged, err));
+            this.driver.triggerFlow(FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, this, {}, { mode: newCapabilityValue }).catch(err => this.error('failed to trigger flow', FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, err));
           }
           preReportValue = newCapabilityValue;
           return newCapabilityValue;
@@ -132,7 +143,7 @@ class ZMNHKD extends QubinoThermostatDevice {
     if (this.getSetting('temperature_hysteresis_cooling_off') !== null) {
       migrationMap.temperatureCoolingHysteresisOff = () => this.getSetting('temperature_hysteresis_cooling_off')  / 10;
     }
-    if (this.getSetting(constants.settings.antifreezeEnabled) !== null) {
+    if (this.getSetting(SETTINGS.ANTIFREEZE_ENABLED) !== null) {
       migrationMap.antifreezeEnabled = () => {
         let currentValue = this.getSetting('antifreeze');
         if (currentValue !== 255) return true;
@@ -143,7 +154,7 @@ class ZMNHKD extends QubinoThermostatDevice {
       migrationMap.antifreeze = () => {
         let currentValue = this.getSetting('antifreeze');
         if (currentValue === 255) return 0;
-        if (currentValue >= 0 && currentValue <= 127) return MeshDriverUtil.mapValueRange(0, 127, 0.1, 12.7, currentValue);
+        if (currentValue >= 0 && currentValue <= 127) return Util.mapValueRange(0, 127, 0.1, 12.7, currentValue);
         return 0;
       }
     }
@@ -173,30 +184,30 @@ class ZMNHKD extends QubinoThermostatDevice {
 	registerSettings() {
 	  super.registerSettings();
 
-    this.registerSetting(constants.settings.temperatureHeatingHysteresisOn, value => {
+    this.registerSetting(SETTINGS.TEMPERATURE_HEATING_HYSTERESIS_ON, value => {
       if (value >= 0) return value * 10;
-      return MeshDriverUtil.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
+      return Util.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
     });
 
-    this.registerSetting(constants.settings.temperatureHeatingHysteresisOff, value => {
+    this.registerSetting(SETTINGS.TEMPERATURE_HEATING_HYSTERESIS_OFF, value => {
       if (value >= 0) return value * 10;
-      return MeshDriverUtil.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
+      return Util.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
     });
 
-    this.registerSetting(constants.settings.temperatureCoolingHysteresisOn, value => {
+    this.registerSetting(SETTINGS.TEMPERATURE_COOLING_HYSTERESIS_ON, value => {
       if (value >= 0) return value * 10;
-      return MeshDriverUtil.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
+      return Util.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
     });
 
-    this.registerSetting(constants.settings.temperatureCoolingHysteresisOff, value => {
+    this.registerSetting(SETTINGS.TEMPERATURE_COOLING_HYSTERESIS_OFF, value => {
       if (value >= 0) return value * 10;
-      return MeshDriverUtil.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
+      return Util.mapValueRange(-0.1, -12.7, 1001, 1127, value); // different; -12.7 - +12.7
     });
 
-    this.registerSetting(constants.settings.antifreeze, value => {
+    this.registerSetting(SETTINGS.ANTIFREEZE, value => {
       if (!value || value === 255) return value;
       if (value >= 0) return value * 10;
-      return MeshDriverUtil.mapValueRange(-0.1, -12.6, 1001, 1127, value); // different; to 1127
+      return Util.mapValueRange(-0.1, -12.6, 1001, 1127, value); // different; to 1127
     });
   }
 }

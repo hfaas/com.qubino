@@ -1,8 +1,9 @@
 'use strict';
 
 const Homey = require('homey');
-const constants = require('../../lib/constants');
+
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
+const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * DIN Dimmer (ZMNHSD)
@@ -20,7 +21,7 @@ class ZMNHSD extends QubinoDimDevice {
 		if (typeof this.getStoreValue('workingMode') !== 'string') {
 			const workingMode = await this.safeConfigurationGet(5);
 			if (workingMode && workingMode.hasOwnProperty('Configuration Value')) {
-				this.setSettings({ workingMode: workingMode['Configuration Value'][0].toString() });
+				this.setSettings({ [SETTINGS.WORKING_MODE]: workingMode['Configuration Value'][0].toString() });
 				this.setStoreValue('workingMode', workingMode['Configuration Value'][0].toString());
 				return workingMode['Configuration Value'][0].toString();
 			}
@@ -34,10 +35,10 @@ class ZMNHSD extends QubinoDimDevice {
 	 * @private
 	 */
 	async registerCapabilities() {
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 
 		// Fetch working mode setting
 		const workingMode = await this._getWorkingModeSetting();
@@ -45,10 +46,10 @@ class ZMNHSD extends QubinoDimDevice {
 
 		// Detect if dim is disabled
 		if (this.getStoreValue('workingMode') === '1') {
-			this.setCapabilityValue(constants.capabilities.dim, 0);
-			this.registerCapabilityListener(constants.capabilities.dim, () => {
-				if (this.hasCapability(constants.capabilities.windowCoveringsTiltSet)) {
-					this.setCapabilityValue(constants.capabilities.windowCoveringsTiltSet, 0);
+			this.setCapabilityValue(CAPABILITIES.DIM, 0);
+			this.registerCapabilityListener(CAPABILITIES.DIM, () => {
+				if (this.hasCapability(CAPABILITIES.WINDOWCOVERINGS_TILT_SET)) {
+					this.setCapabilityValue(CAPABILITIES.WINDOWCOVERINGS_TILT_SET, 0);
 				}
 				return Promise.reject(new Error(Homey.__('error.dim_mode_not_enabled')));
 			});

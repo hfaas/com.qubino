@@ -1,7 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
+const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Flush Dimmer 0 - 10V (ZMNHVD)
@@ -25,8 +25,8 @@ class ZMNHVD extends QubinoDimDevice {
 	 * @private
 	 */
 	registerCapabilities() {
-		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 	}
 }
 

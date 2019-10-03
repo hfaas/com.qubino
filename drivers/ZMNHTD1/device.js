@@ -1,7 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDevice = require('../../lib/QubinoDevice');
+const { CAPABILITIES, COMMAND_CLASSES  } = require('../../lib/constants');
 
 /**
  * Smart Meter (ZMNHTD)
@@ -42,47 +42,56 @@ class ZMNHTD extends QubinoDevice {
 		return migrationMap
 	}
 
+  /**
+   * Method that handles migration of capabilities.
+   * @returns {Promise<void>}
+   */
+  async migrateCapabilities() {
+    await super.migrateCapabilities();
+
+    if (this.hasCapability(CAPABILITIES.ONOFF)) {
+      this.removeCapability(CAPABILITIES.ONOFF).catch(err => this.error(`Error removing ${CAPABILITIES.ONOFF} capability`, err))
+      this.log('removed capability', CAPABILITIES.ONOFF);
+    }
+    if (this.hasCapability(CAPABILITIES.METER_POWER)) {
+      this.removeCapability(CAPABILITIES.METER_POWER).catch(err => this.error(`Error removing ${CAPABILITIES.METER_POWER} capability`, err))
+      this.log('removed capability', CAPABILITIES.METER_POWER);
+    }
+
+    // Loop all current capabilities and add if necessary
+    const currentCapabilities = [
+      CAPABILITIES.MEASURE_VOLTAGE,
+      CAPABILITIES.MEASURE_CURRENT,
+      CAPABILITIES.METER_POWER_IMPORT,
+      CAPABILITIES.METER_POWER_EXPORT,
+      CAPABILITIES.POWER_REACTIVE,
+      CAPABILITIES.POWER_TOTAL_REACTIVE,
+      CAPABILITIES.POWER_TOTAL_APPARENT,
+      CAPABILITIES.POWER_FACTOR
+    ];
+    for (let i in currentCapabilities) {
+      let currentCapability = currentCapabilities[i];
+      if (!this.hasCapability(currentCapability)) {
+        await this.addCapability(currentCapability).catch(err => this.error(`Error adding ${currentCapability} capability`, err))
+      }
+    }
+  }
+
+
 	/**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
 	async registerCapabilities() {
-
-		if (this.hasCapability(constants.capabilities.onoff)) {
-			this.removeCapability(constants.capabilities.onoff).catch(err => this.error(`Error removing ${constants.capabilities.onoff} capability`, err))
-		}
-		if (this.hasCapability(constants.capabilities.meterPower)) {
-			this.removeCapability(constants.capabilities.meterPower).catch(err => this.error(`Error removing ${constants.capabilities.meterPower} capability`, err))
-		}
-
-		// Loop all current capabilities and add if necessary
-		const currentCapabilities = [
-			constants.capabilities.measureVoltage,
-			constants.capabilities.measureCurrent,
-			constants.capabilities.meterPowerImport,
-			constants.capabilities.meterPowerExport,
-			constants.capabilities.powerReactive,
-			constants.capabilities.powerTotalReactive,
-			constants.capabilities.powerTotalApparent,
-			constants.capabilities.powerFactor
-		];
-		for (let i in currentCapabilities) {
-			let currentCapability = currentCapabilities[i];
-			if (!this.hasCapability(currentCapability)) {
-				await this.addCapability(currentCapability).catch(err => this.error(`Error adding ${currentCapability} capability`, err))
-			}
-		}
-
-		// Register capabilities
-		this.registerCapability(constants.capabilities.measureVoltage, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measureCurrent, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.meterPowerImport, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.meterPowerExport, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.powerReactive, constants.commandClasses.meter); // TODO: validate this is in kVar
-		this.registerCapability(constants.capabilities.powerTotalReactive, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.powerTotalApparent, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.powerFactor, constants.commandClasses.meter);
+		this.registerCapability(CAPABILITIES.MEASURE_VOLTAGE, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_CURRENT, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.METER_POWER_IMPORT, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.METER_POWER_EXPORT, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.POWER_REACTIVE, COMMAND_CLASSES.METER); // TODO: validate this is in kVar
+		this.registerCapability(CAPABILITIES.POWER_TOTAL_REACTIVE, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.POWER_TOTAL_APPARENT, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.POWER_FACTOR, COMMAND_CLASSES.METER);
 	}
 }
 

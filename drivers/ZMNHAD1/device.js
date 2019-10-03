@@ -1,7 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDevice = require('../../lib/QubinoDevice');
+const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Flush 1 Relay (ZMNHAD)
@@ -17,12 +17,12 @@ class ZMNHAD extends QubinoDevice {
 	get inputConfiguration() {
 		return [
 			{
-				id: 2,
-				parameterIndex: 100,
+        INPUT_ID: 2,
+        PARAMETER_INDEX: 100,
 			},
 			{
-				id: 3,
-				parameterIndex: 101,
+        INPUT_ID: 3,
+        PARAMETER_INDEX: 101,
 			},
 		];
 	}
@@ -32,9 +32,9 @@ class ZMNHAD extends QubinoDevice {
 	 * @private
 	 */
 	registerCapabilities() {
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 	}
 }
 

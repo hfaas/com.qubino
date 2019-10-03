@@ -2,10 +2,9 @@
 
 const { Util } = require('homey-meshdriver');
 
-const constants = require('../../lib/constants');
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
+const { CAPABILITIES, COMMAND_CLASSES, SETTINGS } = require('../../lib/constants');
 
-const FACTORY_DEFAULT_COLOR_DURATION = 255;
 const COLOR_REPORT_DEBOUNCE_TIMEOUT = 500; //ms
 const MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT = 500; //ms
 
@@ -23,7 +22,7 @@ class ZMNHWD extends QubinoDimDevice {
 		super.registerSettings();
 
 		// Multiply dim duration by 10 instead of default 100
-		this.registerSetting(constants.settings.dimDuration, value => value * 10);
+		this.registerSetting(SETTINGS.DIM_DURATION, value => value * 10);
 	}
 
 	/**
@@ -45,28 +44,28 @@ class ZMNHWD extends QubinoDimDevice {
 		};
 
 		// Register onoff capability
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchMultilevel, {
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, {
 			getOpts: {
 				getOnStart: false // onoff value is retrieved manually in _getCapabilityValuesOnStart()
 			}
 		});
 
 		// Register dim capability
-		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel, {
+		this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL, {
 			getOpts: {
 				getOnStart: false // dim value is retrieved manually in _getCapabilityValuesOnStart()
 			}
 		});
 
 		// Register report listener for switch color command class, the reports are debounced
-		this.registerReportListener(constants.commandClasses.switchColor, constants.commandClasses.switchColorReport, report => {
+		this.registerReportListener(COMMAND_CLASSES.SWITCH_COLOR, COMMAND_CLASSES.SWITCH_COLOR_REPORT, report => {
 			if (this._colorReportDebounce) clearTimeout(this._colorReportDebounce);
 			this._colorReportsQueue.push(report);
 			this._colorReportDebounce = setTimeout(this._debouncedColorReportListener.bind(this), COLOR_REPORT_DEBOUNCE_TIMEOUT);
 		});
 
 		// Register capability listener for all capabilities which affect each other
-		this.registerMultipleCapabilityListener(['onoff', 'dim', 'light_hue', 'light_saturation', 'light_mode', 'light_temperature'], this._multipleCapabilitiesHandler.bind(this), MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT);
+		this.registerMultipleCapabilityListener([CAPABILITIES.ONOFF, CAPABILITIES.DIM, CAPABILITIES.LIGHT_HUE, CAPABILITIES.LIGHT_SATURATION, CAPABILITIES.LIGHT_MODE, CAPABILITIES.LIGHT_TEMPERATURE], this._multipleCapabilitiesHandler.bind(this), MULTIPLE_CAPABILITIES_DEBOUNCE_TIMEOUT);
 
 		// Fetch capability values from device
 		await this._getCapabilityValuesOnStart();
@@ -86,7 +85,7 @@ class ZMNHWD extends QubinoDimDevice {
 		let white = null;
 
 		// Loop all color reports to find all RGBW values
-		let dim = this.getCapabilityValue(constants.capabilities.dim);
+		let dim = this.getCapabilityValue(CAPABILITIES.DIM);
 		for (let i = 0; i < this._colorReportsQueue.length; i++) {
 			let report = this._colorReportsQueue[i];
 			if (report['Color Component ID'] === 0) { // white
@@ -231,15 +230,15 @@ class ZMNHWD extends QubinoDimDevice {
 		}
 
 		// Only dim changed
-		if (Object.prototype.hasOwnProperty.call(values, constants.capabilities.dim) && Object.keys(values).length === 1) {
+		if (Object.prototype.hasOwnProperty.call(values, CAPABILITIES.DIM) && Object.keys(values).length === 1) {
 			let dimDuration = null;
-			if (Object.prototype.hasOwnProperty.call(options, constants.capabilities.dim) && Object.prototype.hasOwnProperty.call(options.dim, 'duration')) {
+			if (Object.prototype.hasOwnProperty.call(options, CAPABILITIES.DIM) && Object.prototype.hasOwnProperty.call(options.dim, 'duration')) {
 				dimDuration = options.dim.duration;
 			}
 			this.log('_multipleCapabilitiesHandler() -> only dim changed', mergedCapabilitiesValuesObject.dim, dimDuration);
 
 			// Execute dim only
-			return this.executeCapabilitySetCommand(constants.capabilities.dim, constants.commandClasses.switchMultilevel, mergedCapabilitiesValuesObject.dim, {
+			return this.executeCapabilitySetCommand(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL, mergedCapabilitiesValuesObject.dim, {
 				duration: dimDuration
 			});
 		}
@@ -247,7 +246,7 @@ class ZMNHWD extends QubinoDimDevice {
 		// Is turned off
 		if (mergedCapabilitiesValuesObject.onoff === false && (typeof newCapabilitiesValuesObject.dim === 'undefined' || newCapabilitiesValuesObject.dim === 0)) {
 			this.log('_multipleCapabilitiesHandler() -> turn off hard');
-			return this.executeCapabilitySetCommand(constants.capabilities.onoff, constants.commandClasses.switchMultilevel, false);
+			return this.executeCapabilitySetCommand(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, false);
 		}
 
 		// Is turned on
@@ -260,20 +259,20 @@ class ZMNHWD extends QubinoDimDevice {
 			colorComponents.blue = this._colorComponentsState.blue;
 			colorComponents.white = this._colorComponentsState.white;
 
-			if (typeof this._colorComponentsState.dim === 'number') this.setCapabilityValue(constants.capabilities.dim, this._colorComponentsState.dim);
-			else this.setCapabilityValue(constants.capabilities.dim, 1);
+			if (typeof this._colorComponentsState.dim === 'number') this.setCapabilityValue(CAPABILITIES.DIM, this._colorComponentsState.dim);
+			else this.setCapabilityValue(CAPABILITIES.DIM, 1);
 		}
 
 		// Set onoff to false when the rgbw values are zero
 		if (mergedCapabilitiesValuesObject.light_mode === 'color' && colorComponents.red === 0 && colorComponents.green === 0 && colorComponents.blue === 0) {
-			this.setCapabilityValue(constants.capabilities.onoff, false);
+			this.setCapabilityValue(CAPABILITIES.ONOFF, false);
 		} else if (mergedCapabilitiesValuesObject.light_mode === 'temperature' && colorComponents.white === 0 && colorComponents.blue === 0) {
-			this.setCapabilityValue(constants.capabilities.onoff, false);
+			this.setCapabilityValue(CAPABILITIES.ONOFF, false);
 		}
 
 		// Set onoff to true if the device is turned on via dimming
 		if (mergedCapabilitiesValuesObject.dim > 0 && mergedCapabilitiesValuesObject.onoff === false) {
-			this.setCapabilityValue(constants.capabilities.onoff, true);
+			this.setCapabilityValue(CAPABILITIES.ONOFF, true);
 		}
 
 		return this._sendColors({ ...colorComponents });
@@ -291,15 +290,15 @@ class ZMNHWD extends QubinoDimDevice {
 		// Get dim value from device
 		let dim = null;
 		try {
-			dim = await this.refreshCapabilityValue(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-			await this.setCapabilityValue(constants.capabilities.onoff, dim > 0);
+			dim = await this.refreshCapabilityValue(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
+			await this.setCapabilityValue(CAPABILITIES.ONOFF, dim > 0);
 			this.log('_getCapabilityValuesOnStart() -> dim:', dim);
 		} catch (err) {
 			return this.error('failed to retrieve dim capability value', err);
 		}
 
 		// Color components [white = 0, cold white = 1, red = 2, green = 3, blue = 4]
-		const commandClassColorSwitch = this.getCommandClass(constants.commandClasses.switchColor);
+		const commandClassColorSwitch = this.getCommandClass(COMMAND_CLASSES.SWITCH_COLOR);
 		if (!(commandClassColorSwitch instanceof Error) && typeof commandClassColorSwitch.SWITCH_COLOR_GET === 'function') {
 
 			// Get all color component values
@@ -451,25 +450,25 @@ class ZMNHWD extends QubinoDimDevice {
 	async onSettings(oldSettings, newSettings, changedKeysArr) {
 
 		// Get updated duration unit
-		let autoSceneModeTransitionDurationUnit = oldSettings[constants.settings.autoSceneModeTransitionDurationUnit];
-		if (changedKeysArr.includes(constants.settings.autoSceneModeTransitionDurationUnit)) {
-			autoSceneModeTransitionDurationUnit = newSettings[constants.settings.autoSceneModeTransitionDurationUnit];
+		let autoSceneModeTransitionDurationUnit = oldSettings[SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION_UNIT];
+		if (changedKeysArr.includes(SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION_UNIT)) {
+			autoSceneModeTransitionDurationUnit = newSettings[SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION_UNIT];
 
 			// If unit changed make sure duration is also added as changed
-			if (!changedKeysArr.includes(constants.settings.autoSceneModeTransitionDuration)) {
-				changedKeysArr.push(constants.settings.autoSceneModeTransitionDuration);
+			if (!changedKeysArr.includes(SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION)) {
+				changedKeysArr.push(SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION);
 			}
 		}
 
 		// Get updated transition duration value
-		let autoSceneModeTransitionDuration = oldSettings[constants.settings.autoSceneModeTransitionDuration];
-		if (changedKeysArr.includes(constants.settings.autoSceneModeTransitionDuration)) {
-			autoSceneModeTransitionDuration = newSettings[constants.settings.autoSceneModeTransitionDuration];
+		let autoSceneModeTransitionDuration = oldSettings[SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION];
+		if (changedKeysArr.includes(SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION)) {
+			autoSceneModeTransitionDuration = newSettings[SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION];
 		}
 
 		// Add 1000 if unit is minutes
 		if (autoSceneModeTransitionDurationUnit === 'min') {
-			newSettings[constants.settings.autoSceneModeTransitionDuration] = autoSceneModeTransitionDuration + 1000;
+			newSettings[SETTINGS.AUTO_SCENE_MODE_TRANSITION_DURATION] = autoSceneModeTransitionDuration + 1000;
 		}
 
 		return super.onSettings(oldSettings, newSettings, changedKeysArr);

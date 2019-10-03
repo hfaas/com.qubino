@@ -1,7 +1,7 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDevice = require('../../lib/QubinoDevice');
+const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Flush 2 Relay (ZMNHBD)
@@ -50,47 +50,66 @@ class ZMNHBD extends QubinoDevice {
 		return migrationMap;
 	}
 
+  /**
+   * Method that handles migration of capabilities.
+   * @returns {Promise<void>}
+   */
+  async migrateCapabilities() {
+    await super.migrateCapabilities();
+
+    if (!this._isRootNode()) {
+      this.log('migrate capabilities for multi channel nodes');
+      if (!this.hasCapability(CAPABILITIES.METER_POWER)) {
+        await this.addCapability(CAPABILITIES.METER_POWER).catch(err => this.error(`Error adding ${CAPABILITIES.METER_POWER} capability`, err))
+        this.log('added capability', CAPABILITIES.METER_POWER);
+      }
+      if (!this.hasCapability(CAPABILITIES.MEASURE_POWER)) {
+        await this.addCapability(CAPABILITIES.MEASURE_POWER).catch(err => this.error(`Error adding ${CAPABILITIES.MEASURE_POWER} capability`, err))
+        this.log('added capability', CAPABILITIES.MEASURE_POWER);
+      }
+    } else {
+      this.log('migrate capabilities for root nodes');
+      if (this.hasCapability(CAPABILITIES.ONOFF)) { // note: this breaks flows for users
+        await this.removeCapability(CAPABILITIES.ONOFF).catch(err => this.error(`Error removing ${CAPABILITIES.ONOFF} capability`, err))
+        this.log('removed capability', CAPABILITIES.ONOFF);
+      }
+      if (this.hasCapability(CAPABILITIES.METER_POWER)) { // note: this breaks flows for users
+        await this.removeCapability(CAPABILITIES.METER_POWER).catch(err => this.error(`Error removing ${CAPABILITIES.METER_POWER} capability`, err))
+        this.log('removed capability', CAPABILITIES.METER_POWER);
+      }
+      if (this.hasCapability(CAPABILITIES.MEASURE_POWER)) { // note: this breaks flows for users
+        await this.removeCapability(CAPABILITIES.MEASURE_POWER).catch(err => this.error(`Error removing ${CAPABILITIES.MEASURE_POWER} capability`, err))
+        this.log('removed capability', CAPABILITIES.MEASURE_POWER);
+      }
+      if (!this.hasCapability(CAPABILITIES.ALL_ON)) {
+        await this.addCapability(CAPABILITIES.ALL_ON).catch(err => this.error(`Error adding ${CAPABILITIES.ALL_ON} capability`, err))
+        this.log('added capability', CAPABILITIES.ALL_ON);
+      }
+      if (!this.hasCapability(CAPABILITIES.ALL_OFF)) {
+        await this.addCapability(CAPABILITIES.ALL_OFF).catch(err => this.error(`Error adding ${CAPABILITIES.ALL_OFF} capability`, err))
+        this.log('added capability', CAPABILITIES.ALL_OFF);
+      }
+    }
+  }
+
 	/**
 	 * Method that will register capabilities of the device based on its configuration.
 	 * @private
 	 */
 	async registerCapabilities() {
-
-		if (!this._isRootNode()) {
-			this.log('migrate capabilities for multi channel nodes')
-			if (!this.hasCapability(constants.capabilities.meterPower)) {
-				await this.addCapability(constants.capabilities.meterPower).catch(err => this.error(`Error adding ${constants.capabilities.meterPower} capability`, err))
-			}
-			if (!this.hasCapability(constants.capabilities.measurePower)) {
-				await this.addCapability(constants.capabilities.measurePower).catch(err => this.error(`Error adding ${constants.capabilities.measurePower} capability`, err))
-			}
-		} else {
-			this.log('migrate capabilities for root nodes')
-			if (this.hasCapability(constants.capabilities.onoff)) { // TODO: this breaks Flows notify users
-				await this.removeCapability(constants.capabilities.onoff).catch(err => this.error(`Error removing ${constants.capabilities.onoff} capability`, err))
-			}
-			if (this.hasCapability(constants.capabilities.meterPower)) { // TODO: this breaks Flows notify users
-				await this.removeCapability(constants.capabilities.meterPower).catch(err => this.error(`Error removing ${constants.capabilities.meterPower} capability`, err))
-			}
-			if (this.hasCapability(constants.capabilities.measurePower)) { // TODO: this breaks Flows notify users
-				await this.removeCapability(constants.capabilities.measurePower).catch(err => this.error(`Error removing ${constants.capabilities.measurePower} capability`, err))
-			}
-			if (!this.hasCapability(constants.capabilities.allOn)) {
-				await this.addCapability(constants.capabilities.allOn).catch(err => this.error(`Error adding ${constants.capabilities.allOn} capability`, err))
-			}
-			if (!this.hasCapability(constants.capabilities.allOff)) {
-				await this.addCapability(constants.capabilities.allOff).catch(err => this.error(`Error adding ${constants.capabilities.allOff} capability`, err))
-			}
-		}
-
-		if (this.hasCapability(constants.capabilities.allOn)) this.registerCapabilityListener(constants.capabilities.allOn, this.turnAllOn.bind(this));
-		if (this.hasCapability(constants.capabilities.allOff)) this.registerCapabilityListener(constants.capabilities.allOff, this.turnAllOff.bind(this));
-		if (this.hasCapability(constants.capabilities.meterPower)) this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		if (this.hasCapability(constants.capabilities.measurePower)) this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		if (this.hasCapability(constants.capabilities.onoff)) this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		if (this.hasCapability(CAPABILITIES.ALL_ON)) this.registerCapabilityListener(CAPABILITIES.ALL_ON, this.turnAllOn.bind(this));
+		if (this.hasCapability(CAPABILITIES.ALL_OFF)) this.registerCapabilityListener(CAPABILITIES.ALL_OFF, this.turnAllOff.bind(this));
+		if (this.hasCapability(CAPABILITIES.METER_POWER)) this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		if (this.hasCapability(CAPABILITIES.MEASURE_POWER)) this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		if (this.hasCapability(CAPABILITIES.ONOFF)) this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 
 	}
 
+  /**
+   * Method that determines if current node is root node.
+   * @returns {boolean}
+   * @private
+   */
 	_isRootNode() {
 		return Object.prototype.hasOwnProperty.call(this.node, 'MultiChannelNodes') && Object.keys(this.node.MultiChannelNodes).length > 0;
 	}
@@ -100,10 +119,10 @@ class ZMNHBD extends QubinoDevice {
 	 * @returns {Promise<*>}
 	 */
 	async turnAllOn() {
-		if (this.hasCommandClass(constants.commandClasses.switchBinary)) {
-			return this.node.CommandClass[`COMMAND_CLASS_${constants.commandClasses.switchBinary}`].SWITCH_BINARY_SET({ 'Switch Value': 'on/enable' });
+		if (this.hasCommandClass(COMMAND_CLASSES.SWITCH_BINARY)) {
+			return this.node.CommandClass[`COMMAND_CLASS_${COMMAND_CLASSES.SWITCH_BINARY}`].SWITCH_BINARY_SET({ 'Switch Value': 'on/enable' });
 		}
-		return Promise.reject(new Error('device_does_not_support_switch_binary'));
+		throw new Error('device_does_not_support_switch_binary');
 	}
 
 	/**
@@ -111,10 +130,10 @@ class ZMNHBD extends QubinoDevice {
 	 * @returns {Promise<*>}
 	 */
 	async turnAllOff() {
-		if (this.hasCommandClass(constants.commandClasses.switchBinary)) {
-			return this.node.CommandClass[`COMMAND_CLASS_${constants.commandClasses.switchBinary}`].SWITCH_BINARY_SET({ 'Switch Value': 'off/disable' });
+		if (this.hasCommandClass(COMMAND_CLASSES.SWITCH_BINARY)) {
+			return this.node.CommandClass[`COMMAND_CLASS_${COMMAND_CLASSES.SWITCH_BINARY}`].SWITCH_BINARY_SET({ 'Switch Value': 'off/disable' });
 		}
-		return Promise.reject(new Error('device_does_not_support_switch_binary'));
+		throw new Error('device_does_not_support_switch_binary');
 	}
 }
 

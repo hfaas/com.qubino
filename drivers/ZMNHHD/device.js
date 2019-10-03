@@ -2,8 +2,8 @@
 
 const { Util } = require('homey-meshdriver');
 
-const constants = require('../../lib/constants');
 const QubinoDimDevice = require('../../lib/QubinoDimDevice');
+const { CAPABILITIES, COMMAND_CLASSES, SETTINGS } = require('../../lib/constants');
 
 /**
  * Mini Dimmer (ZMNHHD)
@@ -17,10 +17,10 @@ class ZMNHHD extends QubinoDimDevice {
 	 * @private
 	 */
 	async registerCapabilities() {
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.dim, constants.commandClasses.switchMultilevel);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
+		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+		this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
+		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
 	}
 
 	/**
@@ -30,10 +30,10 @@ class ZMNHHD extends QubinoDimDevice {
 		super.registerSettings();
 
 		// Override QubinoDimDevice setting handler
-		this.registerSetting(constants.settings.dimDuration, value => value);
+		this.registerSetting(SETTINGS.DIM_DURATION, value => value);
 
 		// Conversion method expects value in milliseconds, spits out 0-127 in sec 128-253 in minutes
-		this.registerSetting(constants.settings.dimDurationKeyPressed, value => Util.calculateZwaveDimDuration(value * 1000, { maxValue: 253 }));
+		this.registerSetting(SETTINGS.DIM_DURATION_KEY_PRESSED, value => Util.calculateZwaveDimDuration(value * 1000, { maxValue: 253 }));
 	}
 }
 
