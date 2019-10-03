@@ -20,12 +20,6 @@
     }
   },
   {
-    "$extends": "associationReportingInterval"
-  },
-  {
-    "$extends": "delayReportAssociationGroup10"
-  },
-  {
     "type": "group",
     "label": {
       "en": "Inputs",
@@ -114,8 +108,8 @@
         },
         "value": -1,
         "attr": {
-          "min": -25.5,
-          "max": 25.5,
+          "min": -12.7,
+          "max": 12.7,
           "step": 0.1
         },
         "label": {
@@ -136,8 +130,8 @@
         },
         "value": 0.2,
         "attr": {
-          "min": -25.5,
-          "max": 25.5,
+          "min": -12.7,
+          "max": 12.7,
           "step": 0.1
         },
         "label": {
@@ -158,8 +152,8 @@
         },
         "value": 0.5,
         "attr": {
-          "min": -25.5,
-          "max": 25.5,
+          "min": -12.7,
+          "max": 12.7,
           "step": 0.1
         },
         "label": {
@@ -180,8 +174,8 @@
         },
         "value": -0.2,
         "attr": {
-          "min": -25.5,
-          "max": 25.5,
+          "min": -12.7,
+          "max": 12.7,
           "step": 0.1
         },
         "label": {
@@ -220,21 +214,10 @@
         "$extends": "tooHighTemperatureLimit"
       },
       {
-        "$extends": "temperatureScale"
+        "$extends": "temperatureSensorOffset"
       },
       {
-        "$extends": "temperatureSensorOffset",
-        "hint": {
-          "en": "This parameter ({{zwaveParameterIndex}}) determines the value (°C) that will be added to the measured temperature value for the sake of calibration. Note: when parameter 78 is set to use Fahrenheit this parameter must still be set as Celsius.",
-          "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren. Let op: wanneer parameter 78 is ingesteld op Fahrenheit moet deze parameter alsnog als Celsius worden ingesteld."
-        }
-      },
-      {
-        "$extends": "temperatureSensorReportingThreshold",
-        "hint": {
-          "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely. Note: when parameter 78 is set to use Fahrenheit this parameter must still be set as Celsius.",
-          "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit. Let op: wanneer parameter 78 is ingesteld op Fahrenheit moet deze parameter alsnog als Celsius worden ingesteld."
-        }
+        "$extends": "temperatureSensorReportingThreshold"
       },
       {
         "id": "temperatureSensorSetpointSelector",
