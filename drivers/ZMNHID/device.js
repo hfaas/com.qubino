@@ -108,31 +108,6 @@ class ZMNHID extends QubinoThermostatDevice {
 	}
 
 	/**
-	 * Override onSettings to handle combined z-wave settings.
-	 * @param oldSettings
-	 * @param newSettings
-	 * @param changedKeysArr
-	 * @returns {Promise<T>}
-	 */
-	async onSettings(oldSettings, newSettings, changedKeysArr) {
-
-		// If enabled/disabled
-		if (changedKeysArr.includes(constants.settings.antifreezeEnabled)) {
-
-			let antifreezeValue = 255;
-			if (newSettings[constants.settings.antifreezeEnabled]) {
-				// Get value from newSettings if possible, else use stored setting value
-				antifreezeValue = newSettings.hasOwnProperty(constants.settings.antifreeze) ? newSettings[constants.settings.antifreeze] : oldSettings[constants.settings.antifreeze];
-			}
-
-			if (!(constants.settings.antifreeze in changedKeysArr)) changedKeysArr.push(constants.settings.antifreeze);
-			newSettings[constants.settings.antifreeze] = antifreezeValue;
-		}
-
-		return await super.onSettings(oldSettings, newSettings, changedKeysArr);
-	}
-
-	/**
 	 * Method that fetches the thermostat mode setting which is needed to determine if dimming is enabled or not.
 	 * @returns {Promise<*>}
 	 * @private
