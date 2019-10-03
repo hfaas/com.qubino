@@ -1892,18 +1892,6 @@
         "associationGroups": [
           1
         ],
-        "defaultConfiguration": [
-          {
-            "id": 100,
-            "size": 1,
-            "value": 9
-          },
-          {
-            "id": 101,
-            "size": 1,
-            "value": 9
-          }
-        ],
         "learnmode": {
           "image": "/drivers/ZMNHAD1/assets/learnmode.svg",
           "instruction": {
@@ -2187,7 +2175,6 @@
               ]
             },
             {
-              "value": "9",
               "id": "enableInput2",
               "type": "dropdown",
               "label": {
@@ -2198,6 +2185,7 @@
                 "index": 100,
                 "size": 1
               },
+              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -2262,7 +2250,6 @@
               }
             },
             {
-              "value": "9",
               "id": "enableInput3",
               "type": "dropdown",
               "label": {
@@ -2273,6 +2260,7 @@
                 "index": 101,
                 "size": 1
               },
+              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -4192,18 +4180,6 @@
         "associationGroups": [
           1
         ],
-        "defaultConfiguration": [
-          {
-            "id": 100,
-            "size": 1,
-            "value": 9
-          },
-          {
-            "id": 101,
-            "size": 1,
-            "value": 9
-          }
-        ],
         "learnmode": {
           "image": "/drivers/ZMNHDD1/assets/learnmode.svg",
           "instruction": {
@@ -4528,7 +4504,6 @@
               }
             },
             {
-              "value": "9",
               "id": "enableInput2",
               "type": "dropdown",
               "label": {
@@ -4539,6 +4514,7 @@
                 "index": 100,
                 "size": 1
               },
+              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -4603,7 +4579,6 @@
               }
             },
             {
-              "value": "9",
               "id": "enableInput3",
               "type": "dropdown",
               "label": {
@@ -4614,6 +4589,7 @@
                 "index": 101,
                 "size": 1
               },
+              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -5975,23 +5951,6 @@
         "associationGroups": [
           1
         ],
-        "defaultConfiguration": [
-          {
-            "id": 100,
-            "size": 1,
-            "value": 9
-          },
-          {
-            "id": 101,
-            "size": 1,
-            "value": 9
-          },
-          {
-            "id": 102,
-            "size": 1,
-            "value": 9
-          }
-        ],
         "learnmode": {
           "image": "/drivers/ZMNHID/assets/learnmode.svg",
           "instruction": {
@@ -6428,7 +6387,6 @@
                 "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -6454,7 +6412,8 @@
               "zwave": {
                 "index": 100,
                 "size": 1
-              }
+              },
+              "value": "0"
             },
             {
               "zwave": {
@@ -6465,7 +6424,6 @@
                 "en": "This parameter (101) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. If input 2 is enabled parameter 12 must be set to influence heating and cooling according to the condense sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (101) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 2 is ingeschakeld moet parameter 12 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -6487,7 +6445,8 @@
               "label": {
                 "en": "Input 2 notification type and event",
                 "nl": "Ingang 2 notificatie type en event"
-              }
+              },
+              "value": "0"
             },
             {
               "zwave": {
@@ -6498,7 +6457,6 @@
                 "en": "This parameter (102) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. If input 3 is enabled parameter 13 must be set to influence heating and cooling according to the flood sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (102) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 3 is ingeschakeld moet parameter 13 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -6520,7 +6478,8 @@
               "label": {
                 "en": "Input 3 notification type and event",
                 "nl": "Ingang 3 notificatie type en event"
-              }
+              },
+              "value": "0"
             },
             {
               "id": "statusOnDelayInput1",
@@ -7026,18 +6985,6 @@
         "associationGroups": [
           1
         ],
-        "defaultConfiguration": [
-          {
-            "id": 100,
-            "size": 1,
-            "value": 9
-          },
-          {
-            "id": 101,
-            "size": 1,
-            "value": 9
-          }
-        ],
         "learnmode": {
           "image": "/drivers/ZMNHKD1/assets/learnmode.svg",
           "instruction": {
@@ -7398,7 +7345,6 @@
               }
             },
             {
-              "value": "9",
               "hint": {
                 "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
@@ -7413,6 +7359,7 @@
                 "index": 100,
                 "size": 1
               },
+              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -7473,7 +7420,6 @@
               ]
             },
             {
-              "value": "9",
               "zwave": {
                 "index": 101,
                 "size": 1
@@ -7488,6 +7434,7 @@
                 "en": "Input 2 notification type and event",
                 "nl": "Ingang 2 notificatie type en event"
               },
+              "value": "0",
               "values": [
                 {
                   "id": "0",
@@ -8104,23 +8051,6 @@
         "associationGroups": [
           1
         ],
-        "defaultConfiguration": [
-          {
-            "id": 100,
-            "size": 1,
-            "value": 9
-          },
-          {
-            "id": 101,
-            "size": 1,
-            "value": 9
-          },
-          {
-            "id": 102,
-            "size": 1,
-            "value": 9
-          }
-        ],
         "learnmode": {
           "image": "/drivers/ZMNHLD/assets/learnmode.svg",
           "instruction": {
@@ -8632,7 +8562,6 @@
                 "en": "This parameter (100) determines whether input 1 is enabled and which message should be send to Homey and other associated devices when switched. If input 1 is enabled parameter 11 must be set to influence heating and cooling according to the window sensor status. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (100) bepaalt of ingang 1 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 1 is ingeschakeld moet parameter 11 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten raamsensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -8658,7 +8587,8 @@
               "zwave": {
                 "index": 100,
                 "size": 1
-              }
+              },
+              "value": "0"
             },
             {
               "zwave": {
@@ -8669,7 +8599,6 @@
                 "en": "This parameter (101) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. If input 2 is enabled parameter 12 must be set to influence heating and cooling according to the condense sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (101) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 2 is ingeschakeld moet parameter 12 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten condensatiesensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -8691,7 +8620,8 @@
               "label": {
                 "en": "Input 2 notification type and event",
                 "nl": "Ingang 2 notificatie type en event"
-              }
+              },
+              "value": "0"
             },
             {
               "zwave": {
@@ -8702,7 +8632,6 @@
                 "en": "This parameter (102) determines whether input 3 is enabled and which message should be send to Homey and other associated devices when switched. If input 3 is enabled parameter 13 must be set to influence heating and cooling according to the flood sensor. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
                 "nl": "Deze parameter (102) bepaalt of ingang 3 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Als ingang 3 is ingeschakeld moet parameter 13 zijn ingesteld op het beïnvloeden van het verwarmen en verkoelen a.d.h.v. de aangesloten overstromingssensor. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
               },
-              "value": "9",
               "values": [
                 {
                   "id": "0",
@@ -8724,7 +8653,8 @@
               "label": {
                 "en": "Input 3 notification type and event",
                 "nl": "Ingang 3 notificatie type en event"
-              }
+              },
+              "value": "0"
             },
             {
               "id": "statusOnDelayInput1",
@@ -9319,13 +9249,6 @@
         "associationGroups": [
           1
         ],
-        "defaultConfiguration": [
-          {
-            "id": 100,
-            "size": 1,
-            "value": 9
-          }
-        ],
         "learnmode": {
           "image": "/drivers/ZMNHND1/assets/learnmode.svg",
           "instruction": {
@@ -9576,7 +9499,6 @@
               ]
             },
             {
-              "value": "9",
               "id": "enableInput2",
               "type": "dropdown",
               "label": {
@@ -9587,6 +9509,7 @@
                 "index": 100,
                 "size": 1
               },
+              "value": "0",
               "values": [
                 {
                   "id": "0",

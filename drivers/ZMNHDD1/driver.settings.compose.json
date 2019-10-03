@@ -94,12 +94,10 @@
         "$extends": "doubleClick"
       },
       {
-        "$extends": "enableInput2",
-        "value": "9"
+        "$extends": "enableInput2"
       },
       {
-        "$extends": "enableInput3",
-        "value": "9"
+        "$extends": "enableInput3"
       }
     ]
   },

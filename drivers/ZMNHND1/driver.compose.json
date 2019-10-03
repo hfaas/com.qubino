@@ -18,13 +18,6 @@
     "associationGroups": [
       1
     ],
-    "defaultConfiguration": [
-      {
-        "id": 100,
-        "size": 1,
-        "value": 9
-      }
-    ],
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
