@@ -11,23 +11,22 @@ const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
  * TODO: add support for analogue sensor connected to input 1
  */
 class ZMNHVD extends QubinoDimDevice {
+  /**
+   * Override default multi channel configuration.
+   * @returns {boolean}
+   */
+  get multiChannelConfigurationDisabled() {
+    return true;
+  }
 
-	/**
-	 * Override default multi channel configuration.
-	 * @returns {boolean}
-	 */
-	get multiChannelConfigurationDisabled() {
-		return true;
-	}
-
-	/**
-	 * Method that will register capabilities of the device based on its configuration.
-	 * @private
-	 */
-	registerCapabilities() {
-		this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
-		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
-	}
+  /**
+   * Method that will register capabilities of the device based on its configuration.
+   * @private
+   */
+  registerCapabilities() {
+    this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
+    this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
+  }
 }
 
 module.exports = ZMNHVD;

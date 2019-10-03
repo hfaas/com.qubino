@@ -1,7 +1,9 @@
 'use strict';
 
 const QubinoThermostatDevice = require('../../lib/QubinoThermostatDevice');
-const { CAPABILITIES, COMMAND_CLASSES, FLOWS, DEVICE_CLASS_GENERIC } = require('../../lib/constants');
+const {
+  CAPABILITIES, COMMAND_CLASSES, FLOWS, DEVICE_CLASS_GENERIC, SETTINGS,
+} = require('../../lib/constants');
 
 /**
  * Flush On/Off Thermostat (ZMNHLD)
@@ -12,73 +14,71 @@ const { CAPABILITIES, COMMAND_CLASSES, FLOWS, DEVICE_CLASS_GENERIC } = require('
  * Therefore, the settings enableInput1/enableInput2/enableInput3 can only accept value 9 SENSOR_BINARY_REPORT.
  */
 class ZMNHLD extends QubinoThermostatDevice {
-
-	/**
-	 * Expose input configuration, three possible inputs (input 1, input 2 and input 3).
-	 * @returns {*[]}
-	 */
-	get inputConfiguration() {
-		return [
-			{
+  /**
+   * Expose input configuration, three possible inputs (input 1, input 2 and input 3).
+   * @returns {*[]}
+   */
+  get inputConfiguration() {
+    return [
+      {
         INPUT_ID: 1,
         PARAMETER_INDEX: 100,
-			},
-			{
+      },
+      {
         INPUT_ID: 2,
         PARAMETER_INDEX: 101,
-			},
-			{
+      },
+      {
         INPUT_ID: 3,
         PARAMETER_INDEX: 102,
-			},
-		];
-	}
+      },
+    ];
+  }
 
-	/**
-	 * Expose root device class generic.
-	 * @returns {string}
-	 */
-	get rootDeviceClassGeneric() {
-		return DEVICE_CLASS_GENERIC.THERMOSTAT;
-	}
+  /**
+   * Expose root device class generic.
+   * @returns {string}
+   */
+  get rootDeviceClassGeneric() {
+    return DEVICE_CLASS_GENERIC.THERMOSTAT;
+  }
 
-	/**
-	 * Method that will register capabilities of the device based on its configuration.
-	 * @private
-	 */
-	async registerCapabilities() {
-		const thermostatMode = await this._getThermostatModeSetting();
-		this.log(`found thermostatMode: ${thermostatMode}`);
+  /**
+   * Method that will register capabilities of the device based on its configuration.
+   * @private
+   */
+  async registerCapabilities() {
+    const thermostatMode = await this._getThermostatModeSetting();
+    this.log(`found thermostatMode: ${thermostatMode}`);
 
-		// Used by thermostatSetpoint command class
-		this.thermostatSetpointType = `${thermostatMode}ing 1`;
-		this.log(`determined thermostatSetpointType: ${this.thermostatSetpointType}`);
+    // Used by thermostatSetpoint command class
+    this.thermostatSetpointType = `${thermostatMode}ing 1`;
+    this.log(`determined thermostatSetpointType: ${this.thermostatSetpointType}`);
 
-		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
-		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
-		this.registerCapability(CAPABILITIES.TARGET_TEMPERATURE, COMMAND_CLASSES.THERMOSTAT_SETPOINT);
+    this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.TARGET_TEMPERATURE, COMMAND_CLASSES.THERMOSTAT_SETPOINT);
     let preReportValue = this.getCapabilityValue(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE);
-		this.registerCapability(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE, COMMAND_CLASSES.THERMOSTAT_MODE, {
-			get: 'THERMOSTAT_MODE_GET',
-			getOpts: {
-				getOnStart: true,
-			},
-			set: 'THERMOSTAT_MODE_SET',
-			setParser: mode => ({
-				Level: {
-					Mode: (mode === 'off') ? 'Off' : thermostatMode,
-				},
-			}),
-			report: 'THERMOSTAT_MODE_REPORT',
-			reportParser: report => {
-				if (report && report.hasOwnProperty('Level') &&
-					report.Level.hasOwnProperty('Mode') &&
-					typeof report.Level.Mode !== 'undefined') {
-					if (report.Level.Mode.toLowerCase() === 'heat' || report.Level.Mode.toLowerCase() === 'cool') {
-
-						// Update the thermostatMode since it may be overriden by input 3
-						this.setSettings({ [SETTINGS.THERMOSTAT_MODE]: report.Level.Mode === 'Heat' ? '0' : '1' });
-						this.setStoreValue('thermostatMode', report.Level.Mode);
+    this.registerCapability(CAPABILITIES.OFF_AUTO_THERMOSTAT_MODE, COMMAND_CLASSES.THERMOSTAT_MODE, {
+      get: 'THERMOSTAT_MODE_GET',
+      getOpts: {
+        getOnStart: true,
+      },
+      set: 'THERMOSTAT_MODE_SET',
+      setParser: mode => ({
+        Level: {
+          Mode: (mode === 'off') ? 'Off' : thermostatMode,
+        },
+      }),
+      report: 'THERMOSTAT_MODE_REPORT',
+      reportParser: report => {
+        if (report && Object.prototype.hasOwnProperty.call(report, 'Level')
+          && Object.prototype.hasOwnProperty.call(report.Level, 'Mode')
+          && typeof report.Level.Mode !== 'undefined') {
+          if (report.Level.Mode.toLowerCase() === 'heat' || report.Level.Mode.toLowerCase() === 'cool') {
+            // Update the thermostatMode since it may be overriden by input 3
+            this.setSettings({ [SETTINGS.THERMOSTAT_MODE]: report.Level.Mode === 'Heat' ? '0' : '1' });
+            this.setStoreValue('thermostatMode', report.Level.Mode);
 
             // Trigger flow
             const newCapabilityValue = 'auto';
@@ -87,7 +87,7 @@ class ZMNHLD extends QubinoThermostatDevice {
             }
             preReportValue = newCapabilityValue;
             return newCapabilityValue;
-					}
+          }
 
           // Trigger flow
           const newCapabilityValue = report.Level.Mode.toLowerCase();
@@ -96,30 +96,30 @@ class ZMNHLD extends QubinoThermostatDevice {
           }
           preReportValue = newCapabilityValue;
           return newCapabilityValue;
-				}
-				return null;
-			},
-		});
-	}
+        }
+        return null;
+      },
+    });
+  }
 
-	/**
-	 * Method that fetches the thermostat mode setting which is needed to determine if dimming is enabled or not.
-	 * @returns {Promise<*>}
-	 * @private
-	 */
-	async _getThermostatModeSetting() {
-		if (typeof this.getStoreValue('thermostatMode') !== 'string') {
-			const thermostatMode = await this.safeConfigurationGet(59);
-			if (thermostatMode && thermostatMode.hasOwnProperty('Configuration Value')) {
-				const result = thermostatMode['Configuration Value'][0] ? 'Cool' : 'Heat';
-				this.setSettings({ [SETTINGS.THERMOSTAT_MODE]: result === 'Heat' ? '0' : '1' });
-				this.setStoreValue('thermostatMode', result);
-				return result;
-			}
-			return null;
-		}
-		return this.getStoreValue('thermostatMode');
-	}
+  /**
+   * Method that fetches the thermostat mode setting which is needed to determine if dimming is enabled or not.
+   * @returns {Promise<*>}
+   * @private
+   */
+  async _getThermostatModeSetting() {
+    if (typeof this.getStoreValue('thermostatMode') !== 'string') {
+      const thermostatMode = await this.safeConfigurationGet(59);
+      if (thermostatMode && Object.prototype.hasOwnProperty.call(thermostatMode, 'Configuration Value')) {
+        const result = thermostatMode['Configuration Value'][0] ? 'Cool' : 'Heat';
+        this.setSettings({ [SETTINGS.THERMOSTAT_MODE]: result === 'Heat' ? '0' : '1' });
+        this.setStoreValue('thermostatMode', result);
+        return result;
+      }
+      return null;
+    }
+    return this.getStoreValue('thermostatMode');
+  }
 }
 
 module.exports = ZMNHLD;

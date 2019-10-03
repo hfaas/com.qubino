@@ -11,30 +11,29 @@ const { CAPABILITIES, COMMAND_CLASSES, SETTINGS } = require('../../lib/constants
  * Extended manual: https://qubino.com/manuals/Mini_Dimmer_V3.4.pdf
  */
 class ZMNHHD extends QubinoDimDevice {
+  /**
+   * Method that will register capabilities of the device based on its configuration.
+   * @private
+   */
+  async registerCapabilities() {
+    this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
+    this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
+  }
 
-	/**
-	 * Method that will register capabilities of the device based on its configuration.
-	 * @private
-	 */
-	async registerCapabilities() {
-		this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
-		this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
-		this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);
-		this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
-	}
+  /**
+   * Method that handles the parsing of many shared settings.
+   */
+  registerSettings() {
+    super.registerSettings();
 
-	/**
-	 * Method that handles the parsing of many shared settings.
-	 */
-	registerSettings() {
-		super.registerSettings();
+    // Override QubinoDimDevice setting handler
+    this.registerSetting(SETTINGS.DIM_DURATION, value => value);
 
-		// Override QubinoDimDevice setting handler
-		this.registerSetting(SETTINGS.DIM_DURATION, value => value);
-
-		// Conversion method expects value in milliseconds, spits out 0-127 in sec 128-253 in minutes
-		this.registerSetting(SETTINGS.DIM_DURATION_KEY_PRESSED, value => Util.calculateZwaveDimDuration(value * 1000, { maxValue: 253 }));
-	}
+    // Conversion method expects value in milliseconds, spits out 0-127 in sec 128-253 in minutes
+    this.registerSetting(SETTINGS.DIM_DURATION_KEY_PRESSED, value => Util.calculateZwaveDimDuration(value * 1000, { maxValue: 253 }));
+  }
 }
 
 module.exports = ZMNHHD;
