@@ -6,7 +6,8 @@
     "max_dim_level_cannot_be_lower_than_min_dim_level": "The maximum dimming value cannot be lower than the minimum dimming value."
   },
   "settings": {
-    "re_pair_required": "Device settings have been saved, re-pairing (without resetting) the device to Homey is required to activate the setting. Wait 30 seconds after removing before re-pairing."
+    "re_pair_required": "Device settings have been saved, re-pairing (without resetting) the device to Homey is required to activate the setting. Wait 30 seconds after removing before re-pairing.",
+    "power_reporting_value_too_low": "The value for \"Power reporting interval\" should be zero or higher than 30."
   },
   "pairing": {
     "configuring": "Configuring..."
