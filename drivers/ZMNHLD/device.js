@@ -46,11 +46,11 @@ class ZMNHLD extends QubinoThermostatDevice {
    * @private
    */
   async registerCapabilities() {
-    const thermostatMode = await this._getThermostatModeSetting();
-    this.log(`found thermostatMode: ${thermostatMode}`);
+    const THERMOSTAT_MODE = await this._getThermostatModeSetting();
+    this.log(`found thermostatMode: ${THERMOSTAT_MODE}`);
 
     // Used by thermostatSetpoint command class
-    this.thermostatSetpointType = `${thermostatMode}ing 1`;
+    this.thermostatSetpointType = `${THERMOSTAT_MODE}ing 1`;
     this.log(`determined thermostatSetpointType: ${this.thermostatSetpointType}`);
 
     this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
@@ -65,7 +65,7 @@ class ZMNHLD extends QubinoThermostatDevice {
       set: 'THERMOSTAT_MODE_SET',
       setParser: mode => ({
         Level: {
-          Mode: (mode === 'off') ? 'Off' : thermostatMode,
+          Mode: (mode === 'off') ? 'Off' : THERMOSTAT_MODE,
         },
       }),
       report: 'THERMOSTAT_MODE_REPORT',
