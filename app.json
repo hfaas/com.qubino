@@ -6,6 +6,7 @@
   "sdk": 2,
   "version": "3.0.0",
   "compatibility": ">=3.0.0",
+  "brandColor": "#1784c7",
   "description": {
     "en": "Qubino devices for Homey",
     "nl": "Qubino apparaten voor Homey"
