@@ -108,6 +108,7 @@
   },
   {
     "$extends": "restoreStatus",
+    "value": false,
     "zwave": {
       "index": 7,
       "size": 1

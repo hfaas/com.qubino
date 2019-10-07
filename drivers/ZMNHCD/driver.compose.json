@@ -1,7 +1,7 @@
 {
   "id": "ZMNHCD",
   "name": {
-    "en": "Flush Shutter ({{driverId}})"
+    "en": "Flush Shutter (ZMNHCD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -9,69 +9,12 @@
   },
   "class": "windowcoverings",
   "capabilities": [
-    "dim",
-    "resetMeter",
-    "calibration",
+    "windowcoverings_set",
     "meter_power",
     "measure_power",
     "measure_temperature",
     "windowcoverings_tilt_set"
   ],
-  "capabilitiesOptions": {
-    "dim": {
-      "title": {
-        "en": "Position",
-        "nl": "Positie"
-      }
-    },
-    "windowcoverings_tilt_set": {
-      "title": {
-        "en": "Tilt slats",
-        "nl": "Kanteling lamellen"
-      }
-    }
-  },
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": []
-      },
-      {
-        "id": "slider",
-        "capabilities": [
-          "dim"
-        ],
-        "options": {
-          "showTitle": true
-        }
-      },
-      {
-        "id": "slider",
-        "capabilities": [
-          "windowcoverings_tilt_set"
-        ],
-        "options": {
-          "showTitle": true
-        }
-      },
-      {
-        "id": "sensor",
-        "capabilities": [
-          "measure_power",
-          "meter_power",
-          "measure_temperature"
-        ]
-      },
-      {
-        "id": "button",
-        "capabilities": [
-          "resetMeter",
-          "calibration"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 3,

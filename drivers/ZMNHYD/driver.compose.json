@@ -1,7 +1,7 @@
 {
   "id": "ZMNHYD",
   "name": {
-    "en": "Smart Plug ({{driverId}})"
+    "en": "Smart Plug (ZMNHYD)"
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
@@ -13,34 +13,8 @@
     "measure_current",
     "measure_power",
     "meter_power",
-    "resetMeter",
     "onoff"
   ],
-  "mobile": {
-    "components": [
-      {
-        "id": "icon",
-        "capabilities": [
-          "onoff"
-        ]
-      },
-      {
-        "id": "sensor",
-        "capabilities": [
-          "measure_power",
-          "measure_voltage",
-          "measure_current",
-          "meter_power"
-        ]
-      },
-      {
-        "id": "button",
-        "capabilities": [
-          "resetMeter"
-        ]
-      }
-    ]
-  },
   "zwave": {
     "manufacturerId": 345,
     "productTypeId": 2,
@@ -51,14 +25,14 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/learnmode.svg",
       "instruction": {
-        "en": "Enable inclusion mode on the {{driverNameEn}} via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Press the S (Service) button 3 times within 3 seconds.",
-        "nl": "Activeer inclusie modus op de {{driverNameNl}} via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Klik 3 keer binnen 3 seconden op de S (Service) knop."
+        "en": "Enable inclusion mode on the {{driverNameEn}} via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Press and hold the S (Service) button between 2 and 6 seconds.",
+        "nl": "Activeer inclusie modus op de {{driverNameNl}} via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Houd 2 tot 6 seconden de S (Service) knop ingedrukt."
       }
     },
     "unlearnmode": {
       "instruction": {
-        "en": "Enable exclusion mode on the {{driverNameEn}} by pressing the S (Service) button 3 times within 3 seconds.\n\nNote: pressing the S button 5 times within 3 seconds will reset the device completely.",
-        "nl": "Activeer exclusie modus op de {{driverNameNl}} door binnen 3 seconden 3 keer op de S (Service) knop te drukken.\n\nLet op: wanneer de S knop 5 keer binnen 3 seconden wordt ingedrukt wordt het apparaat teruggezet naar fabrieksinstellingen."
+        "en": "Enable exclusion mode on the {{driverNameEn}} by pressing and holding the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely. Resetting the device is only possible the first minute after connecting it to the power supply.",
+        "nl": "Activeer exclusie modus op de {{driverNameNl}} door 2 tot 6 seconden de S (Service) knop ingedrukt te houden.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen. Terugzetten naar fabrieksinstellingen is alleen mogelijk de eerste minuut na het aansluiten op de stroomtoevoer."
       },
       "image": "{{driverAssetsPath}}/learnmode.svg"
     }

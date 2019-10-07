@@ -68,7 +68,7 @@
     }
   ],
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs te be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
+    "en": "This parameter ({{zwaveParameterIndex}}) determines whether input 2 is enabled and which message should be send to Homey and other associated devices when switched. Note: it is generally advised to leave this parameter unchanged, when changed the device needs to be removed from Homey and re-added after waiting 30 seconds (do not reset the device when removing).",
     "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt of ingang 2 is ingeschakeld en welk bericht moet worden verstuurd naar Homey en andere geassocieerde apparaten wanneer geschakeld. Let op: over het algemeen is het geadviseerd om deze parameter ongewijzigd te laten, na het aanpassen van deze parameter moet het apparaat van Homey worden verwijderd en opnieuw worden toegevoegd na 30 seconden wachten (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen)."
   }
 }

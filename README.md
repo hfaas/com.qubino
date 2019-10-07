@@ -3,6 +3,23 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
+Version 3.0.0
+* Finalised SDKv2 update
+* Added support for Mini Dimmer (ZMNHHD)
+* Added support for Flush On/Off Thermostat 2 (ZMNKID)
+* Added Flow cards for devices with thermostat mode
+* Added Flow cards for devices with inputs
+* Added support for Energy
+* Improved stability for RGBW Dimmer (ZMNHWD)
+* Improved support for Flush Shutter (ZMNHCD)
+* Improved support for Flush Shutter DC (ZMNHOD)
+* Improved advanced settings for all devices
+* Improved Flow cards for all devices
+* Various bug fixes and improvements
+* Note: a breaking change had to be implemented for Flush 2 Relays (ZMNHBD). The capabilities `onoff`, `meter_power` and `measure_power` have been removed which can break Flows using these capabilities.
+* Note: a breaking change had to be implemented for Flush Dimmer (ZMNHDA). The capability `alarm_contact` has been removed which can break Flows using this capability.
+* Note: a breaking change had to be implemented for Smart Meter (ZMNHTD). The capabilities `onoff` and `meter_power` have been removed which can break Flows using these capabilities.
+
 Version 2.0.10
 * Added support for ZMNHWD (Flush RGBW Dimmer)
 * Fixed an issue that might prevent power meter values from being updated
@@ -64,6 +81,3 @@ Version 1.1.0
     * ZMNHKD1 (Flush Heat & Cool Thermostat): input 2 and 3 can not be used in Flows
     * ZMNHIA2 (Flush On/Off Thermostat): input 2 and 3 can not be used in Flows
     * ZMNHSD1 (DIN Dimmer): input 1 can not be used in Flows
-
-### Known limitations
-* ZMNHID (Flush On/Off Thermostat) does not support the use of Flow Cards for the inputs 1, 2 and 3. This is because of a firmware issue with the device itself.

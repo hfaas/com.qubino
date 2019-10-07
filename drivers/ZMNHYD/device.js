@@ -1,26 +1,29 @@
 'use strict';
 
-const constants = require('../../lib/constants');
 const QubinoDevice = require('../../lib/QubinoDevice');
+const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
 
 /**
  * Smart Plug (ZMNHYD)
- * Extended manual: http://qubino.com/download/2302/
- * TODO: images/icons
+ * Extended manual: https://qubino.com/manuals/Smart_Plug_16A.pdf
+ * TODO: add maintenance action for meter reset
  */
 class ZMNHYD extends QubinoDevice {
+  get multiChannelConfigurationDisabled() {
+    return true;
+  }
 
-	/**
-	 * Method that will register capabilities of the device based on its configuration.
-	 * @private
-	 */
-	registerCapabilities() {
-		this.registerCapability(constants.capabilities.meterPower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measurePower, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measureVoltage, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.measureCurrent, constants.commandClasses.meter);
-		this.registerCapability(constants.capabilities.onoff, constants.commandClasses.switchBinary);
-	}
+  /**
+   * Method that will register capabilities of the device based on its configuration.
+   * @private
+   */
+  registerCapabilities() {
+    this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.MEASURE_VOLTAGE, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.MEASURE_CURRENT, COMMAND_CLASSES.METER);
+    this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY);
+  }
 }
 
 module.exports = ZMNHYD;

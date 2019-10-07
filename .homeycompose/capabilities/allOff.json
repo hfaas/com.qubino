@@ -4,6 +4,6 @@
     "en": "All off",
     "nl": "Alles uit"
   },
-  "getable": true,
+  "getable": false,
   "setable": true
 }

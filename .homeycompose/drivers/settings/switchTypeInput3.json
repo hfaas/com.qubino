@@ -26,7 +26,7 @@
     }
   ],
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) determines the type of switch connected to input 3 of the {{driverNameEn}}. Note: to enable this input parameter 20 or 100 has to be configured.",
+    "en": "This parameter ({{zwaveParameterIndex}}) determines the type of switch connected to input 3 of the {{driverNameEn}}. Note: to enable this input, parameter 20 or 100 has to be configured.",
     "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert het type schakelaar dat is aangesloten op ingang 3 van de {{driverNameNl}}. Let op: om deze input te activeren moet parameter 20 of 100 zijn ingesteld."
   }
 }
