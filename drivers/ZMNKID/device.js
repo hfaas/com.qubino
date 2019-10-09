@@ -83,11 +83,13 @@ class ZMNKID extends QubinoThermostatDevice {
       },
       set: 'THERMOSTAT_MODE_SET',
       setParser: mode => {
-        // TODO: below is a fix for a bug in THERMOSTAT_MODE_V3 SET
-        if (mode === 'off') return new Buffer([0x00]); // Off
-        if (THERMOSTAT_MODE === 'Heat') return new Buffer([0x01]); // Heat = 0x01
-        if (THERMOSTAT_MODE === 'Cool') return new Buffer([0x02]); // Cool = 0x02
-        return new Buffer([0x03]); // Auto
+        return {
+          Level: {
+            Mode: (mode === 'off') ? 'Off' : THERMOSTAT_MODE,
+            'No of Manufacturer Data fields': 0,
+          },
+          'Manufacturer Data': Buffer.from([])
+        }
       },
       report: 'THERMOSTAT_MODE_REPORT',
       reportParser: report => {
