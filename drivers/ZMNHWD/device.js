@@ -103,6 +103,15 @@ class ZMNHWD extends QubinoDimDevice {
       return;
     }
 
+    // Ignore report when colors are reset to zero because Homey turned off the device
+    if (red === 0 && green === 0 && blue === 0 && white === 0 && this._ignoreNextColorReport) {
+      this.log('_debouncedColorReportListener() -> ignore this color report, device has been turned off by Homey');
+      return;
+    }
+
+    // Reset
+    if (this._ignoreNextColorReport) this._ignoreNextColorReport = false;
+
     // Clear reports
     this._colorReportsQueue = [];
     return this._processColorUpdates({
@@ -164,6 +173,9 @@ class ZMNHWD extends QubinoDimDevice {
       this._colorComponentsState.blue = blue;
       this._colorComponentsState.white = white;
       this.log('stored colorComponent values\n', this._colorComponentsState);
+      this._colorChangedWhileOff = true; // Flag that indicates if color component state needs to be restored when turning on
+    } else {
+      this._colorChangedWhileOff = false // Reset flag
     }
 
     const colorComponentsObject = {
@@ -229,13 +241,15 @@ class ZMNHWD extends QubinoDimDevice {
     }
 
     // Only dim changed
-    if (Object.prototype.hasOwnProperty.call(values, CAPABILITIES.DIM) && Object.keys(values).length === 1) {
+    if (Object.prototype.hasOwnProperty.call(values, CAPABILITIES.DIM)
+      && !this._colorChangedWhileOff // when colors changed while off reset color component state
+      && Object.keys(values).length === 1) {
       let dimDuration = null;
       if (Object.prototype.hasOwnProperty.call(options, CAPABILITIES.DIM) && Object.prototype.hasOwnProperty.call(options.dim, 'duration')) {
         dimDuration = options.dim.duration;
       }
       this.log('_multipleCapabilitiesHandler() -> only dim changed', mergedCapabilitiesValuesObject.dim, dimDuration);
-
+      this._ignoreNextColorReport = true;
       // Execute dim only
       return this.executeCapabilitySetCommand(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL, mergedCapabilitiesValuesObject.dim, {
         duration: dimDuration,
@@ -245,11 +259,14 @@ class ZMNHWD extends QubinoDimDevice {
     // Is turned off
     if (mergedCapabilitiesValuesObject.onoff === false && (typeof newCapabilitiesValuesObject.dim === 'undefined' || newCapabilitiesValuesObject.dim === 0)) {
       this.log('_multipleCapabilitiesHandler() -> turn off hard');
+
+      this._ignoreNextColorReport = true;
       return this.executeCapabilitySetCommand(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_MULTILEVEL, false);
     }
 
-    // Is turned on
-    if (currentCapabilitiesValuesObject.onoff === false && mergedCapabilitiesValuesObject.onoff === true) {
+    // Is turned on via onoff or via dimming
+    if ((currentCapabilitiesValuesObject.onoff === false && mergedCapabilitiesValuesObject.onoff === true)
+    || currentCapabilitiesValuesObject.dim === 0 && mergedCapabilitiesValuesObject.onoff > 0) {
       this.log('_multipleCapabilitiesHandler() -> device is turned on, restore last known color components state\n', this._colorComponentsState);
 
       // Override colorComponent object with stored values
