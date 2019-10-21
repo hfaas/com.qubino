@@ -83,6 +83,7 @@ class ZMNKID extends QubinoThermostatDevice {
       },
       set: 'THERMOSTAT_MODE_SET',
       setParser: mode => {
+        this.driver.triggerFlow(FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, this, {}, { mode: mode }).catch(err => this.error('failed to trigger flow', FLOWS.OFF_AUTO_THERMOSTAT_MODE_CHANGED, err));
         return {
           Level: {
             Mode: (mode === 'off') ? 'Off' : THERMOSTAT_MODE,
