@@ -3,7 +3,7 @@
 This app adds support for Qubino Z-Wave modules in Homey.
 
 ### Changelog
-Version 3.0.0
+Version 3.0.2
 * Finalised SDKv2 update
 * Added support for Mini Dimmer (ZMNHHD)
 * Added support for Flush On/Off Thermostat 2 (ZMNKID)
