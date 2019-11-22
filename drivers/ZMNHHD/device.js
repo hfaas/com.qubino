@@ -11,11 +11,17 @@ const { CAPABILITIES, COMMAND_CLASSES, SETTINGS } = require('../../lib/constants
  * Extended manual: https://qubino.com/manuals/Mini_Dimmer_V3.4.pdf
  */
 class ZMNHHD extends QubinoDimDevice {
+
   /**
    * Method that will register capabilities of the device based on its configuration.
    * @private
    */
   async registerCapabilities() {
+    if (!this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
+      await this.addCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.METER_RESET_MAINTENANCE_ACTION} capability`, err));
+      this.log('added capability', CAPABILITIES.METER_RESET_MAINTENANCE_ACTION);
+    }
+  
     this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
     this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
     this.registerCapability(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL);

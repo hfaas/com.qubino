@@ -34,7 +34,8 @@
         "name": {
           "en": "{{driverNameEn}} - Relay 1",
           "nl": "{{driverNameNl}} - Relais 1"
-        }
+        },
+        "settings": []
       },
       "2": {
         "class": "socket",
@@ -47,7 +48,8 @@
         "name": {
           "en": "{{driverNameEn}} - Relay 2",
           "nl": "{{driverNameNl}} - Relais 2"
-        }
+        },
+        "settings": []
       }
     },
     "learnmode": {

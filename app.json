@@ -1693,8 +1693,22 @@
         "onoff",
         "measure_power",
         "meter_power",
-        "measure_temperature"
+        "measure_temperature",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -1974,8 +1988,22 @@
         "measure_power",
         "meter_power",
         "measure_temperature",
-        "onoff"
+        "onoff",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -2575,7 +2603,8 @@
             "name": {
               "en": "Flush 2 Relay (ZMNHBA) - Relay 1",
               "nl": "Flush 2 Relay (ZMNHBA) - Relais 1"
-            }
+            },
+            "settings": []
           },
           "2": {
             "class": "socket",
@@ -2588,7 +2617,8 @@
             "name": {
               "en": "Flush 2 Relay (ZMNHBA) - Relay 2",
               "nl": "Flush 2 Relay (ZMNHBA) - Relais 2"
-            }
+            },
+            "settings": []
           }
         },
         "learnmode": {
@@ -2905,6 +2935,19 @@
         "allOn",
         "allOff"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -2932,7 +2975,8 @@
             "capabilities": [
               "measure_power",
               "meter_power",
-              "onoff"
+              "onoff",
+              "button.reset_meter"
             ],
             "icon": "/drivers/ZMNHBD1/assets/icon.svg",
             "name": {
@@ -2946,7 +2990,8 @@
             "capabilities": [
               "measure_power",
               "meter_power",
-              "onoff"
+              "onoff",
+              "button.reset_meter"
             ],
             "icon": "/drivers/ZMNHBD1/assets/icon-2.svg",
             "name": {
@@ -3463,8 +3508,34 @@
         "meter_power",
         "measure_power",
         "measure_temperature",
-        "windowcoverings_tilt_set"
+        "windowcoverings_tilt_set",
+        "button.reset_meter",
+        "button.calibration"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        },
+        "button.calibration": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Start calibration",
+            "nl": "Start kalibratie"
+          },
+          "desc": {
+            "en": "Force calibration of the Flush Shutter (ZMNHCD). Make sure the blinds are lowered completely before starting the calibration.",
+            "nl": "Start geforceerde kalibratie van de Flush Shutter (ZMNHCD). Zorg dat het rolluik of de jaloezieën volledig naar beneden zijn voor het starten van de kalibratie."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 3,
@@ -3879,7 +3950,8 @@
         "dim",
         "meter_power",
         "measure_power",
-        "measure_temperature"
+        "measure_temperature",
+        "button.reset_meter"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -3888,6 +3960,17 @@
         "dim": {
           "opts": {
             "duration": true
+          }
+        },
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
           }
         }
       },
@@ -4254,7 +4337,8 @@
         "dim",
         "meter_power",
         "measure_power",
-        "measure_temperature"
+        "measure_temperature",
+        "button.reset_meter"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -4263,6 +4347,17 @@
         "dim": {
           "opts": {
             "duration": true
+          }
+        },
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
           }
         }
       },
@@ -5035,7 +5130,8 @@
         "onoff",
         "dim",
         "meter_power",
-        "measure_power"
+        "measure_power",
+        "button.reset_meter"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -5044,6 +5140,17 @@
         "dim": {
           "opts": {
             "duration": true
+          }
+        },
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
           }
         }
       },
@@ -5447,8 +5554,22 @@
         "target_temperature",
         "measure_temperature",
         "meter_power",
-        "measure_power"
+        "measure_power",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -6035,8 +6156,22 @@
         "target_temperature",
         "measure_temperature",
         "meter_power",
-        "measure_power"
+        "measure_power",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -7069,8 +7204,22 @@
         "target_temperature",
         "measure_temperature",
         "meter_power",
-        "measure_power"
+        "measure_power",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -8054,8 +8203,22 @@
         "target_temperature",
         "measure_temperature",
         "meter_power",
-        "measure_power"
+        "measure_power",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,
@@ -9665,8 +9828,34 @@
         "meter_power",
         "measure_power",
         "measure_temperature",
-        "windowcoverings_tilt_set"
+        "windowcoverings_tilt_set",
+        "button.reset_meter",
+        "button.calibration"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        },
+        "button.calibration": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Start calibration",
+            "nl": "Start kalibratie"
+          },
+          "desc": {
+            "en": "Force calibration of the Flush Shutter DC (ZMNHOD). Make sure the blinds are lowered completely before starting the calibration.",
+            "nl": "Start geforceerde kalibratie van de Flush Shutter DC (ZMNHOD). Zorg dat het rolluik of de jaloezieën volledig naar beneden zijn voor het starten van de kalibratie."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 3,
@@ -10081,7 +10270,8 @@
         "dim",
         "meter_power",
         "measure_power",
-        "measure_temperature"
+        "measure_temperature",
+        "button.reset_meter"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -10090,6 +10280,17 @@
         "dim": {
           "opts": {
             "duration": true
+          }
+        },
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
           }
         }
       },
@@ -10594,7 +10795,8 @@
         "powerReactive",
         "powerTotalReactive",
         "powerTotalApparent",
-        "powerFactor"
+        "powerFactor",
+        "button.reset_meter"
       ],
       "capabilitiesOptions": {
         "meter_power.import": {
@@ -10607,6 +10809,17 @@
           "title": {
             "en": "Power Meter (export)",
             "nl": "Energiemeter (export)"
+          }
+        },
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
           }
         }
       },
@@ -12362,8 +12575,22 @@
         "measure_current",
         "measure_power",
         "meter_power",
-        "onoff"
+        "onoff",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 2,
@@ -12673,8 +12900,22 @@
         "target_temperature",
         "measure_temperature",
         "meter_power",
-        "measure_power"
+        "measure_power",
+        "button.reset_meter"
       ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        }
+      },
       "zwave": {
         "manufacturerId": 345,
         "productTypeId": 5,

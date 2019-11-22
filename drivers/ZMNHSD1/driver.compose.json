@@ -12,7 +12,8 @@
     "dim",
     "meter_power",
     "measure_power",
-    "measure_temperature"
+    "measure_temperature",
+    "button.reset_meter"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -21,6 +22,17 @@
     "dim": {
       "opts": {
         "duration": true
+      }
+    },
+    "button.reset_meter": {
+      "maintenanceAction": true,
+      "title": {
+        "en": "Reset power meter",
+        "nl": "Stel stroomverbuik opnieuw in"
+      },
+      "desc": {
+        "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+        "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
       }
     }
   },
