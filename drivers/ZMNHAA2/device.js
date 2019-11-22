@@ -74,7 +74,7 @@ class ZMNHAA extends QubinoDevice {
    * Method that will register capabilities of the device based on its configuration.
    * @private
    */
-  registerCapabilities() {
+  async registerCapabilities() {
     if (!this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
       await this.addCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.METER_RESET_MAINTENANCE_ACTION} capability`, err));
       this.log('added capability', CAPABILITIES.METER_RESET_MAINTENANCE_ACTION);
