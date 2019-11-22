@@ -63,6 +63,11 @@ class ZMNHDA extends QubinoDimDevice {
    * @private
    */
   registerCapabilities() {
+    if (!this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
+      await this.addCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.METER_RESET_MAINTENANCE_ACTION} capability`, err));
+      this.log('added capability', CAPABILITIES.METER_RESET_MAINTENANCE_ACTION);
+    }
+    
     this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
     this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
     this.registerCapability(CAPABILITIES.ONOFF, COMMAND_CLASSES.SWITCH_BINARY, {

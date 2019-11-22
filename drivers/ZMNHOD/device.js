@@ -6,8 +6,6 @@ const { CAPABILITIES, COMMAND_CLASSES, DEVICE_CLASS_GENERIC } = require('../../l
 /**
  * Flush Shutter DC (ZMNHOD)
  * Manual: https://qubino.com/manuals/Flush_Shutter_DC.pdf
- * TODO: maintenance actions for calibration/reset meter
- * TODO: calibration, blinds need to be lowered all the way down before calibration starts
  */
 class ZMNHOD extends QubinoShutterDevice {
   /**
@@ -15,6 +13,15 @@ class ZMNHOD extends QubinoShutterDevice {
    * @private
    */
   async registerCapabilities() {
+    if (!this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
+      await this.addCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.METER_RESET_MAINTENANCE_ACTION} capability`, err));
+      this.log('added capability', CAPABILITIES.METER_RESET_MAINTENANCE_ACTION);
+    }
+    if (!this.hasCapability(CAPABILITIES.CALIBRATION_MAINTENANCE_ACTION)) {
+      await this.addCapability(CAPABILITIES.CALIBRATION_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.CALIBRATION_MAINTENANCE_ACTION} capability`, err));
+      this.log('added capability', CAPABILITIES.CALIBRATION_MAINTENANCE_ACTION);
+    }
+
     // Always register meter power and measure power on root node
     this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);
     this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);

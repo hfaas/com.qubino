@@ -64,6 +64,11 @@ class ZMNKID extends QubinoThermostatDevice {
    * @private
    */
   async registerCapabilities() {
+    if (!this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
+      await this.addCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.METER_RESET_MAINTENANCE_ACTION} capability`, err));
+      this.log('added capability', CAPABILITIES.METER_RESET_MAINTENANCE_ACTION);
+    }
+
     const THERMOSTAT_MODE = await this._getThermostatModeSetting();
     this.log(`found thermostatMode: ${THERMOSTAT_MODE}`);
 

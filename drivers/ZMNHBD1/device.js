@@ -9,6 +9,19 @@ const { CAPABILITIES, COMMAND_CLASSES } = require('../../lib/constants');
  * TODO: add maintenance action for meter reset (both endpoints)
  */
 class ZMNHBD extends QubinoDevice {
+  async onMeshInit() {
+    await super.onMeshInit();
+    if (!this._isRootNode()) {
+      // Listen for reset_meter maintenance action
+      // Override capability listener from QubinoDevice
+      this.registerCapabilityListener(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION, async () => {
+        // Maintenance action button was pressed, return a promise
+        if (typeof this.resetMeter === 'function') return this.resetMeter({ multiChannelNodeId: this.node.multiChannelNodeId});
+        this.error('Reset meter failed');
+        throw new Error('Reset meter not supported');
+      });
+    }
+  }
   /**
    * Override settings migration map
    * @private
@@ -95,6 +108,11 @@ class ZMNHBD extends QubinoDevice {
    * @private
    */
   async registerCapabilities() {
+    if (!this._isRootNode() && !this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
+      await this.addCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.METER_RESET_MAINTENANCE_ACTION} capability`, err));
+      this.log('added capability', CAPABILITIES.METER_RESET_MAINTENANCE_ACTION);
+    }
+
     if (this.hasCapability(CAPABILITIES.ALL_ON)) this.registerCapabilityListener(CAPABILITIES.ALL_ON, this.turnAllOn.bind(this));
     if (this.hasCapability(CAPABILITIES.ALL_OFF)) this.registerCapabilityListener(CAPABILITIES.ALL_OFF, this.turnAllOff.bind(this));
     if (this.hasCapability(CAPABILITIES.METER_POWER)) this.registerCapability(CAPABILITIES.METER_POWER, COMMAND_CLASSES.METER);

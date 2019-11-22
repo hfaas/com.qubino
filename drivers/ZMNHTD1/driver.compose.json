@@ -16,7 +16,8 @@
     "powerReactive",
     "powerTotalReactive",
     "powerTotalApparent",
-    "powerFactor"
+    "powerFactor",
+    "button.reset_meter"
   ],
   "capabilitiesOptions": {
     "meter_power.import": {
@@ -29,6 +30,17 @@
       "title": {
         "en": "Power Meter (export)",
         "nl": "Energiemeter (export)"
+      }
+    },
+    "button.reset_meter": {
+      "maintenanceAction": true,
+      "title": {
+        "en": "Reset power meter",
+        "nl": "Stel stroomverbuik opnieuw in"
+      },
+      "desc": {
+        "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+        "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
       }
     }
   },

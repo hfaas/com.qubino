@@ -81,6 +81,10 @@ class ZMNHTD extends QubinoDevice {
    * @private
    */
   async registerCapabilities() {
+    if (!this.hasCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION)) {
+      await this.addCapability(CAPABILITIES.METER_RESET_MAINTENANCE_ACTION).catch(err => this.error(`Error adding ${CAPABILITIES.METER_RESET_MAINTENANCE_ACTION} capability`, err));
+      this.log('added capability', CAPABILITIES.METER_RESET_MAINTENANCE_ACTION);
+    }
     this.registerCapability(CAPABILITIES.MEASURE_VOLTAGE, COMMAND_CLASSES.METER);
     this.registerCapability(CAPABILITIES.MEASURE_CURRENT, COMMAND_CLASSES.METER);
     this.registerCapability(CAPABILITIES.MEASURE_POWER, COMMAND_CLASSES.METER);
