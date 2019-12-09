@@ -1,0 +1,24 @@
+{
+  "type": "number",
+  "label": {
+    "en": "I1 sensor trigger threshold",
+    "nl": "I1 sensor trigger drempelwaarde"
+  },
+  "units": {
+    "en": "%",
+    "nl": "%"
+  },
+  "zwave": {
+    "index": 141,
+    "size": 1
+  },
+  "value": 5,
+  "attr": {
+    "min": 1,
+    "max": 100
+  },
+  "hint": {
+    "en": "This parameter ({{zwaveParameterIndex}}) defines the fixed threshold (percentage) which when exceeded will result in a basic set on association group 2.\n\nNote: This parameter only applies when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de vaste verandering (in procenten) die overschreden moet worden voordat een basic set bericht op associatie group 2 gepost wordt.\n\nLet op: Deze parameter wordt alleen gebruikt wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+  }
+}

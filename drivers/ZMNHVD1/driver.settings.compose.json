@@ -74,6 +74,9 @@
       },
       {
         "$extends": "doubleClick"
+      },
+      {
+        "$extends": "I1autoManualControl"
       }
     ]
   },
@@ -116,6 +119,27 @@
       },
       {
         "$extends": "temperatureSensorReportingThreshold"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "I1 input sensor reporting",
+      "nl": "I1 ingang sensor metingen"
+    },
+    "children": [
+      {
+        "$extends": "I1minimumSensorValue"
+      },
+      {
+        "$extends": "I1maximumSensorValue"
+      },
+      {
+        "$extends": "I1sensorReportingThreshold"
+      },
+      {
+        "$extends": "I1sensorTriggerThreshold"
       }
     ]
   },
