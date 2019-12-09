@@ -97,15 +97,47 @@ class ZMNHWD extends QubinoDimDevice {
       }
     }
 
-    // If not all color components are received abort
-    if (red === null || green === null || blue === null || white === null) {
-      this.log('_debouncedColorReportListener() -> missing a RGBW value, abort');
-      return;
-    }
-
     // Ignore report when colors are reset to zero because Homey turned off the device
     if (red === 0 && green === 0 && blue === 0 && white === 0 && this._ignoreNextColorReport) {
       this.log('_debouncedColorReportListener() -> ignore this color report, device has been turned off by Homey');
+      return;
+    }
+
+    // If not all color components are received request remaining
+    if (red === null || green === null || blue === null || white === null) {
+      this.log('_debouncedColorReportListener() -> missing a RGBW value, request others');
+      // Color components [white = 0, cold white = 1, red = 2, green = 3, blue = 4]
+      const commandClassColorSwitch = this.getCommandClass(COMMAND_CLASSES.SWITCH_COLOR);
+      if (!(commandClassColorSwitch instanceof Error) && typeof commandClassColorSwitch.SWITCH_COLOR_GET === 'function') {
+        // Get all color component values
+        Promise.all([
+          this._getColorValue(0), // white
+          this._getColorValue(2), // red
+          this._getColorValue(3), // green
+          this._getColorValue(4), // blue
+          this.refreshCapabilityValue(CAPABILITIES.DIM, COMMAND_CLASSES.SWITCH_MULTILEVEL)
+        ])
+          .then(async result => {
+            const [white, red, green, blue, dim] = result;
+            this.log(`_debouncedColorReportListener() -> fetched rgbw(${red},${green},${blue},${white})`);
+
+            // Update state if device is turned on
+            if (red || green || blue || white) {
+              // Store color components in state object
+              this._colorComponentsState.red = red;
+              this._colorComponentsState.green = green;
+              this._colorComponentsState.blue = blue;
+              this._colorComponentsState.white = white;
+            }
+
+            // Update device capabilities
+            return this._processColorUpdates({
+              white, red, green, blue, dim,
+            });
+          })
+          .catch(err => this.error('_debouncedColorReportListener() -> failed to get color value(s)', err));
+      }
+
       return;
     }
 
@@ -356,6 +388,17 @@ class ZMNHWD extends QubinoDimDevice {
     white, red, green, blue, dim,
   }) {
     this.log(`_processColorUpdates() -> rgbw(${red},${green},${blue},${white})`);
+
+    // Device has been turned off
+    if (white === 0 && red === 0 && green === 0 && blue === 0) {
+
+      // Colors where dimmed to zero so device is basically off, do not continue further
+      return this.setCapabilityValue(CAPABILITIES.ONOFF, false);
+    } if (this.getCapabilityValue(CAPABILITIES.ONOFF) === false && (white > 0 || red > 0 || green > 0 || blue > 0)) {
+
+      // Device was off but received color values that indicate device is on
+      this.setCapabilityValue(CAPABILITIES.ONOFF, true);
+    }
 
     // Detect color mode
     if (red > 0 || green > 0 || (blue > 0 && white === 0)) {

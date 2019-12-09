@@ -4,12 +4,12 @@
     "en": "Qubino"
   },
   "sdk": 2,
-  "version": "3.0.2",
+  "version": "3.1.0",
   "compatibility": ">=3.0.0",
   "brandColor": "#1784c7",
   "description": {
-    "en": "Qubino devices for Homey",
-    "nl": "Qubino apparaten voor Homey"
+    "en": "Turn any home into a smart home with Qubino",
+    "nl": "Maak van elk huis een slim huis met Qubino"
   },
   "category": [
     "appliances",
