@@ -1,11 +1,11 @@
 {
   "type": "number",
   "label": {
-    "en": "Maximum sensor value (°C/Lux/%)",
-    "nl": "Maximale sensor niveau (°C/Lux/%)"
+    "en": "Maximum sensor value",
+    "nl": "Maximale sensor niveau"
   },
   "units": {
-    "en": "",
+    "en": "°C/Lux/%",
     "nl": "°C/Lux/%"
   },
   "zwave": {

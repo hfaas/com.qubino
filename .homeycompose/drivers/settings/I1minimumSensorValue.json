@@ -1,8 +1,8 @@
 {
   "type": "number",
   "label": {
-    "en": "Minimum sensor value (°C/Lux/%)",
-    "nl": "Minimale sensor niveau (°C/Lux/%)"
+    "en": "Minimum sensor value",
+    "nl": "Minimale sensor niveau"
   },
   "units": {
     "en": "°C/Lux/%",

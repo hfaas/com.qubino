@@ -76,7 +76,7 @@
         "$extends": "doubleClick"
       },
       {
-        "$extends": "I1autoManualControl"
+        "$extends": "Input1autoManualControl"
       }
     ]
   },
@@ -125,21 +125,21 @@
   {
     "type": "group",
     "label": {
-      "en": "I1 input sensor reporting",
-      "nl": "I1 ingang sensor metingen"
+      "en": "Input 1 sensor reporting",
+      "nl": "Ingang 1 sensor metingen"
     },
     "children": [
       {
-        "$extends": "I1minimumSensorValue"
+        "$extends": "Input1minimumSensorValue"
       },
       {
-        "$extends": "I1maximumSensorValue"
+        "$extends": "Input1maximumSensorValue"
       },
       {
-        "$extends": "I1sensorReportingThreshold"
+        "$extends": "Input1sensorReportingThreshold"
       },
       {
-        "$extends": "I1sensorTriggerThreshold"
+        "$extends": "Input1sensorTriggerThreshold"
       }
     ]
   },
