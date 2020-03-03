@@ -3,7 +3,7 @@
   "type": "dropdown",
   "label": {
     "en": "Control type",
-    "nl": "Type sturing"
+    "nl": "Aansturing"
   },
   "zwave": {
     "index": 52,
@@ -27,7 +27,7 @@
     }
   ],
   "hint": {
-    "en": "This parameter ({{zwaveParameterIndex}}) determines how the input should influence the output (manual=disabled or automatic=output follows input using PID).\n\nNote: This parameter only influences the output when the input type parameter (1) is configured for a 0-10V sensor (values 3, 4 and 5).",
-    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt hoe de ingang de uitgang beïnvloed (handmatig=niet of automatisch=uitgang volgt ingang middels PID).\n\nLet op: Deze parameter beïnvloed de uitgang alleen wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
+    "en": "This parameter ({{zwaveParameterIndex}}) determines how the input should control the output (manual=disabled or automatic=output follows input using PID).\n\nNote: This parameter is only relevant when the input type parameter (1) is configured at a 0-10V sensor (values 3, 4 and 5).",
+    "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt hoe de ingang de uitgang aanstuurt (handmatig=niet of automatisch=uitgang volgt ingang middels PID).\n\nLet op: Deze parameter is alleen relevant wanneer de ingang type parameter (1) is ingesteld op een 0-10V sensor (waardes 3, 4 of 5)."
   }
 }
