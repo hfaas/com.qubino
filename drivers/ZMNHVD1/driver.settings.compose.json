@@ -76,7 +76,7 @@
         "$extends": "doubleClick"
       },
       {
-        "$extends": "Input1autoManualControl"
+        "$extends": "controlTypeInput1"
       }
     ]
   },
@@ -130,16 +130,16 @@
     },
     "children": [
       {
-        "$extends": "Input1minimumSensorValue"
+        "$extends": "sensorMinimumValueInput1"
       },
       {
-        "$extends": "Input1maximumSensorValue"
+        "$extends": "sensorMaximumValueInput1"
       },
       {
-        "$extends": "Input1sensorReportingThreshold"
+        "$extends": "sensorReportingThresholdInput1"
       },
       {
-        "$extends": "Input1sensorTriggerThreshold"
+        "$extends": "sensorTriggerThresholdInput1"
       }
     ]
   },
